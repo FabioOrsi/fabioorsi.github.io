@@ -6,42 +6,50 @@
     <style>
         body { margin: 0; background-color: #1a1a1a; }
         model-viewer { width: 100vw; height: 100vh; }
-        model-viewer[poster] {cursor: pointer;} /* This targets all model-viewer elements when they have a poster showing */
-        model-viewer:not([poster]) {cursor: grab;} /* Optional: change it back to the 'grab' hand once the 3D model is active */
-        .model-card:hover {
-            border-color: #00d1ff; /* Change border color */
-            transform: scale(1.02); /* Slight zoom in */
-            transition: all 0.2s ease; /* Smooth the movement */
-            }
     </style>
 </head>
 
 <style>
-  /* The Grid Container */
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    background: #121212;
-  }
+    /* The Grid Container */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        background: #121212;
+        }
+    
+    /* The Card Frame */
+    .model-card {
+        background: #1e1e1e;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #333;
+        color: white;
+        font-family: sans-serif;
+        }
 
-  /* The Card Frame */
-  .model-card {
-    background: #1e1e1e;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #333;
-    color: white;
-    font-family: sans-serif;
-  }
+    .model-card:hover {
+        border-color: #00d1ff; /* Change border color */
+        transform: scale(1.02); /* Slight zoom in */
+        transition: all 0.2s ease; /* Smooth the movement */
+        }
 
-  model-viewer {
-    width: 100%;
-    height: 500px;
-    background-color: #252525;
-  }
+    model-viewer {
+        width: 100%;
+        height: 500px;
+        background-color: #252525;
+        }
 
+    model-viewer[poster] {
+        cursor: grab;
+        }
+
+    model-viewer:not([poster]) {
+        cursor: grab;
+        }
+
+    
   .info { padding: 15px; }
   .info h3 { margin: 0 0 10px; color: #00d1ff; }
   .info p { font-size: 0.9rem; color: #bbb; line-height: 1.4; }
@@ -99,7 +107,7 @@
     </script>
 
     <div class = "info">
-        <p>v0.7</p>
+        <p>v0.8</p>
     </div>
     
 </body>
