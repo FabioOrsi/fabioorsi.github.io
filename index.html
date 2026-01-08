@@ -45,7 +45,7 @@
       <div class="model-card">
         <model-viewer 
             src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/model___1761578825965.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=Twar3680z2zeuDtRcUp%2B2HPYV11uSGBg8Z6D6eYJGLLxFJD8Le8wdD%2B3EYu2txf45Aaa4J%2F%2FnY2Ym7liDN8L6pq381x2ZKiSwP2PWP8xZlbnAG2YKvIkwucCbiNCxaY2Ho2%2F0m4djsWgrOtUQ5tv6FDekSdZkgAUvNqo%2F0gzuratHDeIfgZxryWYwWhqw301g1qoLSzzmOFJ52Une3fU%2FhjQSrrdXpZBAdXdItFcrIfCvFuEqc%2Bo%2FqW7WlmS3lORAZgTFT078T80L6SP9F%2Bd%2B4eR9zGwn7%2Fql9JPEV9%2BKeVW7erO1zcX%2BgtZN2MyuVI9g7Y2fFR6DgHhx3DN7CKb%2Fw%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dmodel___1761578825965.glb"
-            reveal              = "interaction"
+            reveal              = "manual"
             poster              = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/NQqCgx56cnfCBsOgupoN/PBmjlDTrqfew0c57weIS/poster___1747780134792.jpg?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=A6elXtgzJlPC1ir4fDJH3MxoPn%2F92Z94M3UjuiJHTPHjs94IHuofrEt%2BKKU6rk8PECsSNvxjqyE0KF71Y%2BHmwWcMuBBoFKBinf%2B751naMdXFXm%2Fi1U4Ol4POXM9uqHZywyn9UkasQ0yZLGtqRaLsqO8%2FFVdwr5%2F6wQG9ZBTS878fyJ70IBj%2FYUdSalQ7GMbr36CrDUY6%2F2m4O8nwKTDniqE%2BnxaFJ1r5h%2BNqgtCrb2bYGrpTT08N87KJ96FjQXKSPLcCaIQ%2FhQM5rn4ExXahx37wNEkHDKI0JIzneBsGOOkM%2Blgrcr%2Bz1%2B2LUgk9k9V4jiOiPw%2Fc4%2FFyAL4L8gTi9g%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dposter___1747780134792.jpg"
             ar                  = ""
             auto-rotate         = ""
@@ -82,8 +82,17 @@
       </div>
     </div>    
 
+    <script>
+      // Finds all model-viewers on the page
+      document.querySelectorAll('model-viewer').forEach((viewer) => {
+        viewer.addEventListener('click', () => {
+          viewer.dismissPoster();
+        });
+      });
+    </script>
+
     <div class = "info">
-        <p>v0.5</p>
+        <p>v0.6</p>
     </div>
     
 </body>
