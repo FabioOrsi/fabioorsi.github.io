@@ -17,12 +17,15 @@
 
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
       gap: 20px;
       padding: 30px;
       padding-top: 5px;
       padding-bottom: 5px;
       background: #121212;
+
+      max-width: 1620px;
+      justify-self: center;
     }
 
     .model-card {
@@ -37,6 +40,7 @@
       flex-direction: column; /* Keeps the info section below the model */
       align-items: center;    /* Centers children horizontally */
 
+      max-width: 800px;
     }
 
     .model-card:hover {
@@ -56,7 +60,6 @@
 
 <body>
   <div class="grid-container">
-
     <div class="model-card">
       <model-viewer 
         ar
@@ -84,7 +87,6 @@
         <p>View more</p>
       </div>
     </div>
-
     <div class="model-card">
       <model-viewer 
         ar
@@ -112,7 +114,9 @@
         <p>View more</p>
       </div>
     </div>
+  </div>
 
+  <div class="grid-container">
     <div class="model-card">
       <model-viewer 
         ar
@@ -140,11 +144,6 @@
         <p>View more</p>
       </div>
     </div>
-
-  </div>    
-
-  <div class="grid-container">
-
     <div class="model-card">
       <model-viewer 
         ar
@@ -172,7 +171,9 @@
         <p>View more</p>
       </div>
     </div>
+  </div>
 
+  <div class="grid-container">
     <div class="model-card">
       <model-viewer 
         ar
@@ -195,10 +196,12 @@
         min-camera-orbit    = "auto 0deg 5%"
         max-camera-orbit    = "auto 180deg 350%">
       </model-viewer>
+
       <div class="info">
         <h3>Electronics</h3>
         <p>View more</p>
       </div>
+
     </div>
 
     <div class="model-card">
@@ -223,10 +226,12 @@
         min-camera-orbit    = "auto 0deg 5%"
         max-camera-orbit    = "auto 180deg 350%">
       </model-viewer>
+
       <div class="info">
         <h3>Misc</h3>
         <p>View more</p>
       </div>
+
     </div>
 
   </div>    
