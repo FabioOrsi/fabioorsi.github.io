@@ -1,114 +1,251 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>3D Portfolio</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-    <style>
-        body { margin: 0; background-color: #1a1a1a; }
-        model-viewer { width: 100vw; height: 100vh; }
-    </style>
-</head>
-
-<style>
-    /* The Grid Container */
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 20px;
-        background: #121212;
-        }
-    
-    /* The Card Frame */
-    .model-card {
-        background: #1e1e1e;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid #333;
-        color: white;
-        font-family: sans-serif;
-        }
-
-    .model-card:hover {
-        border-color: #00d1ff; /* Change border color */
-        transform: scale(1.02); /* Slight zoom in */
-        transition: all 0.2s ease; /* Smooth the movement */
-        }
+  <title>3D Portfolio</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1a1a1a;
+    }
 
     model-viewer {
-        width: 100%;
-        height: 500px;
-        background-color: #252525;
-        cursor: pointer;
-        }
+      width: 90%;
+      height: 400px;
+      background-color: #252525;
+    }
 
-    /* model-viewer[poster] {
-        cursor: grab;
-        }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      background: #121212;
+    }
 
-    model-viewer:not([poster]) {
-        cursor: grab;
-        } */
+    .model-card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #333;
+      color: white;
+      font-family: sans-serif;
 
-    
-  .info { padding: 15px; }
-  .info h3 { margin: 0 0 10px; color: #00d1ff; }
-  .info p { font-size: 0.9rem; color: #bbb; line-height: 1.4; }
-</style>
+      display: flex;
+      flex-direction: column; /* Keeps the info section below the model */
+      align-items: center;    /* Centers children horizontally */
+
+    }
+
+    .model-card:hover {
+      border-color: #00d1ff;
+      transform: scale(1.01);
+      transition: all 0.2s ease;
+    }
+
+
+
+    .info { padding: 15px; padding-bottom: 0px;}
+    .info h3 { margin: 0 0 10px; color: #00d1ff; justify-self: center; }
+    .info p { font-size: 0.9rem; color: #999; line-height: 1.4; justify-self: center; }
+
+  </style>
+</head>
 
 <body>
-    <div class="grid-container">
-      <div class="model-card">
-        <model-viewer 
-            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/model___1761578825965.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=Twar3680z2zeuDtRcUp%2B2HPYV11uSGBg8Z6D6eYJGLLxFJD8Le8wdD%2B3EYu2txf45Aaa4J%2F%2FnY2Ym7liDN8L6pq381x2ZKiSwP2PWP8xZlbnAG2YKvIkwucCbiNCxaY2Ho2%2F0m4djsWgrOtUQ5tv6FDekSdZkgAUvNqo%2F0gzuratHDeIfgZxryWYwWhqw301g1qoLSzzmOFJ52Une3fU%2FhjQSrrdXpZBAdXdItFcrIfCvFuEqc%2Bo%2FqW7WlmS3lORAZgTFT078T80L6SP9F%2Bd%2B4eR9zGwn7%2Fql9JPEV9%2BKeVW7erO1zcX%2BgtZN2MyuVI9g7Y2fFR6DgHhx3DN7CKb%2Fw%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dmodel___1761578825965.glb"
-            reveal              = "manual"
-            poster              = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/NQqCgx56cnfCBsOgupoN/PBmjlDTrqfew0c57weIS/poster___1747780134792.jpg?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=A6elXtgzJlPC1ir4fDJH3MxoPn%2F92Z94M3UjuiJHTPHjs94IHuofrEt%2BKKU6rk8PECsSNvxjqyE0KF71Y%2BHmwWcMuBBoFKBinf%2B751naMdXFXm%2Fi1U4Ol4POXM9uqHZywyn9UkasQ0yZLGtqRaLsqO8%2FFVdwr5%2F6wQG9ZBTS878fyJ70IBj%2FYUdSalQ7GMbr36CrDUY6%2F2m4O8nwKTDniqE%2BnxaFJ1r5h%2BNqgtCrb2bYGrpTT08N87KJ96FjQXKSPLcCaIQ%2FhQM5rn4ExXahx37wNEkHDKI0JIzneBsGOOkM%2Blgrcr%2Bz1%2B2LUgk9k9V4jiOiPw%2Fc4%2FFyAL4L8gTi9g%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dposter___1747780134792.jpg"
-            ar                  = ""
-            auto-rotate         = ""
-            camera-controls     = ""
-            autoplay            = "true"
-            shadow-intensity    = ".97"
-            field-of-view       = "22deg"
-            exposure            = "1"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "30deg 85deg 105%"
-            ar-placement        = "floor"
-            tone-mapping        = "aces"
-            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-            quick-look-browsers = "safari chrome"
-            min-field-of-view   = "10deg"
-            max-field-of-view   = "90deg"
-            min-camera-orbit    = "auto 0deg 5%"
-            max-camera-orbit    = "auto 180deg 350%"
-            ar-status           = "not-presenting"
-            class               = "embed-responsive-item">
-        </model-viewer>
-        <div class="info">
-          <h3>Cyberpunk Helmet</h3>
-          <p>Hard surface practice using sub-d modeling techniques.</p>
-        </div>
-      </div>
-      
-      <div class="model-card">
-        <model-viewer data-js-focus-visible="" src="https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/NQqCgx56cnfCBsOgupoN/PBmjlDTrqfew0c57weIS/model___1747780134792.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=k3LBBidRo1Gnwfb11vpNO4TFpODcfYZ8htMBtpci1iffCCzHTPQkmcVZgs%2FlQF8otO74R4wHBdx4BY00KmFLvWh0lJk34jM701K5OORQDL%2BsrVk8YNg5sTgV4TcXCJIiTKYwTPnWcqPMR9Og8%2BBpJzJfO4OnkSC5iUPcOGVbYHeMjLRbY7A81NGaeiikzk1JIAydxUiXTJagy51NX%2BwTOmoZvhOicKCGmxddYEUA9S6pasCkI7YsUgV%2Bk%2F6MPtRTvpz0tnxWebTFaNq1BZSo%2B0%2F0ysU%2FUmz%2BBGFBItTskY6FcazIs%2FTNC%2Bhw3eIt%2FVZ1j1A7T8%2F708ZPP2SpjoAoSg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dmodel___1747780134792.glb" ios-src="https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/NQqCgx56cnfCBsOgupoN/PBmjlDTrqfew0c57weIS/model___1747780134792.usdz?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=FnebL9STAf3AzIANIvk%2FNIAoPXEZu5I1gggYGcXA8BYIAmJ%2BXI%2FR326IL3oiPwHn36AWKZA%2BNTB9bp9B9t2DyEhHYNLn6M%2FeYUVlZo3rOnHZX6JuizXfHFs8Y8BDk76%2FkDO42umx7FKPXLQLftKRvbNtLMLbhzoaHv7BOE97LD7CXnoTuaGgDQfDNPhanLnoVAFTpZSYA258e%2FPy5EPQp8qdGxem0E09AUEEaUsf%2FjVMShFUirRx%2FihWzz6y7ZjXWK2fom4MxSiW8oW%2FThKhfZ9A1Vbw92GQ%2B0cmegaS98thJpO6wN6xWMCaw%2FgHRW1ZUB%2BIV11ZPY2jXak%2Fubmbkw%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dmodel___1747780134792.usdz" revealoff="interaction" ar="" auto-rotate="" camera-controls="" autoplay="true" shadow-intensity=".97" field-of-view="15deg" exposure="1" camera-target="auto auto auto" camera-orbit="30deg 75deg 105%" ar-placement="floor" tone-mapping="aces" environment-image="https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/NQqCgx56cnfCBsOgupoN/PBmjlDTrqfew0c57weIS/hdr___1747780134792.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=ZhjKYEfYP6YwpTN84LmtBc83GEaM%2Fz5o9La8RfjzFiWCq9mLtck7A9ZgRqBr0Pj7oMx%2FKRAT7QaU7ekMhF%2BxRkqPFbXHX0%2Byny%2BWaqKJZapB%2Ff2vPEgW4hPFqrdN7%2BDt9RveXA0UtmjJ0LLBlwjgexsDvXNh7Y6m1IAQChTSW6ggmOrSozIlfM48pA5AaoA6lDpAnDg8UVfoqNF7eOfmXZ%2BKhgAkqzor8AG%2BpYseCPI0YD3xxY6Pf%2B5p91y6fEAh18vt81pTrT9SPdSCYC0v5%2BX632%2Bp9u5N1vNYQZxtRAHIILA6EkW0T6hcOJCXn3LaM2HAZJ%2Bh6neWh33V3bXcKw%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1747780134792.hdr" quick-look-browsers="safari chrome" min-field-of-view="10deg" max-field-of-view="90deg" min-camera-orbit="auto 0deg 5%" max-camera-orbit="auto 180deg 350%" ar-status="not-presenting" class="embed-responsive-item"></model-viewer>
-        <div class="info">
-          <h3>Low-Poly Bot</h3>
-          <p>Optimized for mobile games with a single 1k texture set.</p>
-        </div>
-      </div>
-    </div>    
+  <div class="grid-container">
 
-    <script>
-      // Finds all model-viewers on the page
-      document.querySelectorAll('model-viewer').forEach((viewer) => {
-        viewer.addEventListener('click', () => {
+    <div class="model-card">
+      <model-viewer 
+        ar
+        camera-controls
+        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/cEwoAZ2tsStOl0EZpSkv/Vxu4n5Aupz905Vek45Ra/model___1706574709931.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=B5JSDi4wICpPnh6jMmCcsoUAzxaq10IMWdRuQ3eQmQ1MF84FAcBDYNClxyysgA8R6hsxDzqm8SW%2FNb2qz3zdaujAK1RhfHeINXGDRd0JiEoF3Oooyi2%2F0%2Bio2%2FYJzzKgmg%2BWyls7wn%2ByeqFnUKqhGqapBDluSbiRd0HgBEmqmCzMiPsZWI3vQQ%2BGqQRbOQuwNWh7mj5xoFuM0dDQyvDvOtSEGJP7PVKUvMS%2FdYEL8YI6zqtWHaILJIp6foDqpm%2FcMrnvgWMfzTpYvz%2BQB3ZVLv7wFMX%2BX6xau8criL9W4hBkPPE%2BnIQ41MMY86KGaFPefiwftbklrHAA5JaeBWIo9A%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1706574709931.glb"
+        reveal              = "auto"
+        loading             = "lazy"
+        autoplay            = "true"
+        shadow-intensity    = ".97"
+        field-of-view       = "22deg"
+        exposure            = "1"
+        camera-target       = "auto auto auto"
+        camera-orbit        = "-30deg 85deg 105%"
+        ar-placement        = "floor"
+        tone-mapping        = "aces"
+        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+        quick-look-browsers = "safari chrome"
+        min-field-of-view   = "10deg"
+        max-field-of-view   = "90deg"
+        min-camera-orbit    = "auto 0deg 5%"
+        max-camera-orbit    = "auto 180deg 350%">
+      </model-viewer>
+      <div class="info">
+        <h3>Furniture</h3>
+        <p>View more</p>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <model-viewer 
+        ar
+        camera-controls
+        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/my883zmfme7v/3hyoznpyxaqw/model___1618572031526.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=H2M0r65QWIMfdNP%2BMaQc%2BVoaV1%2BizvBpyrS4CB9uzfmLeCln96g7XODLK2V4Iv%2FjB%2BwXP%2BBSiG5d4D5Z0EQKeKpN3diTYBGx39QuADp1gFT8gpCMvs0lgOcUVXef67paRXlAJcA43tt3m7mWAzt1%2BoGVrMwmk08JZ3UxnSTJgnnKJ6ScCwH0rHwXbOkwpq3hpsbnzGBKTPVy7WRrwc%2FPvAf%2FFvXQr91Ae%2BTWbCbBbGVY9hTy6cgBmLyZmS64eK94th9tCfExjphWBB%2FH%2BI%2FWyC7AXJWM7K8LgKnjHYu5Jlx8NVFdVSeysGEXLqyZA1hAc8aiA894KVcxOmKcAJ5Vcg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1618572031526.glb"
+        reveal              = "auto"
+        loading             = "lazy"
+        autoplay            = "true"
+        shadow-intensity    = ".97"
+        field-of-view       = "22deg"
+        exposure            = "1"
+        camera-target       = "auto auto auto"
+        camera-orbit        = "-90deg 85deg 105%"
+        ar-placement        = "floor"
+        tone-mapping        = "aces"
+        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+        quick-look-browsers = "safari chrome"
+        min-field-of-view   = "10deg"
+        max-field-of-view   = "90deg"
+        min-camera-orbit    = "auto 0deg 5%"
+        max-camera-orbit    = "auto 180deg 350%">
+      </model-viewer>
+      <div class="info">
+        <h3>Vehicles</h3>
+        <p>View more</p>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <model-viewer 
+        ar
+        camera-controls
+        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/rlwydt3b58fn/xkjc0owfls8s/model___1616466478973.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=TxS4YYyHbonqDfmoVOaWGJ0PkndAZBF0XnLTgks7Dir07R%2FLclVnkG9H5wyIpxdqjcfmLiJoMPzowPDBEsGjMlp40r6GZ6w88J7fr4e3x0kRXSYwJ%2FvLu2LVEvXAtrTzAtZ300ELVUcQYj9t6%2Bj%2FRT57kixeuNWrvaKOd%2BSy36%2FjuS6oGrVilgPVhsqL9IVOY0kuxIJy5IGxFqz0C1RQHyX8pPxjcwYlvTxnMBg2s3SdEsrRjsWL9QfVTZct50LZFZRduj%2B9PTt5OSnHlFch8eYd0AwD%2FTETZbvI96dUcPcnKOTziZ2XfQdy2zD0MPCWNtvIa2TIaZqxbQeW2tqFNw%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1616466478973.glb"
+        reveal              = "auto"
+        loading             = "lazy"
+        autoplay            = "true"
+        shadow-intensity    = ".97"
+        field-of-view       = "22deg"
+        exposure            = "1"
+        camera-target       = "auto auto auto"
+        camera-orbit        = "-30deg 85deg 115%"
+        ar-placement        = "floor"
+        tone-mapping        = "aces"
+        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+        quick-look-browsers = "safari chrome"
+        min-field-of-view   = "10deg"
+        max-field-of-view   = "90deg"
+        min-camera-orbit    = "auto 0deg 5%"
+        max-camera-orbit    = "auto 180deg 350%">
+      </model-viewer>
+      <div class="info">
+        <h3>Sports</h3>
+        <p>View more</p>
+      </div>
+    </div>
+
+  </div>    
+
+  <div class="grid-container">
+
+    <div class="model-card">
+      <model-viewer 
+        ar
+        camera-controls
+        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/rnv3mhjcgh7n/7ls3pnqqsav0/model___1687944715571.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=tS%2FEQHIECoZxL%2F1OfMJw0W4m5d8SYKSY9YoLW%2Bh3ZdwldvuUpLi2g%2BODnJBaXHh1sKXEB0KxtR2EyvWlcJucWT7MoUuAbxa%2FpfGFybPKvc9If6ZIxYpVn0RTQ6%2B4lUu7mU0iuTl7yhfPDXbRE9E2H%2FnK4fmXn7xN9Tn%2F%2B24dCDCF4toqAtllxsyWuWFEkiWs4fUbwS%2BnnVhPLHl9o5gsHZjOlzrcRmy%2F70RailOuBJ0ZpI0PSLI2sFl038YDmGmA8T5v3JA5hRLwj0P%2B%2FM6IvIFjcZqwHTb1j9oEW4O0CFW5Rna8OEB6E3Nmktbb7FU8kyDejkzAX0u2gr5%2BCVF5MQ%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1687944715571.glb"
+        reveal              = "auto"
+        loading             = "lazy"
+        autoplay            = "true"
+        shadow-intensity    = ".97"
+        field-of-view       = "22deg"
+        exposure            = "1"
+        camera-target       = "auto auto auto"
+        camera-orbit        = "30deg 85deg 125%"
+        ar-placement        = "floor"
+        tone-mapping        = "aces"
+        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+        quick-look-browsers = "safari chrome"
+        min-field-of-view   = "10deg"
+        max-field-of-view   = "90deg"
+        min-camera-orbit    = "auto 0deg 5%"
+        max-camera-orbit    = "auto 180deg 350%">
+      </model-viewer>
+      <div class="info">
+        <h3>Furnishings</h3>
+        <p>View more</p>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <model-viewer 
+        ar
+        camera-controls
+        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/ICFFIywI4rqpiyb9Mqo1/eq7d15NHxSOe3b9fgzF6/model___1714172245833.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=BFSRhR%2F%2BwQoj1zVjbCY6UWbICmkFLvtW5AwplnWJJ0rORWfqluubW75mVs7slogb7q3ygztXkYegTPUisJRxH%2FispdVe8DCPcJYqfIf7ICRUo7ErlePMvJxHIYUEDPUZQZbqkklslt27cUtgL9avwHqlv23ZZKKyXh1uLPHN%2Fr1kJ7vooK%2Fi%2FPkhqvPIISqvEne5iTBtpqS7o8P1GFLTdHTEy%2FwQEblTs3YhJ3v7doZuBsPN7eNGeeiFqhVEmW6wamqT2QJp0M8LOl7T81zoMMscTqlWj6157sqtAcHM%2FcDEKIH4g1RYw6HZYoxO89kJ8L0ZtjLVFcxRyNitN3PkwQ%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1714172245833.glb"
+        reveal              = "auto"
+        loading             = "lazy"
+        autoplay            = "true"
+        shadow-intensity    = ".97"
+        field-of-view       = "22deg"
+        exposure            = "1"
+        camera-target       = "auto auto auto"
+        camera-orbit        = "30deg 85deg 105%"
+        ar-placement        = "floor"
+        tone-mapping        = "aces"
+        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+        quick-look-browsers = "safari chrome"
+        min-field-of-view   = "10deg"
+        max-field-of-view   = "90deg"
+        min-camera-orbit    = "auto 0deg 5%"
+        max-camera-orbit    = "auto 180deg 350%">
+      </model-viewer>
+      <div class="info">
+        <h3>Electronics</h3>
+        <p>View more</p>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <model-viewer 
+        ar
+        camera-controls
+        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/KafycdnPHaUVJSV3ws3t/i9qio7ufjcyv/model___1670352956472.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=y18RplPPCAUdxAdVcqPz1xSB7XSCtdggM6thMz6DJ02cNdicZrrfDbe0MZLZYysm6aMQH7eSv6E0o5E%2Fz6klHxSelyv5lQj1tkBW%2F0TvEAjaEfyNhMcHjWtYqSxEq%2BTOpYBnbpf6WYus%2B89xqXjNyYDQJ5HlrTal7q9IvNWYHVSDLHiDlNNYwYoNGvTjRg7RgDrDzDjhssahKbq2hgtPD6D4CsUKwj74Wlz%2FwTZMSaGEukBFOWPM9LanhNfNMtNpr6KTj8aM6EQzcU5NFrwv3aRukGt6ebhkgAF8whDRriqmrK8L7Hs04bi8uZ35Hq02XQBuNjw9zsZV0h9yffax8Q%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1670352956472.glb"
+        reveal              = "auto"
+        loading             = "lazy"
+        autoplay            = "true"
+        shadow-intensity    = ".97"
+        field-of-view       = "22deg"
+        exposure            = "1"
+        camera-target       = "auto auto auto"
+        camera-orbit        = "30deg 85deg 105%"
+        ar-placement        = "floor"
+        tone-mapping        = "aces"
+        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+        quick-look-browsers = "safari chrome"
+        min-field-of-view   = "10deg"
+        max-field-of-view   = "90deg"
+        min-camera-orbit    = "auto 0deg 5%"
+        max-camera-orbit    = "auto 180deg 350%">
+      </model-viewer>
+      <div class="info">
+        <h3>Misc</h3>
+        <p>View more</p>
+      </div>
+    </div>
+
+  </div>    
+
+
+
+  <script>
+    document.querySelectorAll('.model-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        const viewer = card.querySelector('model-viewer');
+        if (viewer) {
           viewer.dismissPoster();
-        });
+        }
       });
-    </script>
+    });
+  </script>
 
     <div class = "info">
-        <p>v0.9</p>
+        <p>v0.10</p>
     </div>
     
 </body>
