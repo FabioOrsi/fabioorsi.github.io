@@ -13,7 +13,6 @@
       width: 90%;
       height: 400px;
       background-color: #252525;
-      z-index: 2; /* This makes the viewer "sit on top" of the link */
     }
 
     .grid-container {
@@ -62,11 +61,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 1;
+      z-index: -1;
     }
 
 
-    .info { padding: 15px; padding-bottom: 0px;}
+    .info { padding: 0px; padding-bottom: 0px;}
     .info h3 { margin: 0 0 10px; color: #00d1ff; justify-self: center; }
     .info p { font-size: 0.9rem; color: #999; line-height: 1.4; justify-self: center; }
 
@@ -76,6 +75,7 @@
 <body>
   <div class="grid-container">
     <div class="model-card">
+      <br>
       <model-viewer 
         ar
         camera-controls
@@ -98,11 +98,14 @@
         max-camera-orbit    = "auto 180deg 350%">
       </model-viewer>
       <div class="info">
-        <h3>Furniture</h3>
-        <p>View more</p>
+        <a href="furniture/" class="main-link">
+          <h3><br>Furniture</h3>
+          <p>View more</p>
+        </a>
       </div>
     </div>
     <div class="model-card">
+      <br>
       <model-viewer 
         ar
         camera-controls
@@ -125,14 +128,17 @@
         max-camera-orbit    = "auto 180deg 350%">
       </model-viewer>
       <div class="info">
-        <h3>Vehicles</h3>
-        <p>View more</p>
+        <a href="transportation/" class="main-link">
+          <h3><br>Transportation</h3>
+          <p>View more</p>
+        </a>
       </div>
     </div>
   </div>
 
   <div class="grid-container">
     <div class="model-card">
+      <br>
       <model-viewer 
         ar
         camera-controls
@@ -155,11 +161,14 @@
         max-camera-orbit    = "auto 180deg 350%">
       </model-viewer>
       <div class="info">
-        <h3><a href="sports/" class="main-link">Sports</a></h3>
-        <p>View more</p>
+        <a href="sports/" class="main-link">
+          <h3><br>Sports</h3>
+          <p>View more</p>
+        </a>
       </div>
     </div>
     <div class="model-card">
+      <br>
       <model-viewer 
         ar
         camera-controls
@@ -182,14 +191,17 @@
         max-camera-orbit    = "auto 180deg 350%">
       </model-viewer>
       <div class="info">
-        <h3>Furnishings</h3>
-        <p>View more</p>
+        <a href="furnishings/" class="main-link">
+          <h3><br>Furnishings</h3>
+          <p>View more</p>
+        </a>
       </div>
     </div>
   </div>
 
   <div class="grid-container">
     <div class="model-card">
+      <br>
       <model-viewer 
         ar
         camera-controls
@@ -213,13 +225,16 @@
       </model-viewer>
 
       <div class="info">
-        <h3>Electronics</h3>
-        <p>View more</p>
+        <a href="electronics/" class="main-link">
+          <h3><br>Electronics</h3>
+          <p>View more</p>
+        </a>
       </div>
 
     </div>
 
     <div class="model-card">
+      <br>
       <model-viewer 
         ar
         camera-controls
@@ -243,8 +258,10 @@
       </model-viewer>
 
       <div class="info">
-        <h3>Misc</h3>
-        <p>View more</p>
+        <a href="misc/" class="main-link">
+          <h3><br>Misc</h3>
+          <p>View more</p>
+        </a>
       </div>
 
     </div>
@@ -252,7 +269,7 @@
   </div>    
 
 
-
+<!-- 
   <script>
     document.querySelectorAll('.model-card').forEach((card) => {
       card.addEventListener('click', () => {
@@ -262,7 +279,7 @@
         }
       });
     });
-  </script>
+  </script> -->
 
     <div class = "info">
         <p>v0.10</p>
