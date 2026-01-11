@@ -36,7 +36,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 1600px;
+        max-width: 1620px;
       }
       .info {
         padding: 15px;
@@ -70,235 +70,292 @@
         font-size: 0.8rem;
         transition: background 0.2s, transform 0.1s;
       }
-
+      .reset-button:hover {
+        background-color: rgba(0, 209, 255, 0.6);
+      }
       .reset-button:active {
         transform: scale(0.95);
+      }
+
+      .portfolio-wrapper {
+        position: relative;
+        max-width: 1920px;
+        margin: 0 auto;
+      }
+
+      #backToTopBtn {
+        position: fixed;
+        top: 30px;
+        right: calc(50% - 810px + 20px - 120px);
+        z-index: 15;
+        background-color: rgba(0, 209, 255, 0.4);
+        color: #fff;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+        display: none;
+        transition: background 0.2s, transform 0.1s; opacity 0.3s;
+      }
+
+      #backToTopBtn:hover {
+        background-color: rgba(0, 209, 255, 0.6);
+      }
+
+      #backToTopBtn:active {
+        transform: scale(0.95);
+      }
+
+      #backToRootBtn {
+        position: fixed;
+        top: 30px;
+        left: calc(50% - 810px + 20px - 125px); 
+        z-index: 15;
+        background-color: rgba(0, 209, 255, 0.4);
+        color: #fff;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        transition: background 0.2s, transform 0.1s, opacity 0.3s;;
+      }
+
+      #backToRootBtn:hover {
+        background-color: rgba(0, 209, 255, 0.6);
+      }
+
+      #backToRootBtn:active {
+        transform: scale(0.95);
+      }
+
+      @media (max-width: 1660px) {
+        #backToRootBtn { left: 20px; }
+        #backToTopBtn { right: 20px; }
       }
 
     </style>
   </head>
 
   <body>
-    <div class="grid-container">
-      <div class="model-card">
-        <button class="reset-button" onclick="resetCamera('football_helmet', '45deg 75deg 115%', 'auto auto auto', '22deg')">Reset View</button>
-        <br><br>
-        <model-viewer
-          ar
-          camera-controls
-          id                  = "football_helmet"
-          src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/msdshlutezr5/8pbucicqkmbc/model___1616466902850.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=L%2BboaI80nU5guVKjzz9qWZcyqUx4JIUyPVBbhAUCi8hdok%2F9HxFmlTGYp52gbHet5X0%2B9YtIKeNDxmUHywc%2FIh8XKdk3KxEe%2FXcFX1FFRdG%2FquorTBQ6f5yjjIKMgTWmv3E%2FdIRn9b6Hfc%2Bp05SY95X5Yeby7Frfod5zzpsIyZAp1FOsCurjiae7i4%2FiU3czB%2FN8%2FJSOoLDhUF9S9t7JDoXnULpGpnBPJuquJU2vHJCet%2BTndpjceLoWbe0VAgkbOBld%2BoVb01HtCmugw%2F5QmcUDzrp96xTcYm1AyHBXI8WzLsMWDqPxyzIFk1Txw2seopZhxbQn7bZhhW8yNBGyVg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1616466902850.glb"
-          reveal              = "auto"
-          loading             = "lazy"
-          autoplay            = "true"
-          shadow-intensity    = ".97"
-          field-of-view       = "22deg"
-          exposure            = "1"
-          camera-target       = "auto auto auto"
-          camera-orbit        = "45deg 75deg 115%"
-          ar-placement        = "floor"
-          tone-mapping        = "aces"
-          environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-          quick-look-browsers = "safari chrome"
-          min-field-of-view   = "10deg"
-          max-field-of-view   = "90deg"
-          min-camera-orbit    = "auto 0deg 5%"
-          max-camera-orbit    = "auto 180deg 350%">
-        </model-viewer>
-        <div class="info">
-          <h3>Football Helmet</h3>
-          <p>This project has multiple variants, with options for different decal styles and colors.</p>
-          <p>This is one of many helmet models made for this customer, for different sports.</p>
-          <br>
+    <div class="portfolio-wrapper">
+      <a href="/"><button id="backToRootBtn" title="Back to Home"><span style="margin-right: 10px;">&#9664;</span> Back</button></a>
+
+      <button onclick="topFunction()" id="backToTopBtn" title="Go to top">&#9650; Top</button>
+
+      <div class="grid-container">
+        <div class="model-card">
+          <button class="reset-button" onclick="resetCamera('football_helmet', '45deg 75deg 115%', 'auto auto auto', '22deg')">Reset View</button>
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "football_helmet"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/msdshlutezr5/8pbucicqkmbc/model___1616466902850.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=L%2BboaI80nU5guVKjzz9qWZcyqUx4JIUyPVBbhAUCi8hdok%2F9HxFmlTGYp52gbHet5X0%2B9YtIKeNDxmUHywc%2FIh8XKdk3KxEe%2FXcFX1FFRdG%2FquorTBQ6f5yjjIKMgTWmv3E%2FdIRn9b6Hfc%2Bp05SY95X5Yeby7Frfod5zzpsIyZAp1FOsCurjiae7i4%2FiU3czB%2FN8%2FJSOoLDhUF9S9t7JDoXnULpGpnBPJuquJU2vHJCet%2BTndpjceLoWbe0VAgkbOBld%2BoVb01HtCmugw%2F5QmcUDzrp96xTcYm1AyHBXI8WzLsMWDqPxyzIFk1Txw2seopZhxbQn7bZhhW8yNBGyVg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1616466902850.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "45deg 75deg 115%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+          </model-viewer>
+          <div class="info">
+            <h3>Football Helmet</h3>
+            <p>This project has multiple variants, with options for different decal styles and colors.</p>
+            <p>This is one of many helmet models made for this customer, for different sports.</p>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="grid-container">
-      <div class="model-card">
-        <button class="reset-button" onclick="resetCamera('boxing_gloves', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
-        <br><br>
-        <model-viewer
-          ar
-          camera-controls
-          id                  = "boxing_gloves"
-          src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/uhulwsrvektc/j5dqklpapej2/model___1642663859694.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=gXMbyFgpkFJWvsZd105P4LvmLpu2QIZqgLW4EOpbHES03FrtjLfcJ6mv29d5Cb2kBz0%2FYc1qj6tBWLTxodL2DYuzIMWfR%2BmnHr4hHWfTgHh1aOLHAg8we7RDAL68lGc%2BHpFKQO9o8%2BEtPCmOUf%2F7bQ68v4oJRu3TM8qvwW33OjDCeMG1OCi%2Bdq%2F2%2F6rK0bSpJ%2BiRem5fKC3utSoaMMl2KWwJnxRvWQRGDQZiya1sqUr8XYUdO%2BiakVHLnhq49VcIV4hV2Ni6XmCNq4xVHa311qKQJICLbkbBzOzPL5WVGg5hCDsYCxloxp50bqwLGcPZAby5zoOgcHuvSDc85F63zg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1642663859694.glb"
-          reveal              = "auto"
-          loading             = "lazy"
-          autoplay            = "true"
-          shadow-intensity    = ".97"
-          field-of-view       = "22deg"
-          exposure            = "1"
-          camera-target       = "auto auto auto"
-          camera-orbit        = "0deg 85deg 125%"
-          ar-placement        = "floor"
-          tone-mapping        = "aces"
-          environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-          quick-look-browsers = "safari chrome"
-          min-field-of-view   = "10deg"
-          max-field-of-view   = "90deg"
-          min-camera-orbit    = "auto 0deg 5%"
-          max-camera-orbit    = "auto 180deg 350%">
-        </model-viewer>
-        <div class="info">
-          <h3>Boxing Gloves</h3>
-          <p>This project has multiple variants, with options for diffent colors, materials and strap methods.</p>
-          <p>This is one of many boxing glove models made for this customer</p>
-          <br>
+      <div class="grid-container">
+        <div class="model-card">
+          <button class="reset-button" onclick="resetCamera('boxing_gloves', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "boxing_gloves"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/uhulwsrvektc/j5dqklpapej2/model___1642663859694.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=gXMbyFgpkFJWvsZd105P4LvmLpu2QIZqgLW4EOpbHES03FrtjLfcJ6mv29d5Cb2kBz0%2FYc1qj6tBWLTxodL2DYuzIMWfR%2BmnHr4hHWfTgHh1aOLHAg8we7RDAL68lGc%2BHpFKQO9o8%2BEtPCmOUf%2F7bQ68v4oJRu3TM8qvwW33OjDCeMG1OCi%2Bdq%2F2%2F6rK0bSpJ%2BiRem5fKC3utSoaMMl2KWwJnxRvWQRGDQZiya1sqUr8XYUdO%2BiakVHLnhq49VcIV4hV2Ni6XmCNq4xVHa311qKQJICLbkbBzOzPL5WVGg5hCDsYCxloxp50bqwLGcPZAby5zoOgcHuvSDc85F63zg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1642663859694.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "0deg 85deg 125%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+          </model-viewer>
+          <div class="info">
+            <h3>Boxing Gloves</h3>
+            <p>This project has multiple variants, with options for diffent colors, materials and strap methods.</p>
+            <p>This is one of many boxing glove models made for this customer</p>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- <div class="grid-container">
-      <div class="model-card">
-        <br>
-        <br>
-        <model-viewer 
-          ar
-          camera-controls
-          src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/xOsNGoklcOYBOfnUzZPsCoZe0242/ee8mgxejkjc1/1mvez5grpawn/model___1612341489231.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=E6Av2tXNp%2BCsU7k8EoxnBXSC7d%2BZHEcAQSA9UL9izii3jv3TNavVDQo8L6%2B6WXAcKQTw7fXNVLvq%2FqM2gmRQn3Jfjgjajdrq2uesijzQRHnnL24pdgOF7dS2xBykKYwnOLjlDSvuMIHN9imNC3P99Go8xxbzP2VwdXWT4SMyjL0JvHw4cFSWZarnsW7Vg2kLbHKwXI1VLuRlKQ1voY3SuCRhzneHlqZgTOT%2BBE%2Fh1f%2BZN8q2U35hjsku%2BE9UeR%2BfcCo9MC7nSeLZhToU%2BGY7HL2VdNDdo8VAuq5vScKSBSrQcY4C8IB%2FmcXYNxhaETN1lgTK%2FaVubgMCyzaxfsmd%2Fw%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1612341489231.glb"
-          reveal              = "auto"
-          loading             = "lazy"
-          autoplay            = "true"
-          shadow-intensity    = ".97"
-          field-of-view       = "22deg"
-          exposure            = "1"
-          camera-target       = "auto auto auto"
-          camera-orbit        = "0deg 85deg 105%"
-          ar-placement        = "floor"
-          tone-mapping        = "aces"
-          environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-          quick-look-browsers = "safari chrome"
-          min-field-of-view   = "10deg"
-          max-field-of-view   = "90deg"
-          min-camera-orbit    = "auto 0deg 5%"
-          max-camera-orbit    = "auto 180deg 350%">
-        </model-viewer>
-        <div class="info">
-          <h3>Electric Scooter</h3>
-          <p>This project had multiple variants, with options for diffent colors and addons.</p>
+      <div class="grid-container">
+        <div class="model-card">
+          <button class="reset-button" onclick="resetCamera('performance_ebike', '210deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "performance_ebike"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/RR50VjU1sCMqkh8bqom7VFb8Ze03/ueikh9nszf2d/dpaimh7nrto9/model___1630665543175.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=SQ5yLNF0BbRhH9oG6AHMuYx7unxgNNiJRItPTzx2J4k6gujlYCCENQbtHevLcmJ405HTop7Qy7foFYXFtp9nHbT2VWt1ADAzss0lSm3UWMxvN%2BdUNW2%2F1SOvr36ISzlAb5UqJN75w6dFDTX6sDwNEfQtIb2w9GZy7wo0xum1dXJPW1hsKY3%2FSyMof13MnDMoOyZp%2BYOSe1LlS%2Btq%2B1iGQxm9G6bMCr0iKRfw2fDJgm4QxC3LkuvopXcxMRxrpeHgVVyOa8xMXESMevJsmNmmxu%2Ftom5SjMyem%2BNqt%2B1FUi9dsch%2FmhPSS2KB2jfxa0u4ZLPRoVq5Hv70sT3V5Gss7g%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1630665543175.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "210deg 75deg 90%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+          </model-viewer>
+          <div class="info">
+            <h3>Performance E-Bike</h3>
+            <p>This is one of many electric bike models made for this customer.</p>
+            <br>
+          </div>
         </div>
       </div>
-    </div> -->
 
-    <div class="grid-container">
-      <div class="model-card">
-        <button class="reset-button" onclick="resetCamera('performance_ebike', '210deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
-        <br><br>
-        <model-viewer
-          ar
-          camera-controls
-          id                  = "performance_ebike"
-          src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/RR50VjU1sCMqkh8bqom7VFb8Ze03/ueikh9nszf2d/dpaimh7nrto9/model___1630665543175.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=SQ5yLNF0BbRhH9oG6AHMuYx7unxgNNiJRItPTzx2J4k6gujlYCCENQbtHevLcmJ405HTop7Qy7foFYXFtp9nHbT2VWt1ADAzss0lSm3UWMxvN%2BdUNW2%2F1SOvr36ISzlAb5UqJN75w6dFDTX6sDwNEfQtIb2w9GZy7wo0xum1dXJPW1hsKY3%2FSyMof13MnDMoOyZp%2BYOSe1LlS%2Btq%2B1iGQxm9G6bMCr0iKRfw2fDJgm4QxC3LkuvopXcxMRxrpeHgVVyOa8xMXESMevJsmNmmxu%2Ftom5SjMyem%2BNqt%2B1FUi9dsch%2FmhPSS2KB2jfxa0u4ZLPRoVq5Hv70sT3V5Gss7g%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1630665543175.glb"
-          reveal              = "auto"
-          loading             = "lazy"
-          autoplay            = "true"
-          shadow-intensity    = ".97"
-          field-of-view       = "22deg"
-          exposure            = "1"
-          camera-target       = "auto auto auto"
-          camera-orbit        = "210deg 75deg 90%"
-          ar-placement        = "floor"
-          tone-mapping        = "aces"
-          environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-          quick-look-browsers = "safari chrome"
-          min-field-of-view   = "10deg"
-          max-field-of-view   = "90deg"
-          min-camera-orbit    = "auto 0deg 5%"
-          max-camera-orbit    = "auto 180deg 350%">
-        </model-viewer>
-        <div class="info">
-          <h3>Performance E-Bike</h3>
-          <p>This is one of many electric bike models made for this customer.</p>
-          <br>
+      <div class="grid-container">
+        <div class="model-card">
+          <button class="reset-button" onclick="resetCamera('strider', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "strider"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/ncrjdts5nbxi/nedbs74bve15/model___1615994868578.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=a57blaZppw0A7bgI6Z9OWr8RqfRVkiKVvdATAQsGT5amjtt%2FjCY3AseVuHwhcaly3IGlZrsmXlk6qJ9MNUcdbImtAMfFL6px%2BaAXu5EH%2F9SEBNsgP7%2BtEwz4gGX%2FF9gY4c8gS44vMxNWOgZK%2F1lgwkYBYyhAyz%2FAxRwqDcDpTbbnYWCtqf6zkcz9Lb5I9d%2FUNk613kSOlh3%2BlOvkWeTwSQnd0naWA96jHTWYsRUWtb3MVn4fcvWhqsYyE6H%2FTg4JP9bHgI9e4mloGJjX2J36xHnYOEv1HsHHd1BIVmdMZsInBwi9REHtko%2BDrwSQB%2Byc1V5g4NDjQV8uZV6WOQVqzg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1615994868578.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "30deg 75deg 90%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+          </model-viewer>
+          <div class="info">
+            <h3>Strider</h3>
+            <p>This project has multiple variants, with options for diffent colors and sizes.</p>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="grid-container">
-      <div class="model-card">
-        <button class="reset-button" onclick="resetCamera('strider', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
-        <br><br>
-        <model-viewer
-          ar
-          camera-controls
-          id                  = "strider"
-          src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/ncrjdts5nbxi/nedbs74bve15/model___1615994868578.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=a57blaZppw0A7bgI6Z9OWr8RqfRVkiKVvdATAQsGT5amjtt%2FjCY3AseVuHwhcaly3IGlZrsmXlk6qJ9MNUcdbImtAMfFL6px%2BaAXu5EH%2F9SEBNsgP7%2BtEwz4gGX%2FF9gY4c8gS44vMxNWOgZK%2F1lgwkYBYyhAyz%2FAxRwqDcDpTbbnYWCtqf6zkcz9Lb5I9d%2FUNk613kSOlh3%2BlOvkWeTwSQnd0naWA96jHTWYsRUWtb3MVn4fcvWhqsYyE6H%2FTg4JP9bHgI9e4mloGJjX2J36xHnYOEv1HsHHd1BIVmdMZsInBwi9REHtko%2BDrwSQB%2Byc1V5g4NDjQV8uZV6WOQVqzg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1615994868578.glb"
-          reveal              = "auto"
-          loading             = "lazy"
-          autoplay            = "true"
-          shadow-intensity    = ".97"
-          field-of-view       = "22deg"
-          exposure            = "1"
-          camera-target       = "auto auto auto"
-          camera-orbit        = "30deg 75deg 90%"
-          ar-placement        = "floor"
-          tone-mapping        = "aces"
-          environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-          quick-look-browsers = "safari chrome"
-          min-field-of-view   = "10deg"
-          max-field-of-view   = "90deg"
-          min-camera-orbit    = "auto 0deg 5%"
-          max-camera-orbit    = "auto 180deg 350%">
-        </model-viewer>
-        <div class="info">
-          <h3>Strider</h3>
-          <p>This project has multiple variants, with options for diffent colors and sizes.</p>
-          <br>
+      <div class="grid-container">
+        <div class="model-card">
+          <button class="reset-button" onclick="resetCamera('foldable_kayak', '30deg 60deg 80%', 'auto auto auto', '22deg')">Reset View</button>
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "foldable_kayak"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/w152np8uw6kc/yf7pfhls6yjq/model___1615935859843.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=ww3v0y9SaVL98LMwWeU3yDulCCK2T9pbp9lxjAKd4xtf6a8xVaw6Uy71OuDJoujjvR4p0OZ86gNyt0Jun2BJisCrRrPCJaOT72ROvu9T4GYpBR9m6kVkHkB%2FVZM2lN2tAJZmW6PU6Upr%2Bs2do%2FEtr%2Btvucft2QHmZ%2FlBYsPERyZ4cYp3NCijgvcUIaLCwzJ1%2BVVFHbw8WNKBb0qrqDfVwIK3oYW4bJHz1BeYsUNT%2BuR6WRRsFxm8xNRT7kOvFRfNIK8X4LplGDwWN9CY%2FMV2KLrKKqPth2QU3qkAY4brO9GeNf4PNMzeXOgkNK5GTs5T%2BvIeypIPxf9CZlMEEjnO8w%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1615935859843.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "30deg 60deg 80%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+          </model-viewer>
+          <div class="info">
+            <h3>Foldable Kayak</h3>
+            <p>This project also includes the folded variant, and is one of multiple kayaks made for this customer.</p>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="grid-container">
-      <div class="model-card">
-        <button class="reset-button" onclick="resetCamera('foldable_kayak', '30deg 60deg 80%', 'auto auto auto', '22deg')">Reset View</button>
-        <br><br>
-        <model-viewer
-          ar
-          camera-controls
-          id                  = "foldable_kayak"
-          src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/w152np8uw6kc/yf7pfhls6yjq/model___1615935859843.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=ww3v0y9SaVL98LMwWeU3yDulCCK2T9pbp9lxjAKd4xtf6a8xVaw6Uy71OuDJoujjvR4p0OZ86gNyt0Jun2BJisCrRrPCJaOT72ROvu9T4GYpBR9m6kVkHkB%2FVZM2lN2tAJZmW6PU6Upr%2Bs2do%2FEtr%2Btvucft2QHmZ%2FlBYsPERyZ4cYp3NCijgvcUIaLCwzJ1%2BVVFHbw8WNKBb0qrqDfVwIK3oYW4bJHz1BeYsUNT%2BuR6WRRsFxm8xNRT7kOvFRfNIK8X4LplGDwWN9CY%2FMV2KLrKKqPth2QU3qkAY4brO9GeNf4PNMzeXOgkNK5GTs5T%2BvIeypIPxf9CZlMEEjnO8w%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1615935859843.glb"
-          reveal              = "auto"
-          loading             = "lazy"
-          autoplay            = "true"
-          shadow-intensity    = ".97"
-          field-of-view       = "22deg"
-          exposure            = "1"
-          camera-target       = "auto auto auto"
-          camera-orbit        = "30deg 60deg 80%"
-          ar-placement        = "floor"
-          tone-mapping        = "aces"
-          environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-          quick-look-browsers = "safari chrome"
-          min-field-of-view   = "10deg"
-          max-field-of-view   = "90deg"
-          min-camera-orbit    = "auto 0deg 5%"
-          max-camera-orbit    = "auto 180deg 350%">
-        </model-viewer>
-        <div class="info">
-          <h3>Foldable Kayak</h3>
-          <p>This project also includes the folded variant, and is one of multiple kayaks made for this customer.</p>
-          <br>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      function resetCamera(viewerId, orbit, target, fov) {
-        const viewer = document.getElementById(viewerId);
-        if (viewer) {
-          viewer.cameraOrbit = orbit;
-          viewer.cameraTarget = target;
-          viewer.fieldOfView = fov;
-          viewer.jumpCameraToGoal();
+      <script>
+        function resetCamera(viewerId, orbit, target, fov) {
+          const viewer = document.getElementById(viewerId);
+          if (viewer) {
+            viewer.cameraOrbit = orbit;
+            viewer.cameraTarget = target;
+            viewer.fieldOfView = fov;
+          }
         }
-      }
-    </script>
+      </script>
 
-    <div class = "info">
-        <p>v0.10</p>
+      <script>
+        let mybutton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+        function topFunction() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+      </script>
+
+      <div class = "info">
+          <p>v0.10</p>
+      </div>
     </div>
-
   </body>
 </html>
 
