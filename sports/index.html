@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Sports - 3D Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <style>
       body {
@@ -21,10 +24,10 @@
         top: 0;
         left: 0;
         right: 0;
-        z-index: 15; /* Lower than buttons (15+) so buttons stay on top */
+        z-index: 15;
         padding-top: 20px;
         padding-bottom: 20px;
-        background: #121212; /* Match your body background */
+        background: #121212;
       }
 
       .grid-container {
@@ -52,6 +55,7 @@
         flex-direction: column;
         align-items: center;
         max-width: 1620px;
+        font-family: 'Roboto', sans-serif;
       }
 
       .info {
@@ -75,17 +79,18 @@
 
       .reset-button {
         position: absolute;
-        top: 6%;
+        top: 7%;
         right: 4%;
         z-index: 10;
         background: rgba(0, 209, 255, 0.4);
         border: none;
         border-radius: 6px;
         color: #fff;
-        padding: 8px 12px;
+        padding: 24px 12px;
         cursor: pointer;
+        font-family: 'Roboto', sans-serif;
         font-weight: none;
-        font-size: 0.8rem;
+        font-size: 1rem;
         transition: background 0.2s, transform 0.1s;
       }
       .reset-button:hover {
@@ -111,11 +116,13 @@
         border: none;
         padding: 12px 18px;
         border-radius: 50px;
+        font-family: 'Roboto', sans-serif;
         font-weight: bold;
+        font-size: 1rem;
         cursor: pointer;
         box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
         display: none;
-        transition: background 0.2s, transform 0.1s; opacity 0.3s;
+        transition: background 0.2s, transform 0.1s, opacity 0.3s;
       }
 
       #backToTopBtn:hover {
@@ -136,10 +143,11 @@
         border: none;
         padding: 12px 18px;
         border-radius: 50px;
+        font-family: 'Roboto', sans-serif;
         font-weight: bold;
+        font-size: 1rem;
         cursor: pointer;
         box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-        display: flex;
         align-items: center;
         transition: background 0.2s, transform 0.1s, opacity 0.3s;;
       }
@@ -157,6 +165,36 @@
         #backToTopBtn { right: 20px; }
       }
 
+      .fullscreen-button {
+        position: absolute;
+        top: 7%;
+        left: 4%;
+        z-index: 10;
+        background: rgba(0, 209, 255, 0.4);
+        border: none;
+        border-radius: 4px;
+        color: white;
+        padding: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+      }
+
+      .fullscreen-button:hover {
+        background: rgba(0, 209, 255, 0.8);
+      }
+
+      model-viewer:fullscreen {
+        width: 100vw;
+        height: 100vh;
+        background-color: #1a1a1a;
+      }
+
+      model-viewer:-webkit-full-screen { width: 100%; height: 100%; }
+      model-viewer:-ms-fullscreen { width: 100%; height: 100%; }
+
     </style>
   </head>
 
@@ -168,20 +206,17 @@
     </div>
 
     <div class="portfolio-wrapper">
-      <a href="/"><button id="backToRootBtn" title="Back to Home"><span style="margin-right: 10px;">&#9664;</span> Back</button></a>
+      <a href="/"><button id="backToRootBtn" title="Back to Home">&#60; Back</button></a>
 
-      <button onclick="topFunction()" id="backToTopBtn" title="Go to top">&#9650; Top</button>
-
-      <!-- <div class="grid-container">
-        <div class="model-card">
-          <br>
-          <div class="info"><h3>Sports</h3></div>
-          <br>
-        </div>
-      </div> -->
+      <button onclick="topFunction()" id="backToTopBtn" title="Go to top">&#708; Top</button>
 
       <div class="grid-container">
         <div class="model-card">
+          <button class="fullscreen-button" onclick="toggleFullscreen('football_helmet')" title="Fullscreen">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
+          </button>
           <button class="reset-button" onclick="resetCamera('football_helmet', '45deg 75deg 115%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
@@ -217,6 +252,10 @@
 
       <div class="grid-container">
         <div class="model-card">
+          <button class="fullscreen-button" onclick="toggleFullscreen('performance_ebike')" title="Fullscreen">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
           <button class="reset-button" onclick="resetCamera('performance_ebike', '210deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
@@ -251,6 +290,10 @@
 
       <div class="grid-container">
         <div class="model-card">
+          <button class="fullscreen-button" onclick="toggleFullscreen('strider')" title="Fullscreen">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
           <button class="reset-button" onclick="resetCamera('strider', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
@@ -285,6 +328,10 @@
 
       <div class="grid-container">
         <div class="model-card">
+          <button class="fullscreen-button" onclick="toggleFullscreen('boxing_gloves')" title="Fullscreen">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
           <button class="reset-button" onclick="resetCamera('boxing_gloves', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
@@ -320,6 +367,10 @@
 
       <div class="grid-container">
         <div class="model-card">
+          <button class="fullscreen-button" onclick="toggleFullscreen('foldable_kayak')" title="Fullscreen">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+            </svg>
           <button class="reset-button" onclick="resetCamera('foldable_kayak', '30deg 60deg 80%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
@@ -381,6 +432,28 @@
             top: 0,
             behavior: 'smooth'
           });
+        }
+      </script>
+
+      <script>
+        function toggleFullscreen(id) {
+          const viewer = document.getElementById(id);
+          
+          if (!document.fullscreenElement) {
+            // Enter Fullscreen
+            if (viewer.requestFullscreen) {
+              viewer.requestFullscreen();
+            } else if (viewer.webkitRequestFullscreen) { /* Safari */
+              viewer.webkitRequestFullscreen();
+            } else if (viewer.msRequestFullscreen) { /* IE11 */
+              viewer.msRequestFullscreen();
+            }
+          } else {
+            // Exit Fullscreen
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+          }
         }
       </script>
 
