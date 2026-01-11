@@ -7,17 +7,31 @@
       body {
         margin: 0;
         background-color: #1a1a1a;
+        padding-top: 90px;
       }
+
       model-viewer {
         width: 95%;
         height: 600px;
         background-color: #252525;
       }
+
+      #top-title-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 15; /* Lower than buttons (15+) so buttons stay on top */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: #121212; /* Match your body background */
+      }
+
       .grid-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
-        padding: 120px;
+        padding: 150px;
         padding-top: 5px;
         padding-bottom: 5px;
         background: #121212;
@@ -25,6 +39,7 @@
         margin-left: auto;
         margin-right: auto;
       }
+
       .model-card {
         position: relative;
         background: #1e1e1e;
@@ -38,15 +53,18 @@
         align-items: center;
         max-width: 1620px;
       }
+
       .info {
         padding: 15px;
         padding-bottom: 0px;
       }
+
       .info h3 {
         margin: 0 0 10px;
         color: #00d1ff;
         justify-self: center;
       }
+
       .info p {
         font-size: 0.9rem;
         color: #999;
@@ -85,8 +103,8 @@
 
       #backToTopBtn {
         position: fixed;
-        top: 30px;
-        right: calc(50% - 810px + 20px - 120px);
+        top: 25px;
+        right: calc(50% - 810px + 20px - 110px);
         z-index: 15;
         background-color: rgba(0, 209, 255, 0.4);
         color: #fff;
@@ -110,7 +128,7 @@
 
       #backToRootBtn {
         position: fixed;
-        top: 30px;
+        top: 23px;
         left: calc(50% - 810px + 20px - 125px); 
         z-index: 15;
         background-color: rgba(0, 209, 255, 0.4);
@@ -143,10 +161,24 @@
   </head>
 
   <body>
+    <div id="top-title-bar" class="grid-container">
+      <div class="model-card">
+        <div class="info"><h3>Sports</h3></div>
+      </div>
+    </div>
+
     <div class="portfolio-wrapper">
       <a href="/"><button id="backToRootBtn" title="Back to Home"><span style="margin-right: 10px;">&#9664;</span> Back</button></a>
 
       <button onclick="topFunction()" id="backToTopBtn" title="Go to top">&#9650; Top</button>
+
+      <!-- <div class="grid-container">
+        <div class="model-card">
+          <br>
+          <div class="info"><h3>Sports</h3></div>
+          <br>
+        </div>
+      </div> -->
 
       <div class="grid-container">
         <div class="model-card">
@@ -178,41 +210,6 @@
             <h3>Football Helmet</h3>
             <p>This project has multiple variants, with options for different decal styles and colors.</p>
             <p>This is one of many helmet models made for this customer, for different sports.</p>
-            <br>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div class="model-card">
-          <button class="reset-button" onclick="resetCamera('boxing_gloves', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
-          <br><br>
-          <model-viewer
-            ar
-            camera-controls
-            id                  = "boxing_gloves"
-            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/uhulwsrvektc/j5dqklpapej2/model___1642663859694.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=gXMbyFgpkFJWvsZd105P4LvmLpu2QIZqgLW4EOpbHES03FrtjLfcJ6mv29d5Cb2kBz0%2FYc1qj6tBWLTxodL2DYuzIMWfR%2BmnHr4hHWfTgHh1aOLHAg8we7RDAL68lGc%2BHpFKQO9o8%2BEtPCmOUf%2F7bQ68v4oJRu3TM8qvwW33OjDCeMG1OCi%2Bdq%2F2%2F6rK0bSpJ%2BiRem5fKC3utSoaMMl2KWwJnxRvWQRGDQZiya1sqUr8XYUdO%2BiakVHLnhq49VcIV4hV2Ni6XmCNq4xVHa311qKQJICLbkbBzOzPL5WVGg5hCDsYCxloxp50bqwLGcPZAby5zoOgcHuvSDc85F63zg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1642663859694.glb"
-            reveal              = "auto"
-            loading             = "lazy"
-            autoplay            = "true"
-            shadow-intensity    = ".97"
-            field-of-view       = "22deg"
-            exposure            = "1"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "0deg 85deg 125%"
-            ar-placement        = "floor"
-            tone-mapping        = "aces"
-            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-            quick-look-browsers = "safari chrome"
-            min-field-of-view   = "10deg"
-            max-field-of-view   = "90deg"
-            min-camera-orbit    = "auto 0deg 5%"
-            max-camera-orbit    = "auto 180deg 350%">
-          </model-viewer>
-          <div class="info">
-            <h3>Boxing Gloves</h3>
-            <p>This project has multiple variants, with options for diffent colors, materials and strap methods.</p>
-            <p>This is one of many boxing glove models made for this customer</p>
             <br>
           </div>
         </div>
@@ -281,6 +278,41 @@
           <div class="info">
             <h3>Strider</h3>
             <p>This project has multiple variants, with options for diffent colors and sizes.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="model-card">
+          <button class="reset-button" onclick="resetCamera('boxing_gloves', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "boxing_gloves"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/uhulwsrvektc/j5dqklpapej2/model___1642663859694.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=gXMbyFgpkFJWvsZd105P4LvmLpu2QIZqgLW4EOpbHES03FrtjLfcJ6mv29d5Cb2kBz0%2FYc1qj6tBWLTxodL2DYuzIMWfR%2BmnHr4hHWfTgHh1aOLHAg8we7RDAL68lGc%2BHpFKQO9o8%2BEtPCmOUf%2F7bQ68v4oJRu3TM8qvwW33OjDCeMG1OCi%2Bdq%2F2%2F6rK0bSpJ%2BiRem5fKC3utSoaMMl2KWwJnxRvWQRGDQZiya1sqUr8XYUdO%2BiakVHLnhq49VcIV4hV2Ni6XmCNq4xVHa311qKQJICLbkbBzOzPL5WVGg5hCDsYCxloxp50bqwLGcPZAby5zoOgcHuvSDc85F63zg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1642663859694.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "0deg 85deg 125%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+          </model-viewer>
+          <div class="info">
+            <h3>Boxing Gloves</h3>
+            <p>This project has multiple variants, with options for diffent colors, materials and strap methods.</p>
+            <p>This is one of many boxing glove models made for this customer</p>
             <br>
           </div>
         </div>
