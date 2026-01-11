@@ -11,6 +11,7 @@
         margin: 0;
         background-color: #1a1a1a;
         padding-top: 90px;
+        font-family: 'Roboto', sans-serif;
       }
 
       model-viewer {
@@ -28,6 +29,8 @@
         padding-top: 20px;
         padding-bottom: 20px;
         background: #121212;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.3rem;
       }
 
       .grid-container {
@@ -61,12 +64,14 @@
       .info {
         padding: 15px;
         padding-bottom: 0px;
+        font-family: 'Roboto', sans-serif;
       }
 
       .info h3 {
         margin: 0 0 10px;
         color: #00d1ff;
         justify-self: center;
+        font-family: 'Roboto', sans-serif;
       }
 
       .info p {
@@ -75,12 +80,13 @@
         line-height: 1.4;
         justify-self: center;
         text-align: center;
+        font-family: 'Roboto', sans-serif;
       }
 
       .reset-button {
         position: absolute;
-        top: 7%;
-        right: 4%;
+        top: 2%;
+        right: 2%;
         z-index: 10;
         background: rgba(0, 209, 255, 0.4);
         border: none;
@@ -108,16 +114,16 @@
 
       #backToTopBtn {
         position: fixed;
-        top: 25px;
-        right: calc(50% - 810px + 20px - 110px);
+        top: 21px;
+        right: calc(50% - 915px);
         z-index: 15;
         background-color: rgba(0, 209, 255, 0.4);
         color: #fff;
         border: none;
-        padding: 12px 18px;
-        border-radius: 50px;
+        padding: 18px 24px;
+        border-radius: 15px;
         font-family: 'Roboto', sans-serif;
-        font-weight: bold;
+        font-weight: none;
         font-size: 1rem;
         cursor: pointer;
         box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
@@ -135,16 +141,17 @@
 
       #backToRootBtn {
         position: fixed;
-        top: 23px;
-        left: calc(50% - 810px + 20px - 125px); 
+        top: 21px;
+        /* left: 20px; */
+        left: calc(50% - 920px); 
         z-index: 15;
         background-color: rgba(0, 209, 255, 0.4);
         color: #fff;
         border: none;
-        padding: 12px 18px;
-        border-radius: 50px;
+        padding: 18px 24px;
+        border-radius: 15px;
         font-family: 'Roboto', sans-serif;
-        font-weight: bold;
+        font-weight: none;
         font-size: 1rem;
         cursor: pointer;
         box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
@@ -167,8 +174,8 @@
 
       .fullscreen-button {
         position: absolute;
-        top: 7%;
-        left: 4%;
+        top: 2%;
+        left: 2%;
         z-index: 10;
         background: rgba(0, 209, 255, 0.4);
         border: none;
@@ -201,7 +208,7 @@
   <body>
     <div id="top-title-bar" class="grid-container">
       <div class="model-card">
-        <div class="info"><h3>Sports</h3></div>
+        <div class="info"><h3>3D Models | Sports</h3></div>
       </div>
     </div>
 
@@ -212,12 +219,6 @@
 
       <div class="grid-container">
         <div class="model-card">
-          <button class="fullscreen-button" onclick="toggleFullscreen('football_helmet')" title="Fullscreen">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-            </svg>
-          </button>
-          <button class="reset-button" onclick="resetCamera('football_helmet', '45deg 75deg 115%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
             ar
@@ -240,10 +241,16 @@
             max-field-of-view   = "90deg"
             min-camera-orbit    = "auto 0deg 5%"
             max-camera-orbit    = "auto 180deg 350%">
+            <button class="fullscreen-button" onclick="toggleFullscreen('football_helmet', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
+            <button class="reset-button" onclick="resetCamera('football_helmet', '45deg 75deg 115%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
             <h3>Football Helmet</h3>
-            <p>This project has multiple variants, with options for different decal styles and colors.</p>
+            <p>This project included multiple variants, with options for different decal styles and colors.</p>
             <p>This is one of many helmet models made for this customer, for different sports.</p>
             <br>
           </div>
@@ -252,11 +259,6 @@
 
       <div class="grid-container">
         <div class="model-card">
-          <button class="fullscreen-button" onclick="toggleFullscreen('performance_ebike')" title="Fullscreen">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-            </svg>
-          <button class="reset-button" onclick="resetCamera('performance_ebike', '210deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
             ar
@@ -279,6 +281,11 @@
             max-field-of-view   = "90deg"
             min-camera-orbit    = "auto 0deg 5%"
             max-camera-orbit    = "auto 180deg 350%">
+            <button class="fullscreen-button" onclick="toggleFullscreen('performance_ebike', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            <button class="reset-button" onclick="resetCamera('performance_ebike', '210deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
             <h3>Performance E-Bike</h3>
@@ -290,11 +297,6 @@
 
       <div class="grid-container">
         <div class="model-card">
-          <button class="fullscreen-button" onclick="toggleFullscreen('strider')" title="Fullscreen">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-            </svg>
-          <button class="reset-button" onclick="resetCamera('strider', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
             ar
@@ -317,10 +319,15 @@
             max-field-of-view   = "90deg"
             min-camera-orbit    = "auto 0deg 5%"
             max-camera-orbit    = "auto 180deg 350%">
-          </model-viewer>
+            <button class="fullscreen-button" onclick="toggleFullscreen('strider', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            <button class="reset-button" onclick="resetCamera('strider', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
+            </model-viewer>
           <div class="info">
             <h3>Strider</h3>
-            <p>This project has multiple variants, with options for diffent colors and sizes.</p>
+            <p>This project included multiple variants, with options for diffent colors and sizes.</p>
             <br>
           </div>
         </div>
@@ -328,11 +335,6 @@
 
       <div class="grid-container">
         <div class="model-card">
-          <button class="fullscreen-button" onclick="toggleFullscreen('boxing_gloves')" title="Fullscreen">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-            </svg>
-          <button class="reset-button" onclick="resetCamera('boxing_gloves', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
             ar
@@ -355,10 +357,15 @@
             max-field-of-view   = "90deg"
             min-camera-orbit    = "auto 0deg 5%"
             max-camera-orbit    = "auto 180deg 350%">
-          </model-viewer>
+            <button class="fullscreen-button" onclick="toggleFullscreen('boxing_gloves', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            <button class="reset-button" onclick="resetCamera('boxing_gloves', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
+            </model-viewer>
           <div class="info">
             <h3>Boxing Gloves</h3>
-            <p>This project has multiple variants, with options for diffent colors, materials and strap methods.</p>
+            <p>This project included multiple variants, with options for diffent colors, materials and strap methods.</p>
             <p>This is one of many boxing glove models made for this customer</p>
             <br>
           </div>
@@ -367,11 +374,6 @@
 
       <div class="grid-container">
         <div class="model-card">
-          <button class="fullscreen-button" onclick="toggleFullscreen('foldable_kayak')" title="Fullscreen">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-            </svg>
-          <button class="reset-button" onclick="resetCamera('foldable_kayak', '30deg 60deg 80%', 'auto auto auto', '22deg')">Reset View</button>
           <br><br>
           <model-viewer
             ar
@@ -394,10 +396,15 @@
             max-field-of-view   = "90deg"
             min-camera-orbit    = "auto 0deg 5%"
             max-camera-orbit    = "auto 180deg 350%">
-          </model-viewer>
+            <button class="fullscreen-button" onclick="toggleFullscreen('foldable_kayak', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            <button class="reset-button" onclick="resetCamera('foldable_kayak', '30deg 60deg 80%', 'auto auto auto', '22deg')">Reset View</button>
+            </model-viewer>
           <div class="info">
             <h3>Foldable Kayak</h3>
-            <p>This project also includes the folded variant, and is one of multiple kayaks made for this customer.</p>
+            <p>This project included the folded variant, and is one of multiple kayaks made for this customer.</p>
             <br>
           </div>
         </div>
@@ -436,23 +443,24 @@
       </script>
 
       <script>
-        function toggleFullscreen(id) {
+        function toggleFullscreen(id, btn) {
           const viewer = document.getElementById(id);
-          
+          const iconPath = btn.querySelector('path');
+
           if (!document.fullscreenElement) {
-            // Enter Fullscreen
             if (viewer.requestFullscreen) {
               viewer.requestFullscreen();
-            } else if (viewer.webkitRequestFullscreen) { /* Safari */
+            } else if (viewer.webkitRequestFullscreen) {
               viewer.webkitRequestFullscreen();
-            } else if (viewer.msRequestFullscreen) { /* IE11 */
+            } else if (viewer.msRequestFullscreen) {
               viewer.msRequestFullscreen();
             }
+            iconPath.setAttribute('d', 'M4 14h6v6M20 10h-6V4M14 10l7-7M10 14l-7 7');
           } else {
-            // Exit Fullscreen
             if (document.exitFullscreen) {
               document.exitFullscreen();
             }
+            iconPath.setAttribute('d', 'M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7');
           }
         }
       </script>
