@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sports - 3D Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #1a1a1a;
+        padding-top: 95px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      model-viewer {
+        width: 95%;
+        height: 600px;
+        background-color: #252525;
+      }
+
+      #top-title-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 15;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: #121212;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.3rem;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 150px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background: #121212;
+        max-width: 1620px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .model-card {
+        position: relative;
+        background: #1e1e1e;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #333;
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1620px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .info {
+        padding: 15px;
+        padding-bottom: 0px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .info h3 {
+        margin: 0 0 10px;
+        color: #00d1ff;
+        justify-self: center;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .info p {
+        font-size: 0.9rem;
+        color: #999;
+        line-height: 1.4;
+        justify-self: center;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .reset-button {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        z-index: 10;
+        background: rgba(0, 209, 255, 0.4);
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        padding: 24px 12px;
+        cursor: pointer;
+        font-family: 'Roboto', sans-serif;
+        font-weight: none;
+        font-size: 1rem;
+        transition: background 0.2s, transform 0.1s;
+      }
+      .reset-button:hover {
+        background-color: rgba(0, 209, 255, 0.6);
+      }
+      .reset-button:active {
+        transform: scale(0.95);
+      }
+
+      .portfolio-wrapper {
+        position: relative;
+        max-width: 1920px;
+        margin: 0 auto;
+      }
+
+      #backToTopBtn {
+        position: fixed;
+        top: 21px;
+        right: calc(50% - 915px);
+        z-index: 15;
+        background-color: rgba(0, 209, 255, 0.4);
+        color: #fff;
+        border: none;
+        padding: 18px 24px;
+        border-radius: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: none;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+        display: none;
+        transition: background 0.2s, transform 0.1s, opacity 0.3s;
+      }
+
+      #backToTopBtn:hover {
+        background-color: rgba(0, 209, 255, 0.6);
+      }
+
+      #backToTopBtn:active {
+        transform: scale(0.95);
+      }
+
+      #backToRootBtn {
+        position: fixed;
+        top: 21px;
+        /* left: 20px; */
+        left: calc(50% - 920px); 
+        z-index: 15;
+        background-color: rgba(0, 209, 255, 0.4);
+        color: #fff;
+        border: none;
+        padding: 18px 24px;
+        border-radius: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: none;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+        align-items: center;
+        transition: background 0.2s, transform 0.1s, opacity 0.3s;;
+      }
+
+      #backToRootBtn:hover {
+        background-color: rgba(0, 209, 255, 0.6);
+      }
+
+      #backToRootBtn:active {
+        transform: scale(0.95);
+      }
+
+      @media (max-width: 1660px) {
+        #backToRootBtn { left: 20px; }
+        #backToTopBtn { right: 20px; }
+      }
+
+      .fullscreen-button {
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        z-index: 10;
+        background: rgba(0, 209, 255, 0.4);
+        border: none;
+        border-radius: 4px;
+        color: white;
+        padding: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+      }
+
+      .fullscreen-button:hover {
+        background: rgba(0, 209, 255, 0.8);
+      }
+
+      model-viewer:fullscreen {
+        width: 100vw;
+        height: 100vh;
+        background-color: #1a1a1a;
+      }
+
+      model-viewer:-webkit-full-screen { width: 100%; height: 100%; }
+      model-viewer:-ms-fullscreen { width: 100%; height: 100%; }
+
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 209, 255, 0.3);
+        border: none;
+        color: white;
+        padding: 20px 10px;
+        cursor: pointer;
+        z-index: 100;
+        font-size: 2rem;
+        border-radius: 5px;
+        transition: background 0.2s;
+      }
+
+      .nav-button:hover {
+        background: rgba(0, 209, 255, 0.7);
+      }
+
+      .nav-button.left { left: 10px; }
+      .nav-button.right { right: 10px; }
+
+      :fullscreen .nav-button { z-index: 999; }
+
+      .nav-button:disabled {
+        background: rgba(128, 128, 128, 0.2);
+        color: #666;
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+
+      .nav-button:disabled:hover {
+        background: rgba(128, 128, 128, 0.2);
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="top-title-bar" class="grid-container">
+      <div class="model-card">
+        <div class="info"><h3>3D Models | Transportation</h3></div>
+      </div>
+    </div>
+
+    <div class="portfolio-wrapper">
+      <a href="/"><button id="backToRootBtn" title="Back to Home">&#60; Back</button></a>
+
+      <button onclick="topFunction()" id="backToTopBtn" title="Go to top">&#708; Top</button>
+
+      <div class="grid-container">
+        <div  class="model-card"
+              data-current-index="0"
+              data-variants='[
+                "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/4wcfojugzwca/bzwz2yldrkwj/model___1624666606178.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=RWGAedkpNzIBvQ6Bfy5z1sr3phiCMDBTSYk7lL7xKIEnbonvh6kLdNvVhz1Verks2GKe2i9sQMVub6JyWn9W7M03VVu9zI9UUKpVOExLP2cuofeyGfeqt8W21I2tfnSj66ehFdmCB4XlU1CUVr%2FMf0QajCW29MdqjxjKyOfig8Omo%2Bd7u3zifVST206yzMWQljLNlJ3y0VNMhna6IN47l%2Fydob3RqcLiJp%2Bmqb6r9hJvaMAQlG5gGtntd80c5qHnTe86AUxOuQRfXUI4bMit7sey%2BR0dDbXKvg0VVsW0%2B4ByPRO6fWUEjqcIHrE7aXIprj1fWYEE7Aq04V%2FsA%2FRa7A%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1624666606178.glb",
+                "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/my883zmfme7v/eim04gayuqoe/model___1618571993867.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=SYJxAtY3XF%2BclLr3fjuHEk%2BaOwKQapGBaGXUEZcMLnuO6UjLGQ0vDkIrGyOUE3nN1e4BY3ES%2B1GZ0a8CVryb5obLSHRYm5NrAWhxbz22ca29JFTuuHg7f2IYVm4h2zRVBBzOAS3VNOVtio9tqihA1x1v9WBg4AO3S093BBIZ3p%2Bbv3DL4f2XCJpHH2h11Ducs3QrjujxTcz%2FG0XLryIs8%2FV9Jo2Ibb7smjzJwSswXMyGYkJpN7zlt70Nd2ORtZsV2rVqvwgZ1q22sM4HaO4K4SJx4w0RPoJWZNl%2BEY6VwnS5NFW74JLsnOJgFPMYTTKF54u3mHxZv%2BfBg%2BAtY7IFGA%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1618571993867.glb",
+                "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/vxrjrkezwgdc/cd9vvibzhfms/model___1615828323664.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=cr%2B%2FB0lD1NSXkz1JIvckrQG5zsncRsJGAezR3y9mXW2ZnQ9FeyfZoP4TKjgFZsdeUM8pYBvY3fUlw4O5GGqizPGhi64M8Mu2bEnAsil5xNBzSJEu1qg5m9dSD%2B2%2FL8VcLFNSp7UttCz6rRT6xIqemgHN06wGPB8Ok%2FWrNHRKTPtyCHVBjaL1SBe9U0upwOuJm%2F1l79GCmNIKsWX%2BTO%2Fn8aGz4b1n9%2BMto5JtV1dHe0nVj2Kcl4k1kdMvz57tr6nDBHQd7i6LHoFa0hD3MVsQKtFaqZhsFe1pqUvxXE%2Bj39pxXc6Z2aB4tMHgqSJjlFbPB9m3ytoulc5xOKZ3iNVNQA%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1615828323664.glb",
+                "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/sgqwu63t15kh/a8pkdj8ezwuw/model___1619653572788.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=H9JkilHkI%2Ftf%2FwvpYPy4ogKXG9euD61plDjXg0Qt6YAKSmtkz454adY1q%2BFQkjELCy0Gv4tBDo1GBr6DSrb6Kmubp3IkKkWuy%2FUzANXS5CIvFPZ%2FmUMpmRTERoXKeZiX8uXCDcp1oohBqSTQUnAZBDF7g4vkUIjzQzqvm4DroV9Dd2WJZyKh%2BBgxbkF1U%2FDOOJK65KmINQuc9nvJTxQV6%2BdEp234ocJ2gCTk6qq0kBEl5IFZ80LCfLhNCP0kT9FRUj3q1MGvElBsKonrZtPbQ4iEvHZ%2FtH83Y5nfNiESa0Z26gH5YR8bCtuB%2F2LC3g4DcOQNP5Z4bZo%2FY7tL4LvVhg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1619653572788.glb"
+                ]'>
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "vespa_motorcycle"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/4wcfojugzwca/bzwz2yldrkwj/model___1624666606178.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=RWGAedkpNzIBvQ6Bfy5z1sr3phiCMDBTSYk7lL7xKIEnbonvh6kLdNvVhz1Verks2GKe2i9sQMVub6JyWn9W7M03VVu9zI9UUKpVOExLP2cuofeyGfeqt8W21I2tfnSj66ehFdmCB4XlU1CUVr%2FMf0QajCW29MdqjxjKyOfig8Omo%2Bd7u3zifVST206yzMWQljLNlJ3y0VNMhna6IN47l%2Fydob3RqcLiJp%2Bmqb6r9hJvaMAQlG5gGtntd80c5qHnTe86AUxOuQRfXUI4bMit7sey%2BR0dDbXKvg0VVsW0%2B4ByPRO6fWUEjqcIHrE7aXIprj1fWYEE7Aq04V%2FsA%2FRa7A%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1624666606178.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "-90deg 90deg 85%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
+            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
+            <button class="fullscreen-button" onclick="toggleFullscreen('vespa_motorcycle', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
+            <button class="reset-button" onclick="resetCamera('vespa_motorcycle', '-90deg 90deg 85%', 'auto auto auto', '22deg')">Reset View</button>
+          </model-viewer>
+          <div class="info">
+            <h3>Vespa Motorcycles</h3>
+            <p>Some of the 3D models made in collaboration with this manufacturer.</p>
+            <p>Each motorcycle included multiple options for decals and body paint.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="model-card">
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "electric_bike"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/RR50VjU1sCMqkh8bqom7VFb8Ze03/dlvias9eycbq/hyhybzbxzy40/model___1624285472353.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=CGACl07UBAfx2nqqZAyrW590b3SuybU4Y89EyxKr5JxkLWN%2FOrIss31EvoaU2lSTUOrj8E1rkArOhLIfab3n2eAUxvvTVokcwmjKuQGpScKn64eFA2%2BVObjZcwAVr9oX%2BH4p0Ave0J6KuCsDvWGPEcwurBsQE1IM%2BaKet9dLXlKDlmIOfJstj50lRPcFlPsP%2BlnkIoB80WCBmNRWUkyQafjeeUZjnJ1mBbee5arKoQzVinTedoE3Iu90RJb7rWPgeI8nPKn7IQ4Tck9Knyi4CW%2BoYTcZ%2FUd3yvVqK%2BzzwFG2IgKECMGpnXk50gONZnX98GwCnkdG5KXBbOsjj%2FHPUw%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1624285472353.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "0deg 88deg 80%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+            <button class="fullscreen-button" onclick="toggleFullscreen('electric_bike', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
+            <button class="reset-button" onclick="resetCamera('electric_bike', '0deg 88deg 80%', 'auto auto auto', '22deg')">Reset View</button>
+          </model-viewer>
+          <div class="info">
+            <h3>Electric Bikes</h3>
+            <p>This is one of many electric bikes made in collaboration with this manufacturer.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="model-card">
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "mazda_car"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/feanjf4wgt8m/8wjgvl62qlm1/model___1635885222636.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=kz5LIJ0CTWeLXxxzcwpTSu2rCWtMyTciAkXCMAB5HQZq0bbvEn3op5zWKcGq3frQzZpxyrF6g0dmC%2FbFteulV9CRC988uysktwsH7Bgo4ZZD8Sy8QLzEBcENqPic%2B8vMnRepc62fI9WD53LiNZalKjvpxtl1vLggOKlKcSBPm7GNL99NyMKh6AQnFvPcIQOHQmoVfG68l1sSNQ5vhBoW6edzgi2LE9oOvoJpV8U4puzr3UbIl4ruFOw8TRk9LDCH0DxQU8jl29YmiIWgLbUKGyg855sOuOs4wRknt6AsiPpMufMnDly8NFiw%2Frw%2B86QhzFT8A%2BQ2g41ZuOt484gp%2FQ%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1635885222636.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "0deg 88deg 85%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+            <button class="fullscreen-button" onclick="toggleFullscreen('mazda_car', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            <button class="reset-button" onclick="resetCamera('mazda_car', '0deg 88deg 85%', 'auto auto auto', '22deg')">Reset View</button>
+            </model-viewer>
+          <div class="info">
+            <h3>Mazda Vehicle</h3>
+            <p>This was a one-time collaboration, with multiple options for colors.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="model-card">
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "scooter"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/xOsNGoklcOYBOfnUzZPsCoZe0242/ee8mgxejkjc1/1mvez5grpawn/model___1612341489231.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=hK0mIGB0IN71TA9t%2BIlfJttIGT54IkELZkhAiR%2BAha2VOM6FbAVCgEKwbGW2PtxcCCcRcaDb%2FYeVY6UrcOSLb8VJ3aE9JVgIxi1c8ngKrvtK99W%2BVVxeOIoPZiHox9joa5%2FK46wsx3RSy0nEHD7y31FDIVb%2FXeC1ilSpQuiZwcWr8fy1A5mVcG31%2FykISErMtN62IrdwTbw9n8yMg3tpJN6cv0KgNIf9JFqcEf7oQEtUyeUL5T5zYI8NyZT597VyRAJ%2BwRJBnJ806vhTsXasLyPzWJ6p%2BIYBN6dRAbaFyt6VrQIMgyF7Dhb2Fvjkck1DCfZHf%2BiC1tu2sZG7%2BDUhYw%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1612341489231.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "180deg 75deg 90%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+            <button class="fullscreen-button" onclick="toggleFullscreen('scooter', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            <button class="reset-button" onclick="resetCamera('scooter', '180deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
+          </model-viewer>
+          <div class="info">
+            <h3>Electric Scooters</h3>
+            <p>This is one of many electric scooter models made in collaboration with this manufacturer.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="model-card">
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "scooter2"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/qh53jf49jjpf/buyukugmolae/model___1639142254050.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=gYOUd1IwHSZNXyPirt97BPg0TAzjTWpX8G0nPShisciToF0zn3NvEk9%2F7%2BNnw8ahE%2BtqccCD%2BxQ%2Bsid75GIKjA9%2BszG0FH732W5CVKRCsALvik%2FLloj4XKBwrAig2WG8rGg%2F0fK2tJUfC7ALA9FQlDgpiN5h%2FIITMiZZfE5Kpy%2FthG7pI%2Fjt1mOvNKXqppzSzMDfwTmfVu%2B98TmGHqQi7ug3QBjC7dgnYFZ0bDsdqkrBXvR%2FLWbIn5m3Tr7UfztiW1nKOLMDEKfddQjbEx2sNUnYxjSbkAELPlPUYAyiZqKpK4e3BskteaTlXtbzCYH9BV%2BEuDKIbW9nvN0P1K%2B8VQ%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1639142254050.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "90deg 85deg 90%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+            <button class="fullscreen-button" onclick="toggleFullscreen('scooter2', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            <button class="reset-button" onclick="resetCamera('scooter2', '90deg 85deg 90%', 'auto auto auto', '22deg')">Reset View</button>
+            </model-viewer>
+          <div class="info">
+            <h3>Electric Scooters [2]</h3>
+            <p>This project included multiple variants, with options for diffent colors.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="model-card">
+          <br><br>
+          <model-viewer
+            ar
+            camera-controls
+            id                  = "foldable_kayak"
+            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/w152np8uw6kc/yf7pfhls6yjq/model___1615935859843.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=ww3v0y9SaVL98LMwWeU3yDulCCK2T9pbp9lxjAKd4xtf6a8xVaw6Uy71OuDJoujjvR4p0OZ86gNyt0Jun2BJisCrRrPCJaOT72ROvu9T4GYpBR9m6kVkHkB%2FVZM2lN2tAJZmW6PU6Upr%2Bs2do%2FEtr%2Btvucft2QHmZ%2FlBYsPERyZ4cYp3NCijgvcUIaLCwzJ1%2BVVFHbw8WNKBb0qrqDfVwIK3oYW4bJHz1BeYsUNT%2BuR6WRRsFxm8xNRT7kOvFRfNIK8X4LplGDwWN9CY%2FMV2KLrKKqPth2QU3qkAY4brO9GeNf4PNMzeXOgkNK5GTs5T%2BvIeypIPxf9CZlMEEjnO8w%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1615935859843.glb"
+            reveal              = "auto"
+            loading             = "lazy"
+            autoplay            = "true"
+            shadow-intensity    = ".97"
+            field-of-view       = "22deg"
+            exposure            = "1"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "0deg 70deg 80%"
+            ar-placement        = "floor"
+            tone-mapping        = "aces"
+            environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
+            quick-look-browsers = "safari chrome"
+            min-field-of-view   = "10deg"
+            max-field-of-view   = "90deg"
+            min-camera-orbit    = "auto 0deg 5%"
+            max-camera-orbit    = "auto 180deg 350%">
+            <button class="fullscreen-button" onclick="toggleFullscreen('foldable_kayak', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            <button class="reset-button" onclick="resetCamera('foldable_kayak', '0deg 70deg 80%', 'auto auto auto', '22deg')">Reset View</button>
+            </model-viewer>
+          <div class="info">
+            <h3>Foldable Kayak</h3>
+            <p>This project included the folded variant, and is one of multiple kayaks made for this customer.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function resetCamera(viewerId, orbit, target, fov) {
+          const viewer = document.getElementById(viewerId);
+          if (viewer) {
+            viewer.cameraOrbit = orbit;
+            viewer.cameraTarget = target;
+            viewer.fieldOfView = fov;
+          }
+        }
+      </script>
+
+      <script>
+        let mybutton = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+        function topFunction() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+      </script>
+
+      <script>
+        function toggleFullscreen(id, btn) {
+          const viewer = document.getElementById(id);
+          const iconPath = btn.querySelector('path');
+
+          if (!document.fullscreenElement) {
+            if (viewer.requestFullscreen) {
+              viewer.requestFullscreen();
+            } else if (viewer.webkitRequestFullscreen) {
+              viewer.webkitRequestFullscreen();
+            } else if (viewer.msRequestFullscreen) {
+              viewer.msRequestFullscreen();
+            }
+            iconPath.setAttribute('d', 'M4 14h6v6M20 10h-6V4M14 10l7-7M10 14l-7 7');
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+            iconPath.setAttribute('d', 'M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7');
+          }
+        }
+      </script>
+
+      <script>
+        function changeVariant(btn, direction) {
+          const card = btn.closest('.model-card');
+          const viewer = card.querySelector('model-viewer');
+          const variants = JSON.parse(card.getAttribute('data-variants'));
+          let index = parseInt(card.getAttribute('data-current-index'));
+
+          const newIndex = index + direction;
+          if (newIndex < 0 || newIndex >= variants.length) return;
+
+          card.setAttribute('data-current-index', newIndex);
+          const newSrc = variants[newIndex];
+          viewer.src = newSrc;
+
+          updateButtonStates(card, newIndex, variants.length);
+        }
+
+        function updateButtonStates(card, index, total) {
+          const prevBtn = card.querySelector('.nav-button.left');
+          const nextBtn = card.querySelector('.nav-button.right');
+          
+          if (prevBtn) prevBtn.disabled = (index === 0);
+          if (nextBtn) nextBtn.disabled = (index === total - 1);
+        }
+
+        window.addEventListener('load', () => {
+          document.querySelectorAll('.model-card').forEach(card => {
+            const variantsAttr = card.getAttribute('data-variants');
+            if (variantsAttr) {
+              const variants = JSON.parse(variantsAttr);
+              if (variants.length > 0) {
+                updateButtonStates(card, 0, variants.length);
+              }
+            }
+          });
+        });
+      </script>
+
+      <div class = "info">
+          <p>v0.10</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+
