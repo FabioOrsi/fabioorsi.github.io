@@ -2,243 +2,11 @@
 <html>
   <head>
     <title>Transportation - 3D Portfolio</title>
+    <link rel="stylesheet" href="/resources/3dmodels.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-        background-color: #1a1a1a;
-        padding-top: 95px;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      model-viewer {
-        width: 95%;
-        height: 600px;
-        /* background-color: #252525; */
-        /* border: 1px solid #333; */
-        /* border-radius: 12px; */
-      }
-
-      model-viewer::part(default-progress-bar) {
-        background-color: #0081af !important;
-        height: 3px !important;
-        visibility: visible !important;
-      }
-
-      #top-title-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 15;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        background: #121212;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 150px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        background: #121212;
-        max-width: 1620px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .model-card {
-        position: relative;
-        background: #1e1e1e;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid #333;
-        color: white;
-        font-family: sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 1620px;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      .info {
-        padding: 15px;
-        padding-bottom: 0px;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      .info h3 {
-        margin: 0 0 10px;
-        color: #00d1ff;
-        justify-self: center;
-        font-size: 1.5rem;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      .info p {
-        font-size: 1.2rem;
-        color: #999;
-        line-height: 1.4;
-        justify-self: center;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-      }
-
-      .fullscreen-button,
-      .reset-button,
-      .nav-button {
-        position: absolute;
-        bottom: 2%;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        border-radius: 6px;
-        color: white;
-        background: rgba(0, 209, 255, 0.4);
-        cursor: pointer;
-        z-index: 100;
-        transition: background 0.2s;
-        box-sizing: border-box;
-      }
-
-      .reset-button {
-        width: 95px;
-        left: calc(2% + 50px);
-        font-size: 0.9rem;
-      }
-
-      .reset-button:hover {
-        background-color: rgba(0, 209, 255, 0.6);
-      }
-      .reset-button:active {
-        transform: scale(0.95);
-      }
-
-      .fullscreen-button {
-        width: 45px;
-        left: 2%;
-      }
-
-      .fullscreen-button:hover {
-        background: rgba(0, 209, 255, 0.8);
-      }
-
-      .fullscreen-button svg {
-        width: 24px;
-        height: 24px;
-      }
-
-      model-viewer:fullscreen { width: 100vw; height: 100vh; background-color: #1a1a1a; }
-      model-viewer:-webkit-full-screen { width: 100%; height: 100%; }
-      model-viewer:-ms-fullscreen { width: 100%; height: 100%; }
-
-      .nav-button {
-        width: 45px;
-        font-size: 1.5rem;
-      }
-
-      .nav-button:hover {
-        background: rgba(0, 209, 255, 0.7);
-      }
-
-      /* .nav-button.left { left: calc(2% + 150px); }
-      .nav-button.right { left: calc(2% + 200px); } */
-
-      .nav-button.left { top: 2%; left: calc(50% - 50px); }
-      .nav-button.right { top: 2%; left: calc(50% - 0px); }
-
-      /* .nav-button.left { left: calc(50% - 50px); }
-      .nav-button.right { left: calc(50% - 0px); } */
-
-      :fullscreen .nav-button { z-index: 999; }
-
-      .nav-button:disabled {
-        background: rgba(128, 128, 128, 0.2);
-        color: #666;
-        cursor: not-allowed;
-        opacity: 0.5;
-      }
-
-      .nav-button:disabled:hover {
-        background: rgba(128, 128, 128, 0.2);
-      }
-
-      .portfolio-wrapper {
-        position: relative;
-        max-width: 1920px;
-        margin: 0 auto;
-      }
-
-      #backToTopBtn {
-        position: fixed;
-        top: 21px;
-        right: calc(50% - 915px);
-        z-index: 15;
-        background-color: rgba(0, 209, 255, 0.4);
-        color: #fff;
-        border: none;
-        padding: 18px 24px;
-        border-radius: 15px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: none;
-        font-size: 1rem;
-        cursor: pointer;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-        display: none;
-        transition: background 0.2s, transform 0.1s, opacity 0.3s;
-      }
-
-      #backToTopBtn:hover {
-        background-color: rgba(0, 209, 255, 0.6);
-      }
-
-      #backToTopBtn:active {
-        transform: scale(0.95);
-      }
-
-      #backToRootBtn {
-        position: fixed;
-        top: 21px;
-        /* left: 20px; */
-        left: calc(50% - 920px); 
-        z-index: 15;
-        background-color: rgba(0, 209, 255, 0.4);
-        color: #fff;
-        border: none;
-        padding: 18px 24px;
-        border-radius: 15px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: none;
-        font-size: 1rem;
-        cursor: pointer;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-        align-items: center;
-        transition: background 0.2s, transform 0.1s, opacity 0.3s;;
-      }
-
-      #backToRootBtn:hover {
-        background-color: rgba(0, 209, 255, 0.6);
-      }
-
-      #backToRootBtn:active {
-        transform: scale(0.95);
-      }
-
-      @media (max-width: 1660px) {
-        #backToRootBtn { left: 20px; }
-        #backToTopBtn { right: 20px; }
-      }
-
-    </style>
   </head>
 
   <body>
@@ -493,45 +261,6 @@
         </div>
       </div>
 
-      <!-- <div class="grid-container">
-        <div class="model-card">
-          <br><br>
-          <model-viewer
-            ar
-            camera-controls
-            id                  = "foldable_kayak"
-            src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/w152np8uw6kc/yf7pfhls6yjq/model___1615935859843.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=ww3v0y9SaVL98LMwWeU3yDulCCK2T9pbp9lxjAKd4xtf6a8xVaw6Uy71OuDJoujjvR4p0OZ86gNyt0Jun2BJisCrRrPCJaOT72ROvu9T4GYpBR9m6kVkHkB%2FVZM2lN2tAJZmW6PU6Upr%2Bs2do%2FEtr%2Btvucft2QHmZ%2FlBYsPERyZ4cYp3NCijgvcUIaLCwzJ1%2BVVFHbw8WNKBb0qrqDfVwIK3oYW4bJHz1BeYsUNT%2BuR6WRRsFxm8xNRT7kOvFRfNIK8X4LplGDwWN9CY%2FMV2KLrKKqPth2QU3qkAY4brO9GeNf4PNMzeXOgkNK5GTs5T%2BvIeypIPxf9CZlMEEjnO8w%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1615935859843.glb"
-            reveal              = "auto"
-            loading             = "lazy"
-            autoplay            = "true"
-            shadow-intensity    = ".97"
-            field-of-view       = "22deg"
-            exposure            = "1"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "0deg 70deg 80%"
-            ar-placement        = "floor"
-            tone-mapping        = "aces"
-            environment-image   = "/media/environment_realistic.hdr"
-            quick-look-browsers = "safari chrome"
-            min-field-of-view   = "10deg"
-            max-field-of-view   = "22deg"
-            min-camera-orbit    = "auto 0deg 5%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="fullscreen-button" onclick="toggleFullscreen('foldable_kayak', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            <button class="reset-button" onclick="resetCamera('foldable_kayak', '0deg 70deg 80%', 'auto auto auto', '22deg')">Reset View</button>
-            </model-viewer>
-          <div class="info">
-            <h3>Foldable Kayaks</h3>
-            <p>Some of the 3D models made in collaboration with this manufacturer.</p>
-            <p>These projects also included the folded variants.</p>
-            <br>
-          </div>
-        </div>
-      </div> -->
-
       <script>
         function resetCamera(viewerId, orbit, target, fov) {
           const viewer = document.getElementById(viewerId);
@@ -541,88 +270,61 @@
             viewer.fieldOfView = fov;
           }
         }
-      </script>
-
-      <script>
-        let mybutton = document.getElementById("backToTopBtn");
-
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-
-        function topFunction() {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        }
-      </script>
-
-      <script>
+      
         function toggleFullscreen(id, btn) {
           const viewer = document.getElementById(id);
           const iconPath = btn.querySelector('path');
-
           if (!document.fullscreenElement) {
-            if (viewer.requestFullscreen) {
-              viewer.requestFullscreen();
-            } else if (viewer.webkitRequestFullscreen) {
-              viewer.webkitRequestFullscreen();
-            } else if (viewer.msRequestFullscreen) {
-              viewer.msRequestFullscreen();
-            }
+            viewer.requestFullscreen?.() || viewer.webkitRequestFullscreen?.();
             iconPath.setAttribute('d', 'M4 14h6v6M20 10h-6V4M14 10l7-7M10 14l-7 7');
           } else {
-            if (document.exitFullscreen) {
-              document.exitFullscreen();
-            }
+            document.exitFullscreen?.();
             iconPath.setAttribute('d', 'M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7');
           }
         }
-      </script>
-
-      <script>
+      
         function changeVariant(btn, direction) {
           const card = btn.closest('.model-card');
           const viewer = card.querySelector('model-viewer');
           const variants = JSON.parse(card.getAttribute('data-variants'));
           let index = parseInt(card.getAttribute('data-current-index'));
-
           const newIndex = index + direction;
           if (newIndex < 0 || newIndex >= variants.length) return;
-
+      
           card.setAttribute('data-current-index', newIndex);
-          const newSrc = variants[newIndex];
-          viewer.src = newSrc;
-
+          viewer.src = variants[newIndex];
           updateButtonStates(card, newIndex, variants.length);
         }
-
+      
         function updateButtonStates(card, index, total) {
           const prevBtn = card.querySelector('.nav-button.left');
           const nextBtn = card.querySelector('.nav-button.right');
-          
           if (prevBtn) prevBtn.disabled = (index === 0);
           if (nextBtn) nextBtn.disabled = (index === total - 1);
         }
-
+      
         window.addEventListener('load', () => {
           document.querySelectorAll('.model-card').forEach(card => {
             const variantsAttr = card.getAttribute('data-variants');
             if (variantsAttr) {
               const variants = JSON.parse(variantsAttr);
-              if (variants.length > 0) {
-                updateButtonStates(card, 0, variants.length);
-              }
+              if (variants.length > 0) updateButtonStates(card, 0, variants.length);
             }
           });
         });
+      
+        let backToTopBtn = document.getElementById("backToTopBtn");
+        window.onscroll = () => {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopBtn.style.display = "block";
+          } else {
+            backToTopBtn.style.display = "none";
+          }
+        };
+      
+        function topFunction() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       </script>
 
       <div class = "info">
