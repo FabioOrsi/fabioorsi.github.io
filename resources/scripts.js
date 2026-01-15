@@ -76,3 +76,22 @@ function updateButtonStates(card, index, total) {
         counter.innerText = `${index + 1}/${total}`;
     }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const sharedConfig = {
+        ar: true,
+        cameraControls: true,
+        reveal: "auto",
+        loading: "lazy",
+        autoplay: true,
+        toneMapping: "aces",
+        environmentImage: "/resources/environment_realistic.hdr",
+        quickLookBrowsers: "safari chrome",
+        minFieldOfView: "10deg",
+        maxFieldOfView: "22deg"
+    };
+
+    document.querySelectorAll('model-viewer').forEach(viewer => {
+        Object.assign(viewer, sharedConfig);
+    });
+});
