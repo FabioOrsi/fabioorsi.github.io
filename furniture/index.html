@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Furniture - 3D Portfolio - F.Orsi</title>
+    <link rel="stylesheet" href="/resources/3dmodels.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script src="/resources/scripts.js" defer></script>
+  </head>
+
+  <body>
+    <div id="top-title-bar" class="grid-container">
+      <div class="model-card">
+
+        <a href="/">
+          <button id="backToRootBtn" title="Back to Home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            <span>Back</span>
+          </button>
+        </a>
+
+        <div class="info"><h3>3D Models | Furniture</h3></div>
+
+        <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+          <span>Top</span>
+        </button>
+
+      </div>
+    </div>
+
+    <div class="portfolio-wrapper">
+
+      <div class="grid-container">
+        <div  class="model-card"
+              data-current-index="0"
+              data-variants='[
+                "/furniture/media/sofa1.glb",
+                "/furniture/media/sofa3.glb",
+                "/furniture/media/sofa4.glb",
+                "/furniture/media/sofa5.glb",
+                "/furniture/media/sofa6.glb"
+                ]'>
+          <br><br>
+          <model-viewer
+            id                  = "viewer1"
+            src                 = "/furniture/media/sofa1.glb"
+            field-of-view       = "22deg"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "30deg 80deg 100%"
+            max-camera-orbit    = "auto 180deg 100%">
+            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
+            <span class="variant-counter">1/1</span>
+            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
+            <button class="fullscreen-button" onclick="toggleFullscreen('viewer1', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
+            <button class="reset-button" onclick="resetCamera('viewer1', '30deg 80deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+          </model-viewer>
+          <div class="info">
+            <h3>Sofas</h3>
+            <p>Some of the 3D models made in collaboration with multiple manufacturers.</p>
+            <p>Most of these included different options for sizes, fabrics and colors.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div  class="model-card"
+              data-current-index="0"
+              data-variants='[
+                "/transportation/media/bike1.glb",
+                "/transportation/media/bike2.glb",
+                "/transportation/media/bike3.glb",
+                "/transportation/media/bike4.glb"
+                ]'>
+          <br><br>
+          <model-viewer
+            id                  = "viewer2"
+            src                 = "/transportation/media/bike1.glb"
+            field-of-view       = "22deg"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "0deg 88deg 100%"
+            max-camera-orbit    = "auto 180deg 100%">
+            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
+            <span class="variant-counter">1/1</span>
+            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
+            <button class="fullscreen-button" onclick="toggleFullscreen('viewer2', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
+            <button class="reset-button" onclick="resetCamera('viewer2', '0deg 88deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+          </model-viewer>
+          <div class="info">
+            <h3>Electric Bikes</h3>
+            <p>Some of the 3D models made in collaboration with multiple manufacturers.</p>
+            <p>Most of these included different options for addons and for body paints.</p>
+            <br>
+            <p>* Made in collaboration with other artists from Spase Inc.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div  class="model-card"
+              data-current-index="0"
+              data-variants='[
+                "/transportation/media/car1.glb"
+                ]'>
+          <br><br>
+          <model-viewer
+            id                  = "viewer3"
+            src                 = "/transportation/media/car1.glb"
+            field-of-view       = "22deg"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "0deg 88deg 100%"
+            max-camera-orbit    = "auto 180deg 100%">
+            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
+            <span class="variant-counter">1/1</span>
+            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
+            <button class="fullscreen-button" onclick="toggleFullscreen('viewer3', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
+            <button class="reset-button" onclick="resetCamera('viewer3', '0deg 88deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+          </model-viewer>
+          <div class="info">
+            <h3>Mazda Vehicle</h3>
+            <p>This was a one-time collaboration, with multiple options for colors.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div  class="model-card"
+              data-current-index="0"
+              data-variants='[
+                "/transportation/media/scooter1.glb",
+                "/transportation/media/scooter2.glb",
+                "/transportation/media/scooter3.glb"
+                ]'>
+          <br><br>
+          <model-viewer
+            id                  = "viewer4"
+            src                 = "/transportation/media/scooter1.glb"
+            field-of-view       = "22deg"
+            camera-target       = "auto auto auto"
+            camera-orbit        = "180deg 75deg 100%"
+            max-camera-orbit    = "auto 180deg 100%">
+            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
+            <span class="variant-counter">1/1</span>
+            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
+            <button class="fullscreen-button" onclick="toggleFullscreen('viewer4', this)" title="Fullscreen">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+              </svg>
+            </button>
+            <button class="reset-button" onclick="resetCamera('viewer4', '180deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+          </model-viewer>
+          <div class="info">
+            <h3>Electric Scooters</h3>
+            <p>Some of the 3D models made in collaboration with multiple manufacturers.</p>
+            <p>Most of these included different options for addons and for body paints.</p>
+            <br>
+            <p>* Made in collaboration with other artists from Spase Inc.</p>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class = "info">
+          <p>v0.11</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+
