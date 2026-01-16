@@ -85,13 +85,15 @@ window.addEventListener('DOMContentLoaded', () => {
         loading: "lazy",
         autoplay: true,
         toneMapping: "aces",
-        environmentImage: "/resources/environment_realistic.hdr",
+        environmentImage: "/resources/christmas_photo_studio_04_1k.hdr",
         quickLookBrowsers: "safari chrome",
         minFieldOfView: "10deg",
-        maxFieldOfView: "22deg"
+        maxFieldOfView: "22deg",
     };
 
     document.querySelectorAll('model-viewer').forEach(viewer => {
         Object.assign(viewer, sharedConfig);
+        viewer.setAttribute('shadow-intensity', '2.0');
+        viewer.setAttribute('exposure', '2.5');
     });
 });
