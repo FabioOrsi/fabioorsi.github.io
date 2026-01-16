@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sports - 3D Portfolio</title>
+    <title>Transportation - 3D Portfolio</title>
     <link rel="stylesheet" href="/resources/3dmodels.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,134 +69,32 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/media/020101.glb",
-                "/media/020102.glb",
-                "/media/020103.glb",
-                "/media/020104.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            ar
-            camera-controls
-            id                  = "vespa_motorcycle"
-            src                 = "/media/020101.glb"
-            reveal              = "auto"
-            loading             = "lazy"
-            autoplay            = "true"
-            shadow-intensity    = ".97"
-            field-of-view       = "22deg"
-            exposure            = "1"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "-90deg 90deg 90%"
-            ar-placement        = "floor"
-            tone-mapping        = "aces"
-            environment-image   = "/media/environment_realistic.hdr"
-            quick-look-browsers = "safari chrome"
-            min-field-of-view   = "10deg"
-            max-field-of-view   = "22deg"
-            min-camera-orbit    = "auto 0deg 5%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('vespa_motorcycle', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('vespa_motorcycle', '-90deg 90deg 90%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3>Vespa Motorcycles</h3>
-            <p>Some of the 3D models made in collaboration with this manufacturer.</p>
-            <p>Most of these included different options for decals and body paints.</p>
-            <br>
-          </div>
-        </div>
-      </div>
-
       <div class="grid-container">
         <div  class="model-card"
               data-current-index="0"
               data-variants='[
-                "/media/020201.glb",
-                "/media/020202.glb",
-                "/media/020203.glb",
-                "/media/020204.glb"
+                "/transportation/media/bike1.glb",
+                "/transportation/media/bike2.glb",
+                "/transportation/media/bike3.glb",
+                "/transportation/media/bike4.glb"
                 ]'>
           <br><br>
           <model-viewer
-            ar
-            camera-controls
-            id                  = "electric_bike"
-            src                 = "/media/020201.glb"
-            reveal              = "auto"
-            loading             = "lazy"
-            autoplay            = "true"
-            shadow-intensity    = ".97"
+            id                  = "viewer2"
+            src                 = "/transportation/media/bike1.glb"
             field-of-view       = "22deg"
-            exposure            = "1"
             camera-target       = "auto auto auto"
             camera-orbit        = "0deg 88deg 100%"
-            ar-placement        = "floor"
-            tone-mapping        = "aces"
-            environment-image   = "/media/environment_realistic.hdr"
-            quick-look-browsers = "safari chrome"
-            min-field-of-view   = "10deg"
-            max-field-of-view   = "22deg"
-            min-camera-orbit    = "auto 0deg 5%"
             max-camera-orbit    = "auto 180deg 100%">
             <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
+            <span class="variant-counter">1/1</span>
             <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('electric_bike', this)" title="Fullscreen">
+            <button class="fullscreen-button" onclick="toggleFullscreen('viewer2', this)" title="Fullscreen">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
               </svg>
             </button>
-            <button class="reset-button" onclick="resetCamera('electric_bike', '0deg 88deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+            <button class="reset-button" onclick="resetCamera('viewer2', '0deg 88deg 100%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
             <h3>Electric Bikes</h3>
@@ -212,37 +110,26 @@
       <div class="grid-container">
         <div  class="model-card"
               data-current-index="0"
-              data-variants='["/media/020301.glb"]'>
+              data-variants='[
+                "/transportation/media/car1.glb"
+                ]'>
           <br><br>
           <model-viewer
-            ar
-            camera-controls
-            id                  = "mazda_car"
-            src                 = "/media/020301.glb"
-            reveal              = "auto"
-            loading             = "lazy"
-            autoplay            = "true"
-            shadow-intensity    = ".97"
+            id                  = "viewer3"
+            src                 = "/transportation/media/car1.glb"
             field-of-view       = "22deg"
-            exposure            = "1"
             camera-target       = "auto auto auto"
             camera-orbit        = "0deg 88deg 100%"
-            ar-placement        = "floor"
-            tone-mapping        = "aces"
-            environment-image   = "/media/environment_realistic.hdr"
-            quick-look-browsers = "safari chrome"
-            min-field-of-view   = "10deg"
-            max-field-of-view   = "22deg"
-            min-camera-orbit    = "auto 0deg 5%"
             max-camera-orbit    = "auto 180deg 100%">
             <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
+            <span class="variant-counter">1/1</span>
             <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('mazda_car', this)" title="Fullscreen">
+            <button class="fullscreen-button" onclick="toggleFullscreen('viewer3', this)" title="Fullscreen">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
               </svg>
             </button>
-            <button class="reset-button" onclick="resetCamera('mazda_car', '0deg 88deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+            <button class="reset-button" onclick="resetCamera('viewer3', '0deg 88deg 100%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
             <h3>Mazda Vehicle</h3>
@@ -256,40 +143,27 @@
         <div  class="model-card"
               data-current-index="0"
               data-variants='[
-                "/media/020401.glb",
-                "/media/020402.glb",
-                "/media/020403.glb"
+                "/transportation/media/scooter1.glb",
+                "/transportation/media/scooter2.glb",
+                "/transportation/media/scooter3.glb"
                 ]'>
           <br><br>
           <model-viewer
-            ar
-            camera-controls
-            id                  = "scooter"
-            src                 = "/media/020401.glb"
-            reveal              = "auto"
-            loading             = "lazy"
-            autoplay            = "true"
-            shadow-intensity    = ".97"
+            id                  = "viewer4"
+            src                 = "/transportation/media/scooter1.glb"
             field-of-view       = "22deg"
-            exposure            = "1"
             camera-target       = "auto auto auto"
             camera-orbit        = "180deg 75deg 100%"
-            ar-placement        = "floor"
-            tone-mapping        = "aces"
-            environment-image   = "/media/environment_realistic.hdr"
-            quick-look-browsers = "safari chrome"
-            min-field-of-view   = "10deg"
-            max-field-of-view   = "22deg"
-            min-camera-orbit    = "auto 0deg 5%"
             max-camera-orbit    = "auto 180deg 100%">
             <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
+            <span class="variant-counter">1/1</span>
             <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('scooter', this)" title="Fullscreen">
+            <button class="fullscreen-button" onclick="toggleFullscreen('viewer4', this)" title="Fullscreen">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
               </svg>
             </button>
-            <button class="reset-button" onclick="resetCamera('scooter', '180deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+            <button class="reset-button" onclick="resetCamera('viewer4', '180deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
             <h3>Electric Scooters</h3>
@@ -301,119 +175,6 @@
           </div>
         </div>
       </div>
-
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/media/020501.glb",
-                "/media/020502.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            ar
-            camera-controls
-            id                  = "foldable_kayak"
-            src                 = "/media/020501.glb"
-            reveal              = "auto"
-            loading             = "lazy"
-            autoplay            = "true"
-            shadow-intensity    = ".97"
-            field-of-view       = "22deg"
-            exposure            = "1"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "0deg 70deg 100%"
-            ar-placement        = "floor"
-            tone-mapping        = "aces"
-            environment-image   = "/media/environment_realistic.hdr"
-            quick-look-browsers = "safari chrome"
-            min-field-of-view   = "10deg"
-            max-field-of-view   = "22deg"
-            min-camera-orbit    = "auto 0deg 5%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('foldable_kayak', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('foldable_kayak', '0deg 70deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3>Foldable Kayaks</h3>
-            <p>Some of the 3D models made in collaboration with this manufacturer.</p>
-            <p>These projects also included the folded variants.</p>
-            <br>
-          </div>
-        </div>
-      </div>
-
-      <script>
-        function resetCamera(viewerId, orbit, target, fov) {
-          const viewer = document.getElementById(viewerId);
-          if (viewer) {
-            viewer.cameraOrbit = orbit;
-            viewer.cameraTarget = target;
-            viewer.fieldOfView = fov;
-          }
-        }
-      
-        function toggleFullscreen(id, btn) {
-          const viewer = document.getElementById(id);
-          const iconPath = btn.querySelector('path');
-          if (!document.fullscreenElement) {
-            viewer.requestFullscreen?.() || viewer.webkitRequestFullscreen?.();
-            iconPath.setAttribute('d', 'M4 14h6v6M20 10h-6V4M14 10l7-7M10 14l-7 7');
-          } else {
-            document.exitFullscreen?.();
-            iconPath.setAttribute('d', 'M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7');
-          }
-        }
-      
-        function changeVariant(btn, direction) {
-          const card = btn.closest('.model-card');
-          const viewer = card.querySelector('model-viewer');
-          const variants = JSON.parse(card.getAttribute('data-variants'));
-          let index = parseInt(card.getAttribute('data-current-index'));
-          const newIndex = index + direction;
-          if (newIndex < 0 || newIndex >= variants.length) return;
-      
-          card.setAttribute('data-current-index', newIndex);
-          viewer.src = variants[newIndex];
-          updateButtonStates(card, newIndex, variants.length);
-        }
-      
-        function updateButtonStates(card, index, total) {
-          const prevBtn = card.querySelector('.nav-button.left');
-          const nextBtn = card.querySelector('.nav-button.right');
-          if (prevBtn) prevBtn.disabled = (index === 0);
-          if (nextBtn) nextBtn.disabled = (index === total - 1);
-        }
-      
-        window.addEventListener('load', () => {
-          document.querySelectorAll('.model-card').forEach(card => {
-            const variantsAttr = card.getAttribute('data-variants');
-            if (variantsAttr) {
-              const variants = JSON.parse(variantsAttr);
-              if (variants.length > 0) updateButtonStates(card, 0, variants.length);
-            }
-          });
-        });
-      
-        let backToTopBtn = document.getElementById("backToTopBtn");
-        window.onscroll = () => {
-          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            backToTopBtn.style.display = "block";
-          } else {
-            backToTopBtn.style.display = "none";
-          }
-        };
-      
-        function topFunction() {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      </script> -->
 
       <div class = "info">
           <p>v0.11</p>
