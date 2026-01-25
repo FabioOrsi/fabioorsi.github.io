@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
         loading: "lazy",
         autoplay: true,
         toneMapping: "aces",
-        environmentImage: "/resources/christmas_photo_studio_04_1k.hdr",
+        // environmentImage: "/resources/round_platform_1k.hdr",
         quickLookBrowsers: "safari chrome",
         minFieldOfView: "10deg",
         maxFieldOfView: "22deg",
@@ -93,7 +93,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('model-viewer').forEach(viewer => {
         Object.assign(viewer, sharedConfig);
+        if (!viewer.getAttribute('environment-image')) {
+            viewer.environmentImage = "/resources/media/round_platform_1k.hdr";
+        }
+        if (!viewer.getAttribute('exposure')) {
+            viewer.setAttribute('exposure', '3');
+        }
         viewer.setAttribute('shadow-intensity', '2.0');
-        viewer.setAttribute('exposure', '2.5');
     });
 });
