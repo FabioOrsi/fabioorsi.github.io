@@ -94,7 +94,6 @@
                 align-items: center;
                 gap: 8px;
                 background: #2a2a2a;
-                /* color: #999; */
                 color: #00d1ff;
                 border: 1px solid #444;
                 padding: 8px 16px;
@@ -108,6 +107,9 @@
                 transition: all 0.2s ease;
                 width: fit-content;
                 margin: 0 auto;
+
+                justify-content: flex-start;
+                min-width: 100px;
             }
 
             .expertise-dropdown summary:hover {
@@ -120,8 +122,15 @@
                 display: none;
             }
 
-            .expertise-dropdown[open] .chevron {
-                transform: rotate(180deg);
+            .expertise-dropdown summary::after {
+                content: "Show Detailed Skills";
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                transition: all 0.2s ease;
+            }
+
+            .expertise-dropdown[open] summary::after {
+                content: "Hide Detailed Skills";
             }
 
         </style>
@@ -157,227 +166,72 @@
             </div>
         </div>
 
-    <div class="grid-container">
-        <div class="model-card" style="transform: none; border-color: #333;">
-            <div class="info">
-                <div class="logo-container" style="position: relative; height: 50px; margin-top: 40px;">
-                    <div class="logo-blue" style="left: 50%; translate: -50% -50%; transform: scale(2.7)"></div>
-                </div>
-                <h3 style="padding-top: 40px; margin-bottom: 5px;"><strong>
-                    Fabio Orsi
-                </strong></h3>
-                <p style="margin: 0;"><strong>
-                    3D Artist & Developer
-                </strong></p>
-            </div>
-
-            <hr class="tech-divider">
-            <div class="info">
-                <bio><p>
-                    As an Industrial Designer with a foundation in Control & Automation Engineering, 
-                    I operate at the intersections of creative and technical development.
-                </p></bio>
-            </div>
-
-            <hr class="tech-divider">
-            <div class="info">
-                <bio><p>
-                    Beyond manual authoring, I have designed dozens of automated workflows that assisted 
-                    in the production of hundreds of thousands of 3D models for various fields including 
-                    medical, manufacturing, and product visualization for the Web and XR.
-                </p></bio>
-                <br>
-            </div>
-
-            <div class="info">
-                <details class="expertise-dropdown">
-                    <summary>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-                        <span>Detailed Skills</span>
-                        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                    </summary>
-                    <ul class="expertise-list">
-                        <li>
-                            <strong style="color: #00d1ff;">3D Modeling & Texturing:</strong><br>
-                            Creating photorealistic 3D assets derived from physical references and engineering data for 
-                            offline rendering and real-time visualization.
-                        </li>
-                        <li>
-                            <strong style="color: #00d1ff;">Product Design:</strong><br>
-                            Engineering and designing products utilizing specialized CAD software for prototyping and 
-                            mass manufacturing.
-                        </li>
-                        <li>
-                            <strong style="color: #00d1ff;">Technical Art & Automation:</strong><br>
-                            Coding algorithms to streamline and standardize complex pipelines in 3D authoring software 
-                            such as Blender and Substance Painter, generally in the form of custom tools and plugins.
-                        </li>
-                        <li>
-                            <strong style="color: #00d1ff;">Systems Integration:</strong><br>
-                            Developing solutions to integrate Enterprise Systems (CRMs/ERPs) and other web services,
-                            such as Odoo, Redmine, Google Cloud, AWS and Discord.
-                        </li>
-                        <li>
-                            <strong style="color: #00d1ff;">Industrial Automation:</strong><br>
-                            Bridging the gap between enterprise systems, 3D authoring software, and manufacturing by 
-                            automating end-to-end processes from order placement to CNC machining and 3D printing.
-                        </li>
-                    </ul>
-                </details>
-                <br>
-            </div>
-
-
-        </div>
-    </div>
-
-    <div class="grid-container" style="padding-bottom: 0px;">
-        <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
-            <hr class="tech-divider">
-            <div class="info" style="width: 480px;">
-                <h3 style="padding-top: 10px; margin-bottom: 0px;"><strong>Portfolio</strong></h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="grid-container">
-        <div class="model-card" style="background-color: transparent; transform: none; border-color: transparent;">
-            <div class="info" style="padding-top: 0px;">
-                    <p>This portfolio is focused on my latest contributions in 3D Product Visualization and Workflow Automation:</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="portfolio-wrapper">
-
-        <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
-            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                <br>
-                <model-viewer
-                    src                 = "/resources/media/sofa22881.glb"
-                    field-of-view       = "22deg"
-                    camera-target       = "auto auto auto"
-                    camera-orbit        = "30deg 80deg 100%"
-                    max-camera-orbit    = "auto 180deg 100%"
-                    style               = "width: 90%; height: 400px;">
-                </model-viewer>
+        <div class="grid-container">
+            <div class="model-card" style="transform: none; border-color: #333;">
                 <div class="info">
-                    <a href="furniture/" class="main-link">
-                        <h3>3D | Furniture</h3>
-                        <p>View more</p>
-                    </a>
+                    <div class="logo-container" style="position: relative; height: 50px; margin-top: 40px;">
+                        <div class="logo-blue" style="left: 50%; translate: -50% -50%; transform: scale(2.7)"></div>
+                    </div>
+                    <h3 style="padding-top: 40px; margin-bottom: 5px;"><strong>
+                        Fabio Orsi
+                    </strong></h3>
+                    <p style="margin: 0;"><strong>
+                        3D Artist & Developer
+                    </strong></p>
                 </div>
-            </div>
-            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                <br>
-                <model-viewer
-                    src                 = "/resources/media/vespa2.glb"
-                    field-of-view       = "22deg"
-                    camera-target       = "auto auto auto"
-                    camera-orbit        = "-90deg 90deg 100%"
-                    max-camera-orbit    = "auto 180deg 100%"
-                    style               = "width: 90%; height: 400px;">
-                </model-viewer>
-                <div class="info">
-                    <a href="transportation/" class="main-link">
-                        <h3>3D | Transportation</h3>
-                        <p>View more</p>
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
-            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                <br>
-                <model-viewer
-                    src                 = "/resources/media/helmet1.glb"
-                    environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                    exposure            = "2"
-                    field-of-view       = "22deg"
-                    camera-target       = "auto auto auto"
-                    camera-orbit        = "30deg 80deg 110%"
-                    max-camera-orbit    = "auto 180deg 110%"
-                    style               = "width: 90%; height: 400px;">
-                </model-viewer>
+                <hr class="tech-divider">
                 <div class="info">
-                    <a href="sports/" class="main-link">
-                        <h3>3D | Sports</h3>
-                        <p>View more</p>
-                    </a>
+                    <bio><p>
+                        As an Industrial Designer with a foundation in Control & Automation Engineering, 
+                        I operate at the intersections of creative and technical development.
+                    </p></bio>
                 </div>
-            </div>
-            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                <br>
-                <model-viewer
-                    src                 = "/resources/media/lamp64561.glb"
-                    environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                    exposure            = "2"
-                    field-of-view       = "22deg"
-                    camera-target       = "auto auto auto"
-                    camera-orbit        = "30deg 80deg 125%"
-                    max-camera-orbit    = "auto 180deg 125%"
-                    style               = "width: 90%; height: 400px;">
-                </model-viewer>
-                <div class="info">
-                    <a href="furnishings/" class="main-link">
-                        <h3>3D | Furnishings</h3>
-                        <p>View more</p>
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                <br>
-                <model-viewer
-                    src                 = "/resources/media/appliance7325.glb"
-                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                    exposure            = "0.72"
-                    field-of-view       = "22deg"
-                    camera-target       = "auto auto auto"
-                    camera-orbit        = "30deg 75deg 110%"
-                    max-camera-orbit    = "auto 180deg 110%"
-                    style               = "width: 90%; height: 400px;">
-                </model-viewer>
+                <hr class="tech-divider">
                 <div class="info">
-                    <a href="electronics/" class="main-link">
-                        <h3>3D | Electronics</h3>
-                        <p>View more</p>
-                    </a>
+                    <bio><p>
+                        Beyond manual authoring, I have designed dozens of automated workflows that assisted 
+                        in the production of hundreds of thousands of 3D models for various fields including 
+                        medical, manufacturing, and product visualization for the Web and XR.
+                    </p></bio>
+                    <br>
                 </div>
-            </div>
-            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                <br>
-                <model-viewer
-                    src                 = "/resources/media/electronics71628.glb"
-                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                    exposure            = "0.72"
-                    field-of-view       = "22deg"
-                    camera-target       = "auto auto auto"
-                    camera-orbit        = "30deg 75deg 120%"
-                    max-camera-orbit    = "auto 180deg 120%"
-                    style               = "width: 90%; height: 400px;">
-                </model-viewer>
-                <div class="info">
-                    <a href="misc/" class="main-link">
-                        <h3 style="color: gray;">3D | Misc</h3>
-                        <p>View more</p>
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                <br>
-                <a href="scripts/"><img src="/resources/media/image002.png" width="90%" style="display: block; margin-left: auto; margin-right: auto;"></a>
                 <div class="info">
-                    <a href="scripts/" class="main-link">
-                        <h3 style="color: gray;">Codes</h3>
-                        <p>View details</p>
-                    </a>
+                    <details class="expertise-dropdown">
+                        <summary>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        </summary>
+                        <ul class="expertise-list">
+                            <li>
+                                <strong style="color: #00d1ff;">3D Modeling & Texturing:</strong><br>
+                                Creating photorealistic 3D assets derived from physical references and engineering data for 
+                                offline rendering and real-time visualization.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">Product Design:</strong><br>
+                                Engineering and designing products utilizing specialized CAD software for prototyping and 
+                                mass manufacturing.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">Technical Art & Automation:</strong><br>
+                                Coding algorithms to streamline and standardize complex pipelines in 3D authoring software 
+                                such as Blender and Substance Painter, generally in the form of custom tools and plugins.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">Systems Integration:</strong><br>
+                                Developing solutions to integrate Enterprise Systems (CRMs/ERPs) and other web services,
+                                such as Odoo, Redmine, Google Cloud, AWS and Discord.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">Industrial Automation:</strong><br>
+                                Bridging the gap between enterprise systems, 3D authoring software, and manufacturing by 
+                                automating end-to-end processes from order placement to CNC machining and 3D printing.
+                            </li>
+                        </ul>
+                    </details>
+                    <br>
                 </div>
             </div>
         </div>
@@ -385,23 +239,172 @@
         <div class="grid-container" style="padding-bottom: 0px;">
             <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
                 <hr class="tech-divider">
-            </div>
-        </div>
-
-        <div class="grid-container" style="padding-bottom: 20px;">
-            <div class="model-card" style="transform: none; border-color: #333;">
                 <div class="info" style="width: 480px;">
-                    <h3><strong>Contact</strong></h3>
-                    <p style="margin-top: 0px; margin-bottom: 10px;">osb.fabio@gmail.com</p>
+                    <h3 style="padding-top: 10px; margin-bottom: 0px;"><strong>Portfolio</strong></h3>
                 </div>
             </div>
         </div>
 
-      <div class = "info">
-          <p>v0.11</p>
-      </div>
-    </div>
-  </body>
+        <div class="grid-container">
+            <div class="model-card" style="background-color: transparent; transform: none; border-color: transparent;">
+                <div class="info" style="padding-top: 0px;">
+                        <p>This portfolio is focused on my latest contributions in 3D Product Visualization and Workflow Automation:</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-wrapper">
+
+            <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
+                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                    <br>
+                    <model-viewer
+                        src                 = "/resources/media/sofa22881.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 80deg 100%"
+                        max-camera-orbit    = "auto 180deg 100%"
+                        style               = "width: 90%; height: 400px;">
+                    </model-viewer>
+                    <div class="info">
+                        <a href="furniture/" class="main-link">
+                            <h3>3D | Furniture</h3>
+                            <p>View more</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                    <br>
+                    <model-viewer
+                        src                 = "/resources/media/vespa2.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "-90deg 90deg 100%"
+                        max-camera-orbit    = "auto 180deg 100%"
+                        style               = "width: 90%; height: 400px;">
+                    </model-viewer>
+                    <div class="info">
+                        <a href="transportation/" class="main-link">
+                            <h3>3D | Transportation</h3>
+                            <p>View more</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
+                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                    <br>
+                    <model-viewer
+                        src                 = "/resources/media/helmet1.glb"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 80deg 110%"
+                        max-camera-orbit    = "auto 180deg 110%"
+                        style               = "width: 90%; height: 400px;">
+                    </model-viewer>
+                    <div class="info">
+                        <a href="sports/" class="main-link">
+                            <h3>3D | Sports</h3>
+                            <p>View more</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                    <br>
+                    <model-viewer
+                        src                 = "/resources/media/lamp64561.glb"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 80deg 125%"
+                        max-camera-orbit    = "auto 180deg 125%"
+                        style               = "width: 90%; height: 400px;">
+                    </model-viewer>
+                    <div class="info">
+                        <a href="furnishings/" class="main-link">
+                            <h3>3D | Furnishings</h3>
+                            <p>View more</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
+                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                    <br>
+                    <model-viewer
+                        src                 = "/resources/media/appliance7325.glb"
+                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                        exposure            = "0.72"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 75deg 110%"
+                        max-camera-orbit    = "auto 180deg 110%"
+                        style               = "width: 90%; height: 400px;">
+                    </model-viewer>
+                    <div class="info">
+                        <a href="electronics/" class="main-link">
+                            <h3>3D | Electronics</h3>
+                            <p>View more</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                    <br>
+                    <model-viewer
+                        src                 = "/resources/media/electronics71628.glb"
+                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                        exposure            = "0.72"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 75deg 120%"
+                        max-camera-orbit    = "auto 180deg 120%"
+                        style               = "width: 90%; height: 400px;">
+                    </model-viewer>
+                    <div class="info">
+                        <a href="misc/" class="main-link">
+                            <h3 style="color: gray;">3D | Misc</h3>
+                            <p>View more</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
+                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                    <br>
+                    <a href="scripts/"><img src="/resources/media/image002.png" width="90%" style="display: block; margin-left: auto; margin-right: auto;"></a>
+                    <div class="info">
+                        <a href="scripts/" class="main-link">
+                            <h3 style="color: gray;">Codes</h3>
+                            <p>View details</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding-bottom: 0px;">
+                <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
+                    <hr class="tech-divider">
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding-bottom: 20px;">
+                <div class="model-card" style="transform: none; border-color: #333;">
+                    <div class="info" style="width: 480px;">
+                        <h3><strong>Contact</strong></h3>
+                        <p style="margin-top: 0px; margin-bottom: 10px;">osb.fabio@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "info"><p>v0.90</p></div>
+        </div>
+    </body>
 </html>
 
 
