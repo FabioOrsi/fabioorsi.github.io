@@ -50,219 +50,170 @@
 
     <div class="portfolio-wrapper">
 
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/helmet1.glb",
-                "/resources/media/helmet2.glb",
-                "/resources/media/helmet3.glb",
-                "/resources/media/helmet4.glb",
-                "/resources/media/helmet5.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer1"
-            src                 = "/resources/media/helmet1.glb"
-            environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-            exposure            = "2"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "45deg 75deg 115%"
-            max-camera-orbit    = "auto 180deg 115%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer1', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer1', '45deg 75deg 115%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Helmets</h3>
-            <p>Most of these included different options for decals and colors.</p>
-            <br>
-          </div>
-        </div>
-      </div>
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/helmet1.glb",
+                        "/resources/media/helmet2.glb",
+                        "/resources/media/helmet3.glb",
+                        "/resources/media/helmet4.glb",
+                        "/resources/media/helmet5.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer1"
+                        src                 = "/resources/media/helmet1.glb"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "45deg 75deg 115%"
+                        max-camera-orbit    = "auto 180deg 115%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer1', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer1', '45deg 75deg 115%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3 style="padding-top: 20px;">Helmets</h3>
+                        <p>Most of these included different options for decals and colors.</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
 
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/boxingglove1.glb",
-                "/resources/media/boxingglove2.glb",
-                "/resources/media/boxingglove3.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer2"
-            src                 = "/resources/media/boxingglove1.glb"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "0deg 85deg 125%"
-            max-camera-orbit    = "auto 180deg 125%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer2', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer2', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Boxing Gloves</h3>
-            <p>Most of these included different options for straps, materials and colors.</p>
-            <br>
-          </div>
-        </div>
-      </div>
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/boxingglove1.glb",
+                        "/resources/media/boxingglove2.glb",
+                        "/resources/media/boxingglove3.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer2"
+                        src                 = "/resources/media/boxingglove1.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "0deg 85deg 125%"
+                        max-camera-orbit    = "auto 180deg 125%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer2', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer2', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Boxing Gloves</h3>
+                        <p>Most of these included different options for straps, materials and colors.</p>
+                    </div>
+                </div>
+            </div>
 
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/hockeystick1.glb",
-                "/resources/media/hockeystick2.glb",
-                "/resources/media/hockeystick3.glb"
-              ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer3"
-            src                 = "/resources/media/hockeystick1.glb"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "0deg 90deg 115%"
-            max-camera-orbit    = "auto 180deg 115%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer3', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer3', '0deg 90deg 115%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Hockey Sticks</h3>
-            <p>These included different options for decals and colors.</p>
-            <br>
-          </div>
-        </div>
-      </div>
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/hockeystick1.glb",
+                        "/resources/media/hockeystick2.glb",
+                        "/resources/media/hockeystick3.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer3"
+                        src                 = "/resources/media/hockeystick1.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "0deg 90deg 115%"
+                        max-camera-orbit    = "auto 180deg 115%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer3', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer3', '0deg 90deg 115%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Hockey Sticks</h3>
+                        <p>These included different options for decals and colors.</p>
+                    </div>
+                </div>
+            </div>
 
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/bike1.glb",
-                "/resources/media/bike2.glb",
-                "/resources/media/bike3.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer4"
-            src                 = "/resources/media/bike1.glb"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "0deg 85deg 100%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer4', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer4', '0deg 85deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Performance Bikes & E-Bikes</h3>
-            <p>Most of these included different options for addons and for body paints.</p>
-            <p>* Made in collaboration with other artists from Spase Inc.</p>
-            <br>
-          </div>
-        </div>
-      </div>
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/bike1.glb",
+                        "/resources/media/bike2.glb",
+                        "/resources/media/bike3.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer4"
+                        src                 = "/resources/media/bike1.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "0deg 85deg 100%"
+                        max-camera-orbit    = "auto 180deg 100%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer4', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer4', '0deg 85deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Performance Bikes & E-Bikes</h3>
+                        <p>Most of these included different options for addons and for body paints.</p>
+                        <p>* Made in collaboration with other artists from Spase Inc.</p>
+                    </div>
+                </div>
+            </div>
 
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/strider1.glb",
-                "/resources/media/strider2.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer5"
-            src                 = "/resources/media/strider1.glb"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "180deg 75deg 100%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer5', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer5', '180deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Striders</h3>
-            <p>These included different options for size and colors.</p>
-            <br>
-          </div>
-        </div>
-      </div>
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/strider1.glb",
+                        "/resources/media/strider2.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer5"
+                        src                 = "/resources/media/strider1.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "180deg 75deg 100%"
+                        max-camera-orbit    = "auto 180deg 100%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer5', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer5', '180deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Striders</h3>
+                        <p>These included different options for size and colors.</p>
+                    </div>
+                </div>
+            </div>
 
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/kayak1.glb",
-                "/resources/media/kayak2.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer6"
-            src                 = "/resources/media/kayak1.glb"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "0deg 70deg 100%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer6', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer6', '0deg 70deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Foldable Kayaks</h3>
-            <p>These projects also included the folded variants.</p>
-            <p>* Made in collaboration with other artists from Spase Inc.</p>
-            <br>
-          </div>
-        </div>
-      </div>
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/kayak1.glb",
+                        "/resources/media/kayak2.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer6"
+                        src                 = "/resources/media/kayak1.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "0deg 70deg 100%"
+                        max-camera-orbit    = "auto 180deg 100%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer6', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer6', '0deg 70deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3">Foldable Kayaks</h3>
+                        <p>These projects also included the folded variants.</p>
+                        <p>* Made in collaboration with other artists from Spase Inc.</p>
+                    </div>
+                </div>
+            </div>
 
-      <div class = "info">
-          <p>v0.11</p>
-      </div>
-    </div>
-  </body>
+            <div class = "info"><p>v0.90</p></div>
+        </div>
+    </body>
 </html>
 
 

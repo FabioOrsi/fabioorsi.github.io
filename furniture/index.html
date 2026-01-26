@@ -1,322 +1,264 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Furniture - 3D Portfolio - F.Orsi</title>
-    <link rel="stylesheet" href="/resources/3dmodels.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-    <script src="/resources/scripts.js" defer></script>
-  </head>
+    <head>
+        <title>Furniture - 3D Portfolio - F.Orsi</title>
+        <link rel="stylesheet" href="/resources/3dmodels.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+        <script src="/resources/scripts.js" defer></script>
+    </head>
 
-  <body>
-    <div id="top-title-bar" class="grid-container">
-      <div class="model-card">
-
-        <a href="/">
-          <div class="logo-container" title="Home">
-            <div class="logo-blue"></div>
-          </div>
-        </a>
-
-        <div class="info">
-          <div class="dropdown">
-            <button class="dropdown-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-              <span>Furniture</span>
-              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            <div class="dropdown-content">
-              <a href="/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg> Home</a>
-              <a href="/furniture" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"></path><path d="M4 13h16M8 9h8M8 16h8M4 6l-1-2h18l-1 2M6 20v2m12-2v2"></path></svg> Furniture</a>
-              <a href="/sports"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Sports</a>
-              <a href="/furnishings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.07 5.07l13.86 13.86M5.07 18.93l13.86-13.86"></path></svg> Furnishings</a>
-              <a href="/transportation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 15.5V5h3m-3 10.5h12"/></svg> Transportation</a>
-              <a href="/electronics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> Electronics</a>
-              <a href="/misc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Misc</a>
-              <a href="/codes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Codes</a>
+    <body>
+        <div id="top-title-bar" class="grid-container">
+            <div class="model-card">
+                <a href="/"><div class="logo-container" title="Home"><div class="logo-blue"></div></div></a>
+                <div class="info">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            <span>Furniture</span>
+                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="menu-category">- Bio</div>
+                            <a href="/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Home</a>
+                            <div class="menu-category">- 3D Models</div>
+                            <a href="/furniture" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"></path><path d="M4 13h16M8 9h8M8 16h8M4 6l-1-2h18l-1 2M6 20v2m12-2v2"></path></svg>Furniture</a>
+                            <a href="/sports"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Sports</a>
+                            <a href="/furnishings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.07 5.07l13.86 13.86M5.07 18.93l13.86-13.86"></path></svg>Furnishings</a>
+                            <a href="/transportation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 15.5V5h3m-3 10.5h12"/></svg>Transportation</a>
+                            <a href="/electronics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>Electronics</a>
+                            <a href="/misc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>Misc</a>
+                            <div class="menu-category">- Development</div>
+                            <a href="/codes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Codes</a>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
             </div>
-          </div>
         </div>
 
-        <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
-          <span>Top</span>
-        </button>
-
-      </div>
-    </div>
-
-    <div class="grid-container">
-      <div class="model-card" style="background-color: transparent; border-color: transparent;">
-        <div class="info" style="padding-top: 0px;">
-          <p>A selection of 3D models made in collaboration with multiple manufacturers:</p>
+        <div class="grid-container">
+            <div class="model-card" style="background-color: transparent;">
+                <div class="info" style="padding-top: 0px;">
+                    <p>A selection of 3D models made in collaboration with multiple manufacturers:</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="portfolio-wrapper">
+        <div class="portfolio-wrapper">
 
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/sofa14395.glb",
-                "/resources/media/sofa22881.glb",
-                "/resources/media/sofa37823.glb",
-                "/resources/media/sofa47576.glb",
-                "/resources/media/sofa56027.glb",
-                "/resources/media/sofa67469.glb",
-                "/resources/media/sofa76527.glb",
-                "/resources/media/sofa85533.glb",
-                "/resources/media/sofa97851.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer1"
-            src                 = "/resources/media/sofa14395.glb"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "30deg 80deg 100%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer1', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer1', '30deg 80deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Sofas</h3>
-            <p>Most of these included different options for sizes, fabrics and colors.</p>
-            <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
-            <br>
-          </div>
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/sofa14395.glb",
+                        "/resources/media/sofa22881.glb",
+                        "/resources/media/sofa37823.glb",
+                        "/resources/media/sofa47576.glb",
+                        "/resources/media/sofa56027.glb",
+                        "/resources/media/sofa67469.glb",
+                        "/resources/media/sofa76527.glb",
+                        "/resources/media/sofa85533.glb",
+                        "/resources/media/sofa97851.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer1"
+                        src                 = "/resources/media/sofa14395.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 80deg 100%"
+                        max-camera-orbit    = "auto 180deg 100%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer1', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer1', '30deg 80deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Sofas</h3>
+                        <p>Most of these included different options for sizes, fabrics and colors.</p>
+                        <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/chair10743.glb",
+                        "/resources/media/chair21418.glb",
+                        "/resources/media/chair34608.glb",
+                        "/resources/media/chair47820.glb",
+                        "/resources/media/chair54980.glb",
+                        "/resources/media/chair61582.glb",
+                        "/resources/media/chair76210.glb",
+                        "/resources/media/chair87638.glb",
+                        "/resources/media/chair95924.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer2"
+                        src                 = "/resources/media/chair10743.glb"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 80deg 110%"
+                        max-camera-orbit    = "auto 180deg 110%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer2', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer2', '30deg 80deg 110%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Chairs</h3>
+                        <p>Most of these included different options for colors.</p>
+                        <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/diningtable13269.glb",
+                        "/resources/media/diningtable27809.glb",
+                        "/resources/media/diningtable37229.glb",
+                        "/resources/media/diningtable47098.glb",
+                        "/resources/media/diningtable54837.glb",
+                        "/resources/media/diningtable64816.glb",
+                        "/resources/media/diningtable77634.glb",
+                        "/resources/media/diningtable85585.glb",
+                        "/resources/media/diningtable97855.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer3"
+                        src                 = "/resources/media/diningtable13269.glb"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 75deg 90%"
+                        max-camera-orbit    = "auto 180deg 100%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer3', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer3', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Dining Tables</h3>
+                        <p>Most of these included different options for sizes, materials and colors.</p>
+                        <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/desk14619.glb",
+                        "/resources/media/desk24848.glb",
+                        "/resources/media/desk35404.glb",
+                        "/resources/media/desk47286.glb",
+                        "/resources/media/desk54617.glb",
+                        "/resources/media/desk65568.glb",
+                        "/resources/media/desk74345.glb",
+                        "/resources/media/desk84336.glb",
+                        "/resources/media/desk97729.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer4"
+                        src                 = "/resources/media/desk14619.glb"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 75deg 90%"
+                        max-camera-orbit    = "auto 180deg 100%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer4', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer4', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Desks</h3>
+                        <p>Most of these included different options for sizes and colors.</p>
+                        <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/coffeetable18276.glb",
+                        "/resources/media/coffeetable27952.glb",
+                        "/resources/media/coffeetable37802.glb",
+                        "/resources/media/coffeetable47826.glb",
+                        "/resources/media/coffeetable57803.glb",
+                        "/resources/media/coffeetable67044.glb",
+                        "/resources/media/coffeetable77037.glb",
+                        "/resources/media/coffeetable85310.glb",
+                        "/resources/media/coffeetable98042.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer5"
+                        src                 = "/resources/media/coffeetable18276.glb"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 75deg 100%"
+                        max-camera-orbit    = "auto 180deg 100%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer5', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer5', '30deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Coffee Tables and Side Tables</h3>
+                        <p>Most of these included different options for sizes and colors.</p>
+                        <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/bed17417.glb",
+                        "/resources/media/bed27396.glb",
+                        "/resources/media/bed34093.glb",
+                        "/resources/media/bed44061.glb",
+                        "/resources/media/bed51705.glb",
+                        "/resources/media/bed64055.glb",
+                        "/resources/media/bed74843.glb",
+                        "/resources/media/bed87611.glb",
+                        "/resources/media/bed94063.glb"
+                    ]'>
+                    <br>
+                    <model-viewer
+                        id                  = "viewer6"
+                        src                 = "/resources/media/bed17417.glb"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        field-of-view       = "22deg"
+                        camera-target       = "auto auto auto"
+                        camera-orbit        = "30deg 75deg 100%"
+                        max-camera-orbit    = "auto 180deg 100%">
+                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer6', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_camera('viewer6', '30deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
+                    </model-viewer>
+                    <div class="info" style="padding: 15px;">
+                        <h3>Beds</h3>
+                        <p>Most of these included different options for sizes and colors.</p>
+                        <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "info"><p>v0.90</p></div>
         </div>
-      </div>
-
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/chair10743.glb",
-                "/resources/media/chair21418.glb",
-                "/resources/media/chair34608.glb",
-                "/resources/media/chair47820.glb",
-                "/resources/media/chair54980.glb",
-                "/resources/media/chair61582.glb",
-                "/resources/media/chair76210.glb",
-                "/resources/media/chair87638.glb",
-                "/resources/media/chair95924.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer2"
-            src                 = "/resources/media/chair10743.glb"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "30deg 80deg 110%"
-            max-camera-orbit    = "auto 180deg 110%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer2', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer2', '30deg 80deg 110%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Chairs</h3>
-            <p>Most of these included different options for colors.</p>
-            <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
-            <br>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/diningtable13269.glb",
-                "/resources/media/diningtable27809.glb",
-                "/resources/media/diningtable37229.glb",
-                "/resources/media/diningtable47098.glb",
-                "/resources/media/diningtable54837.glb",
-                "/resources/media/diningtable64816.glb",
-                "/resources/media/diningtable77634.glb",
-                "/resources/media/diningtable85585.glb",
-                "/resources/media/diningtable97855.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer3"
-            src                 = "/resources/media/diningtable13269.glb"
-            environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-            exposure            = "2"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "30deg 75deg 90%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer3', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer3', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Dining Tables</h3>
-            <p>Most of these included different options for sizes, materials and colors.</p>
-            <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
-            <br>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/desk14619.glb",
-                "/resources/media/desk24848.glb",
-                "/resources/media/desk35404.glb",
-                "/resources/media/desk47286.glb",
-                "/resources/media/desk54617.glb",
-                "/resources/media/desk65568.glb",
-                "/resources/media/desk74345.glb",
-                "/resources/media/desk84336.glb",
-                "/resources/media/desk97729.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer4"
-            src                 = "/resources/media/desk14619.glb"
-            environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-            exposure            = "2"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "30deg 75deg 90%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer4', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer4', '30deg 75deg 90%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Desks</h3>
-            <p>Most of these included different options for sizes and colors.</p>
-            <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
-            <br>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/coffeetable18276.glb",
-                "/resources/media/coffeetable27952.glb",
-                "/resources/media/coffeetable37802.glb",
-                "/resources/media/coffeetable47826.glb",
-                "/resources/media/coffeetable57803.glb",
-                "/resources/media/coffeetable67044.glb",
-                "/resources/media/coffeetable77037.glb",
-                "/resources/media/coffeetable85310.glb",
-                "/resources/media/coffeetable98042.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer5"
-            src                 = "/resources/media/coffeetable18276.glb"
-            environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-            exposure            = "2"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "30deg 75deg 100%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer5', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer5', '30deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Coffee Tables and Side Tables</h3>
-            <p>Most of these included different options for sizes and colors.</p>
-            <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
-            <br>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid-container">
-        <div  class="model-card"
-              data-current-index="0"
-              data-variants='[
-                "/resources/media/bed17417.glb",
-                "/resources/media/bed27396.glb",
-                "/resources/media/bed34093.glb",
-                "/resources/media/bed44061.glb",
-                "/resources/media/bed51705.glb",
-                "/resources/media/bed64055.glb",
-                "/resources/media/bed74843.glb",
-                "/resources/media/bed87611.glb",
-                "/resources/media/bed94063.glb"
-                ]'>
-          <br><br>
-          <model-viewer
-            id                  = "viewer6"
-            src                 = "/resources/media/bed17417.glb"
-            environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-            exposure            = "2"
-            field-of-view       = "22deg"
-            camera-target       = "auto auto auto"
-            camera-orbit        = "30deg 75deg 100%"
-            max-camera-orbit    = "auto 180deg 100%">
-            <button class="nav-button left" onclick="changeVariant(this, -1)">&#10094;</button>
-            <span class="variant-counter">1/1</span>
-            <button class="nav-button right" onclick="changeVariant(this, 1)">&#10095;</button>
-            <button class="fullscreen-button" onclick="toggleFullscreen('viewer6', this)" title="Fullscreen">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-              </svg>
-            </button>
-            <button class="reset-button" onclick="resetCamera('viewer6', '30deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-          </model-viewer>
-          <div class="info">
-            <h3 style="padding-top: 20px;">Beds</h3>
-            <p>Most of these included different options for sizes and colors.</p>
-            <p>* Some of these were made in collaboration with other artists from Spase Inc.</p>
-            <br>
-          </div>
-        </div>
-      </div>
-
-      <div class = "info">
-          <p>v0.11</p>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
 
 
