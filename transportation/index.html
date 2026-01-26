@@ -15,13 +15,30 @@
       <div class="model-card">
 
         <a href="/">
-          <button id="backToRootBtn" title="Back to Home">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            <span>Back</span>
-          </button>
+          <div class="logo-container" title="Home">
+            <div class="logo-blue"></div>
+          </div>
         </a>
 
-        <div class="info"><h3>3D Models | Transportation</h3></div>
+        <div class="info">
+          <div class="dropdown">
+            <button class="dropdown-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+              <span>Transportation</span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg> Home</a>
+              <a href="/furniture"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"></path><path d="M4 13h16M8 9h8M8 16h8M4 6l-1-2h18l-1 2M6 20v2m12-2v2"></path></svg> Furniture</a>
+              <a href="/sports"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> Sports</a>
+              <a href="/furnishings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.07 5.07l13.86 13.86M5.07 18.93l13.86-13.86"></path></svg> Furnishings</a>
+              <a href="/transportation" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 15.5V5h3m-3 10.5h12"/></svg> Transportation</a>
+              <a href="/electronics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg> Electronics</a>
+              <a href="/misc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Misc</a>
+              <a href="/codes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Codes</a>
+            </div>
+          </div>
+        </div>
 
         <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
@@ -31,21 +48,29 @@
       </div>
     </div>
 
+    <div class="grid-container">
+      <div class="model-card" style="background-color: transparent; border-color: transparent;">
+        <div class="info" style="padding-top: 0px;">
+          <p>A selection of 3D models made in collaboration with multiple manufacturers:</p>
+        </div>
+      </div>
+    </div>
+
     <div class="portfolio-wrapper">
 
       <div class="grid-container">
         <div  class="model-card"
               data-current-index="0"
               data-variants='[
-                "/transportation/media/vespa1.glb",
-                "/transportation/media/vespa2.glb",
-                "/transportation/media/vespa3.glb",
-                "/transportation/media/vespa4.glb"
+                "/resources/media/vespa1.glb",
+                "/resources/media/vespa2.glb",
+                "/resources/media/vespa3.glb",
+                "/resources/media/vespa4.glb"
                 ]'>
           <br><br>
           <model-viewer
             id                  = "viewer1"
-            src                 = "/transportation/media/vespa1.glb"
+            src                 = "/resources/media/vespa1.glb"
             field-of-view       = "22deg"
             camera-target       = "auto auto auto"
             camera-orbit        = "-90deg 90deg 100%"
@@ -61,8 +86,7 @@
             <button class="reset-button" onclick="resetCamera('viewer1', '-90deg 90deg 100%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
-            <h3>Vespa Motorcycles</h3>
-            <p>Some of the 3D models made in collaboration with this manufacturer.</p>
+            <h3 style="padding-top: 20px;">Motorcycles</h3>
             <p>Most of these included different options for decals and body paints.</p>
             <br>
           </div>
@@ -73,15 +97,15 @@
         <div  class="model-card"
               data-current-index="0"
               data-variants='[
-                "/transportation/media/bike1.glb",
-                "/transportation/media/bike2.glb",
-                "/transportation/media/bike3.glb",
-                "/transportation/media/bike4.glb"
+                "/resources/media/ebike1.glb",
+                "/resources/media/ebike2.glb",
+                "/resources/media/ebike3.glb",
+                "/resources/media/ebike4.glb"
                 ]'>
           <br><br>
           <model-viewer
             id                  = "viewer2"
-            src                 = "/transportation/media/bike1.glb"
+            src                 = "/resources/media/ebike1.glb"
             field-of-view       = "22deg"
             camera-target       = "auto auto auto"
             camera-orbit        = "0deg 88deg 100%"
@@ -97,10 +121,8 @@
             <button class="reset-button" onclick="resetCamera('viewer2', '0deg 88deg 100%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
-            <h3>Electric Bikes</h3>
-            <p>Some of the 3D models made in collaboration with multiple manufacturers.</p>
+            <h3 style="padding-top: 20px;">Electric Bikes</h3>
             <p>Most of these included different options for addons and for body paints.</p>
-            <br>
             <p>* Made in collaboration with other artists from Spase Inc.</p>
             <br>
           </div>
@@ -111,12 +133,12 @@
         <div  class="model-card"
               data-current-index="0"
               data-variants='[
-                "/transportation/media/car1.glb"
+                "/resources/media/car1.glb"
                 ]'>
           <br><br>
           <model-viewer
             id                  = "viewer3"
-            src                 = "/transportation/media/car1.glb"
+            src                 = "/resources/media/car1.glb"
             field-of-view       = "22deg"
             camera-target       = "auto auto auto"
             camera-orbit        = "0deg 88deg 100%"
@@ -132,7 +154,7 @@
             <button class="reset-button" onclick="resetCamera('viewer3', '0deg 88deg 100%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
-            <h3>Mazda Vehicle</h3>
+            <h3 style="padding-top: 20px;">Car</h3>
             <p>This was a one-time collaboration, with multiple options for colors.</p>
             <br>
           </div>
@@ -143,14 +165,14 @@
         <div  class="model-card"
               data-current-index="0"
               data-variants='[
-                "/transportation/media/scooter1.glb",
-                "/transportation/media/scooter2.glb",
-                "/transportation/media/scooter3.glb"
+                "/resources/media/scooter1.glb",
+                "/resources/media/scooter2.glb",
+                "/resources/media/scooter3.glb"
                 ]'>
           <br><br>
           <model-viewer
             id                  = "viewer4"
-            src                 = "/transportation/media/scooter1.glb"
+            src                 = "/resources/media/scooter1.glb"
             field-of-view       = "22deg"
             camera-target       = "auto auto auto"
             camera-orbit        = "180deg 75deg 100%"
@@ -166,10 +188,8 @@
             <button class="reset-button" onclick="resetCamera('viewer4', '180deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
           </model-viewer>
           <div class="info">
-            <h3>Electric Scooters</h3>
-            <p>Some of the 3D models made in collaboration with multiple manufacturers.</p>
+            <h3 style="padding-top: 20px;">Electric Scooters</h3>
             <p>Most of these included different options for addons and for body paints.</p>
-            <br>
             <p>* Made in collaboration with other artists from Spase Inc.</p>
             <br>
           </div>

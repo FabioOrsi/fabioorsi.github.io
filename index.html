@@ -1,287 +1,291 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>3D Portfolio</title>
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      background-color: #1a1a1a;
-    }
+    <head>
+        <title>F.Orsi - Portfolio</title>
+        <link rel="stylesheet" href="/resources/3dmodels.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+        <script src="/resources/scripts.js" defer></script>
 
-    model-viewer {
-      width: 90%;
-      height: 400px;
-      background-color: #252525;
-    }
+        <style>
+            .model-card-main {
+                position: relative;
+                background: #1e1e1e;
+                overflow: hidden;
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      background: #121212;
-      max-width: 1620px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+                border: 1px solid #333;
+                border-radius: 12px;
 
-    .model-card {
-      background: #1e1e1e;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #333;
-      color: white;
-      font-family: sans-serif;
+                font-family: sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 1620px;
+                font-family: 'Roboto', sans-serif;
+            }
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+            .model-card:hover {
+                border-color: #00d1ff;
+                transform: scale(1.01);
+                transition: all 0.2s ease;
+            }
 
-      max-width: 800px;
-    }
+            .info bio p {
+                max-width: 480px; 
+                margin: 0 0;
+                padding: 10px 100px;
+                line-height: 1.7;
+                text-align: justify;
+                text-justify: inter-word;
+                hyphens: auto;
+            }
 
-    .model-card:hover {
-      border-color: #00d1ff;
-      transform: scale(1.01);
-      transition: all 0.2s ease;
-    }
+            .lead-text {
+                text-align: left;
+                margin-bottom: 1.5rem;
+            }
 
-    .main-link {
-      color: #00d1ff;
-      text-decoration: none;
-    }
+            .cta-text {
+                margin-top: 1.5rem;
+                text-align: center;
+                opacity: 0.5;
+                padding-top: 0.5rem;
+            }
 
-    .main-link::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-    }
+            .sub-text {
+                font-size: 0.9rem;
+                opacity: 1;
+            }
+        </style>
+    </head>
 
+    <body>
+        <div id="top-title-bar" class="grid-container">
+            <div class="model-card" style="transform: none; border-color: #333;">
+                <a href="/"><div class="logo-container" title="Home"><div class="logo-blue"></div></div></a>
+                <div class="info">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            <span>Menu</span>
+                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="menu-category">- Bio</div>
+                            <a href="/" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Home</a>
+                            <div class="menu-category">- 3D Models</div>
+                            <a href="/furniture"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"></path><path d="M4 13h16M8 9h8M8 16h8M4 6l-1-2h18l-1 2M6 20v2m12-2v2"></path></svg>Furniture</a>
+                            <a href="/sports"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Sports</a>
+                            <a href="/furnishings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.07 5.07l13.86 13.86M5.07 18.93l13.86-13.86"></path></svg>Furnishings</a>
+                            <a href="/transportation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 15.5V5h3m-3 10.5h12"/></svg>Transportation</a>
+                            <a href="/electronics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>Electronics</a>
+                            <a href="/misc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>Misc</a>
+                            <div class="menu-category">- Development</div>
+                            <a href="/codes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Codes</a>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
+            </div>
+        </div>
 
-    .info { padding: 0px; padding-bottom: 0px;}
-    .info h3 { margin: 0 0 10px; color: #00d1ff; justify-self: center; }
-    .info p { font-size: 0.9rem; color: #999; line-height: 1.4; justify-self: center; }
+    <div class="grid-container">
+        <div class="model-card" style="transform: none; border-color: #333;">
+            <div class="info">
+                <h3 style="padding-top: 20px; margin-bottom: 5px;"><strong>Fabio Orsi</strong></h3>
+                <p style="margin: 0;">3D Artist & Developer</p>
+            </div>
+            <hr class="tech-divider">
+            <div class="info">
+                <bio>
+                    <p style="padding: 0 0;"><img src="/resources/media/image001.PNG" width="100%"></p>
+                    <p>As an Industrial Designer with a foundation in Control & Automation Engineering, I operate at the intersections of creative and technical development.</p>
+                </bio>
+            </div>
+            <hr class="tech-divider">
+            <div class="info">
+                <bio>
+                    <p>Beyond manual authoring, I have designed dozens of automated workflows that assisted in the production of hundreds of thousands of 3D models for various fields including medical, manufacturing, and product visualization for the Web and XR.</p>
+                    <br>
+                </bio>
+            </div>
+            <!-- <div class="info">
+                <bio style="opacity: 0.25;">
+                    <p style="color: tomato;">My expertise includes:</p>
+                    <p class="lead-text" style="padding: 0 100px; color: tomato;"><strong>Product Modeling:</strong><br>Creating photorealistic 3D assets derived from physical references and engineering data.</p>
+                    <p class="lead-text" style="color: tomato;"><strong>Technical Art & Automation:</strong> Designing custom algorithms to streamline complex pipelines within <strong>Blender</strong>, <strong>Substance Painter</strong>, and <strong>Enterprise Systems (CRM/ERP)</strong>.</p>
+                </bio>
+                <p class="cta-text"><span class="sub-text">Contact information can be found at the bottom of the page.</span></p>
+            </div> -->
+        </div>
+    </div>
 
-  </style>
-</head>
+    <div class="grid-container" style="padding-bottom: 10px;">
+        <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
+            <hr class="tech-divider">
+            <div class="info" style="width: 480px;">
+                <h3 style="padding-top: 10px;"><strong>Portfolio</strong></h3>
+                <!-- <p style="margin-top: 0px; margin-bottom: 10px;">A curated selection of my previous work:</p> -->
+            </div>
+        </div>
+    </div>
 
-<body>
-  <div class="grid-container">
-    <div class="model-card">
-      <br>
-      <model-viewer 
-        ar
-        camera-controls
-        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/cEwoAZ2tsStOl0EZpSkv/Vxu4n5Aupz905Vek45Ra/model___1706574709931.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=B5JSDi4wICpPnh6jMmCcsoUAzxaq10IMWdRuQ3eQmQ1MF84FAcBDYNClxyysgA8R6hsxDzqm8SW%2FNb2qz3zdaujAK1RhfHeINXGDRd0JiEoF3Oooyi2%2F0%2Bio2%2FYJzzKgmg%2BWyls7wn%2ByeqFnUKqhGqapBDluSbiRd0HgBEmqmCzMiPsZWI3vQQ%2BGqQRbOQuwNWh7mj5xoFuM0dDQyvDvOtSEGJP7PVKUvMS%2FdYEL8YI6zqtWHaILJIp6foDqpm%2FcMrnvgWMfzTpYvz%2BQB3ZVLv7wFMX%2BX6xau8criL9W4hBkPPE%2BnIQ41MMY86KGaFPefiwftbklrHAA5JaeBWIo9A%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1706574709931.glb"
-        reveal              = "auto"
-        loading             = "lazy"
-        autoplay            = "true"
-        shadow-intensity    = ".97"
-        field-of-view       = "22deg"
-        exposure            = "1"
-        camera-target       = "auto auto auto"
-        camera-orbit        = "-30deg 85deg 105%"
-        ar-placement        = "floor"
-        tone-mapping        = "aces"
-        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-        quick-look-browsers = "safari chrome"
-        min-field-of-view   = "10deg"
-        max-field-of-view   = "90deg"
-        min-camera-orbit    = "auto 0deg 5%"
-        max-camera-orbit    = "auto 180deg 350%">
-      </model-viewer>
-      <div class="info">
-        <a href="furniture/" class="main-link">
-          <h3><br>Furniture</h3>
-          <p>View more</p>
-        </a>
+    <div class="portfolio-wrapper">
+
+        <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
+            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                <br>
+                <model-viewer
+                    src                 = "/resources/media/sofa22881.glb"
+                    field-of-view       = "22deg"
+                    camera-target       = "auto auto auto"
+                    camera-orbit        = "30deg 80deg 100%"
+                    max-camera-orbit    = "auto 180deg 100%"
+                    style               = "width: 90%; height: 400px;">
+                </model-viewer>
+                <div class="info">
+                    <a href="furniture/" class="main-link">
+                        <h3>3D | Furniture</h3>
+                        <p>View more</p>
+                    </a>
+                </div>
+            </div>
+            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                <br>
+                <model-viewer
+                    src                 = "/resources/media/vespa2.glb"
+                    field-of-view       = "22deg"
+                    camera-target       = "auto auto auto"
+                    camera-orbit        = "-90deg 90deg 100%"
+                    max-camera-orbit    = "auto 180deg 100%"
+                    style               = "width: 90%; height: 400px;">
+                </model-viewer>
+                <div class="info">
+                    <a href="transportation/" class="main-link">
+                        <h3>3D | Transportation</h3>
+                        <p>View more</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
+            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                <br>
+                <model-viewer
+                    src                 = "/resources/media/helmet1.glb"
+                    environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "2"
+                    field-of-view       = "22deg"
+                    camera-target       = "auto auto auto"
+                    camera-orbit        = "30deg 80deg 110%"
+                    max-camera-orbit    = "auto 180deg 110%"
+                    style               = "width: 90%; height: 400px;">
+                </model-viewer>
+                <div class="info">
+                    <a href="sports/" class="main-link">
+                        <h3>3D | Sports</h3>
+                        <p>View more</p>
+                    </a>
+                </div>
+            </div>
+            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                <br>
+                <model-viewer
+                    src                 = "/resources/media/lamp64561.glb"
+                    environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "2"
+                    field-of-view       = "22deg"
+                    camera-target       = "auto auto auto"
+                    camera-orbit        = "30deg 80deg 125%"
+                    max-camera-orbit    = "auto 180deg 125%"
+                    style               = "width: 90%; height: 400px;">
+                </model-viewer>
+                <div class="info">
+                    <a href="furnishings/" class="main-link">
+                        <h3>3D | Furnishings</h3>
+                        <p>View more</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
+            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                <br>
+                <model-viewer
+                    src                 = "/resources/media/appliance7325.glb"
+                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                    exposure            = "0.72"
+                    field-of-view       = "22deg"
+                    camera-target       = "auto auto auto"
+                    camera-orbit        = "30deg 75deg 110%"
+                    max-camera-orbit    = "auto 180deg 110%"
+                    style               = "width: 90%; height: 400px;">
+                </model-viewer>
+                <div class="info">
+                    <a href="electronics/" class="main-link">
+                        <h3>3D | Electronics</h3>
+                        <p>View more</p>
+                    </a>
+                </div>
+            </div>
+            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                <br>
+                <model-viewer
+                    src                 = "/resources/media/electronics71628.glb"
+                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                    exposure            = "0.72"
+                    field-of-view       = "22deg"
+                    camera-target       = "auto auto auto"
+                    camera-orbit        = "30deg 75deg 120%"
+                    max-camera-orbit    = "auto 180deg 120%"
+                    style               = "width: 90%; height: 400px;">
+                </model-viewer>
+                <div class="info">
+                    <a href="misc/" class="main-link">
+                        <h3>3D | Misc</h3>
+                        <p>View more</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
+            <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
+                <br>
+                <a href="scripts/"><img src="/resources/media/image002.png" width="90%" style="display: block; margin-left: auto; margin-right: auto;"></a>
+                <div class="info">
+                    <a href="scripts/" class="main-link">
+                        <h3>Codes</h3>
+                        <p>View details</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container" style="padding-bottom: 0px;">
+            <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
+                <hr class="tech-divider">
+            </div>
+        </div>
+
+        <div class="grid-container" style="padding-bottom: 20px;">
+            <div class="model-card" style="transform: none; border-color: #333;">
+                <div class="info" style="width: 480px;">
+                    <h3><strong>Contact</strong></h3>
+                    <p style="margin-top: 0px; margin-bottom: 10px;">osb.fabio@gmail.com</p>
+                </div>
+            </div>
+        </div>
+
+      <div class = "info">
+          <p>v0.11</p>
       </div>
     </div>
-    <div class="model-card">
-      <br>
-      <model-viewer 
-        ar
-        camera-controls
-        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/my883zmfme7v/3hyoznpyxaqw/model___1618572031526.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=H2M0r65QWIMfdNP%2BMaQc%2BVoaV1%2BizvBpyrS4CB9uzfmLeCln96g7XODLK2V4Iv%2FjB%2BwXP%2BBSiG5d4D5Z0EQKeKpN3diTYBGx39QuADp1gFT8gpCMvs0lgOcUVXef67paRXlAJcA43tt3m7mWAzt1%2BoGVrMwmk08JZ3UxnSTJgnnKJ6ScCwH0rHwXbOkwpq3hpsbnzGBKTPVy7WRrwc%2FPvAf%2FFvXQr91Ae%2BTWbCbBbGVY9hTy6cgBmLyZmS64eK94th9tCfExjphWBB%2FH%2BI%2FWyC7AXJWM7K8LgKnjHYu5Jlx8NVFdVSeysGEXLqyZA1hAc8aiA894KVcxOmKcAJ5Vcg%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1618572031526.glb"
-        reveal              = "auto"
-        loading             = "lazy"
-        autoplay            = "true"
-        shadow-intensity    = ".97"
-        field-of-view       = "22deg"
-        exposure            = "1"
-        camera-target       = "auto auto auto"
-        camera-orbit        = "-90deg 85deg 105%"
-        ar-placement        = "floor"
-        tone-mapping        = "aces"
-        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-        quick-look-browsers = "safari chrome"
-        min-field-of-view   = "10deg"
-        max-field-of-view   = "90deg"
-        min-camera-orbit    = "auto 0deg 5%"
-        max-camera-orbit    = "auto 180deg 350%">
-      </model-viewer>
-      <div class="info">
-        <a href="transportation/" class="main-link">
-          <h3><br>Transportation</h3>
-          <p>View more</p>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid-container">
-    <div class="model-card">
-      <br>
-      <model-viewer 
-        ar
-        camera-controls
-        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/jphrg55b3gvo/3olbxzgj0fp7/model___1616466813488.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=ZdUsT6YXV9U%2By9h%2BdSod5v%2F9rDwgF4i6KN1hPxXSLJRe%2FA2dXnLwKL3fmnVBSFWemHUlHVxzoa8yq0b%2F8cIB3nwJuZCWojifHciLEHlknImPnit9D%2B4SbR6BHBM8%2BrYkCMKdtC4Lrt7cZONzYVzVEfWy2OBz69l56NQkrNtbKd4MVJ33WqLOG9OYfta96%2B0qS9Q5tkNIqQmY2zI2R%2B787%2B%2BR9I96BBRbnSOoFWzkqI84P80hWc7RNKmr%2FXVEIlKvtiEe5RubgTygBAFxiHyq3AO%2ByrOS0Immwx6H7mZth8LF4u%2BvsgjB4poZQQh33kfj%2F0mAfeCxC2ZldBbu3El%2FCw%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1616466813488.glb"
-        reveal              = "auto"
-        loading             = "lazy"
-        autoplay            = "true"
-        shadow-intensity    = ".97"
-        field-of-view       = "22deg"
-        exposure            = "1"
-        camera-target       = "auto auto auto"
-        camera-orbit        = "30deg 75deg 115%"
-        ar-placement        = "floor"
-        tone-mapping        = "aces"
-        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-        quick-look-browsers = "safari chrome"
-        min-field-of-view   = "10deg"
-        max-field-of-view   = "90deg"
-        min-camera-orbit    = "auto 0deg 5%"
-        max-camera-orbit    = "auto 180deg 350%">
-      </model-viewer>
-      <div class="info">
-        <a href="sports/" class="main-link">
-          <h3><br>Sports</h3>
-          <p>View more</p>
-        </a>
-      </div>
-    </div>
-    <div class="model-card">
-      <br>
-      <model-viewer 
-        ar
-        camera-controls
-        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/rnv3mhjcgh7n/7ls3pnqqsav0/model___1687944715571.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=tS%2FEQHIECoZxL%2F1OfMJw0W4m5d8SYKSY9YoLW%2Bh3ZdwldvuUpLi2g%2BODnJBaXHh1sKXEB0KxtR2EyvWlcJucWT7MoUuAbxa%2FpfGFybPKvc9If6ZIxYpVn0RTQ6%2B4lUu7mU0iuTl7yhfPDXbRE9E2H%2FnK4fmXn7xN9Tn%2F%2B24dCDCF4toqAtllxsyWuWFEkiWs4fUbwS%2BnnVhPLHl9o5gsHZjOlzrcRmy%2F70RailOuBJ0ZpI0PSLI2sFl038YDmGmA8T5v3JA5hRLwj0P%2B%2FM6IvIFjcZqwHTb1j9oEW4O0CFW5Rna8OEB6E3Nmktbb7FU8kyDejkzAX0u2gr5%2BCVF5MQ%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1687944715571.glb"
-        reveal              = "auto"
-        loading             = "lazy"
-        autoplay            = "true"
-        shadow-intensity    = ".97"
-        field-of-view       = "22deg"
-        exposure            = "1"
-        camera-target       = "auto auto auto"
-        camera-orbit        = "30deg 85deg 125%"
-        ar-placement        = "floor"
-        tone-mapping        = "aces"
-        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-        quick-look-browsers = "safari chrome"
-        min-field-of-view   = "10deg"
-        max-field-of-view   = "90deg"
-        min-camera-orbit    = "auto 0deg 5%"
-        max-camera-orbit    = "auto 180deg 350%">
-      </model-viewer>
-      <div class="info">
-        <a href="furnishings/" class="main-link">
-          <h3><br>Furnishings</h3>
-          <p>View more</p>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid-container">
-    <div class="model-card">
-      <br>
-      <model-viewer 
-        ar
-        camera-controls
-        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/ICFFIywI4rqpiyb9Mqo1/eq7d15NHxSOe3b9fgzF6/model___1714172245833.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=BFSRhR%2F%2BwQoj1zVjbCY6UWbICmkFLvtW5AwplnWJJ0rORWfqluubW75mVs7slogb7q3ygztXkYegTPUisJRxH%2FispdVe8DCPcJYqfIf7ICRUo7ErlePMvJxHIYUEDPUZQZbqkklslt27cUtgL9avwHqlv23ZZKKyXh1uLPHN%2Fr1kJ7vooK%2Fi%2FPkhqvPIISqvEne5iTBtpqS7o8P1GFLTdHTEy%2FwQEblTs3YhJ3v7doZuBsPN7eNGeeiFqhVEmW6wamqT2QJp0M8LOl7T81zoMMscTqlWj6157sqtAcHM%2FcDEKIH4g1RYw6HZYoxO89kJ8L0ZtjLVFcxRyNitN3PkwQ%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1714172245833.glb"
-        reveal              = "auto"
-        loading             = "lazy"
-        autoplay            = "true"
-        shadow-intensity    = ".97"
-        field-of-view       = "22deg"
-        exposure            = "1"
-        camera-target       = "auto auto auto"
-        camera-orbit        = "30deg 85deg 105%"
-        ar-placement        = "floor"
-        tone-mapping        = "aces"
-        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-        quick-look-browsers = "safari chrome"
-        min-field-of-view   = "10deg"
-        max-field-of-view   = "90deg"
-        min-camera-orbit    = "auto 0deg 5%"
-        max-camera-orbit    = "auto 180deg 350%">
-      </model-viewer>
-      <div class="info">
-        <a href="electronics/" class="main-link">
-          <h3><br>Electronics</h3>
-          <p>View more</p>
-        </a>
-      </div>
-    </div>
-
-    <div class="model-card">
-      <br>
-      <model-viewer 
-        ar
-        camera-controls
-        src                 = "https://storage.googleapis.com/spase-prod.appspot.com/cloudrunwork/filesoutput/6khH82kjzBXQT82njK6hPH050B43/KafycdnPHaUVJSV3ws3t/i9qio7ufjcyv/model___1670352956472.glb?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&Expires=2493158400&Signature=y18RplPPCAUdxAdVcqPz1xSB7XSCtdggM6thMz6DJ02cNdicZrrfDbe0MZLZYysm6aMQH7eSv6E0o5E%2Fz6klHxSelyv5lQj1tkBW%2F0TvEAjaEfyNhMcHjWtYqSxEq%2BTOpYBnbpf6WYus%2B89xqXjNyYDQJ5HlrTal7q9IvNWYHVSDLHiDlNNYwYoNGvTjRg7RgDrDzDjhssahKbq2hgtPD6D4CsUKwj74Wlz%2FwTZMSaGEukBFOWPM9LanhNfNMtNpr6KTj8aM6EQzcU5NFrwv3aRukGt6ebhkgAF8whDRriqmrK8L7Hs04bi8uZ35Hq02XQBuNjw9zsZV0h9yffax8Q%3D%3D&response-content-disposition=attachment%3B%20filename%3Dmodel___1670352956472.glb"
-        reveal              = "auto"
-        loading             = "lazy"
-        autoplay            = "true"
-        shadow-intensity    = ".97"
-        field-of-view       = "22deg"
-        exposure            = "1"
-        camera-target       = "auto auto auto"
-        camera-orbit        = "30deg 85deg 105%"
-        ar-placement        = "floor"
-        tone-mapping        = "aces"
-        environment-image   = "https://storage.googleapis.com/spase-prod.appspot.com/filesoutput/6khH82kjzBXQT82njK6hPH050B43/1vcEzTVHxy5bA5WRbEEH/976TPvWrDTkbOxxi58A8/hdr___1761578825964.hdr?GoogleAccessId=firebase-adminsdk-t4mui%40spase-prod.iam.gserviceaccount.com&amp;Expires=2493158400&amp;Signature=HwyWm5xtVqjmhGakCUaLWIHKGZTSNuXwCa9AdmAW83DYlyyLKNYF2V5vGJ%2FOn9hxftrTWeQ8B0R9r42hKx73gl2vMTr7CNj7vpw88QdrsCUgsMtvU9aVeg0OFBXhRA2AXTyrpVY85%2BZqk3SGkepQTmyfZ4Iwga30ENtKs6iQez8cJ1%2Bm0LoQlIYS6%2BAudrJIQuB3tSyWGgc0GW9DErvAMIjbI4f%2BdvCiwTFEnX4RFC%2BIuoMpfdwiJq2XP9ffb9lv474DKQxjH3Ph8b0Nw3sqM4Icy3%2FFQeRRAmXgXg6oNN2CSxIT%2FuLY5xngRwbs%2F8VgIhV8KDv3c7KaJ5aThEsASg%3D%3D&amp;response-content-disposition=attachment%3B%20filename%3Dhdr___1761578825964.hdr"
-        quick-look-browsers = "safari chrome"
-        min-field-of-view   = "10deg"
-        max-field-of-view   = "90deg"
-        min-camera-orbit    = "auto 0deg 5%"
-        max-camera-orbit    = "auto 180deg 350%">
-      </model-viewer>
-      <div class="info">
-        <a href="misc/" class="main-link">
-          <h3><br>Misc</h3>
-          <p>View more</p>
-        </a>
-      </div>
-    </div>
-
-  </div>    
-
-
-<!-- 
-  <script>
-    document.querySelectorAll('.model-card').forEach((card) => {
-      card.addEventListener('click', () => {
-        const viewer = card.querySelector('model-viewer');
-        if (viewer) {
-          viewer.dismissPoster();
-        }
-      });
-    });
-  </script> -->
-
-    <div class = "info">
-        <p>v0.10</p>
-    </div>
-    
-</body>
+  </body>
 </html>
 
 
