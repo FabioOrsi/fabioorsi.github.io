@@ -33,7 +33,7 @@
             }
 
             .info bio p {
-                max-width: 480px; 
+                max-width: 700px; 
                 margin: 0 0;
                 padding: 10px 100px;
                 line-height: 1.7;
@@ -44,7 +44,35 @@
 
             .lead-text {
                 text-align: left;
-                margin-bottom: 1.5rem;
+                width: 100%;
+                max-width: 700px;
+                padding-left: 0;
+                padding-right: 0; 
+            }
+
+            .expertise-list {
+                list-style: none;
+                padding: 0;
+                margin: 15px auto 0 auto;
+                max-width: 700px;
+                text-align: left;
+            }
+
+            .expertise-list li {
+                position: relative;
+                padding-left: 1.5rem;
+                margin-bottom: 10px;
+                line-height: 1.7;
+                color: #999;
+
+            }
+
+            .expertise-list li::before {
+                content: "-";
+                position: absolute;
+                left: 0;
+                font-weight: bold;
+                color: #999;
             }
 
             .cta-text {
@@ -58,6 +86,44 @@
                 font-size: 0.9rem;
                 opacity: 1;
             }
+
+            .expertise-dropdown summary {
+                list-style: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: #2a2a2a;
+                /* color: #999; */
+                color: #00d1ff;
+                border: 1px solid #444;
+                padding: 8px 16px;
+                border-radius: 6px;
+
+                font-family: 'Roboto', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+
+                transition: all 0.2s ease;
+                width: fit-content;
+                margin: 0 auto;
+            }
+
+            .expertise-dropdown summary:hover {
+                background: #333;
+                border-color: #00d1ff;
+                color: #00d1ff;
+            }
+
+            .expertise-dropdown summary::-webkit-details-marker {
+                display: none;
+            }
+
+            .expertise-dropdown[open] .chevron {
+                transform: rotate(180deg);
+            }
+
         </style>
     </head>
 
@@ -94,40 +160,90 @@
     <div class="grid-container">
         <div class="model-card" style="transform: none; border-color: #333;">
             <div class="info">
-                <h3 style="padding-top: 20px; margin-bottom: 5px;"><strong>Fabio Orsi</strong></h3>
-                <p style="margin: 0;">3D Artist & Developer</p>
+                <div class="logo-container" style="position: relative; height: 50px; margin-top: 40px;">
+                    <div class="logo-blue" style="left: 50%; translate: -50% -50%; transform: scale(2.7)"></div>
+                </div>
+                <h3 style="padding-top: 40px; margin-bottom: 5px;"><strong>
+                    Fabio Orsi
+                </strong></h3>
+                <p style="margin: 0;"><strong>
+                    3D Artist & Developer
+                </strong></p>
             </div>
+
             <hr class="tech-divider">
             <div class="info">
-                <bio>
-                    <p style="padding: 0 0;"><img src="/resources/media/image001.PNG" width="100%"></p>
-                    <p>As an Industrial Designer with a foundation in Control & Automation Engineering, I operate at the intersections of creative and technical development.</p>
-                </bio>
+                <bio><p>
+                    As an Industrial Designer with a foundation in Control & Automation Engineering, 
+                    I operate at the intersections of creative and technical development.
+                </p></bio>
             </div>
+
             <hr class="tech-divider">
             <div class="info">
-                <bio>
-                    <p>Beyond manual authoring, I have designed dozens of automated workflows that assisted in the production of hundreds of thousands of 3D models for various fields including medical, manufacturing, and product visualization for the Web and XR.</p>
-                    <br>
-                </bio>
+                <bio><p>
+                    Beyond manual authoring, I have designed dozens of automated workflows that assisted 
+                    in the production of hundreds of thousands of 3D models for various fields including 
+                    medical, manufacturing, and product visualization for the Web and XR.
+                </p></bio>
+                <br>
             </div>
-            <!-- <div class="info">
-                <bio style="opacity: 0.25;">
-                    <p style="color: tomato;">My expertise includes:</p>
-                    <p class="lead-text" style="padding: 0 100px; color: tomato;"><strong>Product Modeling:</strong><br>Creating photorealistic 3D assets derived from physical references and engineering data.</p>
-                    <p class="lead-text" style="color: tomato;"><strong>Technical Art & Automation:</strong> Designing custom algorithms to streamline complex pipelines within <strong>Blender</strong>, <strong>Substance Painter</strong>, and <strong>Enterprise Systems (CRM/ERP)</strong>.</p>
-                </bio>
-                <p class="cta-text"><span class="sub-text">Contact information can be found at the bottom of the page.</span></p>
-            </div> -->
+
+            <div class="info">
+                <details class="expertise-dropdown">
+                    <summary>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        <span>Detailed Skills</span>
+                        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </summary>
+                    <ul class="expertise-list">
+                        <li>
+                            <strong style="color: #00d1ff;">3D Modeling & Texturing:</strong><br>
+                            Creating photorealistic 3D assets derived from physical references and engineering data for 
+                            offline rendering and real-time visualization.
+                        </li>
+                        <li>
+                            <strong style="color: #00d1ff;">Product Design:</strong><br>
+                            Engineering and designing products utilizing specialized CAD software for prototyping and 
+                            mass manufacturing.
+                        </li>
+                        <li>
+                            <strong style="color: #00d1ff;">Technical Art & Automation:</strong><br>
+                            Coding algorithms to streamline and standardize complex pipelines in 3D authoring software 
+                            such as Blender and Substance Painter, generally in the form of custom tools and plugins.
+                        </li>
+                        <li>
+                            <strong style="color: #00d1ff;">Systems Integration:</strong><br>
+                            Developing solutions to integrate Enterprise Systems (CRMs/ERPs) and other web services,
+                            such as Odoo, Redmine, Google Cloud, AWS and Discord.
+                        </li>
+                        <li>
+                            <strong style="color: #00d1ff;">Industrial Automation:</strong><br>
+                            Bridging the gap between enterprise systems, 3D authoring software, and manufacturing by 
+                            automating end-to-end processes from order placement to CNC machining and 3D printing.
+                        </li>
+                    </ul>
+                </details>
+                <br>
+            </div>
+
+
         </div>
     </div>
 
-    <div class="grid-container" style="padding-bottom: 10px;">
+    <div class="grid-container" style="padding-bottom: 0px;">
         <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
             <hr class="tech-divider">
             <div class="info" style="width: 480px;">
-                <h3 style="padding-top: 10px;"><strong>Portfolio</strong></h3>
-                <!-- <p style="margin-top: 0px; margin-bottom: 10px;">A curated selection of my previous work:</p> -->
+                <h3 style="padding-top: 10px; margin-bottom: 0px;"><strong>Portfolio</strong></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="model-card" style="background-color: transparent; transform: none; border-color: transparent;">
+            <div class="info" style="padding-top: 0px;">
+                    <p>This portfolio is focused on my latest contributions in 3D Product Visualization and Workflow Automation:</p>
             </div>
         </div>
     </div>
