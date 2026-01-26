@@ -79,16 +79,19 @@ function updateButtonStates(card, index, total) {
 
 window.addEventListener('DOMContentLoaded', () => {
     const sharedConfig = {
+        quickLookBrowsers: "safari chrome",
         ar: true,
         cameraControls: true,
+
+        autoplay: false,
         reveal: "auto",
         loading: "lazy",
-        autoplay: true,
+        powerPreference: "low-power",
+        modelCacheSize: 0,
+
         toneMapping: "aces",
-        // environmentImage: "/resources/round_platform_1k.hdr",
-        quickLookBrowsers: "safari chrome",
         minFieldOfView: "10deg",
-        maxFieldOfView: "22deg",
+        maxFieldOfView: "22deg"
     };
 
     document.querySelectorAll('model-viewer').forEach(viewer => {
@@ -101,4 +104,22 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         viewer.setAttribute('shadow-intensity', '2.0');
     });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const viewer = entry.target;
+            if (entry.isIntersecting) {
+                // Restore the source when it enters the screen
+                if (viewer.dataset.src) viewer.src = viewer.dataset.src;
+            } else {
+                // Remove the source when it leaves the screen to free GPU RAM
+                if (viewer.src) {
+                    viewer.dataset.src = viewer.src;
+                    viewer.src = ""; 
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('model-viewer').forEach(viewer => observer.observe(viewer));
 });
