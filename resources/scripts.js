@@ -105,21 +105,21 @@ window.addEventListener('DOMContentLoaded', () => {
         viewer.setAttribute('shadow-intensity', '2.0');
     });
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const viewer = entry.target;
-            if (entry.isIntersecting) {
-                // Restore the source when it enters the screen
-                if (viewer.dataset.src) viewer.src = viewer.dataset.src;
-            } else {
-                // Remove the source when it leaves the screen to free GPU RAM
-                if (viewer.src) {
-                    viewer.dataset.src = viewer.src;
-                    viewer.src = ""; 
-                }
-            }
-        });
-    }, { threshold: 0.1 });
+    // const observer = new IntersectionObserver((entries) => {
+    //     entries.forEach(entry => {
+    //         const viewer = entry.target;
+    //         if (entry.isIntersecting) {
+    //             // Restore the source when it enters the screen
+    //             if (viewer.dataset.src) viewer.src = viewer.dataset.src;
+    //         } else {
+    //             // Remove the source when it leaves the screen to free GPU RAM
+    //             if (viewer.src) {
+    //                 viewer.dataset.src = viewer.src;
+    //                 viewer.src = ""; 
+    //             }
+    //         }
+    //     });
+    // }, { threshold: 0.1 });
     
-    document.querySelectorAll('model-viewer').forEach(viewer => observer.observe(viewer));
+    // document.querySelectorAll('model-viewer').forEach(viewer => observer.observe(viewer));
 });
