@@ -48,16 +48,16 @@ function update_button_states(card, index, total) {
 
 let back_to_top_btn = document.getElementById("backToTopBtn");
 
-window.addEventListener('load', () => {
-    document.querySelectorAll('.model-card').forEach(card => {
-        back_to_top_btn.style.display = "none";
-        const variants_attr = card.getAttribute('data-variants');
-        if (variants_attr) {
-            const variants = JSON.parse(variants_attr);
-            if (variants.length > 0) update_button_states(card, 0, variants.length);
-        }
-    });
-});
+// window.addEventListener('load', () => {
+//     document.querySelectorAll('.model-card').forEach(card => {
+//         back_to_top_btn.style.display = "none";
+//         const variants_attr = card.getAttribute('data-variants');
+//         if (variants_attr) {
+//             const variants = JSON.parse(variants_attr);
+//             if (variants.length > 0) update_button_states(card, 0, variants.length);
+//         }
+//     });
+// });
 
 window.onscroll = () => {
     const scroll_top = document.body.scrollTop || document.documentElement.scrollTop;
@@ -71,6 +71,25 @@ window.onscroll = () => {
 function top_function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+
+window.addEventListener('load', () => {
+    document.querySelectorAll('.model-card').forEach(card => {
+        if (back_to_top_btn) back_to_top_btn.style.display = "none";
+
+        const variants_attr = card.getAttribute('data-variants');
+        if (variants_attr) {
+            const variants = JSON.parse(variants_attr);
+            const viewer = card.querySelector('model-viewer');
+            
+            if (variants.length > 0) {
+                if (viewer) viewer.src = variants[0];
+                update_button_states(card, 0, variants.length);
+            }
+        }
+    });
+});
+
 
 window.addEventListener('DOMContentLoaded', () => {
     const shared_config = {
