@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Portfolio - F.Orsi</title>
+        <link rel="stylesheet" href="/resources/3dmodels.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+        <script src="/resources/scripts.js" defer></script>
+    </head>
+
+    <style>
+        .model-card-main {
+            position: relative;
+            background: #1e1e1e;
+            overflow: hidden;
+
+            border: 1px solid #333;
+            border-radius: 12px;
+
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1620px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .info bio p {
+            max-width: 700px; 
+            margin: 0 0;
+            padding: 10px 100px;
+            line-height: 1.7;
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+        }
+
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px auto 0 auto;
+            max-width: 700px;
+            text-align: left;
+        }
+
+        .expertise-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 10px;
+            line-height: 1.7;
+            color: #999;
+
+        }
+
+        .expertise-list li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #999;
+        }
+
+        .cta-text {
+            margin-top: 1.5rem;
+            text-align: center;
+            opacity: 0.5;
+            padding-top: 0.5rem;
+        }
+
+        .sub-text {
+            font-size: 0.9rem;
+            opacity: 1;
+        }
+
+        .expertise-dropdown summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #2a2a2a;
+            color: #00d1ff;
+            border: 1px solid #444;
+            padding: 8px 16px;
+            border-radius: 6px;
+
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+
+            transition: all 0.2s ease;
+            width: fit-content;
+            margin: 0 auto;
+
+            justify-content: flex-start;
+            min-width: 100px;
+        }
+
+        .expertise-dropdown summary:hover {
+            background: #333;
+            border-color: #00d1ff;
+            color: #00d1ff;
+        }
+
+        .expertise-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .expertise-dropdown summary::after {
+            content: "Show Detailed Skills";
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .expertise-dropdown[open] summary::after {
+            content: "Hide Detailed Skills";
+        }
+
+    </style>
+
+    <body>
+        <div id="top-title-bar" class="grid-container">
+            <div class="model-card" style="transform: none; border-color: #333;">
+                <a href="/"><div class="logo-container" title="Home"><div class="logo-blue"></div></div></a>
+                <div class="info">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            <span>Development</span>
+                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="menu-category">- Bio</div>
+                            <a href="/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Home</a>
+                            <div class="menu-category">- 3D Models</div>
+                            <a href="/furniture"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"></path><path d="M4 13h16M8 9h8M8 16h8M4 6l-1-2h18l-1 2M6 20v2m12-2v2"></path></svg>Furniture</a>
+                            <a href="/sports"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Sports</a>
+                            <a href="/furnishings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.07 5.07l13.86 13.86M5.07 18.93l13.86-13.86"></path></svg>Furnishings</a>
+                            <a href="/transportation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 15.5V5h3m-3 10.5h12"/></svg>Transportation</a>
+                            <a href="/electronics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>Electronics</a>
+                            <a href="/misc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>Misc</a>
+                            <div class="menu-category">- Tech Art & Automation</div>
+                            <a href="/coding" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Development</a>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="model-card" style="transform: none; border-color: #333;">
+                <div class="info">
+                    <div class="info">
+                        <div class="exp-sub">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); justify-items: center; align-items: center;">
+                                <div style="
+                                    width: 256px;
+                                    height: 256px;
+                                    background-color: rgba(0, 209, 255, 0.85);
+                                    position: relative;
+                                    -webkit-mask: url('/resources/media/techart.svg') no-repeat center;
+                                    -webkit-mask-size: contain;
+                                    mask: url('/resources/media/techart.svg') no-repeat center;
+                                    mask-size: contain;
+                                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);">
+                                </div>
+
+                                <div>
+                                    <h3 style="text-align: center; line-height: 1.5; padding-top: 0px;">
+                                        Technical Art &<br>Pipeline Automation
+                                    </h3>
+                                    <bio><p>
+                                        I have developed many custom scripts and plugins to standardize and automate
+                                        pipelines for high-volume production of 3D models, leveraging APIs from
+                                        software such as Blender and Substance Painter. These tools ensure project
+                                        consistency for different artists and teams while significantly reducing
+                                        repetitive manual work.
+                                    </p></bio>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="expertise-list">
+                            <li style="padding-bottom: 10px;">
+                                <strong style="color: #00d1ff; text-transform: uppercase;">
+                                    Workflow Standardization
+                                </strong><br>
+                                Enforcing naming conventions, file formats, and complex folder hierarchies
+                                across large-scale projects.
+                            </li>
+                            <li style="padding-bottom: 10px;">
+                                <strong style="color: #00d1ff; text-transform: uppercase;">
+                                    Environmental Synchronization
+                                </strong><br>
+                                Automating lighting and camera configurations to maintain visual parity
+                                between different 3D software suites.
+                            </li>
+                            <li style="padding-bottom: 10px;">
+                                <strong style="color: #00d1ff; text-transform: uppercase;">
+                                    Geometry & Shading Logic
+                                </strong><br>
+                                Scripting automated mesh generation, processing, and analysis alongside
+                                dynamic material and shader setups.
+                            </li>
+                            <li style="padding-bottom: 10px;">
+                                <strong style="color: #00d1ff; text-transform: uppercase;">
+                                    High-Volume Asset Management
+                                </strong><br>
+                                Implementing bulk import & export systems for 3D authoring software to
+                                streamline asset production and deployment.
+                            </li>
+                            <li style="padding-bottom: 10px;">
+                                <strong style="color: #00d1ff; text-transform: uppercase;">
+                                    Manufacturing and Mesh Processing Automation
+                                </strong><br>
+                                Writing scripts to fetch 3D models or references from cloud-based storage,
+                                process these meshes automatically, and send them to manufacturing using
+                                software for specialized industrial CNC machines and 3D printers.
+                            </li>
+                        </ul>
+                        <br>
+                        <hr class="tech-divider" style="width: 80%;">
+
+                        <div class="exp-sub">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); justify-items: center; align-items: center;">
+                                <div>
+                                    <h3 style="text-align: center; line-height: 1.5; padding-top: 0px;">
+                                        Systems Integration<br>& Middleware
+                                    </h3>
+                                    <bio><p>
+                                        I have designed and deployed multiple integration layers between Enterprise
+                                        Systems (ERP/CRM) and cloud-based web services to synchronize data across
+                                        teams, departments and companies. Implementations include:
+                                    </p></bio>
+                                </div>
+                                <div style="
+                                    width: 256px;
+                                    height: 256px;
+                                    background-color: rgba(0, 209, 255, 0.85);
+                                    position: relative;
+                                    -webkit-mask: url('/resources/media/integration.svg') no-repeat center;
+                                    -webkit-mask-size: contain;
+                                    mask: url('/resources/media/integration.svg') no-repeat center;
+                                    mask-size: contain;
+                                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="expertise-list">
+                            <li style="padding-bottom: 10px;">
+                                <strong style="color: #00d1ff; text-transform: uppercase;">
+                                    Healthcare Data Management
+                                </strong><br>
+                                Bridging Redmine and AWS to manage the secure retrieval, storage and delivery
+                                of high-resolution medical images and confidential patient information,
+                                including occasional anonymization.
+                            </li>
+                            <li style="padding-bottom: 10px;">
+                                <strong style="color: #00d1ff; text-transform: uppercase;">
+                                    Production Lifecycle
+                                </strong><br>
+                                Integrating Odoo with Google Cloud to automate the flow of CAD and
+                                manufacturing data from initial design to the factory floor and warehouse
+                                management, up to sales and marketing.
+                            </li>
+                            <li style="padding-bottom: 10px;">
+                                <strong style="color: #00d1ff; text-transform: uppercase;">
+                                    Cloud Operations & Monitoring
+                                </strong><br>
+                                Developing interfaces between Google Cloud, AWS and Discord to enable
+                                real-time system notifications, remote document control, automated
+                                translations, and more.
+                            </li>
+                        </ul>
+                        <br>
+                        <hr class="tech-divider" style="width: 80%;">
+
+
+
+
+
+
+                        <div class="exp-sub">
+                            <h3>Technical Art & Pipeline Automation</h3>
+                            <bio><p>
+                                I have developed many custom scripts and plugins to standardize and automate
+                                pipelines for high-volume production of 3D models, leveraging APIs from
+                                software such as Blender and Substance Painter. These tools ensure project
+                                consistency for different artists and teams while significantly reducing
+                                repetitive manual work. Implementations include:
+                            </p></bio>
+                        </div>
+
+                        <ul class="expertise-list">
+                            <li>
+                                <strong style="color: #00d1ff;">Workflow Standardization</strong><br>
+                                Enforcing naming conventions, file formats, and complex folder hierarchies
+                                across large-scale projects.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">Environmental Synchronization</strong><br>
+                                Automating lighting and camera configurations to maintain visual parity
+                                between different 3D software suites.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">Geometry & Shading Logic:</strong><br>
+                                Scripting automated mesh generation, processing, and analysis alongside
+                                dynamic material and shader setups.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">High-Volume Asset Management:</strong><br>
+                                Implementing bulk import & export systems for 3D authoring software to
+                                streamline asset production and deployment.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">Manufacturing and Mesh Processing Automation</strong><br>
+                                Writing scripts to fetch 3D models or references from cloud-based storage,
+                                process these meshes automatically, and send them to manufacturing using
+                                software for specialized industrial CNC machines and 3D printers.
+                            </li>
+                        </ul>
+
+                        <hr class="tech-divider" style="width: 80%;">
+
+
+
+                        <div class="exp-sub">
+                            <h4>Workflow Standardization</h4>
+                            <p>Enforcing naming conventions, file formats, and complex folder hierarchies across large-scale projects.</p>
+                        </div>
+                        <div class="exp-sub">
+                            <h4>Environmental Synchronization</h4>
+                            <p>Automating lighting and camera configurations to maintain visual parity between different 3D software suites.</p>
+                        </div>
+                        <div class="exp-sub">
+                            <h4>Geometry & Shading Logic</h4>
+                            <p>Scripting automated mesh generation, processing, and analysis alongside dynamic material and shader setups.</p>
+                        </div>
+                        <div class="exp-sub">
+                            <h4>Manufacturing Automation</h4>
+                            <p>Writing scripts to fetch 3D medical images from AWS/Redmine, processing meshes automatically, and preparing data for industrial 3D printers.</p>
+                        </div>
+                    </div>
+        
+                    <hr class="tech-divider">
+        
+                    <div class="info">
+                        <bio><p><strong>Systems Integration & Middleware:</strong> I have designed and deployed multiple integration layers between Enterprise Systems (ERP/CRM) and cloud-based web services to synchronize data across teams, departments, and companies.</p></bio>
+                        
+                        <div class="exp-sub">
+                            <h4>Healthcare Data Management</h4>
+                            <p>Bridging Redmine and AWS for secure retrieval and storage of high-resolution medical images and confidential patient information.</p>
+                        </div>
+                        <div class="exp-sub">
+                            <h4>Manufacturing Lifecycle</h4>
+                            <p>Integrating Odoo with Google Cloud to automate CAD and manufacturing data flow from design to the factory floor.</p>
+                        </div>
+                    </div>
+        
+                    <hr class="tech-divider">
+        
+                    <div class="info">
+                        <bio><p><strong>XR Research & Development:</strong> I have prototyped cross-platform VR/AR applications for Meta Quest and Pico, focusing on bridging cloud-based repositories with real-time spatial environments. These projects involved dynamically fetching assets, implementing physics, and overcoming challenges in Google Cloud authentication and AR shadow-casting.</p></bio>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid-container">
+            <div class="model-card" style="transform: none; border-color: #333; padding: 30px;">
+                <h3 style="color: #00d1ff;">Programming Language Stats</h3>
+                <div style="width: 100%; max-width: 400px; margin-top: 20px;">
+                    <div class="skill-row"><span>Python</span><span class="stars">★★★★★</span></div>
+                    <div class="skill-row"><span>C / C++</span><span class="stars">★★★☆☆</span></div>
+                    <div class="skill-row"><span>C#</span><span class="stars">★★☆☆☆</span></div>
+                    <div class="skill-row"><span>Web (JS/HTML/CSS)</span><span class="stars">★★☆☆☆</span></div>
+                    <div class="skill-row"><span>Java</span><span class="stars">★☆☆☆☆</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid-container">
+            <div class="model-card" style="transform: none; border-color: #333;">
+                <div class="info" style="padding: 40px 20px;">
+                    <h2 style="color: #00d1ff; margin-bottom: 20px;">Philosophy on AI</h2>
+                    <bio><p>I view Generative AI and LLMs primarily as tools for augmentation rather than replacements. Strategic integration acts as an enabler for artists and developers while maintaining a focus on technical excellence.</p></bio>
+                    
+                    <div class="exp-sub">
+                        <h4>Mesh Processing & Medical Imaging</h4>
+                        <p>Utilizing Machine Learning since 2016 for automated segmentation and classification of 3D medical models derived from CT scans.</p>
+                    </div>
+                    <div class="exp-sub">
+                        <h4>Software Development</h4>
+                        <p>Leveraging LLMs to synthesize fragmented API documentation, accelerate debugging, and prototype ad-hoc algorithms.</p>
+                    </div>
+                    <div class="exp-sub">
+                        <h4>3D Production Standards</h4>
+                        <p>Integrating AI upscaling and PBR parameter estimation (Substance Sampler) while maintaining a critical eye on topology and non-destructive editability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class = "info"><p>v0.90</p></div>
+        </div>
+    </body>
+</html>
+
+< Experience Overview:
+
+    < Technical Art & Pipeline Automation
+
+        I have developed many custom scripts and plugins to standardize and automate
+        pipelines for high-volume production of 3D models, leveraging APIs from
+        software such as Blender and Substance Painter. These tools ensure project
+        consistency for different artists and teams while significantly reducing
+        repetitive manual work. Implementations include:
+
+        < Workflow Standardization:
+        Enforcing naming conventions, file formats, and complex folder hierarchies
+        across large-scale projects.
+
+        < Environmental Synchronization:
+        Automating lighting and camera configurations to maintain visual parity
+        between different 3D software suites.
+
+        < Geometry & Shading Logic:
+        Scripting automated mesh generation, processing, and analysis alongside
+        dynamic material and shader setups.
+
+        < High-Volume Asset Management:
+        Implementing bulk import & export systems for 3D authoring software to
+        streamline asset production and deployment.
+
+        < Manufacturing and Mesh Processing Automation:
+        Writing scripts to fetch 3D medical images from AWS and Redmine, process
+        these meshes automatically, and send them to manufacturing using software
+        for specialized industrial 3D printers.
+
+    < Systems Integration & Middleware
+
+        I have designed and deployed multiple integration layers between Enterprise
+        Systems (ERP/CRM) and cloud-based web services to synchronize data across
+        teams, departments and companies. Implementations include:
+
+        < Healthcare Data Management:
+        Bridging Redmine and AWS to manage the secure retrieval, storage and delivery
+        of high-resolution medical images and confidential patient information,
+        including occasional anonymization.
+
+        < Manufacturing Lifecycle:
+        Integrating Odoo with Google Cloud to automate the flow of CAD and
+        manufacturing data from initial design to the factory floor and warehouse
+        management, up to sales and marketing.
+
+        < Cloud Operations & Monitoring:
+        Developing interfaces between Google Cloud, AWS and Discord to enable
+        real-time system notifications, remote document control, automated
+        translations, and more.
+
+
+    < XR Research & Development:
+
+        I have prototyped cross-platform VR/AR applications using Unity and Unreal
+        Engine for Meta Quest and Pico ecosystems. These projects focused on bridging
+        cloud-based asset repositories with real-time spatial environments.
+
+        The apps allowed the user to select from a list of 3D models, and it would
+        dynamically fetch the 3D model from a remote server into the XR environments,
+        adding physics and allowing the user to manipulate the asset in space.
+
+        Biggest challenges in both cases were accessing Google Cloud from the Meta
+        and Pico ecosystems and creating good shadow-casting solutions in AR.
+
+        While these remain personal R&D initiatives, they provided critical insights
+        into the infrastructure required for cloud-connected spatial computing.
+
+
+< Programing Language Stats
+
+    Python                      + + + + +
+    C/C++                       + + +
+    C#                          + +
+    Web (Javascript/HTML/CSS)   + +
+    Java                        +
+    Others                      +
+
+
+< Philosophy on AI
+
+    I view Generative AI and LLMs primarily as tools for augmentation rather than
+    full workflow replacements. While over-reliance in AI risks creative stagnation
+    and job obsolescence, strategic integration can act as an enabler and enhancer
+    for artists and developers across all fields. My personal experience with AI
+    includes:
+
+    < Mesh Processing & Medical Imaging:
+    My first hands-on contact with AI was in 2016, as I was designing algorithms for
+    3D Medical Imaging (CT/3D scans). I developed multiple mesh processing and mesh
+    analysis tools, including the use of Machine Learning for automated segmentation
+    and classification of medical 3D models.
+
+    < General Software Development:
+    As LLMs evolved with real-time web access, AI became significantly more reliable
+    to access technical information from fragmented API documentations, forums and
+    blog posts. I generally utilize LLMs to rapidly prototype ad-hoc algorithms, to
+    facilitate debugging processes, and to assist in documentation research for more
+    complex implementations.
+
+    < 3D Product Visualization:
+    The development of AI for image processing matured significantly earlier than
+    LLMs, allowing me to integrate AI-driven image upscaling for reference photos
+    many years ago. More recently, popular 3D authoring software such as Substance 3D
+    Sampler are increasingly adding AI tools, facilitating tasks such as estimating
+    PBR material parameters based on reference photos.
+
+    < General 3D Model Generation:
+    While the industry is currently flooded with generative 3D solutions, I maintain
+    a critical eye on output quality. In my experience, these automated products
+    currently fail to meet professional topology standards and lack the non-destructive
+    editability required for production-ready assets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
