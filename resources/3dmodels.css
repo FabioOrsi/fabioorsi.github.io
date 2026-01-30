@@ -439,8 +439,42 @@ model-viewer:-ms-fullscreen {
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: #555; /* Subtle grey to distinguish from links */
+    color: #555;
     letter-spacing: 1px;
   }
+
+.skill-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin: 5px auto;
+    color: #999;
+}
+
+.stars {
+    color: #00d1ff;
+    letter-spacing: 3px;
+}
+
+.exp-sub {
+    margin: 20px auto;
+    max-width: 700px;
+    /* border-left: 2px solid #333; */
+    /* padding-left: 20px; */
+    text-align: left;
+}
+
+.exp-sub h4 {
+    color: #00d1ff;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.exp-sub p {
+    padding: 0 !important;
+    color: #999;
+}
 
 
