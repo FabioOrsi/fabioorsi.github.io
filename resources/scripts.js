@@ -1,14 +1,12 @@
-function reset_camera(viewer_id, orbit, target, fov) {
-    const viewer = document.getElementById(viewer_id);
-    if (viewer) {
-      viewer.cameraOrbit = orbit;
-      viewer.cameraTarget = target;
-      viewer.fieldOfView = fov;
-    }
+function reset_view(element) {
+    const viewer = element.closest('model-viewer');
+    viewer.cameraOrbit = viewer.dataset.cameraOrbit;
+    viewer.cameraTarget = viewer.dataset.cameraTarget;
+    viewer.fieldOfView = viewer.dataset.fieldOfView;
 }
 
-function toggle_fullscreen(id, btn) {
-    const viewer = document.getElementById(id);
+function toggle_fullscreen(btn) {
+    const viewer = btn.closest('model-viewer');
     const icon_path = btn.querySelector('path');
     if (!document.fullscreenElement) {
       viewer.requestFullscreen?.() || viewer.webkitRequestFullscreen?.();
@@ -22,7 +20,10 @@ function toggle_fullscreen(id, btn) {
 function change_variant(btn, direction) {
     const card = btn.closest('.model-card');
     const viewer = card.querySelector('model-viewer');
-    const variants = JSON.parse(card.getAttribute('data-variants'));
+    // const variants = JSON.parse(card.getAttribute('data-variants'));
+    const raw = card.getAttribute('data-variants');
+    const variants = raw ? JSON.parse(raw.replace(/,\s*]/, ']')) : [];
+
     let index = parseInt(card.getAttribute('data-current-index'));
     const new_index = index + direction;
     
@@ -30,6 +31,10 @@ function change_variant(btn, direction) {
 
     card.setAttribute('data-current-index', new_index);
     viewer.src = variants[new_index];
+    viewer.cameraOrbit = viewer.dataset.cameraOrbit;
+    viewer.cameraTarget = viewer.dataset.cameraTarget;
+    viewer.fieldOfView = viewer.dataset.fieldOfView;
+    viewer.jumpCameraToGoal();
     update_button_states(card, new_index, variants.length);
 }
 
@@ -51,11 +56,6 @@ let back_to_top_btn = document.getElementById("backToTopBtn");
 window.addEventListener('load', () => {
     document.querySelectorAll('.model-card').forEach(card => {
         back_to_top_btn.style.display = "none";
-        // const variants_attr = card.getAttribute('data-variants');
-        // if (variants_attr) {
-        //     const variants = JSON.parse(variants_attr);
-        //     if (variants.length > 0) update_button_states(card, 0, variants.length);
-        // }
     });
 });
 
@@ -72,47 +72,91 @@ function top_function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-
 window.addEventListener('load', () => {
     document.querySelectorAll('.model-card').forEach(card => {
-        const variants_attr = card.getAttribute('data-variants');
-        if (variants_attr) {
-            const variants = JSON.parse(variants_attr);
-            const viewer = card.querySelector('model-viewer');
-            
-            if (variants.length > 0) {
-                if (viewer) viewer.src = variants[0];
-                update_button_states(card, 0, variants.length);
-            }
-        }
+        const viewer = card.querySelector('model-viewer');
+        const raw = card.getAttribute('data-variants');
+        const variants = raw ? JSON.parse(raw.replace(/,\s*]/, ']')) : [];
+
+        if (viewer) viewer.src = variants[0];
+        update_button_states(card, 0, variants.length);
     });
 });
-
 
 window.addEventListener('DOMContentLoaded', () => {
     const shared_config = {
         quickLookBrowsers: "safari chrome",
-        ar: true,
-        cameraControls: true,
         autoplay: false,
         reveal: "auto",
         loading: "lazy",
         powerPreference: "low-power",
         modelCacheSize: 0,
         toneMapping: "aces",
-        minFieldOfView: "10deg",
-        maxFieldOfView: "22deg"
     };
 
     document.querySelectorAll('model-viewer').forEach(viewer => {
         Object.assign(viewer, shared_config);
         
-        if (!viewer.getAttribute('environment-image')) {
-            viewer.environmentImage = "/resources/media/round_platform_1k.hdr";
-        }
-        if (!viewer.getAttribute('exposure')) {
-            viewer.setAttribute('exposure', '3');
-        }
-        viewer.setAttribute('shadow-intensity', '2.0');
+        if (!viewer.getAttribute('environment-image'))  viewer.environmentImage = "/resources/media/round_platform_1k.hdr";
+        if (!viewer.getAttribute('exposure'))           viewer.setAttribute('exposure', '3');
+        if (!viewer.getAttribute('min-field-of-view'))  viewer.setAttribute('min-field-of-view', '10deg');
+        if (!viewer.getAttribute('max-field-of-view'))  viewer.setAttribute('max-field-of-view', '22deg');
+        if (!viewer.getAttribute('shadow-intensity'))   viewer.setAttribute('shadow-intensity', '2.0');
+
+        const { cameraOrbit, cameraTarget, fieldOfView } = viewer.dataset;
+
+        viewer.cameraOrbit = cameraOrbit;
+        viewer.cameraTarget = cameraTarget;
+        viewer.fieldOfView = fieldOfView;
+        viewer.minFieldOfView = fieldOfView;
+
+        const parts = cameraOrbit.trim().split(/\s+/);
+        const radiusStr = parts[2];
+        const radiusValue = parseFloat(radiusStr); 
+        const minRadius = radiusValue + 80;
+        const maxRadius = radiusValue + 5;
+        const unit = radiusStr.replace(/[0-9.]/g, '');
+        viewer.minCameraOrbit = `auto auto ${minRadius}${unit}`;
+        viewer.maxCameraOrbit = `auto auto ${maxRadius}${unit}`;
     });
+});
+
+window.addEventListener('load', () => {
+    const devViewer = document.getElementById('development-viewer');
+    const logoViewer = document.getElementById('logo-viewer');
+    const menuViewers = document.querySelectorAll('.menu-viewer');
+
+    const getOrbitParts = (viewer) => {
+        if (!viewer) return null;
+        const parts = viewer.cameraOrbit.trim().split(/\s+/);
+        return {
+            theta: parseFloat(parts[0]),
+            phi: parts[1],
+            radius: parts[2],
+            unit: parts[0].replace(/[0-9.-]/g, '')
+        };
+    };
+
+    if (devViewer) {
+        const devBase = getOrbitParts(devViewer);
+        const logoBase = getOrbitParts(logoViewer);
+        menuViewers.forEach(mv => { mv._baseOrbit = getOrbitParts(mv); });
+
+        const amplitude = 15;
+        const frequency = 0.0003; 
+
+        const swing = (time) => {
+            const offset = amplitude * Math.sin(time * frequency);
+            
+            devViewer.cameraOrbit = `${devBase.theta + offset}${devBase.unit} ${devBase.phi} ${devBase.radius}`;
+            logoViewer.cameraOrbit = `${logoBase.theta + (3 * offset)}${logoBase.unit} ${logoBase.phi} ${logoBase.radius}`;
+            menuViewers.forEach(mv => {
+                mv.cameraOrbit = `${mv._baseOrbit.theta + (4 * offset)}${mv._baseOrbit.unit} ${mv._baseOrbit.phi} ${mv._baseOrbit.radius}`;
+            });
+
+            requestAnimationFrame(swing);
+        };
+
+        requestAnimationFrame(swing);
+    }
 });
