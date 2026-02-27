@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sports - 3D Portfolio - F.Orsi</title>
+        <title>Sports 3D Portfolio - F.Orsi</title>
         <link rel="stylesheet" href="/resources/3dmodels.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,201 +11,161 @@
     </head>
 
     <body>
+
         <div id="top-title-bar" class="grid-container">
-            <div class="model-card">
-                <a href="/"><div class="logo-container" title="Home"><div class="logo-blue"></div></div></a>
+            <div class="model-card" style="transform: none; border-color: #333;">
+                <a href="/"><div class="logo-container" title="Home"><div class="logo-blue" style="width: calc(1px * (48 + (36 - 48) * var(--resolution-threshold))); height: calc(1px * (48 + (36 - 48) * var(--resolution-threshold)));"></div></div></a>
                 <div class="info">
                     <div class="dropdown">
                         <button class="dropdown-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            <span>Sports</span>
-                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            <span style="margin: 0px auto;">sports</span>
+                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="dropdown-content">
-                            <div class="menu-category">- Bio</div>
-                            <a href="/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Home</a>
-                            <div class="menu-category">- 3D Models</div>
-                            <a href="/furniture"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"></path><path d="M4 13h16M8 9h8M8 16h8M4 6l-1-2h18l-1 2M6 20v2m12-2v2"></path></svg>Furniture</a>
-                            <a href="/sports" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Sports</a>
-                            <a href="/furnishings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.07 5.07l13.86 13.86M5.07 18.93l13.86-13.86"></path></svg>Furnishings</a>
-                            <a href="/transportation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 15.5V5h3m-3 10.5h12"/></svg>Transportation</a>
-                            <a href="/electronics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>Electronics</a>
-                            <a href="/misc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>Misc</a>
-                            <div class="menu-category">- Development</div>
-                            <a href="/codes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Codes</a>
+                            <a href="/">                                <div class="icon-home"></div>           Home                </a>
+                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                            <a href="/furniture">                       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
+                            <a href="/transportation">                  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
+                            <a href="/sports" class="active">           <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
+                            <a href="/furnishings">                     <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
+                            <a href="/electronics">                     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
+                            <a href="/apparel">                         <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
+                            <a href="/misc">                            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
                         </div>
                     </div>
                 </div>
-                <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
+                <button onclick="top_function()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
             </div>
         </div>
 
         <div class="grid-container">
-            <div class="model-card" style="background-color: transparent;">
+            <div class="model-card" style="background-color: transparent; border: transparent;">
                 <div class="info" style="padding-top: 0px;">
-                    <p>A selection of 3D models made in collaboration with multiple manufacturers:</p>
+                    <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 10px;">
+                        <div class="info">
+                            <h4>Creative Tools</h4>
+                            <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
+                                <div class="icon-blender"           title="Blender"                 style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                                <div class="icon-substance-painter" title="Substance 3D Painter"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                                <div class="icon-substance-sampler" title="Substance 3D Sampler"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                                <div class="icon-gimp"              title="GIMP"                    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                                <div class="icon-inkscape"          title="Inkscape"                style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Specifications</h4>
+                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Files Format:</span><span>glTF GLB</span></div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Materials Pipeline:</span><span>PBR Materials</span></div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Resolution:</span><span>2048x2048 *</span></div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Format:</span><span>KTX2 UASTC</span></div>
+                        </div>
+                    </div>
+                    <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
+                    <div class="subtext">
+                        * Some models may contain textures in 1024x1024<br>
+                        ** Some projects were made in collaboration with other artists
+                    </div>
                 </div>
             </div>
         </div>
 
-    <div class="portfolio-wrapper">
+        <div class="portfolio-wrapper">
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
-                        "/resources/media/sports/helmets/0001.glb",
-                        "/resources/media/sports/helmets/0002.glb",
-                        "/resources/media/sports/helmets/0003.glb",
-                        "/resources/media/sports/helmets/0004.glb",
-                        "/resources/media/sports/helmets/0005.glb"
-                    ]'>
-                    <br>
-                    <model-viewer
-                        id                  = "viewer1"
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/sports/protectivegear/1608b Original 1K UASTC DRACO.glb",
+                "/sports/protectivegear/1608a Original 1K UASTC DRACO.glb",
+                "/sports/protectivegear/1608c Original 1K UASTC DRACO.glb",
+                "/sports/protectivegear/2918 Original 2K UASTC DRACO.glb",
+                "/sports/protectivegear/3446 Original 2K UASTC DRACO.glb",
+                "/sports/protectivegear/1479 Original 2K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Protective Equipment</h3></div>
+                    <model-viewer camera-controls
                         environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
                         exposure            = "2"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "45deg 75deg 115%"
-                        max-camera-orbit    = "auto 180deg 115%">
-                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer1', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_camera('viewer1', '45deg 75deg 115%', 'auto auto auto', '22deg')">Reset View</button>
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "35deg 75deg 115%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <div class="info" style="padding: 15px;">
-                        <h3 style="padding-top: 20px;">Helmets</h3>
-                        <p>Most of these included different options for decals and colors.</p>
-                        <br>
-                    </div>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/sports/equipment/1234 Original 2K UASTC DRACO.glb",
+                "/sports/equipment/1361 Original 2K UASTC DRACO.glb",
+                "/sports/equipment/2374 Original 2K UASTC DRACO.glb",
+                "/sports/equipment/2581 Original 2K UASTC DRACO.glb",
+                "/sports/equipment/4268 Original 2K UASTC DRACO.glb",
+                "/sports/equipment/6633 Original 2K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Gear</h3></div>
+                    <model-viewer camera-controls
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "-30deg 70deg 100%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                    </model-viewer>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
-                        "/resources/media/sports/boxinggloves/0001.glb",
-                        "/resources/media/sports/boxinggloves/0002.glb",
-                        "/resources/media/sports/boxinggloves/0003.glb"
-                    ]'>
-                    <br>
-                    <model-viewer
-                        id                  = "viewer2"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "0deg 85deg 125%"
-                        max-camera-orbit    = "auto 180deg 125%">
-                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer2', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_camera('viewer2', '0deg 85deg 125%', 'auto auto auto', '22deg')">Reset View</button>
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/sports/bikes/3237 Original 1K UASTC DRACO.glb",
+                "/sports/bikes/2911 Original 1K UASTC DRACO.glb",
+                "/sports/bikes/1545 Original 1K UASTC DRACO.glb",
+                "/sports/bikes/3329 Original 1K UASTC DRACO.glb",
+                "/sports/bikes/0574 Original 1K UASTC DRACO.glb",
+                "/sports/bikes/1733 Original 1K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Performance Bikes & E-Bikes</h3></div>
+                    <model-viewer camera-controls
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 85deg 100%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <div class="info" style="padding: 15px;">
-                        <h3>Boxing Gloves</h3>
-                        <p>Most of these included different options for straps, materials and colors.</p>
-                    </div>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
-                        "/resources/media/sports/hockeysticks/0001.glb",
-                        "/resources/media/sports/hockeysticks/0002.glb",
-                        "/resources/media/sports/hockeysticks/0003.glb"
-                    ]'>
-                    <br>
-                    <model-viewer
-                        id                  = "viewer3"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "0deg 90deg 115%"
-                        max-camera-orbit    = "auto 180deg 115%">
-                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer3', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_camera('viewer3', '0deg 90deg 115%', 'auto auto auto', '22deg')">Reset View</button>
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/sports/miscelaneous/1292 Original 1K UASTC DRACO.glb",
+                "/sports/miscelaneous/0914 Original 1K UASTC DRACO.glb",
+                "/sports/miscelaneous/1547 Original 1K UASTC DRACO.glb",
+                "/sports/miscelaneous/6976 Original 2K UASTC DRACO.glb",
+                "/sports/miscelaneous/6977 Original 2K UASTC DRACO.glb",
+                "/sports/miscelaneous/0611 Original 2K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Miscelaneous</h3></div>
+                    <model-viewer camera-controls
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "-30deg 85deg 100%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <div class="info" style="padding: 15px;">
-                        <h3>Hockey Sticks</h3>
-                        <p>These included different options for decals and colors.</p>
-                    </div>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
                 </div>
             </div>
 
-            <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
-                        "/resources/media/sports/bikes/0001.glb",
-                        "/resources/media/sports/bikes/0002.glb",
-                        "/resources/media/sports/bikes/0003.glb"
-                    ]'>
-                    <br>
-                    <model-viewer
-                        id                  = "viewer4"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "0deg 85deg 100%"
-                        max-camera-orbit    = "auto 180deg 100%">
-                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer4', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_camera('viewer4', '0deg 85deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-                    </model-viewer>
-                    <div class="info" style="padding: 15px;">
-                        <h3>Performance Bikes & E-Bikes</h3>
-                        <p>Most of these included different options for addons and for body paints.</p>
-                        <p>* Made in collaboration with other artists from Spase Inc.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
-                        "/resources/media/sports/striders/0001.glb",
-                        "/resources/media/sports/striders/0002.glb"
-                    ]'>
-                    <br>
-                    <model-viewer
-                        id                  = "viewer5"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "180deg 75deg 100%"
-                        max-camera-orbit    = "auto 180deg 100%">
-                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer5', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_camera('viewer5', '180deg 75deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-                    </model-viewer>
-                    <div class="info" style="padding: 15px;">
-                        <h3>Striders</h3>
-                        <p>These included different options for size and colors.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
-                        "/resources/media/sports/kayaks/0001.glb",
-                        "/resources/media/sports/kayaks/0002.glb"
-                    ]'>
-                    <br>
-                    <model-viewer
-                        id                  = "viewer6"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "0deg 70deg 100%"
-                        max-camera-orbit    = "auto 180deg 100%">
-                        <button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen('viewer6', this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_camera('viewer6', '0deg 70deg 100%', 'auto auto auto', '22deg')">Reset View</button>
-                    </model-viewer>
-                    <div class="info" style="padding: 15px;">
-                        <h3>Foldable Kayaks</h3>
-                        <p>These projects also included the folded variants.</p>
-                        <p>* Made in collaboration with other artists from Spase Inc.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class = "info"><p>v0.90</p></div>
+            <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
+            <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
         </div>
     </body>
 </html>
