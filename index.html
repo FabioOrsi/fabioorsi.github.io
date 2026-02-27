@@ -137,54 +137,73 @@
     </head>
 
     <body>
+
         <div id="top-title-bar" class="grid-container">
             <div class="model-card" style="transform: none; border-color: #333;">
-                <a href="/"><div class="logo-container" title="Home"><div class="logo-blue"></div></div></a>
+                <a href="/">
+                    <div class="logo-container" title="Home">
+                        <div class="logo-blue" style="
+                                width:  calc((36 * var(--R) + 48 * (1 - var(--R))) * 1px);
+                                height: calc((36 * var(--R) + 48 * (1 - var(--R))) * 1px);
+                            ">
+                        </div>
+                    </div>
+                </a>
                 <div class="info">
                     <div class="dropdown">
                         <button class="dropdown-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            <span>Menu</span>
-                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            <span style="margin: 0px auto;">menu</span>
+                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="dropdown-content">
-                            <div class="menu-category">- Bio</div>
-                            <a href="/" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>Home</a>
-                            <div class="menu-category">- 3D Models</div>
-                            <a href="/furniture"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4z"></path><path d="M4 13h16M8 9h8M8 16h8M4 6l-1-2h18l-1 2M6 20v2m12-2v2"></path></svg>Furniture</a>
-                            <a href="/sports"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Sports</a>
-                            <a href="/furnishings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M5.07 5.07l13.86 13.86M5.07 18.93l13.86-13.86"></path></svg>Furnishings</a>
-                            <a href="/transportation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 15.5V5h3m-3 10.5h12"/></svg>Transportation</a>
-                            <a href="/electronics"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>Electronics</a>
-                            <a href="/misc"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>Misc</a>
-                            <div class="menu-category">- Development</div>
-                            <a href="/codes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Codes</a>
+                            <a href="/" class="active">                 <div class="icon-home"></div>           Home                </a>
+                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                            <a href="/furniture">                       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
+                            <a href="/transportation">                  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
+                            <a href="/sports">                          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
+                            <a href="/furnishings">                     <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
+                            <a href="/electronics">                     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
+                            <a href="/apparel">                         <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
+                            <a href="/misc">                            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
                         </div>
                     </div>
                 </div>
-                <button onclick="topFunction()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
+                <button onclick="top_function()" id="backToTopBtn" title="Go to top"><svg style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
             </div>
         </div>
 
         <div class="grid-container">
             <div class="model-card" style="transform: none; border-color: #333;">
                 <div class="info">
-                    <div class="logo-container" style="position: relative; height: 50px; margin-top: 40px;">
-                        <div class="logo-blue" style="left: 50%; translate: -50% -50%; transform: scale(2.7)"></div>
+                    <!-- <div class="logo-container" style="border: none !important; position: relative; padding: calc(1px * (180 + (120 - 180) * var(--resolution-threshold))) 0px 10px 0px;"> -->
+                    <div class="logo-container" style="border: none !important; position: relative; padding: 0px 0px 0px 0px;">
+                        <!-- <div class="logo-blue no-hover-transition" style="opacity: 85% !important; left: 50%; translate: -50% -50%; width: calc(1px * (140 + (92 - 140) * var(--resolution-threshold))); height: calc(1px * (140 + (92 - 140) * var(--resolution-threshold)));"></div> -->
+                        <model-viewer id="logo-viewer"
+                            src = "/resources/media/logo.glb"
+                            disable-zoom
+                            interaction-prompt  = "none"
+                            data-field-of-view  = "22deg"
+                            data-camera-target  = "auto auto auto"
+                            data-camera-orbit   = "0deg 90deg 60%"
+                            shadow-intensity = "0.0"
+                            style               = "
+                                width: calc((150 * var(--R) + 220 * (1 - var(--R))) * 1px);
+                                height: calc((150 * var(--R) + 220 * (1 - var(--R))) * 1px);
+                                background: transparent;
+                                box-shadow: none !important;">
+                        </model-viewer>
                     </div>
-                    <h3 style="padding-top: 40px; margin-bottom: 5px;"><strong>
-                        Fabio Orsi
-                    </strong></h3>
-                    <p style="margin: 0;"><strong>
-                        3D Artist & Developer
-                    </strong></p>
+                    <h3 style="margin: -10px 0px;"><strong>Fabio Orsi</strong></h3>
+                    <p style="margin: 16px 0px 10px;"><strong>3D Artist & Developer</strong></p>
                 </div>
 
                 <hr class="tech-divider">
                 <div class="info">
                     <bio><p>
-                        As an Industrial Designer with a foundation in Control & Automation Engineering, 
-                        I operate at the intersections of creative and technical development.
+                        As an Industrial Designer with a foundation in Control & Automation Engineering, I have always
+                        operated at the intersections of creative and technical development. Focused mainly in 3D and
+                        coding, my activities have almost always leaned towards those of a Tech Artist.
                     </p></bio>
                 </div>
 
@@ -192,7 +211,7 @@
                 <div class="info">
                     <bio><p>
                         Beyond manual authoring, I have designed dozens of automated workflows that assisted 
-                        in the production of hundreds of thousands of 3D models for various fields including 
+                        in the production and management of hundreds of thousands of 3D models for various fields including 
                         medical, manufacturing, and product visualization for the Web and XR.
                     </p></bio>
                     <br>
@@ -206,28 +225,32 @@
                         <ul class="expertise-list">
                             <li>
                                 <strong style="color: #00d1ff;">3D Modeling & Texturing:</strong><br>
-                                Creating photorealistic 3D assets derived from physical references and engineering data for 
-                                offline rendering and real-time visualization.
+                                Creating photorealistic 3D assets for offline rendering and real-time visualization (Web, XR and
+                                Game Engines) derived from concept art, photo references and technical drawings.
                             </li>
                             <li>
-                                <strong style="color: #00d1ff;">Product Design:</strong><br>
-                                Engineering and designing products utilizing specialized CAD software for prototyping and 
-                                mass manufacturing.
-                            </li>
-                            <li>
-                                <strong style="color: #00d1ff;">Technical Art & Automation:</strong><br>
-                                Coding algorithms to streamline and standardize complex pipelines in 3D authoring software 
-                                such as Blender and Substance Painter, generally in the form of custom tools and plugins.
+                                <strong style="color: #00d1ff;">Technical Art:</strong><br>
+                                Developing custom algorithms to automate and standardize complex and repetitive processes
+                                in 3D authoring software such as Blender and Substance Painter, through standalone scripts or
+                                fully API-integrated plugins, addons and extensions.
                             </li>
                             <li>
                                 <strong style="color: #00d1ff;">Systems Integration:</strong><br>
-                                Developing solutions to integrate Enterprise Systems (CRMs/ERPs) and other web services,
-                                such as Odoo, Redmine, Google Cloud, AWS and Discord.
+                                Designing middleware solutions to connect Enterprise Systems (CRMs/ERPs) and cloud-based
+                                web services such as Odoo, Redmine, Google Cloud, AWS, Slack and Discord, integrating teams
+                                within and between companies.
                             </li>
                             <li>
                                 <strong style="color: #00d1ff;">Industrial Automation:</strong><br>
-                                Bridging the gap between enterprise systems, 3D authoring software, and manufacturing by 
-                                automating end-to-end processes from order placement to CNC machining and 3D printing.
+                                Bridging gaps between enterprise systems, 3D/CAD software, and digital manufacturing by
+                                automating processes from order placement to production (CNC machining and 3D printing),
+                                up to packing and shipping.
+                            </li>
+                            <li>
+                                <strong style="color: #00d1ff;">Product Design:</strong><br>
+                                Utilizing specialized CAD software to engineer and design physical products at different stages
+                                of the product development cycle, from prototyping to mass production, always respecting the
+                                different constraints intrinsic to every manufacturing process.
                             </li>
                         </ul>
                     </details>
@@ -240,164 +263,197 @@
             <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
                 <hr class="tech-divider">
                 <div class="info" style="width: 480px;">
-                    <h3 style="padding-top: 10px; margin-bottom: 0px;"><strong>Portfolio</strong></h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-container">
-            <div class="model-card" style="background-color: transparent; transform: none; border-color: transparent;">
-                <div class="info" style="padding-top: 0px;">
-                        <p>This portfolio is focused on my latest contributions in 3D Product Visualization and Workflow Automation:</p>
+                    <h3 style="padding-top: 10px; margin-bottom: 20px;"><strong>Portfolio</strong></h3>
                 </div>
             </div>
         </div>
 
         <div class="portfolio-wrapper">
 
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
-                <div class="model-card" data-current-index="0" data-variants='["/resources/media/furniture/sofas/2881.glb"]'>
-                    <br>
-                    <model-viewer
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "30deg 80deg 100%"
-                        max-camera-orbit    = "auto 180deg 100%"
-                        style               = "width: 90%; height: 400px;">
-                    </model-viewer>
-                    <div class="info">
-                        <a href="furniture/" class="main-link">
-                            <h3>3D | Furniture</h3>
-                            <p>View more</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="model-card" data-current-index="0" data-variants='["/resources/media/transportation/motorcycles/0002.glb"]'>
-                    <br>
-                    <model-viewer
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "-90deg 90deg 100%"
-                        max-camera-orbit    = "auto 180deg 100%"
-                        style               = "width: 90%; height: 400px;">
-                    </model-viewer>
-                    <div class="info">
-                        <a href="transportation/" class="main-link">
-                            <h3>3D | Transportation</h3>
-                            <p>View more</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
-                <div class="model-card" data-current-index="0" data-variants='["/resources/media/sports/helmets/0001.glb"]'>
-                    <br>
-                    <model-viewer
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "2"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "30deg 80deg 110%"
-                        max-camera-orbit    = "auto 180deg 110%"
-                        style               = "width: 90%; height: 400px;">
-                    </model-viewer>
-                    <div class="info">
-                        <a href="sports/" class="main-link">
-                            <h3>3D | Sports</h3>
-                            <p>View more</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="model-card" data-current-index="0" data-variants='["/resources/media/furnishings/lamps/4561.glb"]'>
-                    <br>
-                    <model-viewer
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "2"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "30deg 80deg 125%"
-                        max-camera-orbit    = "auto 180deg 125%"
-                        style               = "width: 90%; height: 400px;">
-                    </model-viewer>
-                    <div class="info">
-                        <a href="furnishings/" class="main-link">
-                            <h3>3D | Furnishings</h3>
-                            <p>View more</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
             <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/resources/media/electronics/appliances/7325.glb"]'>
+                <div class="model-card" data-current-index="0" data-variants='["/resources/media/development_optimized.glb"]'>
                     <br>
-                    <model-viewer
-                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                        exposure            = "0.72"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "30deg 75deg 110%"
-                        max-camera-orbit    = "auto 180deg 110%"
-                        style               = "width: 90%; height: 400px;">
-                    </model-viewer>
+                    <a href="development/" id="model-card-link"><model-viewer id="development-viewer"
+                        disable-zoom
+                        interaction-prompt  = "none"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "3"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "-0.05m 0.35m -1m"
+                        data-camera-orbit   = "0deg 90deg 60%"
+                        style               = "
+                            width: calc((70 * var(--R) + 96 * (1 - var(--R))) * 1%);
+                            height: calc((400 * var(--R) + 525 * (1 - var(--R))) * 1px);">
+                    </model-viewer></a>
                     <div class="info">
-                        <a href="electronics/" class="main-link">
-                            <h3>3D | Electronics</h3>
-                            <p>View more</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                    <br>
-                    <model-viewer
-                        src                 = "/resources/media/electronics71628.glb"
-                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                        exposure            = "0.72"
-                        field-of-view       = "22deg"
-                        camera-target       = "auto auto auto"
-                        camera-orbit        = "30deg 75deg 120%"
-                        max-camera-orbit    = "auto 180deg 120%"
-                        style               = "width: 90%; height: 400px;">
-                    </model-viewer>
-                    <div class="info">
-                        <a href="misc/" class="main-link">
-                            <h3 style="color: gray;">3D | Misc</h3>
-                            <p>View more</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/resources/media/tv7604.glb"]'>
-                    <br>
-                    <a href="scripts/"><img src="/resources/media/image002.png" width="90%" style="display: block; margin-left: auto; margin-right: auto;"></a>
-                    <div class="info">
-                        <a href="scripts/" class="main-link">
-                            <h3 style="color: gray;">Codes</h3>
+                        <a href="development/" class="main-link">
+                            <h3 style="display: flex; align-items: center;">
+                                <span>Development</span>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2);"><div class="icon-list" style="background-color: rgba(0, 209, 255, 1);"></div></div>
+                            </h3>
+                            <h3 style="text-align: center; color: #999;">Technical Art,<br>Systems Integration,<br> XR & AI<br></h3>
                             <p>View details</p>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="grid-container" style="padding-bottom: 0px;">
+
+            <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
+                <div class="model-card" data-current-index="0" data-variants='["/furniture/sofas/2881.glb"]'>
+                    <br>
+                    <a href="furniture/" id="model-card-link"><model-viewer class="menu-viewer"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 80deg 100%"
+                        style               = "width: 96%; height: 400px;">
+                    </model-viewer></a>
+                    <div class="info">
+                        <a href="furniture/" class="main-link">
+                            <h3 style="display: flex; align-items: center;">
+                                <span>Furniture</span>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
+                            </h3>
+                            <p>View details</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="model-card" data-current-index="0" data-variants='["/transportation/motorcycles/0002.glb"]'>
+                    <br>
+                    <a href="transportation/" id="model-card-link"><model-viewer class="menu-viewer"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "-90deg 90deg 100%"
+                        style               = "width: 96%; height: 400px;">
+                    </model-viewer></a>
+                    <div class="info">
+                        <a href="transportation/" class="main-link">
+                            <h3 style="display: flex; align-items: center;">
+                                <span>Transportation</span>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
+                            </h3>
+                            <p>View details</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
+                <div class="model-card" data-current-index="0" data-variants='["/sports/protectivegear/1608a.glb"]'>
+                    <br>
+                    <a href="sports/" id="model-card-link"><model-viewer class="menu-viewer"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto 10cm auto"
+                        data-camera-orbit   = "0deg 80deg 110%"
+                        style               = "width: 96%; height: 400px;">
+                    </model-viewer></a>
+                    <div class="info">
+                        <a href="sports/" class="main-link">
+                            <h3 style="display: flex; align-items: center;">
+                                <span>Sports</span>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
+                            </h3>
+                            <p>View details</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="model-card" data-current-index="0" data-variants='["/furnishings/lamps/4561.glb"]'>
+                    <br>
+                    <a href="furnishings/" id="model-card-link"><model-viewer class="menu-viewer"
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "2"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 80deg 125%"
+                        style               = "width: 96%; height: 400px;">
+                    </model-viewer></a>
+                    <div class="info">
+                        <a href="furnishings/" class="main-link">
+                            <h3 style="display: flex; align-items: center;">
+                                <span>Furnishings</span>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
+                            </h3>
+                            <p>View details</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px;">
+                <div class="model-card" data-current-index="0" data-variants='["/electronics/appliances/7325.glb"]'>
+                    <br>
+                    <a href="electronics/" id="model-card-link"><model-viewer class="menu-viewer"
+                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                        exposure            = "0.72"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 75deg 110%"
+                        style               = "width: 96%; height: 400px;">
+                    </model-viewer></a>
+                    <div class="info">
+                        <a href="electronics/" class="main-link">
+                            <h3 style="display: flex; align-items: center;">
+                                <span>Electronics</span>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
+                            </h3>
+                            <p>View details</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="model-card" data-current-index="0" data-variants='["/apparel/misc/0876.glb"]'>
+                    <br>
+                    <a href="apparel/" id="model-card-link"><model-viewer class="menu-viewer"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "45deg 70deg 100%"
+                        style               = "width: 96%; height: 400px;">
+                    </model-viewer></a>
+                    <div class="info">
+                        <a href="apparel/" class="main-link">
+                            <h3 style="display: flex; align-items: center;">
+                                <span>Apparel</span>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
+                            </h3>
+                            <p>View details</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding-top: 0px; padding-bottom: 10px; display:flex; justify-content: center;">
+                <div class="model-card" style="width: 490px;" data-current-index="0" data-variants='["/misc/utensils/.glb"]'>
+                    <br>
+                    <model-viewer class="menu-viewer"
+                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                        exposure            = "0.72"
+                        data-field-of-view  = "22deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 60deg 100%"
+                        style               = "width: 96%; height: 400px;">
+                    </model-viewer>
+                    <div class="info">
+                        <a href="misc/" class="main-link">
+                            <h3 style="display: flex; align-items: center;">
+                                <span>Misc</span>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
+                            </h3>
+                            <p>View details</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid-container" style="padding-bottom: 10px;">
                 <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
                     <hr class="tech-divider">
                 </div>
             </div>
 
-            <div class="grid-container" style="padding-bottom: 20px;">
-                <div class="model-card" style="transform: none; border-color: #333;">
-                    <div class="info" style="width: 480px;">
-                        <h3><strong>Contact</strong></h3>
-                        <p style="margin-top: 0px; margin-bottom: 10px;">osb.fabio@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class = "info"><p>v0.90</p></div>
+            <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
+            <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
         </div>
     </body>
 </html>
