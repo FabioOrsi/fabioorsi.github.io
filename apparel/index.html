@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Apparel 3D Portfolio - F.Orsi</title>
+        <link rel="stylesheet" href="/resources/3dmodels.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+        <script src="/resources/scripts.js" defer></script>
+    </head>
+
+    <body>
+
+        <div id="top-title-bar" class="grid-container">
+            <div class="model-card" style="transform: none; border-color: #333;">
+                <a href="/"><div class="logo-container" title="Home"><div class="logo-blue" style="width: calc(1px * (48 + (36 - 48) * var(--resolution-threshold))); height: calc(1px * (48 + (36 - 48) * var(--resolution-threshold)));"></div></div></a>
+                <div class="info">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                            <span style="margin: 0px auto;">apparel</span>
+                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="/">                                <div class="icon-home"></div>           Home                </a>
+                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                            <a href="/furniture">                       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
+                            <a href="/transportation">                  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
+                            <a href="/sports">                          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
+                            <a href="/furnishings">                     <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
+                            <a href="/electronics">                     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
+                            <a href="/apparel" class="active">          <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
+                            <a href="/misc">                            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="top_function()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="model-card" style="background-color: transparent; border: transparent;">
+                <div class="info" style="padding-top: 0px;">
+                    <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 10px;">
+                        <div class="info">
+                            <h4>Creative Tools</h4>
+                            <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
+                                <div class="icon-blender"           title="Blender"                 style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                                <div class="icon-substance-painter" title="Substance 3D Painter"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                                <div class="icon-substance-sampler" title="Substance 3D Sampler"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                                <div class="icon-gimp"              title="GIMP"                    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                                <div class="icon-inkscape"          title="Inkscape"                style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Specifications</h4>
+                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Files Format:</span><span>glTF GLB</span></div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Materials Pipeline:</span><span>PBR Materials</span></div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Resolution:</span><span>2048x2048 *</span></div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Format:</span><span>KTX2 UASTC</span></div>
+                        </div>
+                    </div>
+                    <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
+                    <div class="subtext">
+                        * Some models may contain textures in 1024x1024<br>
+                        ** Some projects were made in collaboration with other artists
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-wrapper">
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/apparel/glasses/0876 Original 1K UASTC DRACO.glb",
+                "/apparel/glasses/0344 Original 1K UASTC DRACO.glb",
+                "/apparel/glasses/3556 Original 1K UASTC DRACO.glb",
+                "/apparel/glasses/0346 Original 1K UASTC DRACO.glb",
+                "/apparel/glasses/4238 Original 1K UASTC DRACO.glb",
+                "/apparel/glasses/0345 Original 1K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Glasses</h3></div>
+                    <model-viewer camera-controls
+                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                    exposure            = "0.5"
+                    data-field-of-view  = "22deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "30deg 75deg 90%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                    </model-viewer>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/apparel/handbags/1008 Original 2K UASTC DRACO.glb",
+                "/apparel/handbags/1303 Original 2K UASTC DRACO.glb",
+                "/apparel/handbags/1387 Original 2K UASTC DRACO.glb",
+                "/apparel/handbags/2187 Original 2K UASTC DRACO.glb",
+                "/apparel/handbags/2491 Original 2K UASTC DRACO.glb",
+                "/apparel/handbags/4143 Original 2K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Handbags</h3></div>
+                    <model-viewer camera-controls
+                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                    exposure            = "0.5"
+                    data-field-of-view  = "22deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "-30deg 80deg 110%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                    </model-viewer>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/apparel/backpacks/2331 Original 2K UASTC DRACO.glb",
+                "/apparel/backpacks/1069 Original 2K UASTC DRACO.glb",
+                "/apparel/backpacks/1950 Original 2K UASTC DRACO.glb",
+                "/apparel/backpacks/2558 Original 2K UASTC DRACO.glb",
+                "/apparel/backpacks/2563 Original 2K UASTC DRACO.glb",
+                "/apparel/backpacks/6683 Original 2K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Backpacks</h3></div>
+                    <model-viewer camera-controls
+                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                    exposure            = "0.5"
+                    data-field-of-view  = "22deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "30deg 88deg 120%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                    </model-viewer>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/apparel/shoes/0718 Original 2K UASTC DRACO.glb",
+                "/apparel/shoes/0717 Original 2K UASTC DRACO.glb",
+                "/apparel/shoes/0719 Original 2K UASTC DRACO.glb",
+                "/apparel/shoes/0722 Original 2K UASTC DRACO.glb",
+                "/apparel/shoes/0888 Original 2K UASTC DRACO.glb",
+                "/apparel/shoes/0772 Original 2K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Shoes</h3></div>
+                    <model-viewer camera-controls
+                    environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "2"
+                    data-field-of-view  = "22deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "135deg 75deg 120%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                    </model-viewer>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/apparel/clothing/0433 Original 2K UASTC DRACO.glb",
+                "/apparel/clothing/0370 Original 2K UASTC DRACO.glb",
+                "/apparel/clothing/0603 Original 2K UASTC DRACO.glb",
+                "/apparel/clothing/0800 Original 2K UASTC DRACO.glb",
+                "/apparel/clothing/0807 Original 2K UASTC DRACO.glb",
+                "/apparel/clothing/1434 Original 2K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Clothing</h3></div>
+                    <model-viewer camera-controls
+                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                    exposure            = "0.5"
+                    data-field-of-view  = "22deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "30deg 85deg 120%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                    </model-viewer>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="model-card" data-current-index="0" data-variants='[
+                "/apparel/watches/1563 Original 2K UASTC DRACO.glb",
+                "/apparel/watches/3065 Original 2K UASTC DRACO.glb",
+                "/apparel/watches/1743 Original 2K UASTC DRACO.glb",
+                "/apparel/watches/0427 Original 2K UASTC DRACO.glb",
+                "/apparel/watches/0593 Original 2K UASTC DRACO.glb",
+                "/apparel/watches/2997 Original 2K UASTC DRACO.glb",
+                ]'>
+                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Watches</h3></div>
+                    <model-viewer camera-controls
+                    environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                    exposure            = "0.5"
+                    data-field-of-view  = "22deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "30deg 75deg 150%">
+                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
+                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
+                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                    </model-viewer>
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                </div>
+            </div>
+
+            <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
+            <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
+        </div>
+    </body>
+</html>
+
+
