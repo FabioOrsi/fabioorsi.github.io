@@ -51,11 +51,13 @@
             }
 
             .expertise-list {
-                list-style: none;
-                padding: 0;
-                margin: 15px auto 0 auto;
-                max-width: 700px;
-                text-align: justify;
+                list-style:             none;
+                padding:                0;
+                margin:                 15px auto 0 auto;
+                width:                  90%;
+                max-width:              700px;
+                text-align:             justify;
+                font-size:              calc((0.9 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);
             }
 
             .expertise-list li {
@@ -68,11 +70,10 @@
             }
 
             .expertise-list li::before {
-                content: "-";
-                position: absolute;
-                left: 0;
-                font-weight: bold;
-                color: #999;
+                content:                "❱";
+                position:               absolute;
+                left:                   0;
+                color:                  #aaa;
             }
 
             .cta-text {
@@ -109,6 +110,9 @@
                 width:  660px;
                 margin: 0 auto;
 
+                margin-bottom: calc((10 * var(--R) + 20 * (1 - var(--R))) * 1px);
+
+
                 justify-content: center;
                 min-width: 100px;
             }
@@ -133,10 +137,12 @@
                 transform: rotate(180deg);
             }
 
-            .expertise-dropdown summary:hover {
-                background: #333;
-                border-color: #00d1ff;
-                color: #00d1ff;
+            @media (hover : hover) {
+                .expertise-dropdown summary:hover {
+                    background: #333;
+                    border-color: #00d1ff;
+                    color: #00d1ff;
+                }
             }
 
             .expertise-dropdown summary::-webkit-details-marker {
@@ -150,10 +156,6 @@
                 transition: all 0.2s ease;
             }
 
-            /* .expertise-dropdown[open] .skills-button::after{
-                content: "Skills";
-            } */
-
             .expertise-dropdown .experience-button::after {
                 content: "Experience";
                 font-family: 'Roboto', sans-serif;
@@ -161,15 +163,26 @@
                 transition: all 0.2s ease;
             }
 
-            /* .expertise-dropdown[open] .experience-button::after{
-                content: "Experience";
-            } */
-
             .expertise-dropdown .education-button::after {
                 content: "Education";
                 font-family: 'Roboto', sans-serif;
                 font-weight: 700;
                 transition: all 0.2s ease;
+            }
+
+            .experience-list {
+                font-size:          calc((0.9 * var(--R) + 1.3 * (1 - var(--R))) * 1rem);
+                padding-bottom:     calc((20 * var(--R) + 30 * (1 - var(--R))) * 1px);
+                margin-left:        0px;
+                margin-right:       0px;
+            }
+
+            .experience-list::before {
+                content: "·";
+                position: absolute;
+                left: 0px;
+                font-weight: bold;
+                color: #999;
             }
 
             .icon-skills {
@@ -272,7 +285,8 @@
                         </div>
                     </div>
                     <h3 style="margin: -10px 0px;"><strong>Fabio Orsi</strong></h3>
-                    <p style="margin: 16px 0px 10px;"><strong>3D Artist & Developer</strong></p>
+                    <p style="margin: 16px 0px 10px;"><strong>3D Tech Artist & Developer</strong></p>
+                    <!-- <p style="margin: 16px 0px 10px;"><strong>3D Artist & Developer</strong></p> -->
                 </div>
 
                 <hr class="tech-divider">
@@ -280,15 +294,15 @@
                     <bio><p>
                         As an Industrial Designer with a foundation in Control & Automation Engineering, I have always
                         worked at the intersections between the creative and technical worlds. Focused on 3D models
-                        and coding around them, most of my professional contributions could define me as a Tech Artist.
+                        and coding around them, most of my professional contributions define me as a Technical Artist.
                     </p></bio>
                 </div>
 
                 <hr class="tech-divider">
                 <div class="info">
                     <bio><p>
-                        Beyond manual authoring, I have designed dozens of automated workflows that assisted 
-                        in the production and management of hundreds of thousands of 3D models for various fields including 
+                        Beyond manual authoring, I have designed dozens of automated workflows that have scaled 
+                        the production and management of hundreds of thousands of 3D models for various fields including 
                         medical, manufacturing, and product visualization for the Web and XR.
                     </p></bio>
                 </div>
@@ -297,109 +311,99 @@
                 <br>
                 <div class="info">
                     <details class="expertise-dropdown">
-                        <summary class="skills-button" style="margin-bottom: 20px;"><div class="icon-skills"></div></summary>
+                        <summary class="skills-button"><div class="icon-skills"></div></summary>
                         <ul class="expertise-list">
-                            <br>
+                            <div style="height: 10px;"></div>
                             <li>
-                                <strong style="color: #00d1ff;">3D Modeling & Texturing:</strong><br>
-                                Creating photorealistic 3D assets for offline rendering and real-time visualization (Web, XR and
-                                Game Engines) derived from concept art, photo references and technical drawings.
-                                <br><br>
+                                <strong style="color: #00d1ff; text-transform: uppercase;">3D Modeling & Texturing</strong>
+                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
+                                <strong style="color: #aaa;">Creating assets</strong> for <strong style="color: #aaa;">offline rendering</strong>, real-time visualization <strong style="color: #aaa;">(Web, XR, Game Engines)</strong>, and <strong style="color: #aaa;">digital manufacturing</strong> based on concept art, photo references and technical drawings.
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff;">Technical Art:</strong><br>
-                                Developing custom algorithms to automate and standardize complex and repetitive processes
-                                in 3D authoring pipelines, either through standalone scripts or fully API-integrated plugins
-                                for software such as Blender and Substance Painter.
-                                <br><br>
+                                <strong style="color: #00d1ff; text-transform: uppercase;">Technical Art</strong>
+                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
+                                <strong style="color: #aaa;">Developing standalone scripts</strong> and <strong style="color: #aaa;">API-integrated plugins</strong> (e.g. for Blender, Substance Painter, GIMP) to <strong style="color: #aaa;">standardize and automate</strong> pipelines in <strong style="color: #aaa;">3D asset production</strong>.
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff;">Systems Integration:</strong><br>
-                                Designing middleware solutions to connect Enterprise Systems (CRMs/ERPs) and cloud-based
-                                web services such as Odoo, Redmine, Google Cloud, AWS, Slack and Discord, integrating teams
-                                within and between companies.
-                                <br><br>
+                                <strong style="color: #00d1ff; text-transform: uppercase;">Systems Integration</strong>
+                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
+                                <strong style="color: #aaa;">Designing middleware</strong> between <strong style="color: #aaa;">enterprise platforms (ERPs)</strong> and <strong style="color: #aaa;">web services</strong> (e.g. Redmine, Odoo, Google Cloud, AWS, Discord), <strong style="color: #aaa;">connecting systems</strong> within and across companies.
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff;">Industrial Automation:</strong><br>
-                                Bridging gaps between enterprise systems, 3D/CAD software, and digital manufacturing by
-                                automating processes from order placement to production (CNC machining and 3D printing),
-                                up to packing and shipping.
-                                <br><br>
+                                <strong style="color: #00d1ff; text-transform: uppercase;">Industrial Automation</strong>
+                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
+                                <strong style="color: #aaa;">Automating digital manufacturing pipelines</strong> (CNC machining and 3D printing), including tools for <strong style="color: #aaa;">bulk order placement</strong>, <strong style="color: #aaa;">mesh processing</strong>, <strong style="color: #aaa;">production</strong>, packing and shipping.
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff;">Product Design:</strong><br>
-                                Utilizing specialized CAD software to engineer and design physical products at different stages
-                                of the product development cycle, from prototyping to mass production, always respecting the
-                                different constraints intrinsic to every manufacturing process.
-                                <br>
+                                <strong style="color: #00d1ff; text-transform: uppercase;">Product Design</strong>
+                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
+                                <strong style="color: #aaa;">Engineering</strong> and <strong style="color: #aaa;">designing physical products</strong> at different stages of the development cycle, from <strong style="color: #aaa;">prototyping to mass production</strong>, utilizing specialized <strong style="color: #aaa;">CAD software</strong>.
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 50px; width: 100%;">
                             </li>
                         </ul>
-                        <hr class="tech-divider" style="justify-self: center; margin-top: 20px;"><br>
                     </details>
                     <details class="expertise-dropdown">
-                        <summary class="experience-button" style="margin-bottom: 20px;"><div class="icon-experience"></div></summary>
+                        <summary class="experience-button"><div class="icon-experience"></div></summary>
                         <ul class="expertise-list">
-                            <br>
+                            <div style="height: 10px;"></div>
                             <li>
-                                <strong style="color: #00d1ff;"> Spase, Inc. </strong><br>
-                                <strong>PROJECT MANAGER / TECH ARTIST</strong><br>
-                                <strong>Full-time</strong> - Jun 2019 - Dec 2025<br>
-                                <strong>Remote</strong> - San Jose, California, United States<br>
-                                <br>
-                                <strong>Activities:</strong>
-                                Developing custom algorithms to automate and standardize complex and repetitive processes
-                                in 3D authoring pipelines, either through standalone scripts or fully API-integrated plugins
-                                for software such as Blender and Substance Painter.
-                                <br><br>
+                                <strong style="color: #00d1ff; text-transform: uppercase;"> 3D Artist / Project Manager / Technical Lead </strong><br>
+                                <strong style="color: #cccccc; text-transform: uppercase;"> Spase Inc. </strong> - San Jose, California, United States <br>
+                                <strong style="color: #ccc;"> Remote </strong> - <strong style="color: #ccc;"> Full-time </strong> - Jun 2019 - Dec 2025 <br>
+                                <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
+                                <div class="experience-list"><strong style="color: #aaa;">Authoring photorealistic 3D assets</strong> for real-time product visualization in <strong style="color: #aaa;">e-commerce platforms (Web and XR)</strong> based on reference photos and technical drawings. </div>
+                                <div class="experience-list"><strong style="color: #aaa;">Scoping and quoting projects</strong> for new and recurring clients, <strong style="color: #aaa;">directing and briefing a team of diverse artists</strong>, and performing final <strong style="color: #aaa;">quality control and technical adjustments</strong> on 3D assets. </div>
+                                <div class="experience-list"><strong style="color: #aaa;">Creating internal tools</strong> to <strong style="color: #aaa;">standardize and optimize</strong> production pipelines (e.g. plugins for <strong style="color: #aaa;">Blender, Substance Painter, Chrome, GIMP</strong>). </div>
+                                <div class="experience-list"><strong style="color: #aaa;">Developing middleware</strong> to connect <strong style="color: #aaa;">back-end infrastructure</strong> (Google Sheets, Firebase, AWS) to team tools (<strong style="color: #aaa;">Discord</strong>) and 3D authoring software (<strong style="color: #aaa;">Blender, Substance Painter</strong>). </div>
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 0px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff;"> Смоленск мебель (Smolensk Mebel) </strong><br>
-                                <strong>AUTOMATION CONSULTANT</strong><br>
-                                <strong>Freelance</strong> - Sep 2019 - Dec 2018<br>
-                                <strong>On-Site</strong> - Smolensk, Smolensk, Russia<br>
-                                <br>
-                                <strong>Activities:</strong>
-                                Developing custom algorithms to automate and standardize complex and repetitive processes
-                                in 3D authoring pipelines, either through standalone scripts or fully API-integrated plugins
-                                for software such as Blender and Substance Painter.
-                                <br><br>
+                                <strong style="color: #00d1ff; text-transform: uppercase;"> Production Consultant </strong><br>
+                                <strong style="color: #cccccc; text-transform: uppercase;"> Смоленск мебель </strong> - Smolensk, Smolensk, Russia <br>
+                                <strong style="color: #ccc;"> On-Site </strong> - <strong style="color: #ccc;"> Freelance </strong> - Sep 2018 - Dec 2018<br>
+                                <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
+                                <div class="experience-list"><strong style="color: #aaa;">Deploying an ERP</strong> at a large-scale furniture manufacturing facility, <strong style="color: #aaa;">integrating custom systems</strong> such as CCTV, factory access control, inventory management tools and CNC machines. </div>
+                                <div class="experience-list"><strong style="color: #aaa;">Updating legacy designs and technical drawings</strong>, and performing the migration of historical manufacturing data into a <strong style="color: #aaa;">modern production pipeline</strong>. </div>
+                                <div class="experience-list"><strong style="color: #aaa;">Developing real-time scheduling algorithms</strong> to synchronize production cycles with <strong style="color: #aaa;">live data</strong> from sales, inventory, and logistics. </div>
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 0px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff;"> Dental Direct </strong><br>
-                                <strong>3D ARTIST / SOFTWARE DEVELOPER</strong><br>
-                                <strong>Full-time</strong> - Apr 2016 - Sep 2018<br>
-                                <strong>On-Site / Remote</strong> - São Paulo, São Paulo, Brazil<br>
-                                <br>
-                                <strong>Activities:</strong>
-                                Developing custom algorithms to automate and standardize complex and repetitive processes
-                                in 3D authoring pipelines, either through standalone scripts or fully API-integrated plugins
-                                for software such as Blender and Substance Painter.
-                                <br>
+                                <strong style="color: #00d1ff; text-transform: uppercase;"> 3D Artist / Software Developer </strong><br>
+                                <strong style="color: #cccccc; text-transform: uppercase;"> Dental Direct Brasil </strong> - São Paulo, São Paulo, Brazil<br>
+                                <strong style="color: #ccc;"> On-Site / Remote </strong> - <strong style="color: #ccc;"> Full-time </strong> - Apr 2016 - Sep 2018<br>
+                                <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
+                                <div class="experience-list"><strong style="color: #aaa;">Integrating systems</strong> for the <strong style="color: #aaa;">secure acquisition, storage, and management</strong> of confidential patient information and <strong style="color: #aaa;">3D medical imaging (CT/3D scans)</strong>. </div>
+                                <div class="experience-list"><strong style="color: #aaa;">Automating 3D medical images manipulation</strong> via custom algorithms for <strong style="color: #aaa;">volumetric analysis, parametric mesh generation</strong> and <strong style="color: #aaa;">mesh pre-processing</strong> for additive manufacturing. </div>
+                                <div class="experience-list"><strong style="color: #aaa;">Designing automated scheduling and runtime systems</strong> for Drop-on-Powder <strong style="color: #aaa;">3D printers</strong>, optimizing throughput based on <strong style="color: #aaa;">real-time logistics, delivery urgency</strong>, and <strong style="color: #aaa;">nesting efficiency</strong>. </div>
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 0px; margin-bottom: 50px; width: 100%;">
                             </li>
                         </ul>
-                        <hr class="tech-divider" style="justify-self: center; margin-top: 20px;"><br>
                     </details>
                     <details class="expertise-dropdown">
-                        <summary class="education-button" style="margin-bottom: 20px;"><div class="icon-education"></div></summary>
+                        <summary class="education-button"><div class="icon-education"></div></summary>
                         <ul class="expertise-list">
-                            <br>
+                            <div style="height: 10px;"></div>
                             <li>
-                                <strong style="color: #00d1ff;">Centro Universitário Belas Artes de São Paulo (FEBASP)</strong><br>
-                                <strong>Industrial and Product Design</strong><br>
+                                <strong style="color: #00d1ff; text-transform: none;"> Centro Universitário Belas Artes de São Paulo (FEBASP) </strong><br>
+                                <strong style="color: #cccccc; text-transform: none;"> Industrial and Product Design </strong><br>
                                 Graduated<br>
                                 2014 - 2017<br>
-                                <br>
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff;">Universidade Estadual de Campinas (UNICAMP)</strong><br>
-                                <strong>Control & Automation Engineering (Mechatronics)</strong><br>
+                                <strong style="color: #00d1ff; text-transform: none;"> Universidade Estadual de Campinas (UNICAMP) </strong><br>
+                                <strong style="color: #cccccc; text-transform: none;"> Control & Automation Engineering (Mechatronics) </strong><br>
                                 Incomplete<br>
                                 2009 - 2014<br>
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                         </ul>
-                        <hr class="tech-divider" style="justify-self: center; margin-top: 20px;"><br>
                     </details>
+                    <br>
                 </div>
             </div>
         </div>
