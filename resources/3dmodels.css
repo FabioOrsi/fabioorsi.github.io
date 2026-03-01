@@ -94,7 +94,7 @@ model-viewer::part(default-progress-bar) {
 
 .info p {
     color:              #999;
-    font-size:          calc((1.0 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);
+    font-size:          calc((0.9 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);
     font-family:        'Roboto', sans-serif;
     justify-self:       center;
     text-align:         justify;
