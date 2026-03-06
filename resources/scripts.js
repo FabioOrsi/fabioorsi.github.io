@@ -283,10 +283,10 @@ function handleAutoRotate() {
 
         if ((lowerBound && upperBound) || isFullscreen) {
             if (!viewer.hasAttribute('camera-controls')) {viewer.setAttribute('camera-controls', '');}
-            // if (!viewer.hasAttribute('auto-rotate')) {viewer.setAttribute('auto-rotate', '');}
+            if (!viewer.hasAttribute('auto-rotate')) {viewer.setAttribute('auto-rotate', '');}
         } else {
             if (viewer.hasAttribute('camera-controls')) {viewer.removeAttribute('camera-controls');}
-            // if (viewer.hasAttribute('auto-rotate')) {viewer.removeAttribute('auto-rotate');}
+            if (viewer.hasAttribute('auto-rotate')) {viewer.removeAttribute('auto-rotate');}
         }
     });
 }
