@@ -3,6 +3,8 @@
     <head>
         <title>Transportation 3D Portfolio - F.Orsi</title>
         <link rel="stylesheet" href="/resources/3dmodels.css">
+        <link rel="stylesheet" href="/resources/style_icons.css">
+        <link rel="stylesheet" href="/resources/style_viewers.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -19,12 +21,12 @@
                     <div class="dropdown">
                         <button class="dropdown-btn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            <span style="margin: 0px auto;">transportation</span>
+                            <span style="margin: 0px auto;"> menu </span>
                             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="dropdown-content">
                             <a href="/">                                <div class="icon-home"></div>           Home                </a>
-                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-list"></div></a>
                             <a href="/furniture">                       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
                             <a href="/transportation" class="active">   <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
                             <a href="/sports">                          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
@@ -41,31 +43,30 @@
 
         <div class="grid-container">
             <div class="model-card" style="background-color: transparent; border: transparent;">
-                <div class="info" style="padding-top: 0px;">
-                    <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 10px;">
-                        <div class="info">
-                            <h4>Creative Tools</h4>
-                            <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
-                                <div class="icon-blender"           title="Blender"                 style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-substance-painter" title="Substance 3D Painter"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-substance-sampler" title="Substance 3D Sampler"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-gimp"              title="GIMP"                    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-inkscape"          title="Inkscape"                style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <h4>Specifications</h4>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Files Format:</span><span>glTF GLB</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Materials Pipeline:</span><span>PBR Materials</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Resolution:</span><span>2048x2048 *</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Format:</span><span>KTX2 UASTC</span></div>
+                <div class="title-gallery"> Transportation <div class="icon-3d-card"> 3D </div></div>
+                <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 0px;">
+                    <div>
+                        <div class="title-specs"> Creative Tools </div>
+                        <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
+                            <div class="icon-blender"           title="Blender"></div>
+                            <div class="icon-substance-painter" title="Substance 3D Painter"></div>
+                            <div class="icon-substance-sampler" title="Substance 3D Sampler"></div>
+                            <div class="icon-gimp"              title="GIMP"></div>
+                            <div class="icon-inkscape"          title="Inkscape"></div>
                         </div>
                     </div>
-                    <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
-                    <div class="subtext">
-                        * Some models may contain textures in 1024x1024<br>
-                        ** Some projects were made in collaboration with other artists
+                    <div>
+                        <div class="title-specs"> Specifications </div>
+                        <div class="specs-table"><span>Files Format:</span>         <span>glTF GLB</span></div>
+                        <div class="specs-table"><span>Materials Pipeline:</span>   <span>PBR Materials</span></div>
+                        <div class="specs-table"><span>Textures Resolution:</span>  <span>2048x2048 *</span></div>
+                        <div class="specs-table"><span>Textures Format:</span>      <span>KTX2 UASTC</span></div>
                     </div>
+                </div>
+                <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
+                <div class="subtext">
+                    * Some models may contain textures in 1024x1024<br>
+                    ** Some projects were made in collaboration with other artists
                 </div>
             </div>
         </div>
@@ -73,38 +74,40 @@
         <div class="portfolio-wrapper">
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/transportation/motorcycles/1589 Original 1K UASTC DRACO.glb",
-                "/transportation/motorcycles/1025 Original 1K UASTC DRACO.glb",
-                "/transportation/motorcycles/0646 Original 1K UASTC DRACO.glb",
-                "/transportation/motorcycles/1256 Original 1K UASTC DRACO.glb",
-                "/transportation/motorcycles/3101 Original 1K UASTC DRACO.glb",
-                "/transportation/motorcycles/2340 Original 1K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Motorcycles</h3></div>
-                    <model-viewer camera-controls
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/transportation/motorcycles/1589",
+                        "/transportation/motorcycles/1025",
+                        "/transportation/motorcycles/0646",
+                        "/transportation/motorcycles/2340",
+                        "/transportation/motorcycles/1256",
+                        "/transportation/motorcycles/3101",
+                    ]'>
+                    <div class="card-title"> Motorcycles </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         data-field-of-view  = "22deg"
                         data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "-90deg 90deg 100%">
+                        data-camera-orbit   = "0deg 90deg 100%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/transportation/ebikes/1556 Original 1K UASTC DRACO.glb",
-                "/transportation/ebikes/1504 Original 1K UASTC DRACO.glb",
-                "/transportation/ebikes/1558 Original 1K UASTC DRACO.glb",
-                "/transportation/ebikes/1560 Original 1K UASTC DRACO.glb",
-                "/transportation/ebikes/3404 Original 1K UASTC DRACO.glb",
-                "/transportation/ebikes/4262 Original 1K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Electric Bikes</h3></div>
-                    <model-viewer camera-controls
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/transportation/ebikes/1556",
+                        "/transportation/ebikes/1504",
+                        "/transportation/ebikes/1558",
+                        "/transportation/ebikes/1560",
+                        "/transportation/ebikes/3404",
+                        "/transportation/ebikes/4262",
+                    ]'>
+                    <div class="card-title"> Electric Bikes </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         data-field-of-view  = "22deg"
                         data-camera-target  = "auto auto auto"
                         data-camera-orbit   = "0deg 88deg 100%">
@@ -112,16 +115,17 @@
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/transportation/cars/2490 Original 1K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Cars</h3></div>
-                    <model-viewer camera-controls
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/transportation/cars/2490",
+                    ]'>
+                    <div class="card-title"> Cars </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         data-field-of-view  = "22deg"
                         data-camera-target  = "auto auto auto"
                         data-camera-orbit   = "0deg 88deg 100%">
@@ -129,34 +133,36 @@
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/transportation/scooters/1316 Original 1K UASTC DRACO.glb",
-                "/transportation/scooters/1068 Original 1K UASTC DRACO.glb",
-                "/transportation/scooters/1067 Original 1K UASTC DRACO.glb",
-                "/transportation/scooters/3226 Original 1K UASTC DRACO.glb",
-                "/transportation/scooters/3241 Original 1K UASTC DRACO.glb",
-                "/transportation/scooters/3243 Original 1K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Electric Scooters</h3></div>
-                    <model-viewer camera-controls
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/transportation/scooters/1316",
+                        "/transportation/scooters/1068",
+                        "/transportation/scooters/1067",
+                        "/transportation/scooters/3226",
+                        "/transportation/scooters/3241",
+                        "/transportation/scooters/3243",
+                    ]'>
+                    <div class="card-title"> Electric Scooters </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         data-field-of-view  = "22deg"
                         data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "180deg 75deg 100%">
+                        data-camera-orbit   = "0deg 75deg 100%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
             <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
+            <div style="height: 200px;"></div>
         </div>
     </body>
 </html>
