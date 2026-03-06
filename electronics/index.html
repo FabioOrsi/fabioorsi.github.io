@@ -3,6 +3,8 @@
     <head>
         <title>Electronics 3D Portfolio - F.Orsi</title>
         <link rel="stylesheet" href="/resources/3dmodels.css">
+        <link rel="stylesheet" href="/resources/style_icons.css">
+        <link rel="stylesheet" href="/resources/style_viewers.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -19,12 +21,12 @@
                     <div class="dropdown">
                         <button class="dropdown-btn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            <span style="margin: 0px auto;">electronics</span>
+                            <span style="margin: 0px auto;"> menu </span>
                             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="dropdown-content">
                             <a href="/">                                <div class="icon-home"></div>           Home                </a>
-                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-list"></div></a>
                             <a href="/furniture">                       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
                             <a href="/transportation">                  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
                             <a href="/sports">                          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
@@ -41,31 +43,30 @@
 
         <div class="grid-container">
             <div class="model-card" style="background-color: transparent; border: transparent;">
-                <div class="info" style="padding-top: 0px;">
-                    <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 10px;">
-                        <div class="info">
-                            <h4>Creative Tools</h4>
-                            <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
-                                <div class="icon-blender"           title="Blender"                 style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-substance-painter" title="Substance 3D Painter"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-substance-sampler" title="Substance 3D Sampler"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-gimp"              title="GIMP"                    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-inkscape"          title="Inkscape"                style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <h4>Specifications</h4>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Files Format:</span><span>glTF GLB</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Materials Pipeline:</span><span>PBR Materials</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Resolution:</span><span>2048x2048 *</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Format:</span><span>KTX2 UASTC</span></div>
+                <div class="title-gallery"> Electronics <div class="icon-3d-card"> 3D </div></div>
+                <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 0px;">
+                    <div>
+                        <div class="title-specs"> Creative Tools </div>
+                        <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
+                            <div class="icon-blender"           title="Blender"></div>
+                            <div class="icon-substance-painter" title="Substance 3D Painter"></div>
+                            <div class="icon-substance-sampler" title="Substance 3D Sampler"></div>
+                            <div class="icon-gimp"              title="GIMP"></div>
+                            <div class="icon-inkscape"          title="Inkscape"></div>
                         </div>
                     </div>
-                    <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
-                    <div class="subtext">
-                        * Some models may contain textures in 1024x1024<br>
-                        ** Some projects were made in collaboration with other artists
+                    <div>
+                        <div class="title-specs"> Specifications </div>
+                        <div class="specs-table"><span>Files Format:</span>         <span>glTF GLB</span></div>
+                        <div class="specs-table"><span>Materials Pipeline:</span>   <span>PBR Materials</span></div>
+                        <div class="specs-table"><span>Textures Resolution:</span>  <span>2048x2048 *</span></div>
+                        <div class="specs-table"><span>Textures Format:</span>      <span>KTX2 UASTC</span></div>
                     </div>
+                </div>
+                <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
+                <div class="subtext">
+                    * Some models may contain textures in 1024x1024<br>
+                    ** Some projects were made in collaboration with other artists
                 </div>
             </div>
         </div>
@@ -73,38 +74,41 @@
         <div class="portfolio-wrapper">
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                    "/electronics/tvs/7604 Original 2K UASTC.glb",
-                    "/electronics/tvs/7088 Original 2K UASTC.glb",
-                    "/electronics/tvs/7605 Original 2K UASTC.glb",
-                    "/electronics/tvs/6789 Original 2K UASTC.glb",
-                    "/electronics/tvs/0695 Original 2K UASTC.glb",
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/electronics/tvs/7604",
+                        "/electronics/tvs/7605",
+                        "/electronics/tvs/6789",
+                        "/electronics/tvs/6867",
+                        "/electronics/tvs/8093",
+                        "/electronics/tvs/7088",
                     ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Smart TVs</h3></div>
-                    <model-viewer camera-controls
-                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                        exposure            = "0.72"
-                        data-field-of-view  = "22deg"
+                    <div class="card-title"> Smart TVs </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "30deg 80deg 110%">
+                        data-camera-orbit   = "45deg 80deg 100%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                        <button class="view-button" onclick="save_poster(this)" title="Save Image"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
+
+
             <div class="grid-container">
                 <div class="model-card" data-current-index="0" data-variants='[
-                    "/electronics/phones/1728 Original 2K UASTC.glb",
-                    "/electronics/phones/1698 Original 2K UASTC.glb",
-                    "/electronics/phones/0438 Original 2K UASTC.glb",
-                    "/electronics/phones/1480 Original 2K UASTC.glb",
-                    "/electronics/phones/1722 Original 2K UASTC.glb",
+                    "/electronics/phones/1728",
+                    "/electronics/phones/0438",
+                    "/electronics/phones/1480",
+                    "/electronics/phones/1698",
+                    "/electronics/phones/1722",
                     ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Smartphones</h3></div>
-                    <model-viewer camera-controls
+                    <div class="info"><h3 style="margin: 30px; color: #ccc;">Smartphones</h3></div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         environment-image   = "/resources/media/interior_Original_mirror.hdr"
                         exposure            = "0.72"
                         data-field-of-view  = "22deg"
@@ -113,25 +117,26 @@
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                        <button class="view-button" onclick="save_poster(this)" title="Save Image"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 50px; ">
                 </div>
             </div>
 
             <div class="grid-container">
                 <div class="model-card" data-current-index="0" data-variants='[
-                "/electronics/appliances/7329 Original 2K UASTC DRACO.glb",
-                "/electronics/appliances/7136 Original 2K UASTC DRACO.glb",
-                "/electronics/appliances/7137 Original 2K UASTC DRACO.glb",
-                "/electronics/appliances/7361 Original 2K UASTC DRACO.glb",
-                "/electronics/appliances/7345 Original 2K UASTC DRACO.glb",
-                "/electronics/appliances/5989 Original 2K UASTC DRACO.glb",
-                "/electronics/appliances/7333 Original 2K UASTC DRACO.glb",
-                "/electronics/appliances/7363 Original 2K UASTC DRACO.glb",
-                "/electronics/appliances/7439 Original 2K UASTC DRACO.glb",
+                "/electronics/appliances/7329",
+                "/electronics/appliances/7136",
+                "/electronics/appliances/7137",
+                "/electronics/appliances/7361",
+                "/electronics/appliances/7345",
+                "/electronics/appliances/5989",
+                "/electronics/appliances/7333",
+                "/electronics/appliances/7363",
+                "/electronics/appliances/7439",
                 ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Appliances</h3></div>
-                    <model-viewer camera-controls
+                <div class="info"><h3 style="margin: 30px; color: #ccc;">Appliances</h3></div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         environment-image   = "/resources/media/interior_Original_mirror.hdr"
                         exposure            = "0.72"
                         data-field-of-view  = "22deg"
@@ -140,25 +145,26 @@
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                        <button class="view-button" onclick="save_poster(this)" title="Save Image"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 50px; ">
                 </div>
             </div>
 
             <div class="grid-container">
                 <div class="model-card" data-current-index="0" data-variants='[
-                    "/electronics/misc/0761 Original 1K UASTC DRACO.glb",
-                    "/electronics/misc/7034 Original 2K UASTC DRACO.glb",
-                    "/electronics/misc/2511 Original 1K UASTC DRACO.glb",
-                    "/electronics/misc/3169 Original 1K UASTC DRACO.glb",
-                    "/electronics/misc/6576 Original 2K UASTC DRACO.glb",
-                    "/electronics/misc/2080 Original 2K UASTC DRACO.glb",
-                    "/electronics/misc/0817 Original 1K UASTC DRACO.glb",
-                    "/electronics/misc/1628 Original 1K UASTC DRACO.glb",
-                    "/electronics/misc/6801 Original 2K UASTC DRACO.glb",
+                    "/electronics/misc/0761",
+                    "/electronics/misc/7034",
+                    "/electronics/misc/2511",
+                    "/electronics/misc/3169",
+                    "/electronics/misc/6576",
+                    "/electronics/misc/2080",
+                    "/electronics/misc/0817",
+                    "/electronics/misc/1628",
+                    "/electronics/misc/6801",
                     ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Miscelaneous</h3></div>
-                    <model-viewer camera-controls
+                    <div class="info"><h3 style="margin: 30px; color: #ccc;">Miscelaneous</h3></div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         environment-image   = "/resources/media/interior_Original_mirror.hdr"
                         exposure            = "0.72"
                         data-field-of-view  = "22deg"
@@ -167,14 +173,16 @@
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
+                        <button class="view-button" onclick="save_poster(this)" title="Save Image"><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 50px; ">
                 </div>
             </div>
 
 
             <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
             <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
+            <div style="height: 200px;"></div>
         </div>
     </body>
 </html>
