@@ -3,6 +3,8 @@
     <head>
         <title>Furniture 3D Portfolio - F.Orsi</title>
         <link rel="stylesheet" href="/resources/3dmodels.css">
+        <link rel="stylesheet" href="/resources/style_icons.css">
+        <link rel="stylesheet" href="/resources/style_viewers.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -19,12 +21,12 @@
                     <div class="dropdown">
                         <button class="dropdown-btn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            <span style="margin: 0px auto;">furniture</span>
+                            <span style="margin: 0px auto;"> menu </span>
                             <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="dropdown-content">
                             <a href="/">                                <div class="icon-home"></div>           Home                </a>
-                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-list"></div></a>
                             <a href="/furniture" class="active">        <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
                             <a href="/transportation">                  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
                             <a href="/sports">                          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
@@ -41,31 +43,30 @@
 
         <div class="grid-container">
             <div class="model-card" style="background-color: transparent; border: transparent;">
-                <div class="info" style="padding-top: 0px;">
-                    <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 10px;">
-                        <div class="info">
-                            <h4>Creative Tools</h4>
-                            <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
-                                <div class="icon-blender"           title="Blender"                 style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-substance-painter" title="Substance 3D Painter"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-substance-sampler" title="Substance 3D Sampler"    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-gimp"              title="GIMP"                    style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                                <div class="icon-inkscape"          title="Inkscape"                style="width: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1)); height: calc(2.6rem + (2rem - 2.6rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <h4>Specifications</h4>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Files Format:</span><span>glTF GLB</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 500px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Materials Pipeline:</span><span>PBR Materials</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Resolution:</span><span>2048x2048 *</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; max-width: 400px; margin: 5px auto; color: #999; font-size: calc(1.3rem + (0.8rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));"><span>Textures Format:</span><span>KTX2 UASTC</span></div>
+                <div class="title-gallery"> Furniture <div class="icon-3d-card"> 3D </div></div>
+                <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 0px;">
+                    <div>
+                        <div class="title-specs"> Creative Tools </div>
+                        <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
+                            <div class="icon-blender"           title="Blender"></div>
+                            <div class="icon-substance-painter" title="Substance 3D Painter"></div>
+                            <div class="icon-substance-sampler" title="Substance 3D Sampler"></div>
+                            <div class="icon-gimp"              title="GIMP"></div>
+                            <div class="icon-inkscape"          title="Inkscape"></div>
                         </div>
                     </div>
-                    <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
-                    <div class="subtext">
-                        * Some models may contain textures in 1024x1024<br>
-                        ** Some projects were made in collaboration with other artists
+                    <div>
+                        <div class="title-specs"> Specifications </div>
+                        <div class="specs-table"><span>Files Format:</span>         <span>glTF GLB</span></div>
+                        <div class="specs-table"><span>Materials Pipeline:</span>   <span>PBR Materials</span></div>
+                        <div class="specs-table"><span>Textures Resolution:</span>  <span>2048x2048 *</span></div>
+                        <div class="specs-table"><span>Textures Format:</span>      <span>KTX2 UASTC</span></div>
                     </div>
+                </div>
+                <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
+                <div class="subtext">
+                    * Some models may contain textures in 1024x1024<br>
+                    ** Some projects were made in collaboration with other artists
                 </div>
             </div>
         </div>
@@ -73,165 +74,156 @@
         <div class="portfolio-wrapper">
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/furniture/sofas/2881 Original 2K UASTC DRACO.glb",
-                "/furniture/sofas/4642 Original 1K UASTC DRACO.glb",
-                "/furniture/sofas/7823 Original 1K UASTC DRACO.glb",
-                "/furniture/sofas/7576 Original 2K UASTC DRACO.glb",
-                "/furniture/sofas/0834 Original 2K UASTC DRACO.glb",
-                "/furniture/sofas/7469 Original 2K UASTC DRACO.glb",
-                "/furniture/sofas/6528 Original 1K UASTC DRACO.glb",
-                "/furniture/sofas/5533 Original 1K UASTC DRACO.glb",
-                "/furniture/sofas/7851 Original 1K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Sofas</h3></div>
-                    <model-viewer camera-controls ar
-                        data-field-of-view  = "22deg"
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/furniture/sofas/2881",
+                        "/furniture/sofas/7823",
+                        "/furniture/sofas/7576",
+                        "/furniture/sofas/0834",
+                        "/furniture/sofas/5533",
+                        "/furniture/sofas/7851",
+                    ]'>
+                    <div class="card-title"> Sofas </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
                         data-camera-orbit   = "30deg 80deg 90%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/furniture/chairs/0744 Original 2K UASTC DRACO.glb",
-                "/furniture/chairs/5924 Original 2K UASTC DRACO.glb",
-                "/furniture/chairs/1418 Original 2K UASTC DRACO.glb",
-                "/furniture/chairs/0324 Original 2K UASTC DRACO.glb",
-                "/furniture/chairs/7820 Original 2K UASTC DRACO.glb",
-                "/furniture/chairs/4980 Original 2K UASTC DRACO.glb",
-                "/furniture/chairs/4608 Original 2K UASTC DRACO.glb",
-                "/furniture/chairs/7638 Original 2K UASTC DRACO.glb",
-                "/furniture/chairs/0946 Original 2K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Chairs</h3></div>
-                    <model-viewer camera-controls ar
-                        data-field-of-view  = "22deg"
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/furniture/chairs/0744",
+                        "/furniture/chairs/5924",
+                        "/furniture/chairs/0324",
+                        "/furniture/chairs/7820",
+                        "/furniture/chairs/4980",
+                        "/furniture/chairs/0946",
+                    ]'>
+                    <div class="card-title"> Chairs </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "3"
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "30deg 80deg 110%">
+                        data-camera-orbit   = "30deg 80deg 100%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/furniture/diningtables/4837 Original 1K UASTC DRACO.glb",
-                "/furniture/diningtables/7229 Original 2K UASTC DRACO.glb",
-                "/furniture/diningtables/3269 Original 2K UASTC DRACO.glb",
-                "/furniture/diningtables/7809 Original 2K UASTC DRACO.glb",
-                "/furniture/diningtables/7098 Original 1K UASTC DRACO.glb",
-                "/furniture/diningtables/4816 Original 2K UASTC DRACO.glb",
-                "/furniture/diningtables/7634 Original 2K UASTC DRACO.glb",
-                "/furniture/diningtables/5585 Original 2K UASTC DRACO.glb",
-                "/furniture/diningtables/7855 Original 2K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Dining Tables</h3></div>
-                    <model-viewer camera-controls ar
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/furniture/diningtables/4837",
+                        "/furniture/diningtables/7229",
+                        "/furniture/diningtables/3269",
+                        "/furniture/diningtables/7809",
+                        "/furniture/diningtables/5585",
+                        "/furniture/diningtables/7855",
+                    ]'>
+                    <div class="card-title"> Dining Tables </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
                         exposure            = "2"
-                        data-field-of-view  = "22deg"
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
                         data-camera-orbit   = "210deg 75deg 90%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/furniture/desks/4848 Original 1K UASTC DRACO.glb",
-                "/furniture/desks/4619 Original 2K UASTC DRACO.glb",
-                "/furniture/desks/4386 Original 1K UASTC DRACO.glb",
-                "/furniture/desks/4340 Original 2K UASTC DRACO.glb",
-                "/furniture/desks/4345 Original 1K UASTC DRACO.glb",
-                "/furniture/desks/7286 Original 2K UASTC DRACO.glb",
-                "/furniture/desks/4617 Original 2K UASTC DRACO.glb",
-                "/furniture/desks/7729 Original 2K UASTC DRACO.glb",
-                "/furniture/desks/5404 Original 1K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Desks</h3></div>
-                    <model-viewer camera-controls ar
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/furniture/coffeetables/8277",
+                        "/furniture/coffeetables/7952",
+                        "/furniture/coffeetables/7802",
+                        "/furniture/coffeetables/4412",
+                        "/furniture/coffeetables/4367",
+                        "/furniture/coffeetables/7188",
+                    ]'>
+                    <div class="card-title"> Accessory Tables </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
+                        environment-image   = "/resources/media/round_platform_1k.hdr"
                         exposure            = "2"
-                        data-field-of-view  = "22deg"
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
                         data-camera-orbit   = "30deg 75deg 90%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/furniture/coffeetables/8277 Original 2K UASTC DRACO.glb",
-                "/furniture/coffeetables/7952 Original 2K UASTC DRACO.glb",
-                "/furniture/coffeetables/7802 Original 2K UASTC DRACO.glb",
-                "/furniture/coffeetables/4412 Original 2K UASTC DRACO.glb",
-                "/furniture/coffeetables/4367 Original 2K UASTC DRACO.glb",
-                "/furniture/coffeetables/7044 Original 1K UASTC DRACO.glb",
-                "/furniture/coffeetables/7037 Original 2K UASTC DRACO.glb",
-                "/furniture/coffeetables/5310 Original 1K UASTC DRACO.glb",
-                "/furniture/coffeetables/7188 Original 1K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Coffee Tables and Side Tables</h3></div>
-                    <model-viewer camera-controls ar
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/furniture/desks/4848",
+                        "/furniture/desks/4619",
+                        "/furniture/desks/4386",
+                        "/furniture/desks/4345",
+                        "/furniture/desks/7729",
+                        "/furniture/desks/5404",
+                    ]'>
+                    <div class="card-title"> Desks </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         environment-image   = "/resources/media/round_platform_1k.hdr"
-                        exposure            = "2"
-                        data-field-of-view  = "22deg"
+                        exposure            = "3"
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "30deg 75deg 100%">
+                        data-camera-orbit   = "30deg 75deg 90%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container">
-                <div class="model-card" data-current-index="0" data-variants='[
-                "/furniture/beds/7206 Original 1K UASTC DRACO.glb",
-                "/furniture/beds/7396 Original 1K UASTC DRACO.glb",
-                "/furniture/beds/4093 Original 1K UASTC DRACO.glb",
-                "/furniture/beds/0471 Original 2K UASTC DRACO.glb",
-                "/furniture/beds/3650 Original 1K UASTC DRACO.glb",
-                "/furniture/beds/7430 Original 1K UASTC DRACO.glb",
-                "/furniture/beds/4843 Original 1K UASTC DRACO.glb",
-                "/furniture/beds/7032 Original 2K UASTC DRACO.glb",
-                "/furniture/beds/7022 Original 1K UASTC DRACO.glb",
-                ]'>
-                    <div class="info"><h3 style="margin: 0px; padding: 48px 0px; color: #ccc;">Beds</h3></div>
-                    <model-viewer camera-controls ar
+                <div class="model-card" data-current-index="0"
+                    data-variants='[
+                        "/furniture/beds/7206",
+                        "/furniture/beds/4093",
+                        "/furniture/beds/0471",
+                        "/furniture/beds/3650",
+                        "/furniture/beds/7430",
+                        "/furniture/beds/7032",
+                    ]'>
+                    <div class="card-title"> Beds </div>
+                    <model-viewer class="portfolio-viewer" camera-controls ar
                         environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
                         exposure            = "2"
-                        data-field-of-view  = "22deg"
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
                         data-camera-orbit   = "30deg 80deg 90%">
                         <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
                         <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
                         <button class="reset-button" onclick="reset_view(this)">Reset View</button>
                     </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 48px 0px; ">
+                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
                 </div>
             </div>
 
             <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
             <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
+            <div style="height: 200px;"></div>
         </div>
     </body>
 </html>
