@@ -3,6 +3,8 @@
     <head>
         <title>F.Orsi - Portfolio</title>
         <link rel="stylesheet" href="/resources/3dmodels.css">
+        <link rel="stylesheet" href="/resources/style_icons.css">
+        <link rel="stylesheet" href="/resources/style_viewers.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -10,26 +12,33 @@
         <script src="/resources/scripts.js" defer></script>
         <meta charset="UTF-8">
         <style>
-            .model-card-main {
-                position: relative;
-                background: #1e1e1e;
-                overflow: hidden;
-
-                border: 1px solid #333;
-                border-radius: 12px;
-
-                font-family: sans-serif;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                max-width: 1620px;
-                font-family: 'Roboto', sans-serif;
+            * {
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
             }
 
-            .model-card:hover {
-                border-color: #00d1ff;
-                transform: scale(1.01);
-                transition: all 0.2s ease;
+            .portfolio-link {
+                position:           relative;
+                display:            flex;
+                border-color:       #000;
+                box-shadow:         0 0 0 2px rgba(0, 0, 0, 1),
+                                    0 4px 15px rgba(0, 0, 0, 0.4),
+                                    4px -4px 4px rgba(0, 0, 0, 0.75),
+                                    -4px 4px 4px rgba(255, 255, 255, 0.1),
+                                    inset 4px -4px 10px rgba(0, 0, 0, 0.75),
+                                    inset -2px 2px 10px rgba(255, 255, 255, 0.25);
+                transition:         all 0.8s ease;
+            }
+
+            .portfolio-link:active {
+                box-shadow:         0 4px 15px rgba(0, 0, 0, 0.4),
+                                    inset -2px 2px 4px rgba(0, 0, 0, 0.5),
+                                    inset 2px -2px 4px rgba(255, 255, 255, 0.1);
+            }
+
+            .portfolio-link.parent-hover-effect {
+                border-color:       #000 !important;
+                transition:         all 0.8s ease !important;
             }
 
             .info bio p {
@@ -54,7 +63,7 @@
                 list-style:             none;
                 padding:                0;
                 margin:                 15px auto 0 auto;
-                width:                  90%;
+                width:                  100%;
                 max-width:              700px;
                 text-align:             justify;
                 font-size:              calc((0.9 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);
@@ -66,7 +75,6 @@
                 margin-bottom: 10px;
                 line-height: 1.7;
                 color: #999;
-
             }
 
             .expertise-list li::before {
@@ -95,7 +103,7 @@
                 align-items: center;
                 gap: calc((10 * var(--R) + 15 * (1 - var(--R))) * 1px);
                 background: #2a2a2a;
-                color: #00d1ff;
+                color: rgba(0, 190, 255, 1);
                 border: 1px solid #444;
                 padding: 8px 16px;
                 border-radius: 6px;
@@ -139,9 +147,42 @@
 
             @media (hover : hover) {
                 .expertise-dropdown summary:hover {
-                    background: #333;
-                    border-color: #00d1ff;
-                    color: #00d1ff;
+                    background:     #333;
+                    border-color:   rgba(0, 190, 255, 1);
+                    color:          rgba(0, 190, 255, 1);
+                }
+
+                .portfolio-link:hover {
+                    border-color:   rgba(0, 190, 255, 0.66);
+                }
+
+                .portfolio-link:hover .view-galery {
+                    will-change:        transform;
+                    color:              rgba(0, 190, 255, 1);
+                    transform:          scale(1.1) translateZ(0);
+                    transition:         all 0.6s ease !important;
+                    transition-delay:   200ms !important;
+                }
+
+                .portfolio-link:hover .card-title-home {
+                    will-change:        transform;
+                    transform:          scale(1.1) translateZ(0);
+                    transition:         all 0.6s ease !important;
+                    transition-delay:   200ms !important;
+                }
+
+                .portfolio-link.parent-hover-effect:hover .view-galery {
+                    will-change:        transform;
+                    color:              #999 !important;
+                    transform:          scale(1) translateZ(0) !important;
+                    transition:         all 0.8s ease !important;
+                    transition-delay:   0ms !important;
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                .info p {
+                    color: rgba(0, 190, 255, 1);
                 }
             }
 
@@ -187,7 +228,7 @@
 
             .icon-skills {
                 flex-shrink: 0;
-                background-color: #00d1ff;
+                background-color: rgba(0, 190, 255, 1);
                 position: relative;
                 width: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
                 height: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
@@ -200,7 +241,7 @@
 
             .icon-experience {
                 flex-shrink: 0;
-                background-color: #00d1ff;
+                background-color: rgba(0, 190, 255, 1);
                 position: relative;
                 width: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
                 height: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
@@ -213,7 +254,7 @@
 
             .icon-education {
                 flex-shrink: 0;
-                background-color: #00d1ff;
+                background-color: rgba(0, 190, 255, 1);
                 position: relative;
                 width: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
                 height: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
@@ -267,26 +308,19 @@
         <div class="grid-container">
             <div class="model-card" style="transform: none; border-color: #333;">
                 <div class="info">
-                    <div class="logo-container" style="border: none !important; position: relative; padding: 0px 0px 0px 0px;">
-                        <div class="model-card" style="border: none; background-color: transparent;" data-variants='["/resources/media/logo_optimized.glb"]'>
-                            <model-viewer id="logo-viewer" 
+                    <div class="logo-container" style="border: none !important; position: relative; padding: 0px 0px 0px 0px; margin-top: -10px;">
+                        <div class="model-card" style="border: none; background-color: transparent;" data-variants='["/resources/media/logo_optimized"]'>
+                            <model-viewer id="logo-viewer" class="disable-progress-bar"
                                 disable-zoom
-                                interaction-prompt  = "none"
                                 data-field-of-view  = "22deg"
                                 data-camera-target  = "auto auto auto"
                                 data-camera-orbit   = "0deg 90deg 60%"
-                                shadow-intensity = "0.0"
-                                style               = "
-                                    width: calc((150 * var(--R) + 220 * (1 - var(--R))) * 1px);
-                                    height: calc((150 * var(--R) + 220 * (1 - var(--R))) * 1px);
-                                    background: transparent;
-                                    box-shadow: none !important;">
+                                shadow-intensity    = "0.0">
                             </model-viewer>
                         </div>
                     </div>
-                    <h3 style="margin: -10px 0px;"><strong>Fabio Orsi</strong></h3>
-                    <p style="margin: 16px 0px 10px;"><strong>3D Tech Artist & Developer</strong></p>
-                    <!-- <p style="margin: 16px 0px 10px;"><strong>3D Artist & Developer</strong></p> -->
+                    <h3 style="margin: -10px 0px;"><strong style="color: rgba(0, 190, 255, 1);">Fabio Orsi</strong></h3>
+                    <p style="margin: 16px 0px 10px;"><strong style=" color: #999;">3D Tech Artist & Developer</strong></p>
                 </div>
 
                 <hr class="tech-divider">
@@ -294,7 +328,7 @@
                     <bio><p>
                         As an <strong style="color: #aaa;">Industrial Designer</strong> with a foundation in <strong style="color: #aaa;">Control & Automation Engineering</strong>, I have always
                         worked at the intersections between the <strong style="color: #aaa;">creative and technical</strong> worlds. Focused on <strong style="color: #aaa;">3D models</strong>
-                        and <strong style="color: #aaa;">coding</strong> around them, most of my professional contributions define me as a <strong style="color: #aaa;">Technical Artist</strong>.
+                        and <strong style="color: #aaa;">coding</strong> around them, most of my professional contributions fit the definiton of a <strong style="color: #aaa;">Technical Artist</strong>.
                     </p></bio>
                 </div>
 
@@ -310,59 +344,72 @@
                 <hr class="tech-divider">
                 <br>
                 <div class="info">
-                    <details class="expertise-dropdown">
+                    <details class="expertise-dropdown" open>
                         <summary class="skills-button"><div class="icon-skills"></div></summary>
                         <ul class="expertise-list">
                             <div style="height: 10px;"></div>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: uppercase;">3D Modeling & Texturing</strong>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">3D Modeling & Texturing</strong>
                                 <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
                                 <strong style="color: #aaa;">Creating assets</strong> for <strong style="color: #aaa;">offline rendering</strong>, real-time visualization <strong style="color: #aaa;">(Web, XR, Game Engines)</strong>, and <strong style="color: #aaa;">digital manufacturing</strong> based on concept art, photo references and technical drawings.
+                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Blender | Substance Painter | Substance Sampler | GIMP | Inkscape </div>
                                 <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: uppercase;">Technical Art</strong>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">Technical Art</strong>
                                 <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Developing standalone scripts</strong> and <strong style="color: #aaa;">API-integrated plugins</strong> (e.g. for Blender, Substance Painter, GIMP) to <strong style="color: #aaa;">standardize and automate</strong> pipelines in <strong style="color: #aaa;">3D asset production</strong>.
+                                <strong style="color: #aaa;">Developing standalone scripts</strong> and <strong style="color: #aaa;">API-integrated plugins</strong> (e.g. for Blender, Substance Painter, GIMP) to <strong style="color: #aaa;">standardize and automate</strong> pipelines for <strong style="color: #aaa;"> 3D modeling, texturing and shader setup</strong>.
+                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Blender | Substance Painter | GIMP | Python | Javascript | Google Chrome </div>
                                 <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: uppercase;">Systems Integration</strong>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">Systems Integration</strong>
                                 <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Designing middleware</strong> between <strong style="color: #aaa;">enterprise platforms (ERPs)</strong> and <strong style="color: #aaa;">web services</strong> (e.g. Redmine, Odoo, Google Cloud, AWS, Discord), <strong style="color: #aaa;">connecting systems</strong> within and across companies.
+                                <strong style="color: #aaa;">Designing middleware</strong> to connect <strong style="color: #aaa;">Enterprise Tools</strong> (Odoo, Redmine), <strong style="color: #aaa;">Web Services</strong> (Google Cloud, AWS, Discord), <strong style="color: #aaa;">3D Suites</strong> (Blender, Substance), and <strong style="color: #aaa;">Game Engines</strong> (Unity, Unreal).
+                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Python | Javascript | Command Line Interfaces (CLI) | C/C++ | C# | Java </div>
                                 <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: uppercase;">Industrial Automation</strong>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">XR Development</strong>
                                 <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Automating digital manufacturing pipelines</strong> (CNC machining and 3D printing), including tools for <strong style="color: #aaa;">bulk order placement</strong>, <strong style="color: #aaa;">mesh processing</strong>, <strong style="color: #aaa;">production</strong>, packing and shipping.
+                                <strong style="color: #aaa;">Creating XR apps (VR/MR)</strong> for <strong style="color: #aaa;">Quest and Pico</strong> headsets with integrations to <strong style="color: #aaa;">cloud-based web services</strong> (Google Cloud/Firebase) for <strong style="color: #aaa;">database and 3D asset management</strong>.
+                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Unity | Unreal Engine | Meta Quest SDK | Pico SDK | Javascript | C/C++ | C# </div>
                                 <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: uppercase;">Product Design</strong>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">Product Design</strong>
                                 <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
                                 <strong style="color: #aaa;">Engineering</strong> and <strong style="color: #aaa;">designing physical products</strong> at different stages of the development cycle, from <strong style="color: #aaa;">prototyping to mass production</strong>, utilizing specialized <strong style="color: #aaa;">CAD software</strong>.
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 50px; width: 100%;">
+                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Autodesk Fusion | Autodesk Inventor | PTC Onshape | PTC Creo </div>
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
+                            <li>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">Industrial Automation</strong>
+                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
+                                <strong style="color: #aaa;">Automating digital manufacturing pipelines</strong> (CNC machining and 3D printing), including tools for <strong style="color: #aaa;">bulk order placement</strong>, <strong style="color: #aaa;">mesh processing</strong>, <strong style="color: #aaa;">production nesting, and logistics</strong>.
+                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Python | C/C++ | Command Line Interfaces (CLI) | G-Code | C# </div>
+                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
+                            </li>
+                            <div style="height: 20px;"></div>
                         </ul>
                     </details>
-                    <details class="expertise-dropdown">
+                    <details class="expertise-dropdown" open>
                         <summary class="experience-button"><div class="icon-experience"></div></summary>
                         <ul class="expertise-list">
                             <div style="height: 10px;"></div>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: uppercase;"> 3D Artist / Project Manager / Technical Lead </strong><br>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;"> 3D Artist / Project Manager / Technical Lead </strong><br>
                                 <strong style="color: #cccccc; text-transform: uppercase;"> Spase Inc. </strong> - San Jose, California, United States <br>
                                 <strong style="color: #ccc;"> Remote </strong> - <strong style="color: #ccc;"> Full-time </strong> - Jun 2019 - Dec 2025 <br>
                                 <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
-                                <div class="experience-list"><strong style="color: #aaa;">Authoring photorealistic 3D assets</strong> for real-time product visualization in <strong style="color: #aaa;">e-commerce platforms (Web and XR)</strong> based on reference photos and technical drawings. </div>
+                                <div class="experience-list"><strong style="color: #aaa;">Authoring photorealistic 3D assets</strong> for real-time product visualization in <strong style="color: #aaa;">e-commerce platforms (Web and mobile AR)</strong> based on reference photos and technical drawings. </div>
                                 <div class="experience-list"><strong style="color: #aaa;">Scoping and quoting projects</strong> for new and recurring clients, <strong style="color: #aaa;">directing and briefing a team of diverse artists</strong>, and performing final <strong style="color: #aaa;">quality control and technical adjustments</strong> on 3D assets. </div>
                                 <div class="experience-list"><strong style="color: #aaa;">Creating internal tools</strong> to <strong style="color: #aaa;">standardize and optimize</strong> production pipelines (e.g. plugins for <strong style="color: #aaa;">Blender, Substance Painter, Chrome, GIMP</strong>). </div>
                                 <div class="experience-list"><strong style="color: #aaa;">Developing middleware</strong> to connect <strong style="color: #aaa;">back-end infrastructure</strong> (Google Sheets, Firebase, AWS) to team tools (<strong style="color: #aaa;">Discord</strong>) and 3D authoring software (<strong style="color: #aaa;">Blender, Substance Painter</strong>). </div>
                                 <hr class="tech-divider" style="justify-self: center; margin-top: 0px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: uppercase;"> Production Consultant </strong><br>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;"> Production Consultant </strong><br>
                                 <strong style="color: #cccccc; text-transform: uppercase;"> Смоленск мебель </strong> - Smolensk, Smolensk, Russia <br>
                                 <strong style="color: #ccc;"> On-Site </strong> - <strong style="color: #ccc;"> Freelance </strong> - Sep 2018 - Dec 2018<br>
                                 <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
@@ -372,7 +419,7 @@
                                 <hr class="tech-divider" style="justify-self: center; margin-top: 0px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: uppercase;"> 3D Artist / Software Developer </strong><br>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;"> 3D Artist / Software Developer </strong><br>
                                 <strong style="color: #cccccc; text-transform: uppercase;"> Dental Direct Brasil </strong> - São Paulo, São Paulo, Brazil<br>
                                 <strong style="color: #ccc;"> On-Site / Remote </strong> - <strong style="color: #ccc;"> Full-time </strong> - Apr 2016 - Sep 2018<br>
                                 <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
@@ -383,19 +430,19 @@
                             </li>
                         </ul>
                     </details>
-                    <details class="expertise-dropdown">
+                    <details class="expertise-dropdown" open>
                         <summary class="education-button"><div class="icon-education"></div></summary>
                         <ul class="expertise-list">
                             <div style="height: 10px;"></div>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: none;"> Centro Universitário Belas Artes de São Paulo (FEBASP) </strong><br>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: none;"> Centro Universitário Belas Artes de São Paulo (FEBASP) </strong><br>
                                 <strong style="color: #cccccc; text-transform: none;"> Industrial and Product Design </strong><br>
                                 Graduated<br>
                                 2014 - 2017<br>
                                 <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
                             </li>
                             <li>
-                                <strong style="color: #00d1ff; text-transform: none;"> Universidade Estadual de Campinas (UNICAMP) </strong><br>
+                                <strong style="color: rgba(0, 190, 255, 1); text-transform: none;"> Universidade Estadual de Campinas (UNICAMP) </strong><br>
                                 <strong style="color: #cccccc; text-transform: none;"> Control & Automation Engineering (Mechatronics) </strong><br>
                                 Incomplete<br>
                                 2009 - 2014<br>
@@ -412,233 +459,210 @@
             <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
                 <hr class="tech-divider">
                 <div class="info" style="width: 480px;">
-                    <h3 style="padding-top: 10px; margin-bottom: 40px;"><strong>Portfolio</strong></h3>
+                    <h3 style="padding-top: 10px; margin-bottom: 40px; color: #999;"><strong>Portfolio</strong></h3>
                 </div>
             </div>
         </div>
 
         <div class="portfolio-wrapper">
 
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/resources/media/development_optimized.glb"]'>
-                    <br>
-                    <div class="info">
-                        <a href="development/" class="main-link">
-                            <h3 style="display: flex; align-items: center;">
-                                <span>Development</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2);"><div class="icon-list" style="background-color: rgba(0, 209, 255, 1);"></div></div>
-                            </h3>
-                        </a>
-                    </div>
-                    <br>
-                    <a href="development/" id="model-card-link"><model-viewer id="development-viewer"
-                        disable-zoom
-                        interaction-prompt  = "none"
+            <div class="grid-container" style="padding-bottom: 20px; ">
+                <a href="/development" class="model-card portfolio-link" data-current-index="0"
+                    data-variants='[
+                        "/resources/media/development_optimized"
+                    ]'>
+                    <div class="card-title-home"> Development <div class="icon-3d-card"><div class="icon-list"></div></div></div>
+                    <model-viewer id="development-viewer" title=" View Details 🡪 "
                         environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
                         exposure            = "3"
-                        data-field-of-view  = "22deg"
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "-0.05m 0.35m -1m"
-                        data-camera-orbit   = "0deg 90deg 60%"
-                        style               = "width: calc((70 * var(--R) + 80 * (1 - var(--R))) * 1%); height: 400px;">
-                    </model-viewer></a>
-                    <div class="info">
-                        <a href="development/" class="main-link">
-                            <h3 style="text-align: center; color: #999;">Technical Art,<br>Systems Integration,<br> XR & AI</h3>
-                            <p>View details</p><br>
-                        </a>
-                    </div>
-                </div>
+                        data-camera-orbit   = "0deg 90deg 60%">
+                    </model-viewer>
+                    <div class="view-galery"> View Details 🡪 </div>
+                </a>
             </div>
 
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/furniture/sofas/2881 Original 2K UASTC DRACO.glb"]'>
-                    <br>
-                    <div class="info">
-                        <a href="furniture/" class="main-link">
-                            <h3 style="display: flex; align-items: center;">
-                                <span>Furniture</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
-                            </h3>
-                        </a>
-                    </div>
-                    <br>
-                    <a href="furniture/" id="model-card-link"><model-viewer class="menu-viewer"
-                        data-field-of-view  = "22deg"
+            <div class="grid-container" style="padding-bottom: 20px; ">
+                <a href="/furniture" class="model-card portfolio-link" data-current-index="0"
+                    data-variants='[
+                        "/furniture/sofas/2881",
+                        "/furniture/chairs/0744_home",
+                        "/furniture/diningtables/7229",
+                        "/furniture/desks/4848",
+                        "/furniture/coffeetables/4367",
+                        "/furniture/beds/7032",
+                    ]'>
+                    <div class="card-title-home"> Furniture <div class="icon-3d-card"> 3D </div></div>
+                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
+                        environment-image   = "/resources/media/round_platform_1k.hdr"
+                        exposure            = "3"
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 80deg 70%"
-                        style               = "width: calc((70 * var(--R) + 80 * (1 - var(--R))) * 1%); height: 400px;">
-                    </model-viewer></a>
-                    <div class="info">
-                        <a href="furniture/" class="main-link">
-                            <br><p>View All</p><br>
-                        </a>
-                    </div>
-                </div>
+                        data-camera-orbit   = "0deg 80deg 75%">
+                    </model-viewer>
+                    <div class="view-galery"> View Gallery 🡪 </div>
+                </a>
             </div>
 
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/transportation/motorcycles/1589 Original 1K UASTC DRACO.glb"]'>
-                    <br>
-                    <div class="info">
-                        <a href="transportation/" class="main-link">
-                            <h3 style="display: flex; align-items: center;">
-                                <span>Transportation</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
-                            </h3>
-                        </a>
-                    </div>
-                    <br>
-                    <a href="transportation/" id="model-card-link"><model-viewer class="menu-viewer"
-                        data-field-of-view  = "22deg"
+            <div class="grid-container" style="padding-bottom: 20px; ">
+                <a href="/transportation" class="model-card portfolio-link" data-current-index="0"
+                    data-variants='[
+                        "/transportation/motorcycles/1589",
+                        "/transportation/motorcycles/3101",
+                        "/sports/bikes/1545",
+                        "/transportation/ebikes/1504",
+                        "/transportation/ebikes/3404",
+                        "/transportation/cars/2490",
+                    ]'>
+                    <div class="card-title-home"> Transportation <div class="icon-3d-card"> 3D </div></div>
+                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "-90deg 90deg 80%"
-                        style               = "width: calc((70 * var(--R) + 80 * (1 - var(--R))) * 1%); height: 400px;">
-                    </model-viewer></a>
-                    <div class="info">
-                        <a href="transportation/" class="main-link">
-                            <br><p>View All</p><br>
-                        </a>
-                    </div>
-                </div>
+                        data-camera-orbit   = "0deg 90deg 80%"></model-viewer>
+                    </model-viewer>
+                    <div class="view-galery"> View Gallery 🡪 </div>
+                </a>
             </div>
 
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/sports/protectivegear/1608b Original 1K UASTC DRACO.glb"]'>
-                    <br>
-                    <div class="info">
-                        <a href="sports/" class="main-link">
-                            <h3 style="display: flex; align-items: center;">
-                                <span>Sports</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
-                            </h3>
-                        </a>
-                    </div>
-                    <br>
-                    <a href="sports/" id="model-card-link"><model-viewer class="menu-viewer"
+            <div class="grid-container" style="padding-bottom: 20px; ">
+                <a href="/sports" class="model-card portfolio-link" data-current-index="0"
+                    data-variants='[
+                        "/sports/protectivegear/1608b",
+                        "/sports/protectivegear/2918",
+                        "/sports/equipment/1234",
+                        "/sports/equipment/2581",
+                        "/sports/miscelaneous/1292",
+                        "/sports/miscelaneous/0611",
+                    ]'>
+                    <div class="card-title-home"> Sports <div class="icon-3d-card"> 3D </div></div>
+                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
                         environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
                         exposure            = "2"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto 10cm auto"
-                        data-camera-orbit   = "0deg 80deg 110%"
-                        style               = "width: calc((70 * var(--R) + 80 * (1 - var(--R))) * 1%); height: 400px;">
-                    </model-viewer></a>
-                    <div class="info">
-                        <a href="sports/" class="main-link">
-                            <br><p>View All</p><br>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/furnishings/lamps/4561 Original 2K UASTC DRACO.glb"]'>
-                    <br>
-                    <div class="info">
-                        <a href="furnishings/" class="main-link">
-                            <h3 style="display: flex; align-items: center;">
-                                <span>Furnishings</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
-                            </h3>
-                        </a>
-                    </div>
-                    <br>
-                    <a href="furnishings/" id="model-card-link"><model-viewer class="menu-viewer"
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "2"
-                        data-field-of-view  = "22deg"
+                        data-field-of-view  = "15deg"
                         data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 80deg 115%"
-                        style               = "width: calc((70 * var(--R) + 80 * (1 - var(--R))) * 1%); height: 400px;">
-                    </model-viewer></a>
-                    <div class="info">
-                        <a href="furnishings/" class="main-link">
-                            <br><p>View All</p><br>
-                        </a>
-                    </div>
-                </div>
+                        data-camera-orbit   = "0deg 80deg 100%">
+                    </model-viewer>
+                    <div class="view-galery"> View Gallery 🡪 </div>
+                </a>
             </div>
 
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/electronics/appliances/7329 Original 2K UASTC DRACO.glb"]'>
-                    <br>
-                    <div class="info">
-                        <a href="electronics/" class="main-link">
-                            <h3 style="display: flex; align-items: center;">
-                                <span>Electronics</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
-                            </h3>
-                        </a>
-                    </div>
-                    <br>
-                    <a href="electronics/" id="model-card-link"><model-viewer class="menu-viewer"
+            <div class="grid-container" style="padding-bottom: 20px; ">
+                <a href="/furnishings" class="model-card portfolio-link" data-current-index="0"
+                    data-variants='[
+                        "/furnishings/lamps/4561",
+                        "/furnishings/lamps/4663",
+                        "/furnishings/sculptures/2387",
+                        "/furnishings/sculptures/3896",
+                        "/furnishings/clocks/7753",
+                        "/furnishings/lamps/6039",
+                    ]'>
+                    <div class="card-title-home"> Furnishings <div class="icon-3d-card"> 3D </div></div>
+                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
+                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
+                        exposure            = "1.5"
+                        data-field-of-view  = "15deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 80deg 110%">
+                    </model-viewer>
+                    <div class="view-galery"> View Gallery 🡪 </div>
+                </a>
+            </div>
+
+            <div class="grid-container" style="padding-bottom: 20px; ">
+                <a href="/electronics" class="model-card portfolio-link" data-current-index="0"
+                    data-variants='[
+                        "/electronics/appliances/7329",
+                        "/electronics/appliances/7136",
+                        "/electronics/appliances/5989",
+                        "/electronics/appliances/7137",
+                        "/electronics/misc/7034",
+                        "/electronics/misc/6576",
+                    ]'>
+                    <div class="card-title-home"> Electronics <div class="icon-3d-card"> 3D </div></div>
+                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
                         environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                        exposure            = "0.72"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto 0.11m auto"
-                        data-camera-orbit   = "0deg 75deg 90%"
-                        style               = "width: calc((70 * var(--R) + 80 * (1 - var(--R))) * 1%); height: 400px;">
-                    </model-viewer></a>
-                    <div class="info">
-                        <a href="electronics/" class="main-link">
-                            <br><p>View All</p><br>
-                        </a>
-                    </div>
-                </div>
+                        exposure            = "0.6"
+                        data-field-of-view  = "15deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 75deg 100%">
+                    </model-viewer>
+                    <div class="view-galery"> View Gallery 🡪 </div>
+                </a>
+            </div>
+
+            <div class="grid-container" style="padding-bottom: 20px; ">
+                <a href="/apparel" class="model-card portfolio-link" data-current-index="0"
+                    data-variants='[
+                        "/apparel/glasses/0876",
+                        "/apparel/handbags/1387",
+                        "/apparel/backpacks/2558",
+                        "/apparel/shoes/0719_home",
+                        "/apparel/clothing/0433",
+                        "/apparel/watches/1563_home",
+                    ]'>
+                    <div class="card-title-home"> Apparel <div class="icon-3d-card"> 3D </div></div>
+                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
+                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                        exposure            = "0.6"
+                        data-field-of-view  = "15deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 80deg 100%">
+                    </model-viewer>
+                    <div class="view-galery"> View Gallery 🡪 </div>
+                </a>
+            </div>
+
+            <div class="grid-container" style="padding-bottom: 20px; ">
+                <a href="/misc" class="model-card portfolio-link" data-current-index="0"
+                    data-variants='[
+                        "/apparel/glasses/0876",
+                        "/apparel/handbags/1387",
+                        "/apparel/backpacks/2558",
+                        "/apparel/shoes/0719_home",
+                        "/apparel/clothing/0433",
+                        "/apparel/watches/1563_home",
+                    ]'>
+                    <div class="card-title-home"> Misc <div class="icon-3d-card"> 3D </div></div>
+                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
+                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                        exposure            = "0.6"
+                        data-field-of-view  = "15deg"
+                        data-camera-target  = "auto auto auto"
+                        data-camera-orbit   = "0deg 80deg 100%">
+                    </model-viewer>
+                    <div class="view-galery"> View Gallery 🡪 </div>
+                </a>
             </div>
 
 
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/apparel/glasses/0876 Original 1K UASTC DRACO.glb",]'>
-                    <br>
-                    <div class="info">
-                        <a href="apparel/" class="main-link">
-                            <h3 style="display: flex; align-items: center;">
-                                <span>Apparel</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
-                            </h3>
-                        </a>
-                    </div>
-                    <br>
-                    <a href="apparel/" id="model-card-link"><model-viewer class="menu-viewer"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto 0.01m auto"
-                        data-camera-orbit   = "0deg 70deg 70%"
-                        style               = "width: calc((70 * var(--R) + 80 * (1 - var(--R))) * 1%); height: 400px;">
-                    </model-viewer></a>
-                    <div class="info">
-                        <a href="apparel/" class="main-link">
-                            <br><p>View All</p><br>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
+            <!-- <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;"></div> -->
+
+
 
             <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <div class="model-card" data-current-index="0" data-variants='["/misc/utensils/1123 Original 2K UASTC DRACO.glb",]'>
-                    <br>
-                    <div class="info">
-                        <a href="misc/" class="main-link">
+                <a href="misc/" style="text-decoration: none;">
+                    <div class="model-card portfolio-link" data-current-index="0" data-variants='["/misc/utensils/1123",]'>
+                        <div class="info" style="padding: 10px;">
                             <h3 style="display: flex; align-items: center;">
                                 <span>Misc</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid #00d1ff; color: #00d1ff; transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
+                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid rgba(0, 190, 255, 1); color: rgba(0, 190, 255, 1); transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
                             </h3>
-                        </a>
+                        </div>
+                        <model-viewer class="menu-viewer"
+                            environment-image   = "/resources/media/interior_Original_mirror.hdr"
+                            exposure            = "0.72"
+                            data-field-of-view  = "22deg"
+                            data-camera-target  = "auto 0.01m auto"
+                            data-camera-orbit   = "0deg 60deg 70%"
+                            style               = "width: 90%; height: 480px; box-shadow: none; background-color: transparent; padding-bottom: 10px;">
+                        </model-viewer>
+                        <div class="info" style="padding: 20px;">
+                            <p><strong style="font-weight: bold; text-transform: uppercase;"> View All </strong></p>
+                        </div>
                     </div>
-                    <br>
-                    <model-viewer class="menu-viewer"
-                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                        exposure            = "0.72"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto 0.01m auto"
-                        data-camera-orbit   = "0deg 60deg 70%"
-                        style               = "width: calc((70 * var(--R) + 80 * (1 - var(--R))) * 1%); height: 400px;">
-                    </model-viewer>
-                    <div class="info">
-                        <a href="misc/" class="main-link">
-                            <br><p>View All</p><br>
-                        </a>
-                    </div>
-                </div>
+                </a>
             </div>
 
 
@@ -649,7 +673,7 @@
             </div>
 
             <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
-            <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
+            <div class = "info"><p style="text-align: center;"><br><strong style="color: rgba(0, 190, 255, 1)">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: rgba(0, 190, 255, 1); opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
         </div>
     </body>
 </html>
