@@ -1,441 +1,239 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Development Portfolio - F.Orsi</title>
-        <link rel="stylesheet" href="/resources/3dmodels.css">
+        <title> Development - F.Orsi - Portfolio </title>
+        <link rel="icon" href="/resources/media/favicon.svg" type="image/svg+xml">
+
+        <meta charset="utf-8">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-        <script src="/resources/scripts.js" defer></script>
+
+        <link rel="stylesheet" href="/resources/style_main.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_topbar.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_icons.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_gallery.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_viewers.css?v=1.0.1">
+        <script src="/resources/scripts.js?v=1.0.1" defer></script>
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js",
+                    "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/"
+                }
+            }
+        </script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer-module.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects@1.5.0/dist/model-viewer-effects.min.js"></script>
+
     </head>
 
-    <style>
-        .model-card-main {
-            position: relative;
-            background: #1e1e1e;
-            overflow: hidden;
+    <body>
 
-            border: 1px solid #333;
-            border-radius: 12px;
-
-            font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1620px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .info bio p {
-            max-width: 700px; 
-            margin: 0 0;
-            padding: 10px 100px;
-            line-height: 1.7;
-            text-align: justify;
-            text-justify: inter-word;
-            hyphens: auto;
-        }
-
-        .expertise-list {
-            list-style: none;
-            padding: 0;
-            margin: 15px auto 0 auto;
-            max-width: 700px;
-            text-align: left;
-        }
-
-        .expertise-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 10px;
-            line-height: 1.7;
-            color: #999;
-            text-align: justify;
-
-        }
-
-        .expertise-list li::before {
-            content: "-";
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            color: #999;
-        }
-
-        .cta-text {
-            margin-top: 1.5rem;
-            text-align: center;
-            opacity: 0.5;
-            padding-top: 0.5rem;
-        }
-
-        .sub-text {
-            font-size: 0.9rem;
-            opacity: 1;
-        }
-
-        .expertise-dropdown summary {
-            list-style: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #2a2a2a;
-            color: #00d1ff;
-            border: 1px solid #444;
-            padding: 8px 16px;
-            border-radius: 6px;
-
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-
-            transition: all 0.2s ease;
-            width: fit-content;
-            margin: 0 auto;
-
-            justify-content: flex-start;
-            min-width: 100px;
-        }
-
-        .expertise-dropdown summary:hover {
-            background: #333;
-            border-color: #00d1ff;
-            color: #00d1ff;
-        }
-
-        .expertise-dropdown summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .expertise-dropdown summary::after {
-            content: "Show Detailed Skills";
-            font-family: 'Roboto', sans-serif;
-            font-weight: 700;
-            transition: all 0.2s ease;
-        }
-
-        .expertise-dropdown[open] summary::after {
-            content: "Hide Detailed Skills";
-        }
-
-        .overview-grid {
-            width: 680px;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 20px;
-            justify-items: start;
-            align-items: center;
-        }
-
-    </style>
-
-    <body style="padding-top: 80px;">
-
-        <div id="top-title-bar" class="grid-container">
-            <div class="model-card" style="transform: none; border-color: #333;">
-                <a href="/">
-                    <div class="logo-container" title="Home">
-                        <div class="logo-blue" style="
-                                width:  calc((36 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                                height: calc((36 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                            ">
-                        </div>
-                    </div>
-                </a>
-                <div class="info">
-                    <div class="dropdown">
-                        <button class="dropdown-btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            <span style="margin: 0px auto;">development</span>
-                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="/">                                <div class="icon-home"></div>           Home                </a>
-                            <a href="/development" class="active">      <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
-                            <a href="/furniture">                       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
-                            <a href="/transportation">                  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
-                            <a href="/sports">                          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
-                            <a href="/furnishings">                     <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
-                            <a href="/electronics">                     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
-                            <a href="/apparel">                         <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
-                            <a href="/misc">                            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
-                        </div>
+        <div class="top-bar-container">
+            <div class="top-bar-card">
+                <a href="/" class="logo" title="Home"></a>
+                <div class="menu">
+                    <button class="menu-button"><div class="menu-icon"></div><span style="margin: 0px auto;"> MENU </span><div class="menu-chevron"></div></button>
+                    <div class="menu-content">
+                        <a href="/">                <div class="icon-home"></div>           Home                </a>
+                        <a href="/development">     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                        <a href="/furniture">       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
+                        <a href="/transportation">  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
+                        <a href="/sports">          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
+                        <a href="/furnishings">     <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
+                        <a href="/electronics">     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
+                        <a href="/apparel">         <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
+                        <a href="/misc">            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
                     </div>
                 </div>
-                <button onclick="top_function()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
+                <button id="top-button" title="Go to top" onclick="go_to_top()"><div class="icon-top"></div> Top </button>
             </div>
         </div>
 
-        <div class="grid-container">
-            <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent; padding: 0px;">
-                <div class="overview-grid" style="gap: 40px;">
+        <div class="main-container">
+
+            <div class="specs-card">
+                <div class="gallery-title"> Development </div>
+                <div class="gallery-subtitle"> Proficiencies & Experiences </div>
+                <div class="gallery-specs-container">
                     <div>
-                        <div class="info">
-                            <h3 style="
-                                font-size: calc(1.5rem + (1rem - 1.5rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));
-                                text-align: center;">
-                                <strong>Proficiency Levels</strong>
-                            </h3>
-                        </div>
-                        <div class="info" style="width: 400px;">
-                            <div style="width: 100%;">
-                                <div class="skill-row" style="
-                                    font-size: calc(1.3rem + (1rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));">
-                                    <span>Python</span><span class="stars">&starf; &starf; &starf; &starf; &starf;</span>
-                                </div>
-                                <div class="skill-row" style="
-                                    font-size: calc(1.3rem + (1rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));">
-                                    <span>C / C++</span><span class="stars">&starf; &starf; &starf;</span>
-                                </div>
-                                <div class="skill-row" style="
-                                    font-size: calc(1.3rem + (1rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));">
-                                    <span>C#</span><span class="stars">&starf; &starf;</span>
-                                </div>
-                                <div class="skill-row" style="
-                                    font-size: calc(1.3rem + (1rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));">
-                                    <span>Web (JS/HTML/CSS)</span><span class="stars">&starf; &starf;</span>
-                                </div>
-                                <div class="skill-row" style="
-                                    font-size: calc(1.3rem + (1rem - 1.3rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));">
-                                    <span>Java</span><span class="stars">&starf;</span>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
+                        <div class="gallery-specs-title"> Programming Languages </div>
+                        <div class="gallery-specs-item"><span> Python </span>                   <span class="stars"> &starf; &starf; &starf; &starf; &starf; </span></div>
+                        <div class="gallery-specs-item"><span> C / C++ </span>                  <span class="stars"> &starf; &starf; &starf; </span></div>
+                        <div class="gallery-specs-item"><span> C# </span>                       <span class="stars"> &starf; &starf; </span></div>
+                        <div class="gallery-specs-item"><span> Web (JS/HTML/CSS) </span>        <span class="stars"> &starf; &starf; </span></div>
+                        <div class="gallery-specs-item"><span> Java </span>                     <span class="stars"> &starf; </span></div>
                     </div>
-                    <div class="icon-stats" style="width: 200px; height: 100px; padding-left: 40px; transform: translateY(10px) scale(calc(1.3 - 0.3 * clamp(0, (100vw - 1024px) / 1px * 1000, 1))); "></div>
+                    <div class="gallery-specs-divider"></div>
+                    <div>
+                        <div class="gallery-specs-title"> APIs & Environments </div>
+                        <div class="gallery-specs-item"><span> Blender API </span>              <span class="stars"> &starf; &starf; &starf; &starf; &starf; </span></div>
+                        <div class="gallery-specs-item"><span> Substance Painter API </span>    <span class="stars"> &starf; &starf; &starf; </span></div>
+                        <div class="gallery-specs-item"><span> Google Cloud / AWS </span>       <span class="stars"> &starf; &starf; &starf; </span></div>
+                        <div class="gallery-specs-item"><span> Meta Quest / Pico SDKs </span>   <span class="stars"> &starf; </span></div>
+                        <div class="gallery-specs-item"><span> Unity / Unreal Engine </span>    <span class="stars"> &starf; </span></div>
+                    </div>
                 </div>
-                <hr class="tech-divider" style="width: 710px; justify-self: center; margin-top: 0px; ">
             </div>
+
+            <div class="model-card">
+                <div class="card-title"> Technical Art & <br> Pipeline Automation </div>
+                <model-viewer class="development-viewer" style=" padding: 10px; height: 540px;"
+                    data-variants       = '["/development/technicalart"]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "1"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto 19cm auto"
+                    data-camera-orbit   = "0deg 85deg 70%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <bloom-effect strength="0.3" radius="0.6" threshold="0.3" smoothing="1"></bloom-effect>
+                        <color-grade-effect brightness="0.1" contrast="0.2" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-content"> The production of 3D assets in <b>high-volumes</b> benefits from <b>custom algorithms</b> for the <b>automation</b> of processes that are essential or repetitive, ensuring <b>quality and technical consistency</b> across projects, <b>increasing productivity</b> and <b>reducing manual overhead</b>. </div>
+                <div class="card-content"> My professional experience includes the implementation of these <b>tools for scale</b> utilizing <b>APIs</b> from software like <b>Blender</b> and <b>Substance Painter</b>. In the form of <b>standalone scripts</b> and <b>plugins</b>, my contributions optimized the production of 3D assets for various applications over the years, from quick <b>ad hoc tasks</b> to <b>entire workflows</b>. </div>
+                <div class="card-separator"> Key Implementations : </div>
+                <div class="development-box-title"><span class="icon-development-asset-production"></span> Automated & Parametric Asset Production </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .Mesh_Generation </span>      <span class="development-box-item-description"> Automatic mesh generation based on <u title="Asset Packs, Stock Parts, Parametric Models, etc">prefabs</u>, variable parameters, and non-mesh 3D formats (e.g. DICOM, CAD). </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Mesh_Processing </span>      <span class="development-box-item-description"> Scripts for mesh manipulation on the vertex level based on predefined rules and variable parameters. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Topology_Analysis </span>    <span class="development-box-item-description"> Tools for topological analysis utilizing general <u title="Locations, Edge/Face Connections, Normal Directions, etc">vertex data</u> along <u title="Thickness, Ambient Occlusion, etc">ray-casting</u> and <u title="Gaussian Curvatures">gaussian</u> measuring algorithms. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Procedural_Textures </span>  <span class="development-box-item-description"> <u title="Smart Materials for Adobe Substance Painter">Smart Materials</u> and scripts for automatic <u title="Scripts and Plugins for GIMP, Adobe Substance Painter, and more">texture manipulation</u> based on IDs, UV maps and topology features. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Materials_Setup </span>      <span class="development-box-item-description"> Scripts to automatically set material parameters and assign texture files based on naming and folder hierarchies. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Custom_Shaders </span>       <span class="development-box-item-description"> Algorithms to generate custom <u title="Unity">pre-compiled shaders</u> and perform <u title="Blender Cycles/EEVEE, BGE">real-time shader adjustments</u>. </span></div>
+                </div>
+                <div class="development-box-title"><span class="icon-development-asset-management"></span> High-Volume Asset Management </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .Bulk_Import_Export </span>   <span class="development-box-item-description"> Plugins to streamline importing and exporting large amounts of assets across different software. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Bulk_Optimizations </span>   <span class="development-box-item-description"> Algorithms for automatic <u title="Mesh Decimation, Vertex Merging, DRACO Compression, and more. &#13Texture Resolutions, Color Depths, Compression Levels, Formats and more.">mesh and texture optimizations</u> based on variable parameters and performance metrics. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Gallery_Generation </span>   <span class="development-box-item-description"> Tools to automatically generate 3D galleries for quick visualization and inspection of asset packs. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Naming_Conventions </span>   <span class="development-box-item-description"> Scripts to inspect assets and directories to enforce folder hierarchy and naming conventions. </span></div>
+                </div>
+                <div class="development-box-title"><span class="icon-development-environment-sync"></span> Workflow Standardization </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .Asset_Standards </span>      <span class="development-box-item-description"> Tools to inspect and enforce standards for units, texel density, default transforms, texture resolutions and more. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Environment_Sync </span>     <span class="development-box-item-description"> Presets and plugins to sync lighting and camera settings across different software and render engines. </span></div>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <div class="card-title"> XR Research & <br>Development * </div>
+                <model-viewer class="development-viewer" id="video-viewer" style=" padding: 10px; height: 540px;"
+                    data-variants       = '["/development/XR"]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "1"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto 10cm -12cm"
+                    data-camera-orbit   = "0deg 80deg 55%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <bloom-effect strength="0.3" radius="0.6" threshold="0.3" smoothing="1"></bloom-effect>
+                        <color-grade-effect brightness="0.1" contrast="0.2" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-content"> As an enthusiast of XR technologies, I see a lot of potential in mixing the virtual and real worlds. I've been using AR virtual displays for productivity on a daily basis since the release of the Pico 4, in 2022, and now with the Quest 3 (via Microsoft Mixed Reality Link). </div>
+                <div class="card-content"> Following this interest, I have <b>prototyped</b> a couple of simple <b>VR/AR applications</b> using <b>Unity</b> and <b>Unreal Engine</b> for the <b>Quest</b> and <b>Pico</b> ecosystems. These projects focused on integrating <b>cloud-based asset repositories</b> with real-time visualization for XR headsets. </div>
+                <div class="card-separator"> Key Remarks : </div>
+                <div class="card-content"> These projects consist of simple UIs in which users can <b>preview and select</b> from a <b>list of 3D assets</b>. The assets are <b>dynamically fetched</b> from a remote <b>Firebase</b> server <b>and loaded</b> into the XR environment (VR or AR), having <b>physics</b> added to them and allowing users to <b>manipulate</b> them in space. </div>
+                <div class="development-box-title"><span class="icon-development-xr-goals"></span> Research Goals </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .Game_Engines </span>         <span class="development-box-item-description"> Experiment with the main game engines and learn about their editors, programming languages and render pipelines. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .XR_Development </span>       <span class="development-box-item-description"> Learn more about developing for XR, using the Meta Quest and Pico SDKs for Unity and Unreal Engine. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Cloud_Repositories </span>   <span class="development-box-item-description"> Try solutions for real-time access to high volumes of 3D assets utilizing cloud-based repositories in XR applications. </span></div>
+                </div>
+                <div class="development-box-title"><span class="icon-development-xr-challenges"></span> Development Challenges </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .Quest_Pico_Firebase </span>  <span class="development-box-item-description"> Google-imposed API limitations for Firebase in the Quest and Pico ecosystems required REST workarounds.</span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .AR_Shadow_Casting </span>    <span class="development-box-item-description"> Blending virtual shadows in AR required custom shaders and fine tuning to achieve performance and visual quality.</span></div>
+                </div>
+                <div class="card-content"> * While these remain small <b>personal R&D initiatives</b>, they provided <b>critical insights</b> into development cycles for popular game engines and the <b>infrastructure</b> required to <b>deploy cloud-connected spatial computing apps</b>. </div>
+            </div>
+
+            <div class="model-card">
+                <div class="card-title"> Systems Integration <br> & Industrial Automation </div>
+                <model-viewer class="development-viewer" style=" padding: 10px; height: 540px;"
+                    data-variants       = '["/development/integration"]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "1"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto 15cm 15cm"
+                    data-camera-orbit   = "0deg 75deg 65%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <bloom-effect strength="0.3" radius="0.6" threshold="0.3" smoothing="1"></bloom-effect>
+                        <color-grade-effect brightness="0.1" contrast="0.2" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-content"> Many <b>daily operations</b> within an organization rely on <b>middleware</b> to <b>connect proprietary and 3rd-party systems</b> (e.g. <b>ERPs/CRMs</b>, <b>cloud-based web services</b>, <b>production software</b>, <b>CNC machines</b>). These tools assist in the <b>flow of B2C and B2B information</b> between clients, team members, departments and companies. </div>
+                <div class="card-content"> Designing these <b>integration layers</b> has been a significant part of my work experience, including connections between <b>Redmine</b>, <b>Odoo</b>, <b>AWS</b>, <b>Google Cloud</b>, <b>Discord</b>, manufacturing machines (<b>CNCs/3D printers</b>) and production software (<b>Blender</b>, <b>Substance Painter</b>). </div>
+                <div class="card-separator"> Key Implementations : </div>
+                <div class="development-box-title"><span class="icon-development-digital-fabrication"></span> Digital Manufacturing </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .CAD_CAM_Database </span>     <span class="development-box-item-description"> Tools to manage manufacturing data in local and cloud-based storage systems (e.g. STLs and other CAD/CAM files). </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Mesh_Pre_Processing </span>  <span class="development-box-item-description"> Automatic mesh pre-processing for CNC machines and 3D printers, triggered by scheduling or real-time events . </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Quality_Control </span>      <span class="development-box-item-description"> Tools to assist and automate quality control procedures in digital files and manufactured products. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Automatic_Nesting </span>    <span class="development-box-item-description"> Algorithms to group objects for production with different optimization goals (e.g. time reduction, waste reduction, etc). </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Runtime_Scheduling </span>   <span class="development-box-item-description"> Systematic scheduling and operation of CNC machines and 3D printers according to rule sets (e.g. logistics, nesting). </span></div>
+                </div>
+                <div class="development-box-title"><span class="icon-development-healthcare"></span> Healthcare Data Management & Processing </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .Patient_Database </span>     <span class="development-box-item-description"> Connecting clinics, cloud databases and medical software, with tools such as anonymization and encryption. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Medical_Imaging </span>      <span class="development-box-item-description"> Algorithms for ML-based segmentation and classification, automatic mesh generation, and more. </span></div>
+                </div>
+                <div class="development-box-title"><span class="icon-development-cloud-operations"></span> Cloud Operations </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .ERP_Integration </span>      <span class="development-box-item-description"> Centralizing internal and 3rd-party systems into ERPs and CRMs for efficient management and collaboration. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Database_Sync </span>        <span class="development-box-item-description"> Routines to sync separate databases and enable real-time updates across systems, projects and companies. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Remote_Teams </span>         <span class="development-box-item-description"> Bots and plugins connecting IM platforms (e.g. Slack, Discord) to cloud services and production software. </span></div>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <div class="card-title"> Machine Learning &<br>Artificial Intelligence * </div>
+                <model-viewer class="development-viewer" style=" padding: 10px; height: 540px;"
+                    data-variants       = '["/development/ai"]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "1"
+                    shadow-intensity    = "0"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto 15cm -7.5cm"
+                    data-camera-orbit   = "0deg 80deg 65%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <bloom-effect strength="0.5" radius="0.6" threshold="0.03" smoothing="0.5"></bloom-effect>
+                        <color-grade-effect brightness="0.1" contrast="0.2" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-content"> While over-reliance in <b>AI</b> risks creative stagnation and job obsolescence, its <b>strategic integration</b> can act as an <b>enabler and enhancer</b> for artists, developers and other professionals across all fields. </div>
+                <div class="card-content"> My personal experience with ML/AI started in 2016 when developing <b>computer vision algorithms</b> for the medical field, and extends to today with uses that include <b>texture creation</b>, referencing <b>technical documentation</b> for APIs, quick <b>debugging</b>, and more. </div>
+                <div class="card-separator"> Key Utilizations & Implementations : </div>
+                <div class="development-box-title"><span class="icon-development-ai-medical"></span> Computer Vision & Medical Imaging </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .2D_Computer_Vision </span>   <span class="development-box-item-description"> Implementing <u title="Machine Learning">ML-based</u> computer vision algorithms for automatic segmentation and classification in <u title="CT/MRI Medical Images">DICOM layers</u>. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .3D_Spatial_Vision </span>    <span class="development-box-item-description"> Developing <u title="Convolutional Neural Networks">CNNs</u> for segmentation and classification in 3D meshes based on <u title="Gaussian Curvature, Thickness, Ambient Occlusion, etc">topology measurements</u> and <u title="Locations, Edge/Face Connections, Normal Directions, etc">vertex data</u>. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .AI_3D_Generation </span>   <span class="development-box-item-description"> Utilizing information from the 2D and 3D computer visions to guide the generation of <u title="Automatic meshes from segmented and classified DICOMs, &#13Automatic MBT bracket placement for indirect-bonding trays, &#13and more">3D meshes</u> and <u title="Assign materials according to automatic classification and segmentation">materials</u>. </span></div>
+                </div>
+                <div class="development-box-title"><span class="icon-development-ai-textures"></span> Textures & PBR Materials </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .Upscaling </span>            <span class="development-box-item-description"> Image upscaling for textures and reference photos via <u title="Using tools like Upscayl">CNN algorithms</u>. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .PBR_Materials </span>        <span class="development-box-item-description"> Using <u title="In software like Substance Sampler">AI tools</u> to estimate PBR parameters for materials and generate textures based on reference photos. </span></div>
+                </div>
+                <div class="development-box-title"><span class="icon-development-ai-coding"></span> LLMs & Software Development </div>
+                <div class="development-box">
+                    <div class="development-box-item"><span class="development-box-item-title"> .Documentations </span>       <span class="development-box-item-description"> Quick ad hoc implementations and API/SDK technical documentation referencing. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Debugging </span>            <span class="development-box-item-description"> Quickly finding bugs and exploring solutions. </span></div>
+                </div>
+                <div class="card-content"> * Many <b>generative AIs</b> for <b>generic 3D assets</b> have appeared in the market since 2024, but results have been <b>improper</b> in the production scenarios I encountered so far. The 3D mesh for the stylized brain at the start of this section, however, was created with one of these tools. </div>
+            </div>
+
         </div>
 
-        <div class="grid-container">
-            <div class="model-card" style="transform: none; border-color: #333;">
-                <div class="info">
-                    <div class="info">
-                        <div class="exp-sub">
-                            <div class="overview-grid">
-                                <div class="icon-techart" style="width: 256px; height: 256px; top: 40px;"></div>
-                                <div>
-                                    <h3 style="text-align: center; line-height: 1.5; padding-top: 0px; font-size: calc(2rem + (1.6rem - 2rem) * clamp(0, (100vw - 1024px) / 1px * 1000, 1));">Technical Art</h3>
-                                    <bio><p>
-                                        I have developed many custom algorithms to automate
-                                        complex and repetitive processes within high-volume production
-                                        of 3D assets, leveraging APIs from
-                                        software such as Blender and Substance Painter.
-                                        <br><br>
-                                        Either via standalone scripts or fully integrated plugins,
-                                        addons and extensions, these tools ensure quality and technical consistency
-                                        across diverse artists and teams, while also significantly
-                                        reducing manual tasks.
-                                    </p></bio>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="expertise-list">
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Geometry & Shading Logic
-                                </strong><br>
-                                Developing algorithms for automated mesh generation, mesh processing, and mesh analysis
-                                alongside automated setups for textures and materials/shaders.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    High-Volume Asset Management
-                                </strong><br>
-                                Implementing bulk optimization and import/export solutions for 3D authoring software to
-                                streamline asset production, management and deployment.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Workflow Standardization
-                                </strong><br>
-                                Creating scripts and plugins to enforce naming conventions, file formats, and complex
-                                folder hierarchies across large-scale projects.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Environmental Synchronization
-                                </strong><br>
-                                Automating lighting and camera configurations to maintain visual parity
-                                between different 3D authoring software, web viewers and game engines.
-                            </li>
-                        </ul>
-                        <hr class="tech-divider" style="width: 700px; justify-self: center;">
-                        <br>
-                    </div>
-                </div>
-            </div>
+        <div class="footer-container">
+            <a href="/" class="footer-logo" title="Home"></a>
+            <span class="footer-title"> Fabio Orsi </span>
+            <span class="footer-subtitle"> 3D Tech Artist & Developer </span>
+            <span class="footer-contact" title="Copy to Clipboard"> osb.fabio@gmail.com </span>
         </div>
 
-        <div class="grid-container">
-            <div class="model-card" style="transform: none; border-color: #333;">
-                <div class="info">
-                    <div class="info">
-                         <div class="exp-sub">
-                            <div class="overview-grid" style="margin-left: 25px;">
-                                <div>
-                                    <h3 style="text-align: center; line-height: 1.5; padding-top: 0px; font-size: 1.6rem;">
-                                        Systems Integration
-                                    </h3>
-                                    <bio><p>
-                                        I have designed and deployed multiple integration layers between Enterprise
-                                        Systems (ERP/CRM) and cloud-based web services to synchronize B2C and B2B data
-                                        across teams, departments and companies. Some of the platforms include Redmine,
-                                        Odoo, AWS (EC2 and S3), Google Cloud (Firebase and Google Sheets) and Discord.
-                                    </p></bio>
-                                </div>
-                                <div class="icon-integration" style="width: 256px; height: 256px; transform: translateY(20px);"></div>
-                            </div>
-                        </div>
-                        <ul class="expertise-list">
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Manufacturing and Mesh Processing Automation
-                                </strong><br>
-                                Integrating pipelines for in-demand manufacturing using CNCs and 3D printing, automating
-                                database management, mesh processing, scheduling, and real-time control of machines.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Healthcare Data Management
-                                </strong><br>
-                                Bridging B2B platforms to manage the secure retrieval, storage and delivery of confidential
-                                patient information, including 3D medical images, with features such as anonymization.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Production Lifecycle
-                                </strong><br>
-                                Connecting ERP/CRMs with cloud services to facilitate the flow of real-time production data,
-                                integrating design and engineering teams, factory floor, warehouse, sales, up to marketing.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Cloud Operations & Monitoring
-                                </strong><br>
-                                Developing interfaces between ERPs, cloud services, messaging apps, and custom hardware to
-                                enable real-time system notifications, remote document control, translations, and more.
-                            </li>
-                        </ul>
-                        <hr class="tech-divider" style="width: 700px; justify-self: center;">
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-container">
-            <div class="model-card" style="transform: none; border-color: #333;">
-                <div class="info">
-                    <div class="info">
-                        <div class="exp-sub">
-                            <div class="overview-grid">
-                                <div class="icon-xr" style="width: 256px; height: 256px; transform: translateY(10px);"></div>
-                                <div>
-                                    <h3 style="text-align: center; line-height: 1.5; padding-top: 0px; font-size: 1.6rem;">
-                                        XR Research & Development
-                                    </h3>
-                                    <bio><p>
-                                        I have prototyped a couple of simple cross-platform VR/AR applications using Unity and Unreal
-                                        Engine for Meta Quest and Pico ecosystems. These projects focused on bridging
-                                        cloud-based asset repositories with real-time visualization for XR headsets.
-                                    </p></bio>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="expertise-list">
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Goals
-                                </strong><br>
-                                The apps allowed the user to select from a list of 3D models, and it would
-                                dynamically fetch the 3D model from a remote server into the XR environments,
-                                adding physics and allowing the user to manipulate the asset in space.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Challenges
-                                </strong><br>
-                                Biggest challenges in both cases were accessing Google Cloud from the Meta
-                                and Pico ecosystems and creating good shadow-casting solutions in AR.
-                            </li>
-                        </ul>
-                        <div class="info" style="margin-left: 72px; margin-right: 48px;">
-                            <bio><p>
-                                While these remain small personal R&D initiatives, they provided critical insights
-                                into the infrastructure required for cloud-connected spatial computing.
-                            </p></bio>
-                        </div>
-                        <hr class="tech-divider" style="width: 700px; justify-self: center;">
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="grid-container">
-            <div class="model-card" style="transform: none; border-color: #333;">
-                <div class="info">
-                    <div class="info">
-                         <div class="exp-sub">
-                            <div class="overview-grid" style="margin-left: 25px;">
-                                <div>
-                                    <h3 style="text-align: center; line-height: 1.5; padding-top: 0px; font-size: 1.6rem;">
-                                        Machine Learning & AI
-                                    </h3>
-                                    <bio><p>
-                                        While over-reliance in AI risks creative stagnation and job obsolescence, strategic
-                                        integration can act as an enabler and enhancer for artists and developers across
-                                        all fields. My personal experience with ML/AI includes:
-                                    </p></bio>
-                                </div>
-                                <div class="icon-ai" style="width: 256px; height: 256px;  transform: translateY(20px);"></div>
-                            </div>
-                        </div>
-                        <ul class="expertise-list">
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    Mesh Processing & Medical Imaging
-                                </strong><br>
-                                Developing multiple 3D mesh processing and analysis tools for the medical field, including the
-                                use of Machine Learning for automated segmentation and classification of CT/3D scans.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    General Software Development
-                                </strong><br>
-                                Utilizing LLMs to rapidly prototype simple ad-hoc algorithms, to facilitate debugging processes,
-                                and to assist in API documentation research for more complex implementations.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    3D Texturing and PBR Materials
-                                </strong><br>
-                                Integrating AI image upscaling for reference photos of products and materials. Using AI
-                                tools from apps such as Substance 3D Sampler to estimate the parameters of PBR materials.
-                            </li>
-                            <li style="padding-bottom: 10px;">
-                                <strong style="color: #00d1ff; text-transform: uppercase;">
-                                    3D Model Generation *
-                                </strong><br>
-                                Experimenting with generative AI for 3D, however it is noticeable that these solutions still lack
-                                professional topology standards and editability required for most production assets.
-                            </li>
-                        </ul>
-                        <hr class="tech-divider" style="width: 700px; justify-self: center;">
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
-        <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
     </body>
 </html>
 
