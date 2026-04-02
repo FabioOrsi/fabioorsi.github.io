@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Furnishings 3D Portfolio - F.Orsi</title>
-        <link rel="stylesheet" href="/resources/3dmodels.css">
-        <link rel="stylesheet" href="/resources/style_icons.css">
-        <link rel="stylesheet" href="/resources/style_viewers.css">
+        <title> Furnishings 3D Gallery - F.Orsi</title>
+        <link rel="icon" href="/resources/media/favicon.svg" type="image/svg+xml">
+
+        <meta charset="utf-8">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-        <script src="/resources/scripts.js" defer></script>
+
+        <link rel="stylesheet" href="/resources/style_main.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_topbar.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_icons.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_gallery.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_viewers.css?v=1.0.1">
+        <script src="/resources/scripts.js?v=1.0.1" defer></script>
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js",
+                    "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/"
+                }
+            }
+        </script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer-module.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects@1.5.0/dist/model-viewer-effects.min.js"></script>
+
     </head>
 
     <body>
-
-        <div id="top-title-bar" class="grid-container">
-            <div class="model-card" style="transform: none; border-color: #333;">
-                <a href="/"><div class="logo-container" title="Home"><div class="logo-blue" style="width: calc(1px * (48 + (36 - 48) * var(--resolution-threshold))); height: calc(1px * (48 + (36 - 48) * var(--resolution-threshold)));"></div></div></a>
-                <div class="info">
-                    <div class="dropdown">
-                        <button class="dropdown-btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            <span style="margin: 0px auto;"> menu </span>
-                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="/">                                <div class="icon-home"></div>           Home                </a>
-                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-list"></div></a>
-                            <a href="/furniture">                       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
-                            <a href="/transportation">                  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
-                            <a href="/sports">                          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
-                            <a href="/furnishings" class="active">      <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
-                            <a href="/electronics">                     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
-                            <a href="/apparel">                         <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
-                            <a href="/misc">                            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
-                        </div>
+        <div class="top-bar-container">
+            <div class="top-bar-card">
+                <a href="/" class="logo" title="Home"></a>
+                <div class="menu">
+                    <button class="menu-button"><div class="menu-icon"></div><span style="margin: 0px auto;"> MENU </span><div class="menu-chevron"></div></button>
+                    <div class="menu-content">
+                        <a href="/">                <div class="icon-home"></div>           Home                </a>
+                        <a href="/development">     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                        <a href="/furniture">       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
+                        <a href="/transportation">  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
+                        <a href="/sports">          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
+                        <a href="/furnishings">     <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
+                        <a href="/electronics">     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
+                        <a href="/apparel">         <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
+                        <a href="/misc">            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
                     </div>
                 </div>
-                <button onclick="top_function()" id="backToTopBtn" title="Go to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
+                <button id="top-button" title="Go to top" onclick="go_to_top()"><div class="icon-top"></div> Top </button>
             </div>
         </div>
 
-        <div class="grid-container">
-            <div class="model-card" style="background-color: transparent; border: transparent;">
-                <div class="title-gallery"> Furnishings <div class="icon-3d-card"> 3D </div></div>
-                <div class="grid-container" style="gap: 3rem; align-items: center; padding-top: 0px;">
+        <div class="main-container">
+
+            <div class="specs-card">
+                <div class="gallery-title"> Furnishings </div>
+                <div class="gallery-subtitle"> 3D Models Gallery </div>
+                <div class="gallery-specs-container">
                     <div>
-                        <div class="title-specs"> Creative Tools </div>
-                        <div class="grid-container" style="display: flex; flex-direction: row; justify-content: center;">
+                        <div class="gallery-specs-title"> Creative Tools </div>
+                        <div class="creative-tools-container">
                             <div class="icon-blender"           title="Blender"></div>
                             <div class="icon-substance-painter" title="Substance 3D Painter"></div>
                             <div class="icon-substance-sampler" title="Substance 3D Sampler"></div>
@@ -55,152 +67,144 @@
                             <div class="icon-inkscape"          title="Inkscape"></div>
                         </div>
                     </div>
+                    <div class="gallery-specs-divider"></div>
                     <div>
-                        <div class="title-specs"> Specifications </div>
-                        <div class="specs-table"><span>Files Format:</span>         <span>glTF GLB</span></div>
-                        <div class="specs-table"><span>Materials Pipeline:</span>   <span>PBR Materials</span></div>
-                        <div class="specs-table"><span>Textures Resolution:</span>  <span>2048x2048 *</span></div>
-                        <div class="specs-table"><span>Textures Format:</span>      <span>KTX2 UASTC</span></div>
+                        <div class="gallery-specs-title"> Specifications </div>
+                        <div class="gallery-specs-item"><span> Files Format: </span>           <span> glTF 2.0 / GLB </span></div>
+                        <div class="gallery-specs-item"><span> Materials Pipeline: </span>     <span> PBR Materials </span></div>
+                        <div class="gallery-specs-item"><span> Textures Resolution: </span>    <span> 2048x2048 </span></div>
+                        <div class="gallery-specs-item"><span> Textures Format: </span>        <span> KTX2 / UASTC </span></div>
                     </div>
                 </div>
-                <hr class="tech-divider" style="max-width: 100%; width: 700px; justify-self: center; margin: 24px 0px; ">
-                <div class="subtext">
+                <div class="gallery-specs-subtext">
                     * Some models may contain textures in 1024x1024<br>
                     ** Some projects were made in collaboration with other artists
                 </div>
             </div>
-        </div>
 
-        <div class="portfolio-wrapper">
-
-            <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
+            <div class="model-card">
+                <div class="card-title padding-top-20"> Lamps </div>
+                <model-viewer class="portfolio-viewer" camera-controls
+                    data-current-index  = "0"
+                    data-variants       = '[
                         "/furnishings/lamps/4561",
                         "/furnishings/lamps/7035",
                         "/furnishings/lamps/6039",
                         "/furnishings/lamps/5997",
                         "/furnishings/lamps/6003",
                         "/furnishings/lamps/4663",
-                    ]'>
-                    <div class="card-title"> Lamps </div>
-                    <model-viewer class="portfolio-viewer" camera-controls ar
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "1.5"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "30deg 80deg 125%">
-                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
-                    </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
-                </div>
+                    ]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "1.5"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "30deg 80deg 110%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <smaa-effect></smaa-effect>
+                        <bloom-effect strength="0.3" radius="0.6" threshold="0.3" smoothing="0.025"></bloom-effect>
+                        <color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
             </div>
 
-            <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
+            <div class="model-card">
+                <div class="card-title padding-top-20"> Clocks </div>
+                <model-viewer class="portfolio-viewer" camera-controls
+                    data-current-index  = "0"
+                    data-variants       = '[
                         "/furnishings/clocks/7750",
                         "/furnishings/clocks/7749",
                         "/furnishings/clocks/7753",
                         "/furnishings/clocks/8083",
                         "/furnishings/clocks/8082",
                         "/furnishings/clocks/8019",
-                    ]'>
-                    <div class="card-title"> Clocks </div>
-                    <model-viewer class="portfolio-viewer" camera-controls ar
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "2"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "30deg 80deg 135%">
-                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
-                    </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
-                </div>
+                    ]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "2"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "30deg 80deg 115%">
+                    <effect-composer renderMode="quality" msaa="16"><smaa-effect></smaa-effect><color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect></effect-composer>
+                </model-viewer>
             </div>
 
-            <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
+            <div class="model-card">
+                <div class="card-title padding-top-20"> Decorative Objects </div>
+                <model-viewer class="portfolio-viewer" camera-controls
+                    data-current-index  = "0"
+                    data-variants       = '[
                         "/furnishings/sculptures/2387",
                         "/furnishings/sculptures/7030",
                         "/furnishings/sculptures/2579",
                         "/furnishings/sculptures/3896",
                         "/furnishings/sculptures/5848",
                         "/furnishings/sculptures/5789",
-                    ]'>
-                    <div class="card-title"> Decorative Objects </div>
-                    <model-viewer class="portfolio-viewer" camera-controls ar
-                        environment-image   = "/resources/media/round_platform_1k.hdr"
-                        exposure            = "2"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "-30deg 75deg 120%">
-                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
-                    </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
-                </div>
+                    ]'
+                    environment-image   = "/resources/media/hdri/round_platform_1k.hdr"
+                    exposure            = "2"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "-30deg 75deg 110%">
+                    <effect-composer renderMode="quality" msaa="16"><smaa-effect></smaa-effect><color-grade-effect contrast="0.0" saturation="0.0" brightness="0.0" tonemapping="aces_filmic"></color-grade-effect></effect-composer>
+                </model-viewer>
             </div>
 
-            <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
+            <div class="model-card">
+                <div class="card-title padding-top-20"> Mirrors </div>
+                <model-viewer class="portfolio-viewer" camera-controls
+                    data-current-index  = "0"
+                    data-variants       = '[
                         "/furnishings/mirrors/7825",
                         "/furnishings/mirrors/7408",
                         "/furnishings/mirrors/8260",
                         "/furnishings/mirrors/1791",
                         "/furnishings/mirrors/4829",
                         "/furnishings/mirrors/7158",
-                    ]'>
-                    <div class="card-title"> Mirrors </div>
-                    <model-viewer class="portfolio-viewer" camera-controls ar
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "2"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "30deg 85deg 120%">
-                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
-                    </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
-                </div>
+                    ]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "2"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "30deg 85deg 110%">
+                    <effect-composer renderMode="quality" msaa="16"><smaa-effect></smaa-effect><color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect></effect-composer>
+                </model-viewer>
             </div>
 
-            <div class="grid-container">
-                <div class="model-card" data-current-index="0"
-                    data-variants='[
+            <div class="model-card">
+                <div class="card-title padding-top-20"> Wall Art </div>
+                <model-viewer class="portfolio-viewer" camera-controls
+                    data-current-index  = "0"
+                    data-variants       = '[
                         "/furnishings/wallart/0444",
                         "/furnishings/wallart/0742",
                         "/furnishings/wallart/2529",
                         "/furnishings/wallart/6028",
                         "/furnishings/wallart/6197",
                         "/furnishings/wallart/7848",
-                    ]'>
-                    <div class="card-title"> Wall Art </div>
-                    <model-viewer class="portfolio-viewer" camera-controls ar
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "2"
-                        data-field-of-view  = "22deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 85deg 90%">
-                        <div class="viewer-nav-controls"><button class="nav-button left" onclick="change_variant(this, -1)">&#10094;</button><span class="variant-counter">1/1</span><button class="nav-button right" onclick="change_variant(this, 1)">&#10095;</button></div>
-                        <button class="fullscreen-button" onclick="toggle_fullscreen(this)" title="Fullscreen"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>
-                        <button class="reset-button" onclick="reset_view(this)">Reset View</button>
-                    </model-viewer>
-                    <hr class="tech-divider" style="max-width: 70%; width: 700px; justify-self: center; margin: 30px; ">
-                </div>
+                    ]'
+                    environment-image   = "/resources/media/hdri/round_platform_1k.hdr"
+                    exposure            = "2"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 85deg 90%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <smaa-effect></smaa-effect>
+                        <bloom-effect strength="3" radius="0.55" threshold="0.8" smoothing="0.5"></bloom-effect>
+                        <color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
             </div>
 
-            <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
-            <div class = "info"><p style="text-align: center;"><br><strong style="color: #00d1ff">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: #00d1ff; opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
-            <div style="height: 200px;"></div>
+            <div class="development-list-separator"></div>
+
         </div>
+
+        <div class="footer-container">
+            <a href="/" class="footer-logo" title="Home"></a>
+            <span class="footer-title"> Fabio Orsi </span>
+            <span class="footer-subtitle"> 3D Tech Artist & Developer </span>
+            <span class="footer-contact" title="Copy to Clipboard"> osb.fabio@gmail.com </span>
+        </div>
+
     </body>
 </html>
