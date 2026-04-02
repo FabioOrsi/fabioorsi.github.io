@@ -57,8 +57,8 @@ model-viewer:-webkit-full-screen {
 
 .development-viewer,
 .menu-viewer {
-    width:              98% !important;
-    height:             calc(480 * var(--px)) !important;
+    width:              98%;
+    height:             480px;
 
     /* max-width:          calc(700 * var(--px)); */
     /* box-shadow:         none; */
