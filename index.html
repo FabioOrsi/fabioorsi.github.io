@@ -1,490 +1,203 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>F.Orsi - Portfolio</title>
-        <link rel="stylesheet" href="/resources/3dmodels.css">
-        <link rel="stylesheet" href="/resources/style_icons.css">
-        <link rel="stylesheet" href="/resources/style_viewers.css">
+        <title>Home - F.Orsi - Portfolio</title>
+        <link rel="icon" href="/resources/media/favicon.svg" type="image/svg+xml">
+
+        <meta charset="utf-8">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-        <script src="/resources/scripts.js" defer></script>
-        <meta charset="UTF-8">
-        <style>
-            * {
-                -webkit-tap-highlight-color: transparent;
-                -webkit-touch-callout: none;
-            }
 
-            .portfolio-link {
-                position:           relative;
-                display:            flex;
-                border-color:       #000;
-                box-shadow:         0 0 0 2px rgba(0, 0, 0, 1),
-                                    0 4px 15px rgba(0, 0, 0, 0.4),
-                                    4px -4px 4px rgba(0, 0, 0, 0.75),
-                                    -4px 4px 4px rgba(255, 255, 255, 0.1),
-                                    inset 4px -4px 10px rgba(0, 0, 0, 0.75),
-                                    inset -2px 2px 10px rgba(255, 255, 255, 0.25);
-                transition:         all 0.8s ease;
-            }
+        <link rel="stylesheet" href="/resources/style_main.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_topbar.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_icons.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_gallery.css?v=1.0.1">
+        <link rel="stylesheet" href="/resources/style_viewers.css?v=1.0.1">
+        <script src="/resources/scripts.js?v=1.0.1" defer></script>
 
-            .portfolio-link:active {
-                box-shadow:         0 4px 15px rgba(0, 0, 0, 0.4),
-                                    inset -2px 2px 4px rgba(0, 0, 0, 0.5),
-                                    inset 2px -2px 4px rgba(255, 255, 255, 0.1);
-            }
-
-            .portfolio-link.parent-hover-effect {
-                border-color:       #000 !important;
-                transition:         all 0.8s ease !important;
-            }
-
-            .info bio p {
-                max-width: 700px; 
-                margin: 0 0;
-                padding: 10px 100px;
-                line-height: 1.7;
-                text-align: justify;
-                text-justify: inter-word;
-                hyphens: auto;
-            }
-
-            .lead-text {
-                text-align: left;
-                width: 100%;
-                max-width: 700px;
-                padding-left: 0;
-                padding-right: 0; 
-            }
-
-            .expertise-list {
-                list-style:             none;
-                padding:                0;
-                margin:                 15px auto 0 auto;
-                width:                  100%;
-                max-width:              700px;
-                text-align:             justify;
-                font-size:              calc((0.9 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);
-            }
-
-            .expertise-list li {
-                position: relative;
-                padding-left: 1.5rem;
-                margin-bottom: 10px;
-                line-height: 1.7;
-                color: #999;
-            }
-
-            .expertise-list li::before {
-                content:                "❱";
-                position:               absolute;
-                left:                   0;
-                color:                  #aaa;
-            }
-
-            .cta-text {
-                margin-top: 1.5rem;
-                text-align: center;
-                opacity: 0.5;
-                padding-top: 0.5rem;
-            }
-
-            .sub-text {
-                font-size: 0.9rem;
-                opacity: 1;
-            }
-
-            .expertise-dropdown summary {
-                list-style: none;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: calc((10 * var(--R) + 15 * (1 - var(--R))) * 1px);
-                background: #2a2a2a;
-                color: rgba(0, 190, 255, 1);
-                border: 1px solid #444;
-                padding: 8px 16px;
-                border-radius: 6px;
-
-                font-family: 'Roboto', sans-serif;
-                font-weight: 700;
-                text-transform: uppercase;
-                font-size: calc((0.9 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);
-                text-align: center;
-
-                transition: all 0.2s ease;
-                width:  660px;
-                margin: 0 auto;
-
-                margin-bottom: calc((10 * var(--R) + 20 * (1 - var(--R))) * 1px);
-
-
-                justify-content: center;
-                min-width: 100px;
-            }
-
-            .expertise-dropdown summary::before {
-                content: "";
-                order: 3;
-                margin-left: auto;
-                width: 1.1rem;
-                height: 1.1rem;
-                background-color: currentColor;
-                transition: transform 0.3s ease;
-                opacity: 1;
-                
-                -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat center;
-                mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat center;
-                -webkit-mask-size: contain;
-                mask-size: contain;
-            }
-
-            .expertise-dropdown[open] summary::before {
-                transform: rotate(180deg);
-            }
-
-            @media (hover : hover) {
-                .expertise-dropdown summary:hover {
-                    background:     #333;
-                    border-color:   rgba(0, 190, 255, 1);
-                    color:          rgba(0, 190, 255, 1);
-                }
-
-                .portfolio-link:hover {
-                    border-color:   rgba(0, 190, 255, 0.66);
-                }
-
-                .portfolio-link:hover .view-galery {
-                    will-change:        transform;
-                    color:              rgba(0, 190, 255, 1);
-                    transform:          scale(1.1) translateZ(0);
-                    transition:         all 0.6s ease !important;
-                    transition-delay:   200ms !important;
-                }
-
-                .portfolio-link:hover .card-title-home {
-                    will-change:        transform;
-                    transform:          scale(1.1) translateZ(0);
-                    transition:         all 0.6s ease !important;
-                    transition-delay:   200ms !important;
-                }
-
-                .portfolio-link.parent-hover-effect:hover .view-galery {
-                    will-change:        transform;
-                    color:              #999 !important;
-                    transform:          scale(1) translateZ(0) !important;
-                    transition:         all 0.8s ease !important;
-                    transition-delay:   0ms !important;
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js",
+                    "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/"
                 }
             }
+        </script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer-module.min.js"></script>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects@1.5.0/dist/model-viewer-effects.min.js"></script>
 
-            @media screen and (max-width: 1024px) {
-                .info p {
-                    color: rgba(0, 190, 255, 1);
-                }
-            }
-
-            .expertise-dropdown summary::-webkit-details-marker {
-                display: none;
-            }
-
-            .expertise-dropdown .skills-button::after {
-                content: "Skills";
-                font-family: 'Roboto', sans-serif;
-                font-weight: 700;
-                transition: all 0.2s ease;
-            }
-
-            .expertise-dropdown .experience-button::after {
-                content: "Experience";
-                font-family: 'Roboto', sans-serif;
-                font-weight: 700;
-                transition: all 0.2s ease;
-            }
-
-            .expertise-dropdown .education-button::after {
-                content: "Education";
-                font-family: 'Roboto', sans-serif;
-                font-weight: 700;
-                transition: all 0.2s ease;
-            }
-
-            .experience-list {
-                font-size:          calc((0.9 * var(--R) + 1.3 * (1 - var(--R))) * 1rem);
-                padding-bottom:     calc((20 * var(--R) + 30 * (1 - var(--R))) * 1px);
-                margin-left:        0px;
-                margin-right:       0px;
-            }
-
-            .experience-list::before {
-                content: "·";
-                position: absolute;
-                left: 0px;
-                font-weight: bold;
-                color: #999;
-            }
-
-            .icon-skills {
-                flex-shrink: 0;
-                background-color: rgba(0, 190, 255, 1);
-                position: relative;
-                width: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                height: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                -webkit-mask: url('/resources/media/icon-skills.svg') no-repeat center;
-                -webkit-mask-size: contain;
-                mask: url('/resources/media/icon-skills.svg') no-repeat center;
-                mask-size: contain;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            }
-
-            .icon-experience {
-                flex-shrink: 0;
-                background-color: rgba(0, 190, 255, 1);
-                position: relative;
-                width: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                height: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                -webkit-mask: url('/resources/media/icon-experience.svg') no-repeat center;
-                -webkit-mask-size: contain;
-                mask: url('/resources/media/icon-experience.svg') no-repeat center;
-                mask-size: contain;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            }
-
-            .icon-education {
-                flex-shrink: 0;
-                background-color: rgba(0, 190, 255, 1);
-                position: relative;
-                width: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                height: calc((24 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                -webkit-mask: url('/resources/media/icon-education.svg') no-repeat center;
-                -webkit-mask-size: contain;
-                mask: url('/resources/media/icon-education.svg') no-repeat center;
-                mask-size: contain;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            }
-
-        </style>
     </head>
 
     <body>
-
-        <div id="top-title-bar" class="grid-container">
-            <div class="model-card" style="transform: none; border-color: #333;">
-                <a href="/">
-                    <div class="logo-container" title="Home">
-                        <div class="logo-blue" style="
-                                width:  calc((36 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                                height: calc((36 * var(--R) + 48 * (1 - var(--R))) * 1px);
-                            ">
-                        </div>
-                    </div>
-                </a>
-                <div class="info">
-                    <div class="dropdown">
-                        <button class="dropdown-btn">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                            <span style="margin: 0px auto;">menu</span>
-                            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 100%; width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="/" class="active">                 <div class="icon-home"></div>           Home                </a>
-                            <a href="/development">                     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
-                            <a href="/furniture">                       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
-                            <a href="/transportation">                  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
-                            <a href="/sports">                          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
-                            <a href="/furnishings">                     <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
-                            <a href="/electronics">                     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
-                            <a href="/apparel">                         <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
-                            <a href="/misc">                            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
-                        </div>
+        <div class="top-bar-container">
+            <div class="top-bar-card">
+                <a href="/" class="logo" title="Home"></a>
+                <div class="menu">
+                    <button class="menu-button"><div class="menu-icon"></div><span style="margin: 0px auto;"> MENU </span><div class="menu-chevron"></div></button>
+                    <div class="menu-content">
+                        <a href="/">                <div class="icon-home"></div>           Home                </a>
+                        <a href="/development">     <div class="icon-development"></div>    Development         <div class="icon-3d"><div class="icon-list"></div></div></a>
+                        <a href="/furniture">       <div class="icon-furniture"></div>      Furniture           <div class="icon-3d">3D</div></a>
+                        <a href="/transportation">  <div class="icon-transportation"></div> Transportation      <div class="icon-3d">3D</div></a>
+                        <a href="/sports">          <div class="icon-sports"></div>         Sports              <div class="icon-3d">3D</div></a>
+                        <a href="/furnishings">     <div class="icon-furnishings"></div>    Furnishings         <div class="icon-3d">3D</div></a>
+                        <a href="/electronics">     <div class="icon-electronics"></div>    Electronics         <div class="icon-3d">3D</div></a>
+                        <a href="/apparel">         <div class="icon-apparel"></div>        Apparel             <div class="icon-3d">3D</div></a>
+                        <a href="/misc">            <div class="icon-misc"></div>           Misc                <div class="icon-3d">3D</div></a>
                     </div>
                 </div>
-                <button onclick="top_function()" id="backToTopBtn" title="Go to top"><svg style="width: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem); height: calc((1.1 * var(--R) + 1.4 * (1 - var(--R))) * 1rem);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg><span>Top</span></button>
+                <button id="top-button" title="Go to top" onclick="go_to_top()"><div class="icon-top"></div> Top </button>
             </div>
         </div>
 
-        <div class="grid-container">
-            <div class="model-card" style="transform: none; border-color: #333;">
-                <div class="info">
-                    <div class="logo-container" style="border: none !important; position: relative; padding: 0px 0px 0px 0px; margin-top: -10px;">
-                        <div class="model-card" style="border: none; background-color: transparent;" data-variants='["/resources/media/logo_optimized"]'>
-                            <model-viewer id="logo-viewer" class="disable-progress-bar"
-                                disable-zoom
-                                data-field-of-view  = "22deg"
-                                data-camera-target  = "auto auto auto"
-                                data-camera-orbit   = "0deg 90deg 60%"
-                                shadow-intensity    = "0.0">
-                            </model-viewer>
-                        </div>
-                    </div>
-                    <h3 style="margin: -10px 0px;"><strong style="color: rgba(0, 190, 255, 1);">Fabio Orsi</strong></h3>
-                    <p style="margin: 16px 0px 10px;"><strong style=" color: #999;">3D Tech Artist & Developer</strong></p>
-                </div>
+        <div class="main-container" style="padding-top: calc(80 * var(--px));">
 
-                <hr class="tech-divider">
-                <div class="info">
-                    <bio><p>
-                        As an <strong style="color: #aaa;">Industrial Designer</strong> with a foundation in <strong style="color: #aaa;">Control & Automation Engineering</strong>, I have always
-                        worked at the intersections between the <strong style="color: #aaa;">creative and technical</strong> worlds. Focused on <strong style="color: #aaa;">3D models</strong>
-                        and <strong style="color: #aaa;">coding</strong> around them, most of my professional contributions fit the definiton of a <strong style="color: #aaa;">Technical Artist</strong>.
-                    </p></bio>
-                </div>
+            <div class="model-card" style="padding-bottom: calc(10 * var(--px));">
 
-                <hr class="tech-divider">
-                <div class="info">
-                    <bio><p>
-                        Beyond <strong style="color: #aaa;">manual authoring</strong>, I have designed dozens of <strong style="color: #aaa;">automated workflows</strong> that have <strong style="color: #aaa;">scaled 
-                        the production</strong> and management of <strong style="color: #aaa;">hundreds of thousands of 3D models</strong> for various fields including 
-                        medical, manufacturing, and <strong style="color: #aaa;">product visualization</strong> for the <strong style="color: #aaa;">Web and XR</strong>.
-                    </p></bio>
-                </div>
+                <model-viewer id="logo-viewer" class="disable-progress-bar"
+                    data-variants       = '["/resources/media/logo_optimized"]'
+                    exposure            = "3"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 90deg 50%"
+                    shadow-intensity    = "0">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <bloom-effect strength="1.5" radius="0.35" threshold="0.03" smoothing="0.25"></bloom-effect>
+                        <color-grade-effect brightness="0.0" contrast="0.0" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="home-title"> Fabio Orsi </div>
+                <div class="home-subtitle"> 3D Tech Artist & Developer </div>
+                <div class="home-location"><div class="icon-location"></div> Brazil </div>
+                <hr class="home-divider">
+                <div class="home-card-content"> As an <b>Industrial Designer</b> with a foundation in <b>Control & Automation Engineering</b>, I have always worked at the intersections between the <b>creative and technical</b> disciplines. Focusing on <b>3D models</b> and <b>coding</b> around them, most of my professional contributions fit the definition of a <b>Technical Artist</b>. </div>
+                <hr class="home-divider">
+                <div class="home-card-content"> Beyond <b>manual authoring</b>, I have designed dozens of <b>automated workflows</b> that have <b>scaled the production and management</b> of hundreds of thousands of <b>3D assets</b> for applications in various fields, including medical, manufacturing, and <b>product visualization</b> for the <b>Web and XR</b>. </div>
 
-                <hr class="tech-divider">
-                <br>
-                <div class="info">
-                    <details class="expertise-dropdown" open>
-                        <summary class="skills-button"><div class="icon-skills"></div></summary>
-                        <ul class="expertise-list">
-                            <div style="height: 10px;"></div>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">3D Modeling & Texturing</strong>
-                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Creating assets</strong> for <strong style="color: #aaa;">offline rendering</strong>, real-time visualization <strong style="color: #aaa;">(Web, XR, Game Engines)</strong>, and <strong style="color: #aaa;">digital manufacturing</strong> based on concept art, photo references and technical drawings.
-                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Blender | Substance Painter | Substance Sampler | GIMP | Inkscape </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">Technical Art</strong>
-                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Developing standalone scripts</strong> and <strong style="color: #aaa;">API-integrated plugins</strong> (e.g. for Blender, Substance Painter, GIMP) to <strong style="color: #aaa;">standardize and automate</strong> pipelines for <strong style="color: #aaa;"> 3D modeling, texturing and shader setup</strong>.
-                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Blender | Substance Painter | GIMP | Python | Javascript | Google Chrome </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">Systems Integration</strong>
-                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Designing middleware</strong> to connect <strong style="color: #aaa;">Enterprise Tools</strong> (Odoo, Redmine), <strong style="color: #aaa;">Web Services</strong> (Google Cloud, AWS, Discord), <strong style="color: #aaa;">3D Suites</strong> (Blender, Substance), and <strong style="color: #aaa;">Game Engines</strong> (Unity, Unreal).
-                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Python | Javascript | Command Line Interfaces (CLI) | C/C++ | C# | Java </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">XR Development</strong>
-                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Creating XR apps (VR/MR)</strong> for <strong style="color: #aaa;">Quest and Pico</strong> headsets with integrations to <strong style="color: #aaa;">cloud-based web services</strong> (Google Cloud/Firebase) for <strong style="color: #aaa;">database and 3D asset management</strong>.
-                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Unity | Unreal Engine | Meta Quest SDK | Pico SDK | Javascript | C/C++ | C# </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">Product Design</strong>
-                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Engineering</strong> and <strong style="color: #aaa;">designing physical products</strong> at different stages of the development cycle, from <strong style="color: #aaa;">prototyping to mass production</strong>, utilizing specialized <strong style="color: #aaa;">CAD software</strong>.
-                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Autodesk Fusion | Autodesk Inventor | PTC Onshape | PTC Creo </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;">Industrial Automation</strong>
-                                <div style="height: calc((5 * var(--R) + 10 * (1 - var(--R))) * 1px);"></div>
-                                <strong style="color: #aaa;">Automating digital manufacturing pipelines</strong> (CNC machining and 3D printing), including tools for <strong style="color: #aaa;">bulk order placement</strong>, <strong style="color: #aaa;">mesh processing</strong>, <strong style="color: #aaa;">production nesting, and logistics</strong>.
-                                <div class="subtext" style="justify-self: left; padding: 10px 0px;"> Python | C/C++ | Command Line Interfaces (CLI) | G-Code | C# </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <div style="height: 20px;"></div>
-                        </ul>
-                    </details>
-                    <details class="expertise-dropdown" open>
-                        <summary class="experience-button"><div class="icon-experience"></div></summary>
-                        <ul class="expertise-list">
-                            <div style="height: 10px;"></div>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;"> 3D Artist / Project Manager / Technical Lead </strong><br>
-                                <strong style="color: #cccccc; text-transform: uppercase;"> Spase Inc. </strong> - San Jose, California, United States <br>
-                                <strong style="color: #ccc;"> Remote </strong> - <strong style="color: #ccc;"> Full-time </strong> - Jun 2019 - Dec 2025 <br>
-                                <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
-                                <div class="experience-list"><strong style="color: #aaa;">Authoring photorealistic 3D assets</strong> for real-time product visualization in <strong style="color: #aaa;">e-commerce platforms (Web and mobile AR)</strong> based on reference photos and technical drawings. </div>
-                                <div class="experience-list"><strong style="color: #aaa;">Scoping and quoting projects</strong> for new and recurring clients, <strong style="color: #aaa;">directing and briefing a team of diverse artists</strong>, and performing final <strong style="color: #aaa;">quality control and technical adjustments</strong> on 3D assets. </div>
-                                <div class="experience-list"><strong style="color: #aaa;">Creating internal tools</strong> to <strong style="color: #aaa;">standardize and optimize</strong> production pipelines (e.g. plugins for <strong style="color: #aaa;">Blender, Substance Painter, Chrome, GIMP</strong>). </div>
-                                <div class="experience-list"><strong style="color: #aaa;">Developing middleware</strong> to connect <strong style="color: #aaa;">back-end infrastructure</strong> (Google Sheets, Firebase, AWS) to team tools (<strong style="color: #aaa;">Discord</strong>) and 3D authoring software (<strong style="color: #aaa;">Blender, Substance Painter</strong>). </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 0px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;"> Production Consultant </strong><br>
-                                <strong style="color: #cccccc; text-transform: uppercase;"> Смоленск мебель </strong> - Smolensk, Smolensk, Russia <br>
-                                <strong style="color: #ccc;"> On-Site </strong> - <strong style="color: #ccc;"> Freelance </strong> - Sep 2018 - Dec 2018<br>
-                                <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
-                                <div class="experience-list"><strong style="color: #aaa;">Deploying an ERP</strong> at a large-scale furniture manufacturing facility, <strong style="color: #aaa;">integrating custom systems</strong> such as CCTV, factory access control, inventory management tools and CNC machines. </div>
-                                <div class="experience-list"><strong style="color: #aaa;">Updating legacy designs and technical drawings</strong>, and performing the migration of historical manufacturing data into a <strong style="color: #aaa;">modern production pipeline</strong>. </div>
-                                <div class="experience-list"><strong style="color: #aaa;">Developing real-time scheduling algorithms</strong> to synchronize production cycles with <strong style="color: #aaa;">live data</strong> from sales, inventory, and logistics. </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 0px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: uppercase;"> 3D Artist / Software Developer </strong><br>
-                                <strong style="color: #cccccc; text-transform: uppercase;"> Dental Direct Brasil </strong> - São Paulo, São Paulo, Brazil<br>
-                                <strong style="color: #ccc;"> On-Site / Remote </strong> - <strong style="color: #ccc;"> Full-time </strong> - Apr 2016 - Sep 2018<br>
-                                <div style="height: calc((15 * var(--R) + 20 * (1 - var(--R))) * 1px);"></div>
-                                <div class="experience-list"><strong style="color: #aaa;">Integrating systems</strong> for the <strong style="color: #aaa;">secure acquisition, storage, and management</strong> of confidential patient information and <strong style="color: #aaa;">3D medical imaging (CT/3D scans)</strong>. </div>
-                                <div class="experience-list"><strong style="color: #aaa;">Automating 3D medical images manipulation</strong> via custom algorithms for <strong style="color: #aaa;">volumetric analysis, parametric mesh generation</strong> and <strong style="color: #aaa;">mesh pre-processing</strong> for additive manufacturing. </div>
-                                <div class="experience-list"><strong style="color: #aaa;">Designing automated scheduling and runtime systems</strong> for Drop-on-Powder <strong style="color: #aaa;">3D printers</strong>, optimizing throughput based on <strong style="color: #aaa;">real-time logistics, delivery urgency</strong>, and <strong style="color: #aaa;">nesting efficiency</strong>. </div>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 0px; margin-bottom: 50px; width: 100%;">
-                            </li>
-                        </ul>
-                    </details>
-                    <details class="expertise-dropdown" open>
-                        <summary class="education-button"><div class="icon-education"></div></summary>
-                        <ul class="expertise-list">
-                            <div style="height: 10px;"></div>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: none;"> Centro Universitário Belas Artes de São Paulo (FEBASP) </strong><br>
-                                <strong style="color: #cccccc; text-transform: none;"> Industrial and Product Design </strong><br>
-                                Graduated<br>
-                                2014 - 2017<br>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                            <li>
-                                <strong style="color: rgba(0, 190, 255, 1); text-transform: none;"> Universidade Estadual de Campinas (UNICAMP) </strong><br>
-                                <strong style="color: #cccccc; text-transform: none;"> Control & Automation Engineering (Mechatronics) </strong><br>
-                                Incomplete<br>
-                                2009 - 2014<br>
-                                <hr class="tech-divider" style="justify-self: center; margin-top: 10px; margin-bottom: 30px; width: 100%;">
-                            </li>
-                        </ul>
-                    </details>
-                    <br>
-                </div>
-            </div>
-        </div>
+                <div class="card-separator"> Curriculum : </div>
 
-        <div class="grid-container" style="padding-bottom: 0px;">
-            <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
-                <hr class="tech-divider">
-                <div class="info" style="width: 480px;">
-                    <h3 style="padding-top: 10px; margin-bottom: 40px; color: #999;"><strong>Portfolio</strong></h3>
-                </div>
-            </div>
-        </div>
+                <details class="curriculum-dropdown" open>
+                    <summary><span class="icon-skills"></span><span class="curriculum-title"> Skills </span><span class="menu-chevron"></span></summary>
+                    <ul class="curriculum-list">
+                        <li>
+                            <div class="skills-content"><span class="skills-title"> 3D Modeling & Texturing </span><span class="development-box-item-description"> <b>Creating assets</b> for <b>offline rendering</b>, <b>real-time visualization</b> (Web, XR, Game Engines), and <b>digital manufacturing</b> (CNC and 3D printing) based on concept art, photo references and technical drawings. </span></div>
+                            <div class="skills-subtext"> Blender | Substance Painter | Substance Sampler | GIMP | Inkscape </div>
+                            <hr class="curriculum-divider">
+                        </li><li>
+                            <div class="skills-content"><span class="skills-title"> Technical Art </span><span class="development-box-item-description"> <b>Developing standalone scripts</b> and <b>API-integrated plugins</b> (e.g. for Blender, Substance Painter, GIMP) to <b>standardize and automate</b> pipelines for the <b>authoring, processing and management</b> of <b> 3D assets</b>. </span></div>
+                            <div class="skills-subtext"> Blender API | Substance Painter API | GIMP API </div>
+                            <div class="skills-subtext"> Python | Web (HTML/CSS/JS) | Command Line Interfaces (CLI) </div>
+                            <hr class="curriculum-divider">
+                        </li><li>
+                            <div class="skills-content"><span class="skills-title"> Systems Integration </span><span class="development-box-item-description"> <b>Designing middleware</b> to connect <b>Enterprise Tools</b> (Odoo, Redmine), <b>Web Services</b> (Google Cloud, AWS, Discord), <b>3D Suites</b> (Blender, Substance), and <b>Game Engines</b> (Unity, Unreal). </span></div>
+                            <div class="skills-subtext"> Python | Javascript | Command Line Interfaces (CLI) | C/C++ | C# | Java </div>
+                            <hr class="curriculum-divider">
+                        </li><li>
+                            <div class="skills-content"><span class="skills-title"> XR Development</span><span class="development-box-item-description"> <b>Creating XR apps</b> for the <b> Meta Quest and Pico</b> headsets (VR/MR) with integrations to <b>cloud-based web services</b> (Google Cloud/Firebase) for <b>database and 3D asset repositories</b>. </span></div>
+                            <div class="skills-subtext"> Unity | Unreal Engine | Meta Quest SDK | Pico SDK | Javascript | C/C++ | C# </div>
+                            <hr class="curriculum-divider">
+                        </li><li>
+                            <div class="skills-content"><span class="skills-title"> Product Design</span><span class="development-box-item-description"> <b>Engineering</b> and <b>designing physical products</b> at different stages of the development cycle, from <b>prototyping to mass production</b>, utilizing specialized <b>CAD software</b>. </span></div>
+                            <div class="skills-subtext"> Autodesk Fusion | Autodesk Inventor | PTC Onshape </div>
+                            <hr class="curriculum-divider">
+                        </li><li>
+                            <div class="skills-content"><span class="skills-title"> Industrial Automation </span><span class="development-box-item-description"> <b>Automating digital manufacturing pipelines</b> (CNC and 3D printing), including tools for <b>bulk order placement</b>, <b>mesh processing</b>, <b>production nesting</b>, and <b>logistics</b>. </span></div>
+                            <div class="skills-subtext"> Python | C/C++ | Command Line Interfaces (CLI) | G-Code | C# </div>
+                        </li>
+                    </ul>
+                </details>
 
-        <div class="portfolio-wrapper">
+                <details class="curriculum-dropdown" open>
+                    <summary><div class="icon-experience"></div><span class="curriculum-title"> Experience </span><div class="menu-chevron"></div></summary>
+                    <ul class="curriculum-list">
+                        <li>
+                            <div class="skills-title padding-bottom-6"> 3D Artist / Project Manager / Technical Lead </div>
+                            <div class="skills-subtitle"> <b class="uppercase">Spase Inc.</b> - San Jose, California, United States <span class="skills-subtext margin-left-4">(Remote)</span></div>
+                            <div class="skills-subtitle"> <b>Full-time</b> - Jun 2019 - Dec 2025 <span class="skills-subtext margin-left-4">(6 years and 7 months)</span></div>
+                            <div class="experience-box">
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Authoring photorealistic 3D assets</b> based on reference photos and technical drawings for real-time product visualization in <b>e-commerce platforms</b> and <b>interior design applications</b>. </span></div>
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Scoping and quoting projects</b> for new and recurring clients, <b>directing and briefing a team of diverse artists</b>, and performing final <b>quality control and technical adjustments</b> on 3D assets. </span></div>
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Creating internal tools</b> to <b>standardize and optimize</b> production pipelines (e.g. plugins for <b>Blender, Substance Painter, Chrome, GIMP</b>). </span></div>
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Developing middleware</b> to <b>connect</b> back-end infrastructure (<b>Google Sheets, Firebase, AWS</b>), team tools (<b>Discord</b>) and 3D authoring software (<b>Blender, Substance Painter</b>). </span></div>
+                            </div>
+                            <hr class="curriculum-divider">
+                        </li><li>
+                            <div class="skills-title padding-bottom-6"> Production Consultant </div>
+                            <div class="skills-subtitle"> <b class="uppercase">Смоленск мебель</b> - Smolensk, Smolensk, Russia <span class="skills-subtext margin-left-4">(On-Site)</span></div>
+                            <div class="skills-subtitle"> <b>Freelance</b> - Sep 2018 - Dec 2018 <span class="skills-subtext margin-left-4">(4 months)</span></div>
+                            <div class="experience-box">
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Deploying an ERP</b> at a Smolensk Mebel large-scale furniture factory, <b>integrating custom systems</b> such as CCTV, factory access control, inventory management tools and CNC machines. </span></div>
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Updating technical drawings</b> and performing the migration of historical manufacturing data from different sources into a centralized and modern <b>production management system</b>. </span></div>
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Developing real-time scheduling algorithms</b> to synchronize production cycles with <b>live data</b> from sales, inventory, and logistics. </span></div>
+                            </div>
+                            <hr class="curriculum-divider">
+                        </li><li>
+                            <div class="skills-title padding-bottom-6"> 3D Artist / Software Developer </div>
+                            <div class="skills-subtitle"> <b class="uppercase">Dental Direct Brasil</b> - São Paulo, São Paulo, Brazil <span class="skills-subtext margin-left-4">(On-Site / Remote)</span></div>
+                            <div class="skills-subtitle"> <b>Full-time</b> - Apr 2016 - Sep 2018 <span class="skills-subtext margin-left-4">(2 years and 4 months)</span></div>
+                            <div class="experience-box">
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Integrating systems</b> for the <b>secure acquisition, storage, and management</b> of confidential patient information and <b>3D medical imaging (CT/3D scans)</b>. </span></div>
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Automating 3D medical images manipulation</b> via custom algorithms for <b>volumetric analysis, parametric mesh generation</b> and <b>mesh pre-processing</b> for additive manufacturing. </span></div>
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Designing automated scheduling and runtime systems</b> for Drop-on-Powder <b>3D printers</b>, optimizing throughput based on <b>real-time logistics, delivery urgency</b>, and <b>nesting efficiency</b>. </span></div>
+                            </div>
+                            <hr class="curriculum-divider">
+                        </li><li>
+                            <div class="skills-title padding-bottom-6"> Intern Mechanical Engineer </div>
+                            <div class="skills-subtitle"> <b class="uppercase">Shempo</b> - Campinas, São Paulo, Brazil <span class="skills-subtext margin-left-4">(On-Site)</span></div>
+                            <div class="skills-subtitle"> <b>Part-time </b> - Mar 2011 - May 2011 <span class="skills-subtext margin-left-4">(3-month internship)</span></div>
+                            <div class="experience-box">
+                                <div class="experience-box-item"><span class="development-box-item-description"> <b>Creating technical drawings</b> in <b>CAD software</b> for the manufacturing of parts used in LED-panel signages and large digital clocks (for skyscraper rooftops), following the constraints of different <b>production methods</b> (e.g. injection, casting, sheetmetal, machining). </span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </details>
 
-            <div class="grid-container" style="padding-bottom: 20px; ">
-                <a href="/development" class="model-card portfolio-link" data-current-index="0"
-                    data-variants='[
-                        "/resources/media/development_optimized"
-                    ]'>
-                    <div class="card-title-home"> Development <div class="icon-3d-card"><div class="icon-list"></div></div></div>
-                    <model-viewer id="development-viewer" title=" View Details 🡪 "
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "3"
-                        data-field-of-view  = "15deg"
-                        data-camera-target  = "-0.05m 0.35m -1m"
-                        data-camera-orbit   = "0deg 90deg 60%">
-                    </model-viewer>
-                    <div class="view-galery"> View Details 🡪 </div>
-                </a>
+                <details class="curriculum-dropdown" open>
+                    <summary><div class="icon-education"></div><span class="curriculum-title"> Education </span><div class="menu-chevron"></div></summary>
+                    <ul class="curriculum-list">
+                        <li>
+                            <div class="skills-title"> Centro Universitário Belas Artes de São Paulo (FEBASP) </div>
+                            <div class="skills-subtitle"> <b>Product Design (Industrial Design)</b> </div>
+                            Graduated<br>
+                            2014 - 2017
+                            <hr class="curriculum-divider">
+                        </li>
+                        <li>
+                            <div class="skills-title"> Universidade Estadual de Campinas (UNICAMP) </div>
+                            <div class="skills-subtitle"> <b>Control & Automation Engineering (Mechatronics)</b> </div>
+                            Incomplete<br>
+                            2009 - 2014
+                        </li>
+                    </ul>
+                </details>
+
+                <a href="/Fabio Orsi - CV.pdf" download="Fabio_Orsi_CV.pdf" id="top-button" class="download-button"> Download PDF </a>
+
             </div>
 
-            <div class="grid-container" style="padding-bottom: 20px; ">
-                <a href="/furniture" class="model-card portfolio-link" data-current-index="0"
+            <div class="gallery-subtitle padding-top-30"> Portfolio </div>
+
+            <a href="/development" class="model-card portfolio-link">
+                <div class="card-title-home"> Development <div class="icon-3d-card"><div class="icon-list"></div></div></div>
+                <model-viewer class="development-viewer" title=" View Details 🡪 "
+                    data-variants       = '["/resources/media/development_optimized"]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "3"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "-0.05m 0.35m -1m"
+                    data-camera-orbit   = "0deg 90deg 55%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <bloom-effect strength="1" radius="0.35" threshold="0.03" smoothing="0.1"></bloom-effect>
+                        <color-grade-effect brightness="0.0" contrast="0.0" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-footer-home"> View Details <div class="arrow"></div></div>
+            </a>
+
+            <a href="/furniture" class="model-card portfolio-link">
+                <div class="card-title-home"> Furniture <div class="icon-3d-card"> 3D </div></div>
+                <model-viewer class="menu-viewer" title=" View Gallery 🡪 " data-current-index="0"
                     data-variants='[
                         "/furniture/sofas/2881",
                         "/furniture/chairs/0744_home",
@@ -492,21 +205,23 @@
                         "/furniture/desks/4848",
                         "/furniture/coffeetables/4367",
                         "/furniture/beds/7032",
-                    ]'>
-                    <div class="card-title-home"> Furniture <div class="icon-3d-card"> 3D </div></div>
-                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
-                        environment-image   = "/resources/media/round_platform_1k.hdr"
-                        exposure            = "3"
-                        data-field-of-view  = "15deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 80deg 75%">
-                    </model-viewer>
-                    <div class="view-galery"> View Gallery 🡪 </div>
-                </a>
-            </div>
+                    ]'
+                    environment-image   = "/resources/media/hdri/round_platform_1k.hdr"
+                    exposure            = "3"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 80deg 75%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <smaa-effect></smaa-effect>
+                        <color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-footer-home"> View Gallery <div class="arrow"></div></div>
+            </a>
 
-            <div class="grid-container" style="padding-bottom: 20px; ">
-                <a href="/transportation" class="model-card portfolio-link" data-current-index="0"
+            <a href="/transportation" class="model-card portfolio-link">
+                <div class="card-title-home"> Transportation <div class="icon-3d-card"> 3D </div></div>
+                <model-viewer class="menu-viewer" title=" View Gallery 🡪 " data-current-index="0"
                     data-variants='[
                         "/transportation/motorcycles/1589",
                         "/transportation/motorcycles/3101",
@@ -514,19 +229,21 @@
                         "/transportation/ebikes/1504",
                         "/transportation/ebikes/3404",
                         "/transportation/cars/2490",
-                    ]'>
-                    <div class="card-title-home"> Transportation <div class="icon-3d-card"> 3D </div></div>
-                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
-                        data-field-of-view  = "15deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 90deg 80%"></model-viewer>
-                    </model-viewer>
-                    <div class="view-galery"> View Gallery 🡪 </div>
-                </a>
-            </div>
+                    ]'
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 90deg 80%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <smaa-effect></smaa-effect>
+                        <color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-footer-home"> View Gallery <div class="arrow"></div></div>
+            </a>
 
-            <div class="grid-container" style="padding-bottom: 20px; ">
-                <a href="/sports" class="model-card portfolio-link" data-current-index="0"
+            <a href="/sports" class="model-card portfolio-link">
+                <div class="card-title-home"> Sports <div class="icon-3d-card"> 3D </div></div>
+                <model-viewer class="menu-viewer" title=" View Gallery 🡪 " data-current-index="0"
                     data-variants='[
                         "/sports/protectivegear/1608b",
                         "/sports/protectivegear/2918",
@@ -534,65 +251,68 @@
                         "/sports/equipment/2581",
                         "/sports/miscelaneous/1292",
                         "/sports/miscelaneous/0611",
-                    ]'>
-                    <div class="card-title-home"> Sports <div class="icon-3d-card"> 3D </div></div>
-                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "2"
-                        data-field-of-view  = "15deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 80deg 100%">
-                    </model-viewer>
-                    <div class="view-galery"> View Gallery 🡪 </div>
-                </a>
-            </div>
+                    ]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "2"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 80deg 100%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <smaa-effect></smaa-effect>
+                        <color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-footer-home"> View Gallery <div class="arrow"></div></div>
+            </a>
 
-            <div class="grid-container" style="padding-bottom: 20px; ">
-                <a href="/furnishings" class="model-card portfolio-link" data-current-index="0"
+            <a href="/furnishings" class="model-card portfolio-link">
+                <div class="card-title-home"> Furnishings <div class="icon-3d-card"> 3D </div></div>
+                <model-viewer class="menu-viewer" title=" View Gallery 🡪 " data-current-index="0"
                     data-variants='[
                         "/furnishings/lamps/4561",
                         "/furnishings/lamps/4663",
                         "/furnishings/sculptures/2387",
                         "/furnishings/sculptures/3896",
                         "/furnishings/clocks/7753",
-                        "/furnishings/lamps/6039",
-                    ]'>
-                    <div class="card-title-home"> Furnishings <div class="icon-3d-card"> 3D </div></div>
-                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
-                        environment-image   = "/resources/media/christmas_photo_studio_04_1k.hdr"
-                        exposure            = "1.5"
-                        data-field-of-view  = "15deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 80deg 110%">
-                    </model-viewer>
-                    <div class="view-galery"> View Gallery 🡪 </div>
-                </a>
-            </div>
+                        "furnishings/mirrors/1791",
+                    ]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "1.5"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 80deg 110%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <smaa-effect></smaa-effect>
+                        <bloom-effect strength="0.3" radius="0.6" threshold="0.3" smoothing="0.025"></bloom-effect>
+                        <color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-footer-home"> View Gallery <div class="arrow"></div></div>
+            </a>
 
-            <div class="grid-container" style="padding-bottom: 20px; ">
-                <a href="/electronics" class="model-card portfolio-link" data-current-index="0"
+            <a href="/electronics" class="model-card portfolio-link">
+                <div class="card-title-home"> Electronics <div class="icon-3d-card"> 3D </div></div>
+                <model-viewer class="menu-viewer" title=" View Gallery 🡪 " data-current-index="0"
                     data-variants='[
                         "/electronics/appliances/7329",
                         "/electronics/appliances/7136",
-                        "/electronics/appliances/5989",
                         "/electronics/appliances/7137",
-                        "/electronics/misc/7034",
-                        "/electronics/misc/6576",
-                    ]'>
-                    <div class="card-title-home"> Electronics <div class="icon-3d-card"> 3D </div></div>
-                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
-                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                        exposure            = "0.6"
-                        data-field-of-view  = "15deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 75deg 100%">
-                    </model-viewer>
-                    <div class="view-galery"> View Gallery 🡪 </div>
-                </a>
-            </div>
+                        "/electronics/av/6576",
+                        "/electronics/av/0761",
+                        "/electronics/misc/0817",
+                    ]'
+                    environment-image   = "/resources/media/hdri/interior_Original_mirror.hdr"
+                    exposure            = "0.6"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 75deg 100%">
+                </model-viewer>
+                <div class="card-footer-home"> View Gallery <div class="arrow"></div></div>
+            </a>
 
-            <div class="grid-container" style="padding-bottom: 20px; ">
-                <a href="/apparel" class="model-card portfolio-link" data-current-index="0"
+            <a href="/apparel" class="model-card portfolio-link">
+                <div class="card-title-home"> Apparel <div class="icon-3d-card"> 3D </div></div>
+                <model-viewer class="menu-viewer" title=" View Gallery 🡪 " data-current-index="0"
                     data-variants='[
                         "/apparel/glasses/0876",
                         "/apparel/handbags/1387",
@@ -600,81 +320,53 @@
                         "/apparel/shoes/0719_home",
                         "/apparel/clothing/0433",
                         "/apparel/watches/1563_home",
-                    ]'>
-                    <div class="card-title-home"> Apparel <div class="icon-3d-card"> 3D </div></div>
-                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
-                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                        exposure            = "0.6"
-                        data-field-of-view  = "15deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 80deg 100%">
-                    </model-viewer>
-                    <div class="view-galery"> View Gallery 🡪 </div>
-                </a>
-            </div>
+                    ]'
+                    environment-image   = "/resources/media/hdri/interior_Original_mirror.hdr"
+                    exposure            = "0.6"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 80deg 100%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <smaa-effect></smaa-effect>
+                        <color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-footer-home"> View Gallery <div class="arrow"></div></div>
+            </a>
 
-            <div class="grid-container" style="padding-bottom: 20px; ">
-                <a href="/misc" class="model-card portfolio-link" data-current-index="0"
+            <a href="/misc" class="model-card portfolio-link">
+                <div class="card-title-home"> Misc <div class="icon-3d-card"> 3D </div></div>
+                <model-viewer class="menu-viewer" title=" View Gallery 🡪 " data-current-index="0"
                     data-variants='[
-                        "/apparel/glasses/0876",
-                        "/apparel/handbags/1387",
-                        "/apparel/backpacks/2558",
-                        "/apparel/shoes/0719_home",
-                        "/apparel/clothing/0433",
-                        "/apparel/watches/1563_home",
-                    ]'>
-                    <div class="card-title-home"> Misc <div class="icon-3d-card"> 3D </div></div>
-                    <model-viewer class="menu-viewer" title=" View Gallery 🡪 "
-                        environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                        exposure            = "0.6"
-                        data-field-of-view  = "15deg"
-                        data-camera-target  = "auto auto auto"
-                        data-camera-orbit   = "0deg 80deg 100%">
-                    </model-viewer>
-                    <div class="view-galery"> View Gallery 🡪 </div>
-                </a>
-            </div>
+                        "/misc/miscelaneous/0690",
+                        "/misc/guns/0361",
+                        "/misc/pets/2424",
+                        "/misc/tools/0437",
+                        "/misc/tools/0328",
+                        "/misc/pets/0802",
+                    ]'
+                    environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
+                    exposure            = "2.5"
+                    data-field-of-view  = "15deg"
+                    data-camera-target  = "auto auto auto"
+                    data-camera-orbit   = "0deg 80deg 90%">
+                    <effect-composer renderMode="quality" msaa="16">
+                        <smaa-effect></smaa-effect>
+                        <color-grade-effect contrast="0.15" saturation="-0.1" brightness="0.05"></color-grade-effect>
+                    </effect-composer>
+                </model-viewer>
+                <div class="card-footer-home"> View Gallery <div class="arrow"></div></div>
+            </a>
 
-
-
-            <!-- <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;"></div> -->
-
-
-
-            <div class="grid-container" style="padding-top: 0px; padding-bottom: 20px;">
-                <a href="misc/" style="text-decoration: none;">
-                    <div class="model-card portfolio-link" data-current-index="0" data-variants='["/misc/utensils/1123",]'>
-                        <div class="info" style="padding: 10px;">
-                            <h3 style="display: flex; align-items: center;">
-                                <span>Misc</span>
-                                <div class="icon-3d" style="margin-left: 15px; border-radius: 6px; border: 1px solid rgba(0, 190, 255, 1); color: rgba(0, 190, 255, 1); transform: scale(1.2); font-size: calc((var(--resolution-threshold) * (12 - 14) + 14) * 1px);">3D</div>
-                            </h3>
-                        </div>
-                        <model-viewer class="menu-viewer"
-                            environment-image   = "/resources/media/interior_Original_mirror.hdr"
-                            exposure            = "0.72"
-                            data-field-of-view  = "22deg"
-                            data-camera-target  = "auto 0.01m auto"
-                            data-camera-orbit   = "0deg 60deg 70%"
-                            style               = "width: 90%; height: 480px; box-shadow: none; background-color: transparent; padding-bottom: 10px;">
-                        </model-viewer>
-                        <div class="info" style="padding: 20px;">
-                            <p><strong style="font-weight: bold; text-transform: uppercase;"> View All </strong></p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-
-            <div class="grid-container" style="padding-bottom: 10px;">
-                <div class="model-card" style="transform: none; border-color: transparent; background-color: transparent;">
-                    <hr class="tech-divider">
-                </div>
-            </div>
-
-            <div class="grid-container" style="padding: 0px 20px 20px 20px; border-radius: 0px 0px 12px 12px;"></div>
-            <div class = "info"><p style="text-align: center;"><br><strong style="color: rgba(0, 190, 255, 1)">Fabio Orsi</strong><br>3D Artist & Developer<br><br><strong style="color: rgba(0, 190, 255, 1); opacity: 80%; padding-bottom: calc((40 * var(--R) + 60 * (1 - var(--R))) * 1px);">osb.fabio@gmail.com</strong></p></div>
         </div>
+
+        <div class="footer-container">
+            <a href="/" class="footer-logo" title="Home"></a>
+            <span class="footer-title"> Fabio Orsi </span>
+            <span class="footer-subtitle"> 3D Tech Artist & Developer </span>
+            <span class="footer-contact" title="Copy to Clipboard"> osb.fabio@gmail.com </span>
+        </div>
+
     </body>
 </html>
 
