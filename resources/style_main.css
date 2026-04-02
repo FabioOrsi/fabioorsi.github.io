@@ -26,6 +26,11 @@ button, input, select, textarea {
 .padding-top-20 { padding-top: calc(20 * var(--px)) !important; }
 .padding-top-30 { padding-top: calc(30 * var(--px)) !important; }
 
+.padding-bottom-6  { padding-bottom: calc(6  * var(--px)) !important; }
+.padding-bottom-10 { padding-bottom: calc(10 * var(--px)) !important; }
+.padding-bottom-20 { padding-bottom: calc(20 * var(--px)) !important; }
+.padding-bottom-30 { padding-bottom: calc(30 * var(--px)) !important; }
+
 .margin-top-10 { margin-top: calc(10 * var(--px)) !important; }
 .margin-top-20 { margin-top: calc(20 * var(--px)) !important; }
 .margin-top-30 { margin-top: calc(30 * var(--px)) !important; }
@@ -34,6 +39,7 @@ button, input, select, textarea {
 .margin-bottom-20 { margin-bottom: calc(20 * var(--px)) !important; }
 .margin-bottom-30 { margin-bottom: calc(30 * var(--px)) !important; }
 
+.margin-left-4  { margin-left: calc(4  * var(--px)) !important; }
 .margin-left-10 { margin-left: calc(10 * var(--px)) !important; }
 .margin-left-20 { margin-left: calc(20 * var(--px)) !important; }
 .margin-left-30 { margin-left: calc(30 * var(--px)) !important; }
@@ -89,7 +95,20 @@ button, input, select, textarea {
     padding:            calc(6 * var(--px));
     font-size:          calc(1.0 * var(--rem));
     font-weight:        bold;
-    color:              #999;
+    color:              #aaa;
+}
+
+.home-location {
+    display:            inline-flex;
+    flex-direction:     row;
+    align-items:        center;
+    align-content:      center;
+    text-align:         center;
+    color:              rgba(0, 190, 255, 1);
+    font-weight:        bold;
+    font-size:          calc(0.8 * var(--rem));
+    padding-top:        calc(4 * var(--px));
+
 }
 
 .home-divider {
@@ -194,11 +213,11 @@ button, input, select, textarea {
     align-items:        center;
     justify-self:       center;
     padding:            0;
-    margin:             calc(30 * var(--Res) * 1px) 0 0;
-    gap:                calc(15 * var(--Res) * 1px);
+    margin:             calc(20 * var(--px)) 0 calc(10 * var(--px));
+    gap:                calc(15 * var(--px));
 
     color:              rgba(0, 190, 255, 1);
-    font-size:          calc(1.3 * var(--Res) * 1rem);
+    font-size:          calc(1.3 * var(--rem));
     font-weight:        bold;
 
     will-change:        transform;
@@ -208,11 +227,11 @@ button, input, select, textarea {
 .card-footer-home {
     display:            flex;
     align-items:        center;
-    gap:                calc(6 * var(--Res) * 1px);
-    margin:             calc(30 * var(--Res) * 1px) 0;
+    gap:                calc(6 * var(--px));
+    margin:             calc(20 * var(--px)) 0 calc(30 * var(--px));
 
     color:              #999;
-    font-size:          calc(13 * var(--Res) * 1px);
+    font-size:          calc(13 * var(--px));
     font-weight:        bold;
     text-transform:     uppercase;
     text-align:         center;
@@ -342,7 +361,7 @@ button, input, select, textarea {
     content:            "";
 }
 .curriculum-dropdown[open] .menu-chevron {
-    transform: rotate(180deg);
+    transform:          rotate(180deg);
 }
 
 .curriculum-title {
@@ -356,7 +375,7 @@ button, input, select, textarea {
                         calc(10 * var(--px));
 }
 
-.expertise-list {
+.curriculum-list {
     list-style:         none;
     padding:            0;
     margin:             calc(20 * var(--px));
@@ -364,7 +383,7 @@ button, input, select, textarea {
     font-size:          calc(0.9 * var(--rem));
 }
 
-.expertise-list li {
+.curriculum-list li {
     position:           relative;
     padding-left:       calc(30 * var(--px));
     margin-bottom:      10px;
@@ -375,7 +394,7 @@ button, input, select, textarea {
     flex-direction:     column;
 }
 
-.expertise-list li::before {
+.curriculum-list li::before {
     content:            "❱";
     position:           absolute;
     left:               0;
@@ -400,6 +419,14 @@ button, input, select, textarea {
     text-align:         left;
 }
 
+.uppercase {
+    text-transform:     uppercase;
+}
+
+.skills-subtitle b {
+    color:              #ccc;
+}
+
 .skills-subtext {
     display:            inline;
     color:              #777;
@@ -408,25 +435,79 @@ button, input, select, textarea {
     line-height:        calc(20 * var(--px)); 
 }
 
+.experience-box {
+    width:              calc(100% + 20 * var(--px));
+    box-sizing:         border-box;
+    margin:             calc(10 * var(--px))
+                        calc(-20 * var(--px));
+    padding:            calc(0 * var(--px))
+                        calc(20 * var(--px));
+    border-radius:      calc(12 * var(--px)); 
+}
+
+.experience-box-item {
+    display:            flex; 
+    flex-direction:     row; 
+    align-items:        center;
+    margin:             0px
+                        calc(-20 * var(--px));
+    padding:            calc(6 * var(--px))
+                        calc(20 * var(--px))
+                        calc(6 * var(--px))
+                        calc(40 * var(--px));
+}
+
+.experience-box-item b{
+    color:              #aaa;
+}
+
 .experience-list {
-    font-size:          calc((0.9 * var(--R) + 1.3 * (1 - var(--R))) * 1rem);
-    padding-bottom:     calc((20 * var(--R) + 30 * (1 - var(--R))) * 1px);
+    font-size:          calc(0.9 * var(--rem));
+    padding:            calc(10 * var(--px)) 0px;
     margin-left:        0px;
     margin-right:       0px;
 }
 
-.experience-list::before {
-    content: "·";
-    position: absolute;
-    left: 0px;
-    font-weight: bold;
-    color: #999;
+.experience-box-item::before {
+    content:            "·";
+    position:           absolute;
+    left:               calc(30 * var(--px));
+    font-weight:        bold;
+    color:              #999;
+}
+
+.experience-list b {
+    color:              #aaa;
 }
 
 .sub-text {
     font-size: 0.9rem;
     opacity: 1;
 }
+
+.portfolio-link {
+    transition:         all 0.2s ease;
+    border:             1px solid #000;
+    /* border:             1px solid rgba(0, 170, 255, 0.5); */
+    padding:            calc(10 * var(--px));
+    box-shadow:         inset 4px -4px 12px rgba(0, 0, 0, 0.5),
+                        inset -4px 4px 12px rgba(255, 255, 255, 0.1) !important;
+}
+
+.portfolio-link:active {
+    border-color:       rgba(0, 190, 255, 1);
+    box-shadow:         0 4px 15px rgba(0, 0, 0, 0.4),
+                        inset -4px 4px 12px rgba(0, 0, 0, 0.5),
+                        inset 4px -4px 12px rgba(255, 255, 255, 0.1) !important;
+}
+
+.download-button {
+    position:           relative !important;
+    margin-top:         calc(40 * var(--px)) !important;
+    font-size:          calc(0.7 * var(--rem)) !important;
+    text-decoration:    none;
+}
+
 
 @media (hover : hover) {
     .curriculum-dropdown summary:hover {
@@ -435,15 +516,16 @@ button, input, select, textarea {
         color:          rgba(0, 190, 255, 1);
     }
 
-    /* .portfolio-link:hover {
-        border-color:   rgba(0, 190, 255, 0.66);
+    .portfolio-link:hover {
+        border-color:   rgba(0, 190, 255, 1);
+        transition:         all 0.6s ease !important;
+        transition-delay:   200ms !important;
     }
 
-
-    .portfolio-link:active {
-        box-shadow:         0 4px 15px rgba(0, 0, 0, 0.4),
-                            inset -2px 2px 4px rgba(0, 0, 0, 0.5),
-                            inset 2px -2px 4px rgba(255, 255, 255, 0.1) !important;
+    .portfolio-link.parent-hover-effect:hover {
+        border-color:   rgba(0, 150, 255, 0.2);
+        transition:         all 0.8s ease !important;
+        transition-delay:   0ms !important;
     }
 
     .portfolio-link:hover .card-footer-home {
@@ -473,12 +555,19 @@ button, input, select, textarea {
         transition-delay:   200ms !important;
     }
 
+    .portfolio-link.parent-hover-effect:hover .card-title-home {
+        will-change:        transform;
+        transform:          scale(1) translateZ(0) !important;
+        transition:         all 0.8s ease !important;
+        transition-delay:   0ms !important;
+    }
+
     .portfolio-link.parent-hover-effect:hover .card-footer-home {
         will-change:        transform;
         color:              #999 !important;
         transform:          scale(1) translateZ(0) !important;
         transition:         all 0.8s ease !important;
         transition-delay:   0ms !important;
-    } */
+    }
 }
 
