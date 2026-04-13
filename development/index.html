@@ -56,7 +56,7 @@
 
             <div class="specs-card">
                 <div class="gallery-title"> Development </div>
-                <div class="gallery-subtitle"> Proficiencies & Experiences </div>
+                <div class="gallery-subtitle"> Proficiencies & Experience </div>
                 <div class="gallery-specs-container">
                     <div>
                         <div class="gallery-specs-title"> Programming Languages </div>
@@ -79,11 +79,19 @@
             </div>
 
             <div class="model-card">
+                <div class="card-title"> Web </div>
+                <div class="card-content"> When looking for solutions to create my portfolio, I quickly realized services such as Artstation wouldn’t satisfy my needs. To properly <b>showcase my skills</b>, I decided to <b>create</b> this portfolio <b>from scratch</b> and host it on Github. </div>
+                <div class="card-content"> With knowledge acquired in my most recent employment and heavily implementing on top of <b>Google’s &lt;model-viewer&gt;</b>, I built this <b>interactive portfolio</b> with <b>fully-featured 3D viewers</b> and <b>integrated 3D models</b>, performing well even on <b>mobile devices</b> *. </div>
+                <div class="card-content" style="font-size: calc(0.75 * var(--rem)); opacity: 66%; text-indent: 0px; padding-bottom: 0px;"> * To avoid a cluttered UI and provide a better UX, some advanced features are hidden on mobile devices. </div>
+            </div>
+
+            <div class="model-card">
                 <div class="card-title"> Technical Art & <br> Pipeline Automation </div>
-                <model-viewer class="development-viewer" style=" padding: 10px; height: 540px;"
+                <model-viewer class="development-viewer menu-viewer-development always-on" style=" padding: 10px; height: 540px;"
                     data-variants       = '["/development/technicalart"]'
                     environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
                     exposure            = "1"
+                    data-toggle-auto-rotate = "true"
                     data-field-of-view  = "15deg"
                     data-camera-target  = "auto 19cm auto"
                     data-camera-orbit   = "0deg 85deg 70%">
@@ -92,8 +100,8 @@
                         <color-grade-effect brightness="0.1" contrast="0.2" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
                     </effect-composer>
                 </model-viewer>
-                <div class="card-content"> The production of 3D assets in <b>high-volumes</b> benefits from <b>custom algorithms</b> for the <b>automation</b> of processes that are essential or repetitive, ensuring <b>quality and technical consistency</b> across projects, <b>increasing productivity</b> and <b>reducing manual overhead</b>. </div>
-                <div class="card-content"> My professional experience includes the implementation of these <b>tools for scale</b> utilizing <b>APIs</b> from software like <b>Blender</b> and <b>Substance Painter</b>. In the form of <b>standalone scripts</b> and <b>plugins</b>, my contributions optimized the production of 3D assets for various applications over the years, from quick <b>ad hoc tasks</b> to <b>entire workflows</b>. </div>
+                <div class="card-content"> My professional experience includes the development of <b>custom algorithms</b> to assist in the <b>production and management</b> of <b>3D assets</b> in <b>high-volumes</b>. These tools <b>automate processes</b> that are essential or repetitive, ensuring <b>quality and technical consistency</b> across projects, <b>increasing productivity</b> and <b>reducing manual overhead</b>. </div>
+                <div class="card-content"> Utilizing <b>APIs</b> from software like <b>Blender</b> and <b>Substance Painter</b>, my contributions have optimized the production of 3D assets for <b>various applications</b> over the years, automating from quick <b>ad hoc tasks</b> to <b>entire workflows</b>. </div>
                 <div class="card-separator"> Key Implementations : </div>
                 <div class="development-box-title"><span class="icon-development-asset-production"></span> Automated & Parametric Asset Production </div>
                 <div class="development-box">
@@ -109,18 +117,18 @@
                     <div class="development-box-item"><span class="development-box-item-title"> .Bulk_Import_Export </span>   <span class="development-box-item-description"> Plugins to streamline importing and exporting large amounts of assets across different software. </span></div>
                     <div class="development-box-item"><span class="development-box-item-title"> .Bulk_Optimizations </span>   <span class="development-box-item-description"> Algorithms for automatic <u title="Mesh Decimation, Vertex Merging, DRACO Compression, and more. &#13Texture Resolutions, Color Depths, Compression Levels, Formats and more.">mesh and texture optimizations</u> based on variable parameters and performance metrics. </span></div>
                     <div class="development-box-item"><span class="development-box-item-title"> .Gallery_Generation </span>   <span class="development-box-item-description"> Tools to automatically generate 3D galleries for quick visualization and inspection of asset packs. </span></div>
-                    <div class="development-box-item"><span class="development-box-item-title"> .Naming_Conventions </span>   <span class="development-box-item-description"> Scripts to inspect assets and directories to enforce folder hierarchy and naming conventions. </span></div>
                 </div>
                 <div class="development-box-title"><span class="icon-development-environment-sync"></span> Workflow Standardization </div>
                 <div class="development-box">
                     <div class="development-box-item"><span class="development-box-item-title"> .Asset_Standards </span>      <span class="development-box-item-description"> Tools to inspect and enforce standards for units, texel density, default transforms, texture resolutions and more. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Naming_Conventions </span>   <span class="development-box-item-description"> Scripts to inspect assets and directories to enforce folder hierarchy and naming conventions. </span></div>
                     <div class="development-box-item"><span class="development-box-item-title"> .Environment_Sync </span>     <span class="development-box-item-description"> Presets and plugins to sync lighting and camera settings across different software and render engines. </span></div>
                 </div>
             </div>
 
             <div class="model-card">
                 <div class="card-title"> XR Research & <br>Development * </div>
-                <model-viewer class="development-viewer" id="video-viewer" style=" padding: 10px; height: 540px;"
+                <model-viewer class="development-viewer menu-viewer-development always-on" id="video-viewer" style=" padding: 10px; height: 540px;"
                     data-variants       = '["/development/XR"]'
                     environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
                     exposure            = "1"
@@ -132,10 +140,9 @@
                         <color-grade-effect brightness="0.1" contrast="0.2" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
                     </effect-composer>
                 </model-viewer>
-                <div class="card-content"> As an enthusiast of XR technologies, I see a lot of potential in mixing the virtual and real worlds. I've been using AR virtual displays for productivity on a daily basis since the release of the Pico 4, in 2022, and now with the Quest 3 (via Microsoft Mixed Reality Link). </div>
-                <div class="card-content"> Following this interest, I have <b>prototyped</b> a couple of simple <b>VR/AR applications</b> using <b>Unity</b> and <b>Unreal Engine</b> for the <b>Quest</b> and <b>Pico</b> ecosystems. These projects focused on integrating <b>cloud-based asset repositories</b> with real-time visualization for XR headsets. </div>
+                <div class="card-content"> As an enthusiast of XR technologies, I see a lot of potential in <b>mixing</b> the <b>virtual and real worlds</b>. Following this interest, I have <b>protoyped</b> a few simple <b>VR/AR applications</b> to experiment with the implementation of <b>cloud-based asset repositories</b>, utilizing <b>Unity and Unreal Engine</b> to build for the <b>Quest and Pico headsets</b>. </div>
+                <div class="card-content"> These apps consist of <b>simple UIs</b> in which users can preview and select from a list of <b>3D assets</b>, which are then <b>dynamically fetched</b> from a remote <b>Firebase server</b> and loaded into the XR environment, allowing users to <b>view and manipulate</b> them in space (in VR or MR passthrough). </div>
                 <div class="card-separator"> Key Remarks : </div>
-                <div class="card-content"> These projects consist of simple UIs in which users can <b>preview and select</b> from a <b>list of 3D assets</b>. The assets are <b>dynamically fetched</b> from a remote <b>Firebase</b> server <b>and loaded</b> into the XR environment (VR or AR), having <b>physics</b> added to them and allowing users to <b>manipulate</b> them in space. </div>
                 <div class="development-box-title"><span class="icon-development-xr-goals"></span> Research Goals </div>
                 <div class="development-box">
                     <div class="development-box-item"><span class="development-box-item-title"> .Game_Engines </span>         <span class="development-box-item-description"> Experiment with the main game engines and learn about their editors, programming languages and render pipelines. </span></div>
@@ -152,7 +159,7 @@
 
             <div class="model-card">
                 <div class="card-title"> Systems Integration <br> & Industrial Automation </div>
-                <model-viewer class="development-viewer" style=" padding: 10px; height: 540px;"
+                <model-viewer class="development-viewer menu-viewer-development always-on" style=" padding: 10px; height: 540px;"
                     data-variants       = '["/development/integration"]'
                     environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
                     exposure            = "1"
@@ -164,8 +171,8 @@
                         <color-grade-effect brightness="0.1" contrast="0.2" saturation="-0.1" tonemapping="aces_filmic"></color-grade-effect>
                     </effect-composer>
                 </model-viewer>
-                <div class="card-content"> Many <b>daily operations</b> within an organization rely on <b>middleware</b> to <b>connect proprietary and 3rd-party systems</b> (e.g. <b>ERPs/CRMs</b>, <b>cloud-based web services</b>, <b>production software</b>, <b>CNC machines</b>). These tools assist in the <b>flow of B2C and B2B information</b> between clients, team members, departments and companies. </div>
-                <div class="card-content"> Designing these <b>integration layers</b> has been a significant part of my work experience, including connections between <b>Redmine</b>, <b>Odoo</b>, <b>AWS</b>, <b>Google Cloud</b>, <b>Discord</b>, manufacturing machines (<b>CNCs/3D printers</b>) and production software (<b>Blender</b>, <b>Substance Painter</b>). </div>
+                <div class="card-content"> A significant part of my work experience includes the development of <b>middleware</b> to connect <b>internal and 3rd-party systems</b> (e.g. <b>ERPs/CRMs</b>, <b>cloud-based web services</b>, <b>production software</b>, <b>CNC machines</b>), assisting in the <b>flow of information</b> between clients, team members, departments and companies. </div>
+                <div class="card-content"> These <b>integration layers</b> include connections between <b>Redmine</b>, <b>Odoo</b>, <b>AWS</b>, <b>Google Cloud</b>, <b>Discord</b>, manufacturing machines (<b>CNCs/3D printers</b>) and production software (<b>Blender</b>, <b>Substance Painter</b>). </div>
                 <div class="card-separator"> Key Implementations : </div>
                 <div class="development-box-title"><span class="icon-development-digital-fabrication"></span> Digital Manufacturing </div>
                 <div class="development-box">
@@ -190,7 +197,7 @@
 
             <div class="model-card">
                 <div class="card-title"> Machine Learning &<br>Artificial Intelligence * </div>
-                <model-viewer class="development-viewer" style=" padding: 10px; height: 540px;"
+                <model-viewer class="development-viewer menu-viewer-development always-on" style=" padding: 10px; height: 540px;"
                     data-variants       = '["/development/ai"]'
                     environment-image   = "/resources/media/hdri/christmas_photo_studio_04_1k.hdr"
                     exposure            = "1"
@@ -219,10 +226,10 @@
                 </div>
                 <div class="development-box-title"><span class="icon-development-ai-coding"></span> LLMs & Software Development </div>
                 <div class="development-box">
-                    <div class="development-box-item"><span class="development-box-item-title"> .Documentations </span>       <span class="development-box-item-description"> Quick ad hoc implementations and API/SDK technical documentation referencing. </span></div>
+                    <div class="development-box-item"><span class="development-box-item-title"> .Documentations </span>       <span class="development-box-item-description"> Quick ad hoc implementations and referencing technical documentation for APIs/SDKs. </span></div>
                     <div class="development-box-item"><span class="development-box-item-title"> .Debugging </span>            <span class="development-box-item-description"> Quickly finding bugs and exploring solutions. </span></div>
                 </div>
-                <div class="card-content"> * Many <b>generative AIs</b> for <b>generic 3D assets</b> have appeared in the market since 2024, but results have been <b>improper</b> in the production scenarios I encountered so far. The 3D mesh for the stylized brain at the start of this section, however, was created with one of these tools. </div>
+                <div class="card-content" style="font-size: calc(0.75 * var(--rem)); opacity: 66%; text-indent: 0px;"> * Many generative AIs for generic 3D assets have appeared on the market since 2024, but the results have been generally inadequate for the production scenarios I’ve encountered in my professional experience. The 3D mesh of the stylized brain at the art cover of this section, however, was created with one of these tools. </div>
             </div>
 
         </div>
