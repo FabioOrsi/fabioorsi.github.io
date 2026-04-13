@@ -504,7 +504,7 @@ function toggleAutoRotate(button) {
         button.classList.add('active');
         viewer.dataset.toggleAutoRotate = 'true';
         if (viewer.classList.contains('portfolio-viewer')) viewer.setAttribute('auto-rotate', '');
-        reset_view(button);
+        if (viewer.classList.contains('development-viewer')) reset_view(button);
     } else {
         button.classList.remove('active');
         viewer.dataset.toggleAutoRotate = 'false';
