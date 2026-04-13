@@ -5,12 +5,12 @@
     --Res:              calc(1.5 - 0.5 * clamp(0, (100vw - 1024px) / 1px * 1000, 1));
     --px:               calc(var(--Res) * 1px);
     --rem:              calc(var(--Res) * 1rem);
-
 }
 
 body {
     padding:            0;
     margin:             0;
+    color:              #999;
     background-color:   #121212;
     font-family:        'Roboto', sans-serif;
 
@@ -499,6 +499,24 @@ button, input, select, textarea {
     box-shadow:         0 4px 15px rgba(0, 0, 0, 0.4),
                         inset -4px 4px 12px rgba(0, 0, 0, 0.5),
                         inset 4px -4px 12px rgba(255, 255, 255, 0.1) !important;
+}
+
+.experience-box-item-description {
+    display:            inline;
+    color:              #999;
+    font-size:          calc(0.8 * var(--rem)); 
+    /* letter-spacing:     calc(0.5 * var(--px));  */
+    line-height:        calc(14 * var(--px)); 
+}
+.experience-box-item-description u {
+    text-decoration-color:      transparent;
+}
+@media (hover : hover) {
+    .experience-box-item-description u {
+        cursor:                     default; 
+        text-decoration-color:      #444;
+        text-underline-offset:      4px;
+    }
 }
 
 .download-button {

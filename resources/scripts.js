@@ -1,12 +1,22 @@
 function reset_view(element) {
     const viewer = element.closest('model-viewer');
+
+    if (viewer.classList.contains('development-viewer')) viewer.removeAttribute('camera-controls');
+
     viewer.cameraOrbit = viewer.dataset.cameraOrbit;
     viewer.cameraTarget = viewer.dataset.cameraTarget;
     viewer.fieldOfView = viewer.dataset.fieldOfView;
+
     viewer.resetTurntableRotation(0)
+
+    viewer.dataset.toggleAutoRotate = 'true';
+    if (viewer.classList.contains('portfolio-viewer')) viewer.setAttribute('auto-rotate', '');
+
+    const autoRotateButton = viewer.querySelector('.auto-rotate-button');
+    if (!autoRotateButton.classList.contains('active')) autoRotateButton.classList.add('active');
 }
 
-async function toggle_fullscreen(button) {
+async function toggleFullscreen(button) {
     const delay = ms => new Promise(res => setTimeout(res, ms));
     const viewer = button.closest('model-viewer');
 
@@ -16,36 +26,29 @@ async function toggle_fullscreen(button) {
     } else {
         viewer.disableZoom = true;
         await document.exitFullscreen?.();
-        await delay(1000);
-        handleAutoRotate();
     }
+    await delay(1000);
+    handleAutoRotate();
 }
 
-async function save_poster(button) {
-    const galleryTitle = document.querySelector('.gallery-title').textContent.replace(/\s+/g, '');
+async function savePoster(button) {
+    const galleryTitle  = document.querySelector('.gallery-title').textContent.replace(/\s+/g, '');
 
-    const viewer = button.closest('model-viewer');
-    button.style.opacity = "0.5";
+    const viewer        = button.closest('model-viewer');
+    const card          = button.closest('.model-card');
+    const cardTitle     = card.querySelector('.card-title').textContent.replace(/\s+/g, ''); 
+    const index         = parseInt(viewer.getAttribute('data-current-index') || 0);
 
-    const card = button.closest('.model-card');
-    const cardTitle = card.querySelector('.card-title').textContent.replace(/\s+/g, ''); 
-    const index = parseInt(viewer.getAttribute('data-current-index') || 0);
+    const blob = await viewer.toBlob({ idealAspect: false });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Fabio_Orsi_Portfolio_${galleryTitle}_${cardTitle}_0${index + 1}.png`;
+    a.click();
+    
+    URL.revokeObjectURL(url);
 
-    try {
-        const blob = await viewer.toBlob({ idealAspect: true });
-        const url = URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `Fabio_Orsi_Portfolio_${galleryTitle}_${cardTitle}_0${index + 1}.png`;
-        a.click();
-        
-        URL.revokeObjectURL(url);
-    } catch (error) {
-        console.error("Failed to generate poster:", error);
-    } finally {
-        button.style.opacity = "1";
-    }
 }
 
 function initThumbnails() {
@@ -227,17 +230,19 @@ window.addEventListener('DOMContentLoaded', () => {
         viewer.minFieldOfView = fieldOfView;
         viewer.maxFieldOfView = fieldOfView;
 
+        viewer._baseOrbit = cameraOrbit;
+
         const parts = cameraOrbit.trim().split(/\s+/);
         const radiusStr = parts[2];
         const radiusValue = parseFloat(radiusStr); 
         const minRadius = radiusValue + 160;
         const maxRadius = radiusValue + 20;
-        if (viewer.classList.contains('portfolio-viewer')) {
+        if (viewer.classList.contains('portfolio-viewer') || viewer.classList.contains('development-viewer')) {
             viewer.minCameraOrbit = `auto auto ${minRadius}%`;
             viewer.maxCameraOrbit = `auto auto ${maxRadius}%`;
-        }
 
-        if (viewer.classList.contains('portfolio-viewer')) {
+            viewer.setAttribute("data-toggle-auto-rotate", "true");
+
             const navControls = document.createElement('div');
             navControls.className = 'viewer-nav-controls';
             navControls.innerHTML = `
@@ -282,21 +287,44 @@ window.addEventListener('DOMContentLoaded', () => {
             fullscreenbutton.title      = ' Fullscreen ';
             fullscreenbutton.innerHTML  = '<div class="icon-viewer-fullscreen-in"></div>';
             fullscreenbutton.classList.add('top-right');
-            fullscreenbutton.setAttribute('onclick', 'toggle_fullscreen(this)');
+            fullscreenbutton.setAttribute('onclick', 'toggleFullscreen(this)');
 
-            const resetbutton           = document.createElement('button');
-            resetbutton.className       = 'reset-button';
-            resetbutton.title           = ' Reset View ';
-            resetbutton.innerHTML       = '<div class="icon-viewer-home"></div>';
+            const resetbutton = document.createElement('button');
+            resetbutton.className = 'reset-button';
+            resetbutton.title = ' Reset View ';
+            resetbutton.innerHTML = '<div class="icon-viewer-home"></div>';
+            resetbutton.style.visibility = "hidden";
             resetbutton.classList.add('top-left');
             resetbutton.setAttribute('onclick', 'reset_view(this)');
+
+            const sidebarContainer = document.createElement('div');
+            sidebarContainer.className = 'sidebar-container';
+            sidebarContainer.classList.add('open');
+            sidebarContainer.classList.add('top-left');
+            sidebarContainer.innerHTML = `
+                <div class="sidebar-content">
+                    <button class="auto-rotate-button active" onclick="toggleAutoRotate(this)"> Auto Rotate </button>
+                    <div class="align-view-list">
+                        <div style="padding-bottom: 5px; font-size: 0.7rem;"> Align View : </div>
+                        <button class="align-view-button" onclick="reset_view(this)" style="margin-bottom: 10px;"> DEFAULT </button>
+                        <button class="align-view-button" onclick="setView('Top', this)"> TOP </button>
+                        <button class="align-view-button" onclick="setView('Bottom', this)"> BOTTOM </button>
+                        <button class="align-view-button" onclick="setView('Left', this)"> LEFT </button>
+                        <button class="align-view-button" onclick="setView('Right', this)"> RIGHT </button>
+                        <button class="align-view-button" onclick="setView('Front', this)"> FRONT </button>
+                        <button class="align-view-button" onclick="setView('Back', this)"> BACK </button>
+                    </div>
+                </div>`;
+            viewer.appendChild(sidebarContainer);
 
             const svgNS = "http://www.w3.org/2000/svg";
 
             const photoButton          = document.createElement('button');
             photoButton.className      = 'photo-button';
-            photoButton.title          = ' Save Image ';
-            photoButton.setAttribute('onclick', 'save_poster(this)');
+            // photoButton.title          = ' Save Image ';
+            photoButton.setAttribute('onclick', 'savePoster(this)');
+            photoButton.setAttribute('onmouseenter', 'showBoundingBox(this)');
+            photoButton.setAttribute('onmouseleave', 'hideBoundingBox(this)');
 
             const photoIconCircle = document.createElementNS(svgNS,`circle`);
             photoIconCircle.setAttribute('cx', '12');
@@ -321,6 +349,10 @@ window.addEventListener('DOMContentLoaded', () => {
             photoButton.appendChild(photoIcon);
             photoButton.classList.add('bottom-left');
 
+            const posterBoundingBox = document.createElement('div');
+            posterBoundingBox.className = 'poster-bounding-box';
+            viewer.appendChild(posterBoundingBox);
+
             viewer.appendChild(deadzoneTop);
             viewer.appendChild(deadzoneBottom);
             viewer.appendChild(deadzoneLeft);
@@ -328,11 +360,11 @@ window.addEventListener('DOMContentLoaded', () => {
             viewer.appendChild(fullscreenbutton);
             viewer.appendChild(zoomControls);
 
-            if (viewer.classList.contains('portfolio-viewer')) {
+            // if (viewer.classList.contains('portfolio-viewer')) {
                 viewer.appendChild(navControls);
                 viewer.appendChild(resetbutton);
                 viewer.appendChild(photoButton);
-            }
+            // }
 
         }
     });
@@ -349,7 +381,7 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', initThumbnails);
 
 window.addEventListener('load', () => {
-    const devViewers = document.querySelectorAll('.development-viewer');
+    const devViewers = document.querySelectorAll('.menu-viewer-development');
     const logoViewer = document.getElementById('logo-viewer');
     const menuViewers = document.querySelectorAll('.menu-viewer');
 
@@ -380,6 +412,8 @@ window.addEventListener('load', () => {
             }
 
             devViewers.forEach(devViewer => {
+                if (devViewer.dataset.toggleAutoRotate === 'false') return;
+
                 const currentCameraOrbit    = devViewer.cameraOrbit.trim().split(/\s+/);
 
                 const devCard               = devViewer.closest('.model-card');
@@ -415,6 +449,70 @@ window.addEventListener('load', () => {
     }
 });
 
+function toggleSidebar(button) {
+    const container = button.closest('.sidebar-container');
+    container.classList.toggle('open');
+    const arrow = container.querySelector('.sidebar-arrow');
+    arrow.innerHTML = container.classList.contains('open') ? '&#10094;' : '&#10095;';
+}
+
+function setView (view, button) {
+    const viewer = button.closest('model-viewer');
+    viewer.dataset.toggleAutoRotate = 'false';
+    viewer.removeAttribute('auto-rotate');
+    if (!viewer.hasAttribute('camera-controls')) {viewer.setAttribute('camera-controls', '');}
+
+    const autoRotateButton = viewer.querySelector('.auto-rotate-button');
+    if (autoRotateButton.classList.contains('active')) autoRotateButton.classList.remove('active');
+
+    switch(view) {
+        case 'Top':
+            viewer.cameraOrbit = "0deg 0deg 100%"; break;
+        case 'Bottom':
+            viewer.cameraOrbit = "0deg 180deg 100%"; break;
+        case 'Left':
+            viewer.cameraOrbit = "-90deg 85deg 100%"; break;
+        case 'Right':
+            viewer.cameraOrbit = "90deg 85deg 100%"; break;
+        case 'Front':
+            viewer.cameraOrbit = "0deg 85deg 100%"; break;
+        case 'Back':
+            viewer.cameraOrbit = "180deg 85deg 100%"; break;
+        default:
+            viewer.cameraOrbit = viewer.dataset.cameraOrbit; break;
+    }
+    viewer.cameraTarget = viewer.dataset.cameraTarget;
+    viewer.fieldOfView = viewer.dataset.fieldOfView;
+    viewer.resetTurntableRotation(0)
+}
+
+function showBoundingBox(button) {
+    const posterBoundingBox = button.closest('model-viewer').querySelector('.poster-bounding-box');
+    posterBoundingBox.style.visibility = "visible";
+    posterBoundingBox.style.border = "1px dashed rgba(127, 127, 127, 0.3)";
+}
+
+function hideBoundingBox(button) {
+    const posterBoundingBox = button.closest('model-viewer').querySelector('.poster-bounding-box');
+    posterBoundingBox.style.visibility = "hidden";
+    posterBoundingBox.style.border = "1px dashed rgba(127, 127, 127, 0.0)";
+}
+
+function toggleAutoRotate(button) {
+    const viewer = button.closest('model-viewer');
+    if (!button.classList.contains('active')) {
+        button.classList.add('active');
+        viewer.dataset.toggleAutoRotate = 'true';
+        if (viewer.classList.contains('portfolio-viewer')) viewer.setAttribute('auto-rotate', '');
+        reset_view(button);
+    } else {
+        button.classList.remove('active');
+        viewer.dataset.toggleAutoRotate = 'false';
+        if (viewer.classList.contains('portfolio-viewer')) viewer.removeAttribute('auto-rotate');
+        if (viewer.classList.contains('development-viewer')) viewer.setAttribute('camera-controls', '');
+    }
+}
+
 function handleAutoRotate() {
     const isFullscreen = document.fullscreenElement !== null;
     const viewers = document.querySelectorAll('.portfolio-viewer');
@@ -429,17 +527,17 @@ function handleAutoRotate() {
         const cardTitle = card.querySelector('.card-title') || null; 
 
         if ((lowerBound && upperBound) || isFullscreen) {
+            if (viewer.dataset.toggleAutoRotate == 'true' && !viewer.hasAttribute('auto-rotate')) viewer.setAttribute('auto-rotate', '');
             if (!viewer.hasAttribute('camera-controls')) {viewer.setAttribute('camera-controls', '');}
-            if (!viewer.hasAttribute('auto-rotate')) {viewer.setAttribute('auto-rotate', '');}
             if (variantThumbnails) variantThumbnails.style.opacity = "1";
             if (cardTitle) cardTitle.style.color = "#ccc";
-            viewer.classList.add('reveal-viewer');
+            if (!viewer.classList.contains('reveal-viewer')) viewer.classList.add('reveal-viewer');
         } else {
             if (viewer.hasAttribute('camera-controls')) {viewer.removeAttribute('camera-controls');}
             if (viewer.hasAttribute('auto-rotate')) {viewer.removeAttribute('auto-rotate');}
             if (variantThumbnails) variantThumbnails.style.opacity = "0.2";
             if (cardTitle) cardTitle.style.color = "#333";
-            viewer.classList.remove('reveal-viewer');
+            if (viewer.classList.contains('reveal-viewer')) viewer.classList.remove('reveal-viewer');
         }
     });
 }
