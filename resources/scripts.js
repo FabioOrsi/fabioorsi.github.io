@@ -358,13 +358,11 @@ window.addEventListener('DOMContentLoaded', () => {
             viewer.appendChild(deadzoneLeft);
             viewer.appendChild(deadzoneRight);
             viewer.appendChild(fullscreenbutton);
-            viewer.appendChild(zoomControls);
+            if (!viewer.classList.contains('menu-viewer-development')) viewer.appendChild(zoomControls);
 
-            // if (viewer.classList.contains('portfolio-viewer')) {
-                viewer.appendChild(navControls);
-                viewer.appendChild(resetbutton);
-                viewer.appendChild(photoButton);
-            // }
+            viewer.appendChild(navControls);
+            viewer.appendChild(resetbutton);
+            if (!viewer.classList.contains('menu-viewer-development')) viewer.appendChild(photoButton);
 
         }
     });

@@ -18,6 +18,10 @@ body {
     -webkit-touch-callout: none;
 }
 
+html {
+    scroll-behavior:    smooth;
+}
+
 button, input, select, textarea {
     font-family:        inherit;
 }
@@ -83,6 +87,8 @@ button, input, select, textarea {
     border:             1px solid rgba(0, 150, 255, 0.2);
     border-radius:      calc(12 * var(--px));
     text-decoration:    none;
+
+    scroll-margin-top:  calc(80 * var(--px));
 }
 
 .home-title {
@@ -222,6 +228,8 @@ button, input, select, textarea {
 
     will-change:        transform;
     transition:         all 0.8s ease;
+
+    scroll-margin-top:  calc(120 * var(--px));
 }
 
 .card-footer-home {
